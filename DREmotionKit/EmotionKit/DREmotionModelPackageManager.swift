@@ -6,9 +6,11 @@
 //  Copyright © 2017年 dourui. All rights reserved.
 //
 
-import Alamofire
-import Zip
-import RxSwift
+import Foundation
+
+//import Alamofire
+//import Zip
+//import RxSwift
 
 private struct DREmotionModelPackageDescription: Codable {
 
@@ -76,17 +78,17 @@ final class DREmotionModelPackageManager {
         emotionModelPackages = scanPackage(fileURL: documentPackageRootURL) + scanPackage(fileURL: embeddedPackageRootURL)
     }
     
-    func addPackage(zipPackageLocalPath: URL) throws {
-        let uuidString = UUID().uuidString
-        let finalFilePath = documentPackageRootURL.appendingPathComponent(uuidString)
-        do {
-            try Zip.unzipFile(zipPackageLocalPath, destination: finalFilePath, overwrite: true, password: nil)
-            try FileManager.default.removeItem(at: zipPackageLocalPath)
-            self.scanLocalPackages()
-        } catch let error {
-            throw error
-        }
-    }
+//    func addPackage(zipPackageLocalPath: URL) throws {
+//        let uuidString = UUID().uuidString
+//        let finalFilePath = documentPackageRootURL.appendingPathComponent(uuidString)
+//        do {
+//            try Zip.unzipFile(zipPackageLocalPath, destination: finalFilePath, overwrite: true, password: nil)
+//            try FileManager.default.removeItem(at: zipPackageLocalPath)
+//            self.scanLocalPackages()
+//        } catch let error {
+//            throw error
+//        }
+//    }
     
     func removePackage(package: DREmotionModelPackage) throws {
         do {
@@ -96,22 +98,22 @@ final class DREmotionModelPackageManager {
             throw error
         }
     }
-
-    func download(url: String, completinHandler: @escaping () -> Void) {
-        let zipFilePath = documentPackageRootURL.appendingPathComponent(UUID().uuidString + ".zip")
-        
-        Alamofire.download(url) {(url, response) -> (destinationURL: URL, options: DownloadRequest.DownloadOptions) in
-            return (zipFilePath, [.removePreviousFile])
-            }.downloadProgress { (progress) in
-                print(progress)
-            }.response { [weak self] (_) in
-                do {
-                    try self?.addPackage(zipPackageLocalPath: zipFilePath)
-                } catch {
-                    #if DEBUG
-                    print(error)
-                    #endif
-                }
-        }
-    }
+//
+//    func download(url: String, completinHandler: @escaping () -> Void) {
+//        let zipFilePath = documentPackageRootURL.appendingPathComponent(UUID().uuidString + ".zip")
+//        
+//        Alamofire.download(url) {(url, response) -> (destinationURL: URL, options: DownloadRequest.DownloadOptions) in
+//            return (zipFilePath, [.removePreviousFile])
+//            }.downloadProgress { (progress) in
+//                print(progress)
+//            }.response { [weak self] (_) in
+//                do {
+//                    try self?.addPackage(zipPackageLocalPath: zipFilePath)
+//                } catch {
+//                    #if DEBUG
+//                    print(error)
+//                    #endif
+//                }
+//        }
+//    }
 }

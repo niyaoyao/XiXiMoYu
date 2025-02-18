@@ -110,8 +110,10 @@ extension DREmotionModelRender {
         x = sfn[1] * fn[2] - sfn[2] * fn[1]
         y = sfn[2] * fn[0] - sfn[0] * fn[2]
         z = sfn[0] * fn[1] - sfn[1] * fn[0]
-        
-        let l: Double = sqrt(x * x + y * y + z * z)
+        let xx = x * x
+        let yy = y * y
+        let zz = z * z
+        let l: Double = sqrt(xx + yy + zz)
         x = sin(0.5 * angle) * x / l
         y = sin(0.5 * angle) * y / l
         z = sin(0.5 * angle) * z / l
@@ -120,9 +122,16 @@ extension DREmotionModelRender {
         var yaw: Double!
         var pitch: Double!
         var roll: Double!
-        roll = atan2(2 * (w * x + y * z), 1 - 2 * (x * x + y * y))
-        pitch = asin(2 * (w * y - z * x))
-        yaw = atan2(2 * (w * z + x * y), 1 - 2 * (y * y + z * z))
+        let wx = w * x
+        let yz = y * z
+        let wy = w * y
+        let zx = z * x
+        let wz = w * z
+        let xy = x * y
+        
+        roll = atan2(2 * (wx + yz), 1 - 2 * (xx + yy))
+        pitch = asin(2 * (wy - zx))
+        yaw = atan2(2 * (wz + xy), 1 - 2 * (yy + zz))
         
         //        if(yaw < Math.PI / 18) {
         if(sfn[0] < 0.1 && sfn[1] < 0.1) {

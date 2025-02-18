@@ -33,7 +33,7 @@ extension DRMovieRecorder {
                 let url = DRMovieRecorder.videoThumbURL()
                 
                 do {
-                    try UIImagePNGRepresentation(thumbImage)?.write(to: url)
+                    try thumbImage.pngData()?.write(to: url)
                     DispatchQueue.main.async {
                         completion(thumbImage, url)
                     }
@@ -139,7 +139,7 @@ extension DRMovieRecorder {
                                        originAudioVolume: Float = 1.0,
                                        backgroundMusicVolume: Float = 0.1,
                                        completion: (() -> ())?) {
-        let startTime: CMTime = kCMTimeZero
+        let startTime: CMTime = CMTime.zero
         let composition: AVMutableComposition = AVMutableComposition()
         
         // Video
@@ -157,7 +157,7 @@ extension DRMovieRecorder {
         var audioMixParams: [AVMutableAudioMixInputParameters] = []
         let originAudioMixInputParameters = AVMutableAudioMixInputParameters()
         originAudioMixInputParameters.trackID = audioTrack.trackID
-        originAudioMixInputParameters.setVolume(originAudioVolume, at: kCMTimeZero)
+        originAudioMixInputParameters.setVolume(originAudioVolume, at: CMTime.zero)
         audioMixParams.append(originAudioMixInputParameters)
         
         do {
@@ -174,7 +174,7 @@ extension DRMovieRecorder {
                 
                 let bgmAudioMixInputParameters = AVMutableAudioMixInputParameters()
                 bgmAudioMixInputParameters.trackID = bgmTrack.trackID
-                bgmAudioMixInputParameters.setVolume(backgroundMusicVolume, at: kCMTimeZero)
+                bgmAudioMixInputParameters.setVolume(backgroundMusicVolume, at: CMTime.zero)
                 audioMixParams.append(bgmAudioMixInputParameters)
             }
             
@@ -190,7 +190,7 @@ extension DRMovieRecorder {
                 completion?()
             }
         } catch {
-            DebugLog("\(error)")
+            debugPrint("\(error)")
         }
     }
 }

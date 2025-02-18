@@ -16,6 +16,18 @@
 		8C9BE4272D64D46800CA398D /* Live2DDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9BE4262D64D46800CA398D /* Live2DDemoTests.swift */; };
 		8C9BE4312D64D46800CA398D /* Live2DDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9BE4302D64D46800CA398D /* Live2DDemoUITests.swift */; };
 		8C9BE4332D64D46800CA398D /* Live2DDemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9BE4322D64D46800CA398D /* Live2DDemoUITestsLaunchTests.swift */; };
+		8C9BE4432D64E7F200CA398D /* VideoAssets.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8C9BE4402D64E7F200CA398D /* VideoAssets.bundle */; };
+		8C9BE4442D64E7F200CA398D /* EmotionModel.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8C9BE4412D64E7F200CA398D /* EmotionModel.bundle */; };
+		8C9BE4452D64E7F200CA398D /* call.caf in Resources */ = {isa = PBXBuildFile; fileRef = 8C9BE4422D64E7F200CA398D /* call.caf */; };
+		8C9BE4532D64E89000CA398D /* DRVideoExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9BE4472D64E89000CA398D /* DRVideoExtension.swift */; };
+		8C9BE4542D64E89000CA398D /* DRMovieRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C9BE4482D64E89000CA398D /* DRMovieRecorder.m */; };
+		8C9BE4552D64E89000CA398D /* DREmotionModelPackage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C9BE4492D64E89000CA398D /* DREmotionModelPackage.m */; };
+		8C9BE4562D64E89000CA398D /* DREmotionModelPackageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9BE44B2D64E89000CA398D /* DREmotionModelPackageManager.swift */; };
+		8C9BE4572D64E89000CA398D /* DRMovieRecorder+VideoComposition.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C9BE44E2D64E89000CA398D /* DRMovieRecorder+VideoComposition.m */; };
+		8C9BE4582D64E89000CA398D /* DREmotionModelRender.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8C9BE4502D64E89000CA398D /* DREmotionModelRender.mm */; };
+		8C9BE4592D64E89000CA398D /* DREmotionPoseAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9BE4522D64E89000CA398D /* DREmotionPoseAlgorithm.swift */; };
+		8C9BE45C2D64EA2A00CA398D /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C9BE45B2D64EA2A00CA398D /* Test.m */; };
+		8C9BE45F2D64F02F00CA398D /* DRAudioRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C9BE45E2D64F02F00CA398D /* DRAudioRecorder.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +61,25 @@
 		8C9BE42C2D64D46800CA398D /* Live2DDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Live2DDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C9BE4302D64D46800CA398D /* Live2DDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Live2DDemoUITests.swift; sourceTree = "<group>"; };
 		8C9BE4322D64D46800CA398D /* Live2DDemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Live2DDemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8C9BE4402D64E7F200CA398D /* VideoAssets.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = VideoAssets.bundle; sourceTree = "<group>"; };
+		8C9BE4412D64E7F200CA398D /* EmotionModel.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = EmotionModel.bundle; sourceTree = "<group>"; };
+		8C9BE4422D64E7F200CA398D /* call.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = call.caf; sourceTree = "<group>"; };
+		8C9BE4472D64E89000CA398D /* DRVideoExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRVideoExtension.swift; sourceTree = "<group>"; };
+		8C9BE4482D64E89000CA398D /* DRMovieRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRMovieRecorder.m; sourceTree = "<group>"; };
+		8C9BE4492D64E89000CA398D /* DREmotionModelPackage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DREmotionModelPackage.m; sourceTree = "<group>"; };
+		8C9BE44A2D64E89000CA398D /* DRMovieRecorder+VideoComposition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DRMovieRecorder+VideoComposition.h"; sourceTree = "<group>"; };
+		8C9BE44B2D64E89000CA398D /* DREmotionModelPackageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DREmotionModelPackageManager.swift; sourceTree = "<group>"; };
+		8C9BE44C2D64E89000CA398D /* DRMovieRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRMovieRecorder.h; sourceTree = "<group>"; };
+		8C9BE44D2D64E89000CA398D /* DREmotionKit-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DREmotionKit-Bridging-Header.h"; sourceTree = "<group>"; };
+		8C9BE44E2D64E89000CA398D /* DRMovieRecorder+VideoComposition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DRMovieRecorder+VideoComposition.m"; sourceTree = "<group>"; };
+		8C9BE44F2D64E89000CA398D /* DREmotionModelPackage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DREmotionModelPackage.h; sourceTree = "<group>"; };
+		8C9BE4502D64E89000CA398D /* DREmotionModelRender.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DREmotionModelRender.mm; sourceTree = "<group>"; };
+		8C9BE4512D64E89000CA398D /* DREmotionModelRender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DREmotionModelRender.h; sourceTree = "<group>"; };
+		8C9BE4522D64E89000CA398D /* DREmotionPoseAlgorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DREmotionPoseAlgorithm.swift; sourceTree = "<group>"; };
+		8C9BE45A2D64EA2A00CA398D /* Test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Test.h; sourceTree = "<group>"; };
+		8C9BE45B2D64EA2A00CA398D /* Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test.m; sourceTree = "<group>"; };
+		8C9BE45D2D64F02E00CA398D /* DRAudioRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRAudioRecorder.h; sourceTree = "<group>"; };
+		8C9BE45E2D64F02F00CA398D /* DRAudioRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRAudioRecorder.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +130,8 @@
 		8C9BE40E2D64D46400CA398D /* Live2DDemo */ = {
 			isa = PBXGroup;
 			children = (
+				8C9BE4462D64E89000CA398D /* EmotionKit */,
+				8C9BE43F2D64E7F200CA398D /* Resources */,
 				8C9BE40F2D64D46400CA398D /* AppDelegate.swift */,
 				8C9BE4112D64D46400CA398D /* SceneDelegate.swift */,
 				8C9BE4132D64D46400CA398D /* ViewController.swift */,
@@ -106,6 +139,8 @@
 				8C9BE4182D64D46700CA398D /* Assets.xcassets */,
 				8C9BE41A2D64D46700CA398D /* LaunchScreen.storyboard */,
 				8C9BE41D2D64D46700CA398D /* Info.plist */,
+				8C9BE45A2D64EA2A00CA398D /* Test.h */,
+				8C9BE45B2D64EA2A00CA398D /* Test.m */,
 			);
 			path = Live2DDemo;
 			sourceTree = "<group>";
@@ -126,6 +161,39 @@
 			);
 			path = Live2DDemoUITests;
 			sourceTree = "<group>";
+		};
+		8C9BE43F2D64E7F200CA398D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8C9BE4402D64E7F200CA398D /* VideoAssets.bundle */,
+				8C9BE4412D64E7F200CA398D /* EmotionModel.bundle */,
+				8C9BE4422D64E7F200CA398D /* call.caf */,
+			);
+			name = Resources;
+			path = DREmotionKit/Resources;
+			sourceTree = SOURCE_ROOT;
+		};
+		8C9BE4462D64E89000CA398D /* EmotionKit */ = {
+			isa = PBXGroup;
+			children = (
+				8C9BE45D2D64F02E00CA398D /* DRAudioRecorder.h */,
+				8C9BE45E2D64F02F00CA398D /* DRAudioRecorder.m */,
+				8C9BE4472D64E89000CA398D /* DRVideoExtension.swift */,
+				8C9BE4482D64E89000CA398D /* DRMovieRecorder.m */,
+				8C9BE4492D64E89000CA398D /* DREmotionModelPackage.m */,
+				8C9BE44A2D64E89000CA398D /* DRMovieRecorder+VideoComposition.h */,
+				8C9BE44B2D64E89000CA398D /* DREmotionModelPackageManager.swift */,
+				8C9BE44C2D64E89000CA398D /* DRMovieRecorder.h */,
+				8C9BE44D2D64E89000CA398D /* DREmotionKit-Bridging-Header.h */,
+				8C9BE44E2D64E89000CA398D /* DRMovieRecorder+VideoComposition.m */,
+				8C9BE44F2D64E89000CA398D /* DREmotionModelPackage.h */,
+				8C9BE4502D64E89000CA398D /* DREmotionModelRender.mm */,
+				8C9BE4512D64E89000CA398D /* DREmotionModelRender.h */,
+				8C9BE4522D64E89000CA398D /* DREmotionPoseAlgorithm.swift */,
+			);
+			name = EmotionKit;
+			path = DREmotionKit/EmotionKit;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -231,6 +299,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C9BE4452D64E7F200CA398D /* call.caf in Resources */,
+				8C9BE4442D64E7F200CA398D /* EmotionModel.bundle in Resources */,
+				8C9BE4432D64E7F200CA398D /* VideoAssets.bundle in Resources */,
 				8C9BE41C2D64D46700CA398D /* LaunchScreen.storyboard in Resources */,
 				8C9BE4192D64D46700CA398D /* Assets.xcassets in Resources */,
 				8C9BE4172D64D46400CA398D /* Main.storyboard in Resources */,
@@ -258,9 +329,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C9BE4562D64E89000CA398D /* DREmotionModelPackageManager.swift in Sources */,
+				8C9BE45C2D64EA2A00CA398D /* Test.m in Sources */,
+				8C9BE4542D64E89000CA398D /* DRMovieRecorder.m in Sources */,
 				8C9BE4142D64D46400CA398D /* ViewController.swift in Sources */,
+				8C9BE4572D64E89000CA398D /* DRMovieRecorder+VideoComposition.m in Sources */,
+				8C9BE4552D64E89000CA398D /* DREmotionModelPackage.m in Sources */,
 				8C9BE4102D64D46400CA398D /* AppDelegate.swift in Sources */,
+				8C9BE4592D64E89000CA398D /* DREmotionPoseAlgorithm.swift in Sources */,
 				8C9BE4122D64D46400CA398D /* SceneDelegate.swift in Sources */,
+				8C9BE4532D64E89000CA398D /* DRVideoExtension.swift in Sources */,
+				8C9BE45F2D64F02F00CA398D /* DRAudioRecorder.m in Sources */,
+				8C9BE4582D64E89000CA398D /* DREmotionModelRender.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,6 +523,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BLBSCD8ZQ9;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					L2D_TARGET_IPHONE_ES2,
+					"DEBUG=1",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Live2DDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -454,12 +538,24 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/DREmotionKit/Live2DSDK/2.1/lib/$(CONFIGURATION)-$(PLATFORM_NAME)";
 				MARKETING_VERSION = 1.0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"z\"",
+					"-lLive2D",
+					"-lstdc++",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = nycode.Live2DDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/DREmotionKit/EmotionKit/DREmotionKit-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
+				SYSTEM_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/DREmotionKit/Live2DSDK/2.1/include/**";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSION_INFO_FILE = "嘻嘻摸鱼";
 			};
 			name = Debug;
 		};
@@ -471,6 +567,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BLBSCD8ZQ9;
+				GCC_PREPROCESSOR_DEFINITIONS = L2D_TARGET_IPHONE_ES2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Live2DDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -482,12 +579,24 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/DREmotionKit/Live2DSDK/2.1/lib/$(CONFIGURATION)-$(PLATFORM_NAME)";
 				MARKETING_VERSION = 1.0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"z\"",
+					"-lLive2D",
+					"-lstdc++",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = nycode.Live2DDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/DREmotionKit/EmotionKit/DREmotionKit-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
+				SYSTEM_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/DREmotionKit/Live2DSDK/2.1/include/**";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSION_INFO_FILE = "嘻嘻摸鱼";
 			};
 			name = Release;
 		};
