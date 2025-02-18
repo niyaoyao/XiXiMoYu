@@ -1,0 +1,31 @@
+{
+    "id": 3,
+    "version": 1,
+    "name": "Haru",
+    "avatarPath": "avatar.png",
+    "texturePaths": [
+        "textures/0.png",
+        "textures/1.png",
+        "textures/2.png"
+    ],
+    "avatarPaths": [
+      "avatars/haru_smile.gif",
+      "avatars/haru_happy.gif",
+      "avatars/haru_surprised.gif",
+      "avatars/haru_angry.gif",
+      "avatars/haru_sad.gif"
+    ],
+    "modelPath": "model.moc",
+    "motionPaths": [
+      "motions/tapBody_00.mtn",
+      "motions/tapBody_01.mtn",
+      "motions/tapBody_02.mtn",
+      "motions/tapBody_03.mtn",
+      "motions/tapBody_04.mtn",
+      "motions/tapBody_05.mtn",
+      "motions/tapBody_06.mtn",
+      "motions/tapBody_07.mtn",
+      "motions/tapBody_08.mtn",
+      "motions/tapBody_09.mtn"
+    ],
+}

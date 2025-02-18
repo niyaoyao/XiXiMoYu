@@ -1,0 +1,168 @@
+/* 
+  Localizable.strings
+  doutu
+
+  Created by niyao on 10/19/17.
+  Copyright © 2017 dourui. All rights reserved.
+*/
+
+"tabbar.contacts" = "联系人";
+"tabbar.talk" = "";
+"tabbar.me" = "我";
+"tabbar.square" = "广场";
+
+// Common
+"common.cancel" = "取消";
+"common.ok" = "确认";
+"common.success" = "成功";
+"common.failed" = "失败";
+
+// Index
+"index.square_title" = "广场";
+"index.my_profile_title" = "个人主页";
+
+// Login
+"login.login_title" = "登入抖兔";
+"login.phone_number_placeholder" = "手机号";
+"login.password_placeholder" = "密码";
+"login.register_placeholder" = "返回注册";
+"login.confirm" = "登录";
+"login.switch_register" = "注册";
+"login.switch_verify_code" = "短信验证码登录";
+"login.switch_password" = "密码登录";
+
+// Register
+"register.register_title" = "欢迎注册抖兔";
+"register.phone_number_placeholder" = "输入手机号";
+"register.password_placeholder" = "输入密码";
+"register.password_prompt" = "设定登入密码 ( *6位以上英数字 )";
+"register.repassword_placeholder" = "再次确认密码";
+"register.login_placeholder" = "已有账号，选择登录";
+"register.confirm" = "注册";
+"register.setting_avatar_prompt" = "点击上传头像";
+"register.setting_username_title" = "输入昵称";
+"register.setting_username_prompt" = " ( 20字内，不可修改 )";
+"register.send_sms" = "发送验证码";
+"register.enter_sms_code" = "输入短信验证码";
+"register.switch_login" = "登录";
+
+// My Profile
+"profile.switch_avatar" = "默认登入角色";
+"profile.name" = "昵称";
+"profile.name_placeholder" = "输入昵称";
+"profile.phone_number" = "手机号码";
+"profile.password" = "密码";
+"profile.old_password_placeholder" = "输入旧密码";
+"profile.new_password_placeholder" = "输入新密码";
+"profile.new_password_confirm_placeholder" = "再次输入新密码";
+"profile.settings_title" = "编辑个人信息";
+"profile.my_videos" = "我的表演";
+"profile.my_liked" = "我的点赞";
+"profile.avatar_select_album" = "从相册选择";
+
+// Contact list
+"contacts.list.action.pin" = "置顶";
+"contacts.list.action.unpin" = "取消置顶";
+"contacts.list.action.delete" = "置顶";
+"contacts.list.action.dial" = "通话";
+"contacts.list.empty" = "尚未添加联系人，快去添加吧";
+"contacts_list.delete_contact" = "删除联系人";
+"contacts_list.confirm_delete_contact" = "你确定要删除联系人吗？";
+
+// Contact Add
+"contacts_add.enter_user_id_title" = "输入用户 ID 号";
+"contacts_add.enter_user_id_placeholder" = "请输入用户 ID 号";
+"contacts_add.confirm" = "确认";
+"contacts_add.go_back" = "返回";
+"contacts_add.title" = "添加联系人";
+"contacts_add.search.placeholder" = "请输入要添加的联系人昵称";
+"contacts_add.pending" = "等待接受";
+"contacts_add.stranger" = "添加";
+"contacts_add.myself" = "我自己";
+"contacts_add.friend" = "已添加";
+
+// Contact Notification
+"contacts_notification.title" = "消息通知";
+"contacts_notification.accept" = "同意";
+"contacts_notification.accepted" = "已接受";
+"contacts_notification.accepted.prompt" = "已经同意您的好友请求";
+
+// Contact Add Detail
+"contacts_add_detail.user_id" = "用户ID: %d";
+"contacts_add_detaild.add" = "添加";
+"contacts_add_detail.go_back" = "返回";
+
+// Video Square
+"square.video_liked" = "个赞";
+"square.video_seconds_ago" = "秒前";
+"square.video_minutes_ago" = "分钟前";
+"square.video_hours_ago" = "小时前";
+"square.video_days_ago" = "天前";
+
+// Video List
+"video.list_empty" = "尚无视频";
+
+// Talk
+"talk.share_success" = "分享成功";
+"talk.share_prompt" = "为视频添加描述，少于15个字。";
+"talk.share_record_too_short" = "录制时间太短，请录制 3s 以上的视频";
+"talk.share_saved" = "已保存于本地";
+"talk.share_select_model" = "选择模型";
+"talk.leave_alert_title" = "是否离开并结束当前录制？";
+"talk.leave_confirm" = "离开并结束";
+"talk.leave_redo" = "重新开始";
+"talk.delete_video_title" = "删除上一段视频？";
+
+// Avatar selection
+"avatar_selection.choose_default_avatar" = "选择默认角色";
+"avatar_selection.add_new_avatar" = "+ 添加新角色";
+
+// Character
+"character.create_select_model" = "选择你的抖兔角色";
+"character.create_set_nick" = "设定角色昵称";
+"character.create_welcome" = "Hi,\n欢迎开启抖兔家族";
+"character.create_detecting" = "正在进行人脸识别...";
+"character.create_record_prompt" = "点击拍照，长按可录制动态头像";
+"character.create_save" = "确定保存此头像?";
+"character.create_sync_emotion" = "表情同步中...";
+"character.create_avatar" = "拍摄头像";
+
+// API Error
+
+"api.player.duplicated_name" = "角色名称已存在";
+"api.player.character_id_error" = "模型标示错误";
+
+// My Profile Settings
+"profile.settings.title" = "编辑与设定";
+"profile.settings.account_seurity" = "账户安全";
+"profile.settings.clear_cache" = "清除缓存";
+"profile.settings.auto_play" = "视频自动播放";
+"profile.settings.rate_us" = "给我们评分";
+"profile.settings.about" = "关于抖兔";
+"profile.settings.profile_photo" = "头像";
+"profile.settings.nickname" = "昵称";
+
+// Push
+"voip.push_notification" = "您有一个语音来电！";
+"push_notification.voip" = "您有新的语音来电！";
+"push_notification.voip_from" = "来自 ";
+"push_notification.voip_dial" = " 语音通话";
+"push_notification.friend_request" = "新的好友请求";
+"push_notification.friend_request_detail" = "请求加您为好友";
+"push_notification.friend_accepted" = "添加好友请求成功";
+"push_notification.friend_accepted_detail" = "通过了您的好友请求";
+"push_notification.unknown" = "您有新的消息";
+"push_notification.unknown_detail" = "点击查看详情";
+
+// VoIP Dial
+"voip.dial_calling_someone" = "呼叫";
+"voip.dial_calling" = "中";
+"voip.invites_you_voice_call" = "邀请你语音通话";
+
+// Model Control
+"model.control_character" = "人物";
+"model.control_background" = "背景";
+"model.control_sticker" = "贴纸";
+
+// SenseMe
+"senseme.license_invalid" = "为保证人脸识别正常使用，请先前往设置-通用-日期与时间，关闭系统时间自动更新，并手动将系统日期设置为 2018/04/01。\n感谢您的使用！";

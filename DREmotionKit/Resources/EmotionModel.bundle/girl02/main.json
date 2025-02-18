@@ -1,0 +1,29 @@
+{
+    "id": 9,
+    "version": 1,
+    "name": "zhujuelian",
+    "avatarPath": "avatar.png",
+    "texturePaths": [
+        "textures/0.png"
+    ],
+    "avatarPaths": [
+        "avatars/miku_smile.gif",
+        "avatars/miku_happy.gif",
+        "avatars/miku_surprised.gif",
+        "avatars/miku_angry.gif",
+        "avatars/miku_sad.gif",
+    ],
+    "modelPath": "model.moc",
+    "motionPaths": [
+                    "motions/tapBody_00.mtn",
+                    "motions/tapBody_01.mtn",
+                    "motions/tapBody_02.mtn",
+                    "motions/tapBody_03.mtn",
+                    "motions/tapBody_04.mtn",
+                    "motions/tapBody_05.mtn",
+                    "motions/tapBody_06.mtn",
+                    "motions/tapBody_07.mtn",
+                    "motions/tapBody_08.mtn",
+                    "motions/tapBody_09.mtn"
+                    ],
+}
