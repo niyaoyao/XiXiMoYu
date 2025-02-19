@@ -191,8 +191,8 @@ static DREmotionModelRender *manager = nil;
 
 #pragma mark - GLKViewDelegate
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect {
-    CGFloat width = self.viewWidth;
-    CGFloat height = self.viewHeight;
+    CGFloat width = self.view.bounds.size.width;
+    CGFloat height = self.view.bounds.size.height;
     
     glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // GPU 的纹理没有加载完成会出现黑影，此时调用 glClear 会导致 EXC_BAD_ACCESS
@@ -375,7 +375,7 @@ static DREmotionModelRender *manager = nil;
 }
     
 - (void)setModelViewFrame:(CGRect)frame {
-    self.view.frame = CGRectMake(0, 0, self.viewWidth, self.viewHeight); //frame;
+    self.view.frame = frame;
 }
 
 - (void)setModelPose:(DRModelPoseType)poseType number:(NSNumber *)number {
@@ -420,13 +420,6 @@ static DREmotionModelRender *manager = nil;
     return _view;
 }
 
-- (CGFloat)viewWidth {
-    return _viewWidth > 0 ? : UIScreen.mainScreen.bounds.size.width;
-}
-
-- (CGFloat)viewHeight {
-    return _viewHeight > 0 ? : UIScreen.mainScreen.bounds.size.height;
-}
 
 - (NSMutableArray<DREmotionRefreshAction> *)refreshActionArray {
     if (!_refreshActionArray) {

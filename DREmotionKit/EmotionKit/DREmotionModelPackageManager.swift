@@ -43,7 +43,9 @@ final class DREmotionModelPackageManager {
     
 
     private(set) var emotionModelPackages: [DREmotionModelPackage] = []
-    
+    init() {
+        scanLocalPackages()
+    }
     func scanLocalPackages() {
         func scanPackage(fileURL: URL) -> [DREmotionModelPackage] {
             var packages = [DREmotionModelPackage]()

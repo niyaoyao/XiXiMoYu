@@ -246,8 +246,6 @@ typedef void (^DREmotionRefreshAction)();
  */
 @interface DREmotionModelRender : NSObject
 
-@property (nonatomic, assign) CGFloat viewWidth;
-@property (nonatomic, assign) CGFloat viewHeight;
 @property (nonatomic, strong, readonly) GLKView *view;
 @property (nonatomic, strong) NSMutableArray <NSString *> *stickerImagesUrl;
 @property (nonatomic, copy  ) DREmotionRefreshAction refreshAction;
