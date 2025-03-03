@@ -1,0 +1,1079 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 54;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		6680B511F7195B5C90F034F3 /* ALL_BUILD */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 9927630CBCF6499BB5DC8429 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildPhases = (
+				24A98FCCFB58B13C47468407 /* Generate CMakeFiles/ALL_BUILD */,
+			);
+			dependencies = (
+				5B493C88B8E24F5C92E0D173 /* PBXTargetDependency */,
+				9D7303EBEA584E8093098A47 /* PBXTargetDependency */,
+			);
+			name = ALL_BUILD;
+			productName = ALL_BUILD;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		062C1372722F4BB0933BABFE /* LAppDefine.mm in Sources */ = {isa = PBXBuildFile; fileRef = D0C0565422F740D099218845 /* LAppDefine.mm */; };
+		07A62EF16C26464EADB09261 /* CubismBreath.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D40EB39493044D13B4C0CC0E /* CubismBreath.cpp */; };
+		0A6D910EBE244C1ABB66A5FD /* CubismMoc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 294C748AD00A4F15AA1E8A3C /* CubismMoc.cpp */; };
+		129822D47C1C484EAA6B2127 /* CubismDefaultParameterId.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5BE88289410F42A5B890C269 /* CubismDefaultParameterId.cpp */; };
+		1EE0FA8E87A048E7890C2939 /* LAppLive2DManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 226077081B1B418D930BF26A /* LAppLive2DManager.mm */; };
+		20C3CD87DC3346E99CDC278B /* CubismOffscreenSurface_Metal.mm in Sources */ = {isa = PBXBuildFile; fileRef = 91CD945EE2BC41ABAE01C556 /* CubismOffscreenSurface_Metal.mm */; };
+		2ADE438C44144CEB914DA2CF /* csmRectF.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0B9D08C2E0DF4753A10E28CF /* csmRectF.cpp */; };
+		2BDED10CB7884235B6DE196D /* CubismRenderer_Metal.mm in Sources */ = {isa = PBXBuildFile; fileRef = F4FF0D659B8F4F6984C9AB8B /* CubismRenderer_Metal.mm */; };
+		3216C601A0E64D5094353FB1 /* CubismShader_Metal.mm in Sources */ = {isa = PBXBuildFile; fileRef = A07BA875D5234659A771FF8B /* CubismShader_Metal.mm */; };
+		38F4754853C447EB84834CAC /* CubismUserModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FF9CE5749214D4D9E974F50 /* CubismUserModel.cpp */; };
+		423880E0D1A944F1828E636B /* CubismMotionManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B911DA0A27CD478997E9207A /* CubismMotionManager.cpp */; };
+		452AD8FD3E094C1D9AE6009C /* Resources in CopyFiles */ = {isa = PBXBuildFile; fileRef = B936A8502AC34D6CB3776697 /* Resources */; };
+		4594CDD8F687454F93D33040 /* LAppAllocator.mm in Sources */ = {isa = PBXBuildFile; fileRef = D957056BFD26431587F2052E /* LAppAllocator.mm */; };
+		5158B24EB3E44A3B811648B0 /* CubismRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1CCE9B87E8E9429CA2B3D90B /* CubismRenderer.cpp */; };
+		675874E1455C4917A2E0BAD4 /* CubismCdiJson.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3577163B8E6420385A6F605 /* CubismCdiJson.cpp */; };
+		67BD399BE3BE4F1187326B13 /* CubismExpressionMotionManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1E6ABFE62984EED9DC15B98 /* CubismExpressionMotionManager.cpp */; };
+		6EF46E4F9FF44DB39D7168C3 /* CubismFramework.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DFE859EDB804AC0B7942F58 /* CubismFramework.cpp */; };
+		7003E713994F4309B6DD1BEF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F00D90B503E447D9AF6484E /* main.m */; };
+		7B0D81DE01A24F49856E9705 /* CubismEyeBlink.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A839546FEC0D49D9A5DBCA6B /* CubismEyeBlink.cpp */; };
+		7D14976BDD2742D0A1A910AA /* CubismString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DA2A220FA8E94FB888E3376C /* CubismString.cpp */; };
+		7FA8F9CEB4C64C899E397CE3 /* CubismPhysicsJson.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51B12C8653C24ED78F88215D /* CubismPhysicsJson.cpp */; };
+		8603CC081D37465587D8F189 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7FD8390E3C91438A93E59619 /* AppDelegate.mm */; };
+		8971E597C9394882AC2C70BE /* TouchManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0F12C97650824BF085FFE806 /* TouchManager.mm */; };
+		89E80E40A8EC498E97C6C1E3 /* CubismExpressionMotion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CCC90670AB43403189034506 /* CubismExpressionMotion.cpp */; };
+		96B2EC91C384499EB68F4C24 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = FC1CD3D82E3A4987833A88C1 /* ViewController.mm */; };
+		9A4F2A40C7C94A7CA2B36155 /* ACubismMotion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7488A2380E684A319F77F9CF /* ACubismMotion.cpp */; };
+		9C92E85F5B3C45D5A8F3A656 /* LAppSprite.mm in Sources */ = {isa = PBXBuildFile; fileRef = 447C878B4DDE49D3AC36178B /* LAppSprite.mm */; };
+		9D0E0687E3D5426DAA03A8B1 /* CubismRenderingInstanceSingleton_Metal.m in Sources */ = {isa = PBXBuildFile; fileRef = B90A36A3D69847D6AE627C10 /* CubismRenderingInstanceSingleton_Metal.m */; };
+		9DC5583D523C4A85B179BCD3 /* CubismModelUserDataJson.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BECC27132A304E099F307343 /* CubismModelUserDataJson.cpp */; };
+		9E35121FD820459EB5258CEF /* LAppPal.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13BEE6631A0A4A8F89CBE409 /* LAppPal.mm */; };
+		9F4B48A0FF4345C1B066E70B /* CubismCommandBuffer_Metal.mm in Sources */ = {isa = PBXBuildFile; fileRef = 61E3CC441A134D35B05E5B77 /* CubismCommandBuffer_Metal.mm */; };
+		A1DE2D4D818D4EDB9D5E78C7 /* CubismId.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E969F72C44424DAEBD2C6239 /* CubismId.cpp */; };
+		A2F52777F8BE414CA3455C26 /* CubismModelSettingJson.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71EAB38F1D614221A2635178 /* CubismModelSettingJson.cpp */; };
+		A78842634E52453BABD484B4 /* CubismPose.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 24EA335785D44016906DFF5D /* CubismPose.cpp */; };
+		A9B3BDA511604AF4BC3FC7D7 /* MetalUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A24DAD5BD6E43F5BEB69376 /* MetalUIView.m */; };
+		AE98F732A0C946BB87A0CDE8 /* CubismModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81CCF6F063FC44E4975E6CE6 /* CubismModel.cpp */; };
+		B0AA12D28773418F8B7457C3 /* Shaders in Resources */ = {isa = PBXBuildFile; fileRef = C58B8FD2095C4B30A1FBE14D /* Shaders */; };
+		B43F87F31CA44184B8B562F3 /* CubismJson.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5F59009EDF1D483D87CD6838 /* CubismJson.cpp */; };
+		B52643B69154425FA7FE368A /* CubismMatrix44.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76B2A820ECF94F369B200B08 /* CubismMatrix44.cpp */; };
+		B6A538F5DB414FB3A65FC85D /* CubismModelUserData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E533FC25816C4DC6BC1F01B2 /* CubismModelUserData.cpp */; };
+		B846BBB9552947638631CF6B /* CubismModelMatrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D076AA32332C4C20B5A38EFB /* CubismModelMatrix.cpp */; };
+		BE19F937BD5C4B998EB73737 /* LAppTextureManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 647977C39DD04EEA82D1CA81 /* LAppTextureManager.mm */; };
+		C1DEFEBF818541A2A8D0B664 /* CubismVector2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 24A7A7FAC5F9487FAB6C14D1 /* CubismVector2.cpp */; };
+		C69FDAB790534220AD3DECD2 /* CubismPhysics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 53B5C6F3C417478FB20C0804 /* CubismPhysics.cpp */; };
+		C9A56E79DFD6403DACEE0F05 /* CubismDebug.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95ABD6A425A64A5DB2305606 /* CubismDebug.cpp */; };
+		CED8B9024B124473B2E910C1 /* CubismMotionQueueManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CC70B98988D44966A6544862 /* CubismMotionQueueManager.cpp */; };
+		D3A17E7B69814067A9D052BE /* LAppModel.mm in Sources */ = {isa = PBXBuildFile; fileRef = C53B52080F864E5EB2D985CF /* LAppModel.mm */; };
+		D6A40724DC1048A2A55FFAC8 /* CubismTargetPoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9B8C521AF624EA58BF87C50 /* CubismTargetPoint.cpp */; };
+		D88652258F2545D989CCAA40 /* CubismMotionQueueEntry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9871D290D48F4EBA90D46B39 /* CubismMotionQueueEntry.cpp */; };
+		DE784D8874E14F71B95C29A2 /* MetalView.m in Sources */ = {isa = PBXBuildFile; fileRef = 768546B4CB4C4AD2A3BBC403 /* MetalView.m */; };
+		E07DC9629259472FAE9ED475 /* CubismViewMatrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5374D1939A7544BE9E74010C /* CubismViewMatrix.cpp */; };
+		E121457725CD41749CE223BD /* CubismMotionJson.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B1AE3B06840F4973B17C3F63 /* CubismMotionJson.cpp */; };
+		E71ACB74BE4845B488AE7FFC /* csmString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2A025A88822402293D92452 /* csmString.cpp */; };
+		ECDA90D48EA84FCEB9039931 /* CubismIdManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 61EF074BA6414014B5802215 /* CubismIdManager.cpp */; };
+		ED4DBE98B67748F294AE5228 /* MetalShaders.metal in Resources */ = {isa = PBXBuildFile; fileRef = 62F378D3E2F64E8B8C25A15C /* MetalShaders.metal */; };
+		F09149615BA14FBDAC9D5DFC /* CubismMotion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5FA4D2BFD22F48DABF76BEB0 /* CubismMotion.cpp */; };
+		FE95E96339DE462BA42F34C0 /* CubismMath.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2FB2872FDFD438FA0D9E985 /* CubismMath.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		340648BAD95847218916497E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F1B7523D7A9B47DC9A5952E2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0C1C50C1AA790C208BD3539B;
+			remoteInfo = Framework;
+		};
+		B1622B073A3147C588A52930 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F1B7523D7A9B47DC9A5952E2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EB14538DF70519B3A9019FE4;
+			remoteInfo = Demo;
+		};
+		E1F0B54DDB06488783CB3817 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F1B7523D7A9B47DC9A5952E2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0C1C50C1AA790C208BD3539B;
+			remoteInfo = Framework;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		58501C7555584115938FA9E2 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Res;
+			dstSubfolderSpec = 6;
+			files = (
+				452AD8FD3E094C1D9AE6009C /* Resources in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		045187F3D02E4216BF9BED47 /* CubismDebug.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismDebug.hpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Utils/CubismDebug.hpp"; sourceTree = "<absolute>"; };
+		0539C93B7B1D491C9C5518BE /* CubismJson.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismJson.hpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Utils/CubismJson.hpp"; sourceTree = "<absolute>"; };
+		0A24DAD5BD6E43F5BEB69376 /* MetalUIView.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; name = MetalUIView.m; path = src/MetalUIView.m; sourceTree = SOURCE_ROOT; };
+		0B9D08C2E0DF4753A10E28CF /* csmRectF.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = csmRectF.cpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Type/csmRectF.cpp"; sourceTree = "<absolute>"; };
+		0C85CF9C615C4917BC6BFB5F /* CoreGraphics.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator17.2.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = "<absolute>"; };
+		0EC1A065250E4C169B0449F6 /* CubismModelUserDataJson.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismModelUserDataJson.hpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Model/CubismModelUserDataJson.hpp"; sourceTree = "<absolute>"; };
+		0F12C97650824BF085FFE806 /* TouchManager.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = TouchManager.mm; path = src/TouchManager.mm; sourceTree = SOURCE_ROOT; };
+		13BEE6631A0A4A8F89CBE409 /* LAppPal.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = LAppPal.mm; path = src/LAppPal.mm; sourceTree = SOURCE_ROOT; };
+		15EA4E64E45E4E35974A2309 /* LAppModel.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = LAppModel.h; path = src/LAppModel.h; sourceTree = SOURCE_ROOT; };
+		15F113A059704BC1A2CE1464 /* CubismRenderer_Metal.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismRenderer_Metal.hpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Rendering/Metal/CubismRenderer_Metal.hpp"; sourceTree = "<absolute>"; };
+		172FA8255DCA4D87A491B6F9 /* CubismMotionQueueManager.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismMotionQueueManager.hpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionQueueManager.hpp"; sourceTree = "<absolute>"; };
+		1ABC6BC32E9649DEAAB4A3FA /* MetalView.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = MetalView.h; path = src/MetalView.h; sourceTree = SOURCE_ROOT; };
+		1AC2308C574249D293465B43 /* CubismMotionQueueEntry.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismMotionQueueEntry.hpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionQueueEntry.hpp"; sourceTree = "<absolute>"; };
+		1AF0A99A0FFB46DE9B505A05 /* ACubismMotion.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = ACubismMotion.hpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Motion/ACubismMotion.hpp"; sourceTree = "<absolute>"; };
+		1CCE9B87E8E9429CA2B3D90B /* CubismRenderer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismRenderer.cpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Rendering/CubismRenderer.cpp"; sourceTree = "<absolute>"; };
+		1F2CCF405A914763A1620084 /* CubismModelMatrix.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismModelMatrix.hpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Math/CubismModelMatrix.hpp"; sourceTree = "<absolute>"; };
+		1F7C35BDBEF84BD59D13B942 /* CubismEyeBlink.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismEyeBlink.hpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Effect/CubismEyeBlink.hpp"; sourceTree = "<absolute>"; };
+		218DDECD0F9642CDB88506EF /* LAppPal.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = LAppPal.h; path = src/LAppPal.h; sourceTree = SOURCE_ROOT; };
+		226077081B1B418D930BF26A /* LAppLive2DManager.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = LAppLive2DManager.mm; path = src/LAppLive2DManager.mm; sourceTree = SOURCE_ROOT; };
+		24A7A7FAC5F9487FAB6C14D1 /* CubismVector2.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismVector2.cpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Math/CubismVector2.cpp"; sourceTree = "<absolute>"; };
+		24EA335785D44016906DFF5D /* CubismPose.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismPose.cpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Effect/CubismPose.cpp"; sourceTree = "<absolute>"; };
+		294C748AD00A4F15AA1E8A3C /* CubismMoc.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismMoc.cpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Model/CubismMoc.cpp"; sourceTree = "<absolute>"; };
+		2E72DAE7A27F4CA6A0F9E7FD /* CubismModelUserData.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismModelUserData.hpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Model/CubismModelUserData.hpp"; sourceTree = "<absolute>"; };
+		30E15C923A6346879A034096 /* CubismMotionManager.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismMotionManager.hpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionManager.hpp"; sourceTree = "<absolute>"; };
+		3215A861ED0A42FAA53DDED1 /* libFramework.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libFramework.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		337D25ED209F458EA7E3DB1D /* ViewController.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ViewController.h; path = src/ViewController.h; sourceTree = SOURCE_ROOT; };
+		3698D45DDFC944C5869450B6 /* CubismFramework.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismFramework.hpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/CubismFramework.hpp"; sourceTree = "<absolute>"; };
+		371B58376BEB42CF8A0517FE /* Info.plist */ = {isa = PBXFileReference; explicitFileType = sourcecode.text.plist; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = build/proj_xcode_iphonesimulator/CMakeFiles/Demo.dir/Info.plist; sourceTree = SOURCE_ROOT; };
+		37DE788547B546F7AD8C6ECD /* CubismDefaultParameterId.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismDefaultParameterId.hpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/CubismDefaultParameterId.hpp"; sourceTree = "<absolute>"; };
+		3BAB047DB6934F64AD32EC66 /* CubismClippingManager.tpp */ = {isa = PBXFileReference; explicitFileType = default; fileEncoding = 4; lastKnownFileType = text; name = CubismClippingManager.tpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Rendering/CubismClippingManager.tpp"; sourceTree = "<absolute>"; };
+		3C4D96F6711F4D5088DB08A4 /* csmVector.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = csmVector.hpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Type/csmVector.hpp"; sourceTree = "<absolute>"; };
+		3DFE859EDB804AC0B7942F58 /* CubismFramework.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismFramework.cpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/CubismFramework.cpp"; sourceTree = "<absolute>"; };
+		40077A800A0749CAB7F7F24D /* CubismVector2.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismVector2.hpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Math/CubismVector2.hpp"; sourceTree = "<absolute>"; };
+		41375EED76C54BF1AD8137F1 /* LAppSprite.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = LAppSprite.h; path = src/LAppSprite.h; sourceTree = SOURCE_ROOT; };
+		447C878B4DDE49D3AC36178B /* LAppSprite.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = LAppSprite.mm; path = src/LAppSprite.mm; sourceTree = SOURCE_ROOT; };
+		46C0FE241A27468B9621A928 /* CubismMatrix44.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismMatrix44.hpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Math/CubismMatrix44.hpp"; sourceTree = "<absolute>"; };
+		48246B15EAF24AD7A8582186 /* CubismFrameworkConfig.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismFrameworkConfig.hpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/CubismFrameworkConfig.hpp"; sourceTree = "<absolute>"; };
+		48B91CB096094EADA3AD874E /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		4EF79C5078954559BFE7DF85 /* LAppAllocator.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = LAppAllocator.h; path = src/LAppAllocator.h; sourceTree = SOURCE_ROOT; };
+		4F00D90B503E447D9AF6484E /* main.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; name = main.m; path = src/main.m; sourceTree = SOURCE_ROOT; };
+		51B12C8653C24ED78F88215D /* CubismPhysicsJson.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismPhysicsJson.cpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Physics/CubismPhysicsJson.cpp"; sourceTree = "<absolute>"; };
+		5374D1939A7544BE9E74010C /* CubismViewMatrix.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismViewMatrix.cpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Math/CubismViewMatrix.cpp"; sourceTree = "<absolute>"; };
+		53B5C6F3C417478FB20C0804 /* CubismPhysics.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismPhysics.cpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Physics/CubismPhysics.cpp"; sourceTree = "<absolute>"; };
+		54164CDC5F844E3CB69F9EC5 /* CubismMoc.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismMoc.hpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Model/CubismMoc.hpp"; sourceTree = "<absolute>"; };
+		54BC3C004C85489B873E9DEE /* CubismMotionInternal.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismMotionInternal.hpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionInternal.hpp"; sourceTree = "<absolute>"; };
+		5743A01BB17F4998BE86F278 /* LAppDefine.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = LAppDefine.h; path = src/LAppDefine.h; sourceTree = SOURCE_ROOT; };
+		57EE594A377D49B5B91C04C8 /* Info.plist */ = {isa = PBXFileReference; explicitFileType = sourcecode.text.plist; fileEncoding = 4; lastKnownFileType = text.plist; name = Info.plist; path = build/proj_xcode_iphonesimulator/Framework/CMakeFiles/Framework.dir/Info.plist; sourceTree = SOURCE_ROOT; };
+		586567CE6F8B4694B98BF09E /* CubismPhysics.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismPhysics.hpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Physics/CubismPhysics.hpp"; sourceTree = "<absolute>"; };
+		593F4234C176466D844DA027 /* csmMap.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = csmMap.hpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Type/csmMap.hpp"; sourceTree = "<absolute>"; };
+		5A25865B3EFA41FB989EB37B /* AppDelegate.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = AppDelegate.h; path = src/AppDelegate.h; sourceTree = SOURCE_ROOT; };
+		5AFE3D0162E8439184C3C9E9 /* LAppLive2DManager.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = LAppLive2DManager.h; path = src/LAppLive2DManager.h; sourceTree = SOURCE_ROOT; };
+		5BE88289410F42A5B890C269 /* CubismDefaultParameterId.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismDefaultParameterId.cpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/CubismDefaultParameterId.cpp"; sourceTree = "<absolute>"; };
+		5BEE5B36DD144871A2A5FA8B /* CubismCdiJson.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismCdiJson.hpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/CubismCdiJson.hpp"; sourceTree = "<absolute>"; };
+		5F59009EDF1D483D87CD6838 /* CubismJson.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismJson.cpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Utils/CubismJson.cpp"; sourceTree = "<absolute>"; };
+		5FA4D2BFD22F48DABF76BEB0 /* CubismMotion.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismMotion.cpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotion.cpp"; sourceTree = "<absolute>"; };
+		60AAED898A0740F8B36DFDCF /* Foundation.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator17.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		61E3CC441A134D35B05E5B77 /* CubismCommandBuffer_Metal.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = CubismCommandBuffer_Metal.mm; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Rendering/Metal/CubismCommandBuffer_Metal.mm"; sourceTree = "<absolute>"; };
+		61EF074BA6414014B5802215 /* CubismIdManager.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismIdManager.cpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Id/CubismIdManager.cpp"; sourceTree = "<absolute>"; };
+		62F378D3E2F64E8B8C25A15C /* MetalShaders.metal */ = {isa = PBXFileReference; explicitFileType = sourcecode.metal; fileEncoding = 4; name = MetalShaders.metal; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Rendering/Metal/MetalShaders.metal"; sourceTree = "<absolute>"; };
+		647977C39DD04EEA82D1CA81 /* LAppTextureManager.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = LAppTextureManager.mm; path = src/LAppTextureManager.mm; sourceTree = SOURCE_ROOT; };
+		670147190CD54F0FAAF53AFA /* CubismPose.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismPose.hpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Effect/CubismPose.hpp"; sourceTree = "<absolute>"; };
+		6B1456B1952E4AD4AC9890E6 /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		6CB1343BF81B46DEB9A41C8B /* CubismMotion.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismMotion.hpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotion.hpp"; sourceTree = "<absolute>"; };
+		6EC17C675E1E489984F025F5 /* ICubismModelSetting.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = ICubismModelSetting.hpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/ICubismModelSetting.hpp"; sourceTree = "<absolute>"; };
+		6F8DBA2801CA428B8881E9FF /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FF9CE5749214D4D9E974F50 /* CubismUserModel.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismUserModel.cpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Model/CubismUserModel.cpp"; sourceTree = "<absolute>"; };
+		702E78AB557E4D599F42F352 /* CubismIdManager.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismIdManager.hpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Id/CubismIdManager.hpp"; sourceTree = "<absolute>"; };
+		70366B5EB927484F934C768A /* CubismCommandBuffer_Metal.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismCommandBuffer_Metal.hpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Rendering/Metal/CubismCommandBuffer_Metal.hpp"; sourceTree = "<absolute>"; };
+		71EAB38F1D614221A2635178 /* CubismModelSettingJson.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismModelSettingJson.cpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/CubismModelSettingJson.cpp"; sourceTree = "<absolute>"; };
+		7488A2380E684A319F77F9CF /* ACubismMotion.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ACubismMotion.cpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Motion/ACubismMotion.cpp"; sourceTree = "<absolute>"; };
+		768546B4CB4C4AD2A3BBC403 /* MetalView.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; name = MetalView.m; path = src/MetalView.m; sourceTree = SOURCE_ROOT; };
+		76B2A820ECF94F369B200B08 /* CubismMatrix44.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismMatrix44.cpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Math/CubismMatrix44.cpp"; sourceTree = "<absolute>"; };
+		7AE3AC6265FD4A778415310B /* MetalUIView.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = MetalUIView.h; path = src/MetalUIView.h; sourceTree = SOURCE_ROOT; };
+		7EBC76784A1640FFB1877820 /* CubismJsonHolder.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismJsonHolder.hpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/CubismJsonHolder.hpp"; sourceTree = "<absolute>"; };
+		7FD8390E3C91438A93E59619 /* AppDelegate.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = AppDelegate.mm; path = src/AppDelegate.mm; sourceTree = SOURCE_ROOT; };
+		8120EEDE18B64468873CC4AE /* CubismTargetPoint.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismTargetPoint.hpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Math/CubismTargetPoint.hpp"; sourceTree = "<absolute>"; };
+		81CCF6F063FC44E4975E6CE6 /* CubismModel.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismModel.cpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Model/CubismModel.cpp"; sourceTree = "<absolute>"; };
+		8380B73A5298497CBA04605C /* MetalKit.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator17.2.sdk/System/Library/Frameworks/MetalKit.framework; sourceTree = "<absolute>"; };
+		83A3EB4E6C43476AB77C6D59 /* LAppTextureManager.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = LAppTextureManager.h; path = src/LAppTextureManager.h; sourceTree = SOURCE_ROOT; };
+		8FFA8D3C72B84F03B5227F7D /* CubismShader_Metal.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismShader_Metal.hpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Rendering/Metal/CubismShader_Metal.hpp"; sourceTree = "<absolute>"; };
+		91CD945EE2BC41ABAE01C556 /* CubismOffscreenSurface_Metal.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = CubismOffscreenSurface_Metal.mm; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Rendering/Metal/CubismOffscreenSurface_Metal.mm"; sourceTree = "<absolute>"; };
+		95ABD6A425A64A5DB2305606 /* CubismDebug.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismDebug.cpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Utils/CubismDebug.cpp"; sourceTree = "<absolute>"; };
+		9871D290D48F4EBA90D46B39 /* CubismMotionQueueEntry.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismMotionQueueEntry.cpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionQueueEntry.cpp"; sourceTree = "<absolute>"; };
+		99BD58F57A0848BD814E641D /* CubismBasicType.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismBasicType.hpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Type/CubismBasicType.hpp"; sourceTree = "<absolute>"; };
+		A07BA875D5234659A771FF8B /* CubismShader_Metal.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = CubismShader_Metal.mm; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Rendering/Metal/CubismShader_Metal.mm"; sourceTree = "<absolute>"; };
+		A1E6ABFE62984EED9DC15B98 /* CubismExpressionMotionManager.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismExpressionMotionManager.cpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismExpressionMotionManager.cpp"; sourceTree = "<absolute>"; };
+		A5221D5AD38F40339175DB5D /* CubismRenderer.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismRenderer.hpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Rendering/CubismRenderer.hpp"; sourceTree = "<absolute>"; };
+		A58D0374A65D4BA1AAA76EF1 /* CubismMath.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismMath.hpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Math/CubismMath.hpp"; sourceTree = "<absolute>"; };
+		A7C0BA4E75F049FA92C0D6E2 /* csmRectF.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = csmRectF.hpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Type/csmRectF.hpp"; sourceTree = "<absolute>"; };
+		A839546FEC0D49D9A5DBCA6B /* CubismEyeBlink.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismEyeBlink.cpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Effect/CubismEyeBlink.cpp"; sourceTree = "<absolute>"; };
+		A8CC1B49AB5E4486802CCA06 /* CubismClippingManager.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismClippingManager.hpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Rendering/CubismClippingManager.hpp"; sourceTree = "<absolute>"; };
+		A9A59395C42E4700AD1CA294 /* CubismPhysicsJson.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismPhysicsJson.hpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Physics/CubismPhysicsJson.hpp"; sourceTree = "<absolute>"; };
+		AE19BBB7572442AB9F03B358 /* CubismBreath.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismBreath.hpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Effect/CubismBreath.hpp"; sourceTree = "<absolute>"; };
+		B0A4A61921074B689A2FE5D2 /* CubismMotionJson.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismMotionJson.hpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionJson.hpp"; sourceTree = "<absolute>"; };
+		B1AE3B06840F4973B17C3F63 /* CubismMotionJson.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismMotionJson.cpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionJson.cpp"; sourceTree = "<absolute>"; };
+		B2FB2872FDFD438FA0D9E985 /* CubismMath.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismMath.cpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Math/CubismMath.cpp"; sourceTree = "<absolute>"; };
+		B58D1E80F9D745B3B6506542 /* TouchManager.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = TouchManager.h; path = src/TouchManager.h; sourceTree = SOURCE_ROOT; };
+		B90A36A3D69847D6AE627C10 /* CubismRenderingInstanceSingleton_Metal.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; name = CubismRenderingInstanceSingleton_Metal.m; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Rendering/Metal/CubismRenderingInstanceSingleton_Metal.m"; sourceTree = "<absolute>"; };
+		B911DA0A27CD478997E9207A /* CubismMotionManager.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismMotionManager.cpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionManager.cpp"; sourceTree = "<absolute>"; };
+		B936A8502AC34D6CB3776697 /* Resources */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = folder; name = Resources; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Samples/Resources"; sourceTree = "<absolute>"; };
+		BECC27132A304E099F307343 /* CubismModelUserDataJson.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismModelUserDataJson.cpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Model/CubismModelUserDataJson.cpp"; sourceTree = "<absolute>"; };
+		C53B52080F864E5EB2D985CF /* LAppModel.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = LAppModel.mm; path = src/LAppModel.mm; sourceTree = SOURCE_ROOT; };
+		C58B8FD2095C4B30A1FBE14D /* Shaders */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = folder; name = Shaders; path = src/Shaders; sourceTree = SOURCE_ROOT; };
+		CBA9FAB1C2FA47EFA084C688 /* CubismRenderingInstanceSingleton_Metal.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = CubismRenderingInstanceSingleton_Metal.h; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Rendering/Metal/CubismRenderingInstanceSingleton_Metal.h"; sourceTree = "<absolute>"; };
+		CC70B98988D44966A6544862 /* CubismMotionQueueManager.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismMotionQueueManager.cpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionQueueManager.cpp"; sourceTree = "<absolute>"; };
+		CCC90670AB43403189034506 /* CubismExpressionMotion.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismExpressionMotion.cpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismExpressionMotion.cpp"; sourceTree = "<absolute>"; };
+		D076AA32332C4C20B5A38EFB /* CubismModelMatrix.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismModelMatrix.cpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Math/CubismModelMatrix.cpp"; sourceTree = "<absolute>"; };
+		D0C0565422F740D099218845 /* LAppDefine.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = LAppDefine.mm; path = src/LAppDefine.mm; sourceTree = SOURCE_ROOT; };
+		D0C4135D75674C688F36291D /* CubismExpressionMotion.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismExpressionMotion.hpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismExpressionMotion.hpp"; sourceTree = "<absolute>"; };
+		D15F4CB767E54BD1BB8E6893 /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; name = CMakeLists.txt; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/CMakeLists.txt"; sourceTree = "<absolute>"; };
+		D2A025A88822402293D92452 /* csmString.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = csmString.cpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Type/csmString.cpp"; sourceTree = "<absolute>"; };
+		D3388FBCC65346D38604F81E /* Live2DCubismCore.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Live2DCubismCore.hpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Live2DCubismCore.hpp"; sourceTree = "<absolute>"; };
+		D40EB39493044D13B4C0CC0E /* CubismBreath.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismBreath.cpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Effect/CubismBreath.cpp"; sourceTree = "<absolute>"; };
+		D957056BFD26431587F2052E /* LAppAllocator.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = LAppAllocator.mm; path = src/LAppAllocator.mm; sourceTree = SOURCE_ROOT; };
+		D99BEBC08EED458396C82AE2 /* CubismId.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismId.hpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Id/CubismId.hpp"; sourceTree = "<absolute>"; };
+		DA2A220FA8E94FB888E3376C /* CubismString.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismString.cpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Utils/CubismString.cpp"; sourceTree = "<absolute>"; };
+		DA5B6BA9996443E48F69CECC /* ICubismAllocator.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = ICubismAllocator.hpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/ICubismAllocator.hpp"; sourceTree = "<absolute>"; };
+		E1785005ADD54DA88C58BA29 /* CubismExpressionMotionManager.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismExpressionMotionManager.hpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismExpressionMotionManager.hpp"; sourceTree = "<absolute>"; };
+		E1C4A1045E6745D1B81A2978 /* CubismModelSettingJson.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismModelSettingJson.hpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/CubismModelSettingJson.hpp"; sourceTree = "<absolute>"; };
+		E437A87121114CE9A2E8492D /* QuartzCore.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator17.2.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = "<absolute>"; };
+		E49C03F866654AA784FF5858 /* MetalShaderTypes.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = MetalShaderTypes.h; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Rendering/Metal/MetalShaderTypes.h"; sourceTree = "<absolute>"; };
+		E533FC25816C4DC6BC1F01B2 /* CubismModelUserData.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismModelUserData.cpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Model/CubismModelUserData.cpp"; sourceTree = "<absolute>"; };
+		E78A4696B56449DD8351C365 /* CubismOffscreenSurface_Metal.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismOffscreenSurface_Metal.hpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Rendering/Metal/CubismOffscreenSurface_Metal.hpp"; sourceTree = "<absolute>"; };
+		E79FE63E1F984B7EA73D593A /* csmString.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = csmString.hpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Type/csmString.hpp"; sourceTree = "<absolute>"; };
+		E8C82890A7F444FDB3B7418B /* UIKit.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator17.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = "<absolute>"; };
+		E969F72C44424DAEBD2C6239 /* CubismId.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismId.cpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Id/CubismId.cpp"; sourceTree = "<absolute>"; };
+		E99115B8B18D4F2EA79378BA /* Metal.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = Metal.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator17.2.sdk/System/Library/Frameworks/Metal.framework; sourceTree = "<absolute>"; };
+		E9B8C521AF624EA58BF87C50 /* CubismTargetPoint.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismTargetPoint.cpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Math/CubismTargetPoint.cpp"; sourceTree = "<absolute>"; };
+		E9BEFE256EDD4958B43C5355 /* CubismString.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismString.hpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Utils/CubismString.hpp"; sourceTree = "<absolute>"; };
+		F259BF2D102E4EAEB2B0957E /* CubismUserModel.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismUserModel.hpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Model/CubismUserModel.hpp"; sourceTree = "<absolute>"; };
+		F348DD4761254E8FB18077E6 /* CubismPhysicsInternal.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismPhysicsInternal.hpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Physics/CubismPhysicsInternal.hpp"; sourceTree = "<absolute>"; };
+		F3577163B8E6420385A6F605 /* CubismCdiJson.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismCdiJson.cpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/CubismCdiJson.cpp"; sourceTree = "<absolute>"; };
+		F4BC85CE66364CB780C2A27F /* CubismModel.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismModel.hpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Model/CubismModel.hpp"; sourceTree = "<absolute>"; };
+		F4FF0D659B8F4F6984C9AB8B /* CubismRenderer_Metal.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = CubismRenderer_Metal.mm; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Rendering/Metal/CubismRenderer_Metal.mm"; sourceTree = "<absolute>"; };
+		FC1CD3D82E3A4987833A88C1 /* ViewController.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = ViewController.mm; path = src/ViewController.mm; sourceTree = SOURCE_ROOT; };
+		FF3CABF78420465BAC77DBAD /* CubismViewMatrix.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismViewMatrix.hpp; path = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Math/CubismViewMatrix.hpp"; sourceTree = "<absolute>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		34721AD521244B2DBA506AC5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A2F82197A83471B88395F0D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0380ECBAA43849DB9CBCE821 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				F3577163B8E6420385A6F605 /* CubismCdiJson.cpp */,
+				5BE88289410F42A5B890C269 /* CubismDefaultParameterId.cpp */,
+				3DFE859EDB804AC0B7942F58 /* CubismFramework.cpp */,
+				71EAB38F1D614221A2635178 /* CubismModelSettingJson.cpp */,
+				D40EB39493044D13B4C0CC0E /* CubismBreath.cpp */,
+				A839546FEC0D49D9A5DBCA6B /* CubismEyeBlink.cpp */,
+				24EA335785D44016906DFF5D /* CubismPose.cpp */,
+				E969F72C44424DAEBD2C6239 /* CubismId.cpp */,
+				61EF074BA6414014B5802215 /* CubismIdManager.cpp */,
+				B2FB2872FDFD438FA0D9E985 /* CubismMath.cpp */,
+				76B2A820ECF94F369B200B08 /* CubismMatrix44.cpp */,
+				D076AA32332C4C20B5A38EFB /* CubismModelMatrix.cpp */,
+				E9B8C521AF624EA58BF87C50 /* CubismTargetPoint.cpp */,
+				24A7A7FAC5F9487FAB6C14D1 /* CubismVector2.cpp */,
+				5374D1939A7544BE9E74010C /* CubismViewMatrix.cpp */,
+				294C748AD00A4F15AA1E8A3C /* CubismMoc.cpp */,
+				81CCF6F063FC44E4975E6CE6 /* CubismModel.cpp */,
+				E533FC25816C4DC6BC1F01B2 /* CubismModelUserData.cpp */,
+				BECC27132A304E099F307343 /* CubismModelUserDataJson.cpp */,
+				6FF9CE5749214D4D9E974F50 /* CubismUserModel.cpp */,
+				7488A2380E684A319F77F9CF /* ACubismMotion.cpp */,
+				CCC90670AB43403189034506 /* CubismExpressionMotion.cpp */,
+				A1E6ABFE62984EED9DC15B98 /* CubismExpressionMotionManager.cpp */,
+				5FA4D2BFD22F48DABF76BEB0 /* CubismMotion.cpp */,
+				B1AE3B06840F4973B17C3F63 /* CubismMotionJson.cpp */,
+				B911DA0A27CD478997E9207A /* CubismMotionManager.cpp */,
+				9871D290D48F4EBA90D46B39 /* CubismMotionQueueEntry.cpp */,
+				CC70B98988D44966A6544862 /* CubismMotionQueueManager.cpp */,
+				53B5C6F3C417478FB20C0804 /* CubismPhysics.cpp */,
+				51B12C8653C24ED78F88215D /* CubismPhysicsJson.cpp */,
+				1CCE9B87E8E9429CA2B3D90B /* CubismRenderer.cpp */,
+				61E3CC441A134D35B05E5B77 /* CubismCommandBuffer_Metal.mm */,
+				91CD945EE2BC41ABAE01C556 /* CubismOffscreenSurface_Metal.mm */,
+				F4FF0D659B8F4F6984C9AB8B /* CubismRenderer_Metal.mm */,
+				B90A36A3D69847D6AE627C10 /* CubismRenderingInstanceSingleton_Metal.m */,
+				A07BA875D5234659A771FF8B /* CubismShader_Metal.mm */,
+				0B9D08C2E0DF4753A10E28CF /* csmRectF.cpp */,
+				D2A025A88822402293D92452 /* csmString.cpp */,
+				95ABD6A425A64A5DB2305606 /* CubismDebug.cpp */,
+				5F59009EDF1D483D87CD6838 /* CubismJson.cpp */,
+				DA2A220FA8E94FB888E3376C /* CubismString.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		19E1410F42924562AC935DEF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6F8DBA2801CA428B8881E9FF /* Demo.app */,
+				3215A861ED0A42FAA53DDED1 /* libFramework.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		225917A73E08495E8E956FE1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		45E6670946E44F1B9EAFC24D /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				DA38B448BC984A1FA29F182F /* Header Files */,
+				64833BDF57DC4DCC8A02F8D5 /* Source Files */,
+				B73ECD1B881F42948D6B7209 /* Resources */,
+				62F378D3E2F64E8B8C25A15C /* MetalShaders.metal */,
+				48B91CB096094EADA3AD874E /* CMakeLists.txt */,
+				C58B8FD2095C4B30A1FBE14D /* Shaders */,
+				B936A8502AC34D6CB3776697 /* Resources */,
+			);
+			name = Demo;
+			sourceTree = "<group>";
+		};
+		5089797A704A4991BCDA0873 = {
+			isa = PBXGroup;
+			children = (
+				45E6670946E44F1B9EAFC24D /* Demo */,
+				62054F22AC8C4419AB1F5901 /* ALL_BUILD */,
+				816835E6B95547A395B454BC /* Framework */,
+				19E1410F42924562AC935DEF /* Products */,
+				5DB583F23CE44F00A0C21841 /* Frameworks */,
+				225917A73E08495E8E956FE1 /* Resources */,
+			);
+			sourceTree = "<group>";
+		};
+		5DB583F23CE44F00A0C21841 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0C85CF9C615C4917BC6BFB5F /* CoreGraphics.framework */,
+				60AAED898A0740F8B36DFDCF /* Foundation.framework */,
+				8380B73A5298497CBA04605C /* MetalKit.framework */,
+				E99115B8B18D4F2EA79378BA /* Metal.framework */,
+				E437A87121114CE9A2E8492D /* QuartzCore.framework */,
+				E8C82890A7F444FDB3B7418B /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		62054F22AC8C4419AB1F5901 /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				C51EA44B29A64DD383A02E85 /* CMake Rules */,
+				6B1456B1952E4AD4AC9890E6 /* CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		64833BDF57DC4DCC8A02F8D5 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				7FD8390E3C91438A93E59619 /* AppDelegate.mm */,
+				D957056BFD26431587F2052E /* LAppAllocator.mm */,
+				D0C0565422F740D099218845 /* LAppDefine.mm */,
+				226077081B1B418D930BF26A /* LAppLive2DManager.mm */,
+				C53B52080F864E5EB2D985CF /* LAppModel.mm */,
+				13BEE6631A0A4A8F89CBE409 /* LAppPal.mm */,
+				447C878B4DDE49D3AC36178B /* LAppSprite.mm */,
+				647977C39DD04EEA82D1CA81 /* LAppTextureManager.mm */,
+				0A24DAD5BD6E43F5BEB69376 /* MetalUIView.m */,
+				768546B4CB4C4AD2A3BBC403 /* MetalView.m */,
+				0F12C97650824BF085FFE806 /* TouchManager.mm */,
+				FC1CD3D82E3A4987833A88C1 /* ViewController.mm */,
+				4F00D90B503E447D9AF6484E /* main.m */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		816835E6B95547A395B454BC /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				0380ECBAA43849DB9CBCE821 /* Source Files */,
+				8FCCCFF31F2B4AD4A5E600C0 /* Header Files */,
+				AEA73AB692C94AE2A504BA28 /* Resources */,
+				D15F4CB767E54BD1BB8E6893 /* CMakeLists.txt */,
+				3BAB047DB6934F64AD32EC66 /* CubismClippingManager.tpp */,
+			);
+			name = Framework;
+			sourceTree = "<group>";
+		};
+		8FCCCFF31F2B4AD4A5E600C0 /* Header Files */ = {
+			isa = PBXGroup;
+			children = (
+				5BEE5B36DD144871A2A5FA8B /* CubismCdiJson.hpp */,
+				37DE788547B546F7AD8C6ECD /* CubismDefaultParameterId.hpp */,
+				3698D45DDFC944C5869450B6 /* CubismFramework.hpp */,
+				48246B15EAF24AD7A8582186 /* CubismFrameworkConfig.hpp */,
+				7EBC76784A1640FFB1877820 /* CubismJsonHolder.hpp */,
+				E1C4A1045E6745D1B81A2978 /* CubismModelSettingJson.hpp */,
+				AE19BBB7572442AB9F03B358 /* CubismBreath.hpp */,
+				1F7C35BDBEF84BD59D13B942 /* CubismEyeBlink.hpp */,
+				670147190CD54F0FAAF53AFA /* CubismPose.hpp */,
+				DA5B6BA9996443E48F69CECC /* ICubismAllocator.hpp */,
+				6EC17C675E1E489984F025F5 /* ICubismModelSetting.hpp */,
+				D99BEBC08EED458396C82AE2 /* CubismId.hpp */,
+				702E78AB557E4D599F42F352 /* CubismIdManager.hpp */,
+				D3388FBCC65346D38604F81E /* Live2DCubismCore.hpp */,
+				A58D0374A65D4BA1AAA76EF1 /* CubismMath.hpp */,
+				46C0FE241A27468B9621A928 /* CubismMatrix44.hpp */,
+				1F2CCF405A914763A1620084 /* CubismModelMatrix.hpp */,
+				8120EEDE18B64468873CC4AE /* CubismTargetPoint.hpp */,
+				40077A800A0749CAB7F7F24D /* CubismVector2.hpp */,
+				FF3CABF78420465BAC77DBAD /* CubismViewMatrix.hpp */,
+				54164CDC5F844E3CB69F9EC5 /* CubismMoc.hpp */,
+				F4BC85CE66364CB780C2A27F /* CubismModel.hpp */,
+				2E72DAE7A27F4CA6A0F9E7FD /* CubismModelUserData.hpp */,
+				0EC1A065250E4C169B0449F6 /* CubismModelUserDataJson.hpp */,
+				F259BF2D102E4EAEB2B0957E /* CubismUserModel.hpp */,
+				1AF0A99A0FFB46DE9B505A05 /* ACubismMotion.hpp */,
+				D0C4135D75674C688F36291D /* CubismExpressionMotion.hpp */,
+				E1785005ADD54DA88C58BA29 /* CubismExpressionMotionManager.hpp */,
+				6CB1343BF81B46DEB9A41C8B /* CubismMotion.hpp */,
+				54BC3C004C85489B873E9DEE /* CubismMotionInternal.hpp */,
+				B0A4A61921074B689A2FE5D2 /* CubismMotionJson.hpp */,
+				30E15C923A6346879A034096 /* CubismMotionManager.hpp */,
+				1AC2308C574249D293465B43 /* CubismMotionQueueEntry.hpp */,
+				172FA8255DCA4D87A491B6F9 /* CubismMotionQueueManager.hpp */,
+				586567CE6F8B4694B98BF09E /* CubismPhysics.hpp */,
+				F348DD4761254E8FB18077E6 /* CubismPhysicsInternal.hpp */,
+				A9A59395C42E4700AD1CA294 /* CubismPhysicsJson.hpp */,
+				A8CC1B49AB5E4486802CCA06 /* CubismClippingManager.hpp */,
+				A5221D5AD38F40339175DB5D /* CubismRenderer.hpp */,
+				70366B5EB927484F934C768A /* CubismCommandBuffer_Metal.hpp */,
+				E78A4696B56449DD8351C365 /* CubismOffscreenSurface_Metal.hpp */,
+				15F113A059704BC1A2CE1464 /* CubismRenderer_Metal.hpp */,
+				CBA9FAB1C2FA47EFA084C688 /* CubismRenderingInstanceSingleton_Metal.h */,
+				8FFA8D3C72B84F03B5227F7D /* CubismShader_Metal.hpp */,
+				E49C03F866654AA784FF5858 /* MetalShaderTypes.h */,
+				99BD58F57A0848BD814E641D /* CubismBasicType.hpp */,
+				593F4234C176466D844DA027 /* csmMap.hpp */,
+				A7C0BA4E75F049FA92C0D6E2 /* csmRectF.hpp */,
+				E79FE63E1F984B7EA73D593A /* csmString.hpp */,
+				3C4D96F6711F4D5088DB08A4 /* csmVector.hpp */,
+				045187F3D02E4216BF9BED47 /* CubismDebug.hpp */,
+				0539C93B7B1D491C9C5518BE /* CubismJson.hpp */,
+				E9BEFE256EDD4958B43C5355 /* CubismString.hpp */,
+			);
+			name = "Header Files";
+			sourceTree = "<group>";
+		};
+		AEA73AB692C94AE2A504BA28 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				57EE594A377D49B5B91C04C8 /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		B73ECD1B881F42948D6B7209 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				371B58376BEB42CF8A0517FE /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		C51EA44B29A64DD383A02E85 /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		DA38B448BC984A1FA29F182F /* Header Files */ = {
+			isa = PBXGroup;
+			children = (
+				5A25865B3EFA41FB989EB37B /* AppDelegate.h */,
+				4EF79C5078954559BFE7DF85 /* LAppAllocator.h */,
+				5743A01BB17F4998BE86F278 /* LAppDefine.h */,
+				5AFE3D0162E8439184C3C9E9 /* LAppLive2DManager.h */,
+				15EA4E64E45E4E35974A2309 /* LAppModel.h */,
+				218DDECD0F9642CDB88506EF /* LAppPal.h */,
+				41375EED76C54BF1AD8137F1 /* LAppSprite.h */,
+				83A3EB4E6C43476AB77C6D59 /* LAppTextureManager.h */,
+				7AE3AC6265FD4A778415310B /* MetalUIView.h */,
+				1ABC6BC32E9649DEAAB4A3FA /* MetalView.h */,
+				B58D1E80F9D745B3B6506542 /* TouchManager.h */,
+				337D25ED209F458EA7E3DB1D /* ViewController.h */,
+			);
+			name = "Header Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0C1C50C1AA790C208BD3539B /* Framework */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 93958A9FCC764F57BAB64AA2 /* Build configuration list for PBXNativeTarget "Framework" */;
+			buildPhases = (
+				E0AACA31C98D4E25B47E51FE /* Sources */,
+				34721AD521244B2DBA506AC5 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Framework;
+			productName = Framework;
+			productReference = 3215A861ED0A42FAA53DDED1 /* libFramework.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		EB14538DF70519B3A9019FE4 /* Demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 459ADC23092844FF8FB2B982 /* Build configuration list for PBXNativeTarget "Demo" */;
+			buildPhases = (
+				9A7ECE4AA605415E8ADCA11C /* Resources */,
+				58501C7555584115938FA9E2 /* CopyFiles */,
+				67A054EE70D8472F957AB3B8 /* Sources */,
+				8A2F82197A83471B88395F0D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2DF94E0888E24DD9B491EA78 /* PBXTargetDependency */,
+			);
+			name = Demo;
+			productName = Demo;
+			productReference = 6F8DBA2801CA428B8881E9FF /* Demo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F1B7523D7A9B47DC9A5952E2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1520;
+			};
+			buildConfigurationList = D0702067455C47C695F8040D /* Build configuration list for PBXProject "Demo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5089797A704A4991BCDA0873;
+			projectDirPath = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Samples/Metal/Demo/proj.ios.cmake";
+			projectRoot = "";
+			targets = (
+				6680B511F7195B5C90F034F3 /* ALL_BUILD */,
+				EB14538DF70519B3A9019FE4 /* Demo */,
+				0C1C50C1AA790C208BD3539B /* Framework */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9A7ECE4AA605415E8ADCA11C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED4DBE98B67748F294AE5228 /* MetalShaders.metal in Resources */,
+				B0AA12D28773418F8B7457C3 /* Shaders in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		24A98FCCFB58B13C47468407 /* Generate CMakeFiles/ALL_BUILD */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate CMakeFiles/ALL_BUILD";
+			outputPaths = (
+				"/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Samples/Metal/Demo/proj.ios.cmake/build/proj_xcode_iphonesimulator/CMakeFiles/ALL_BUILD",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nif test \"$CONFIGURATION\" = \"Debug\"; then :\n  cd /Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Samples/Metal/Demo/proj.ios.cmake/build/proj_xcode_iphonesimulator\n  echo Build\\ all\\ projects\nfi\nif test \"$CONFIGURATION\" = \"Release\"; then :\n  cd /Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Samples/Metal/Demo/proj.ios.cmake/build/proj_xcode_iphonesimulator\n  echo Build\\ all\\ projects\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		67A054EE70D8472F957AB3B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8603CC081D37465587D8F189 /* AppDelegate.mm in Sources */,
+				4594CDD8F687454F93D33040 /* LAppAllocator.mm in Sources */,
+				062C1372722F4BB0933BABFE /* LAppDefine.mm in Sources */,
+				1EE0FA8E87A048E7890C2939 /* LAppLive2DManager.mm in Sources */,
+				D3A17E7B69814067A9D052BE /* LAppModel.mm in Sources */,
+				9E35121FD820459EB5258CEF /* LAppPal.mm in Sources */,
+				9C92E85F5B3C45D5A8F3A656 /* LAppSprite.mm in Sources */,
+				BE19F937BD5C4B998EB73737 /* LAppTextureManager.mm in Sources */,
+				A9B3BDA511604AF4BC3FC7D7 /* MetalUIView.m in Sources */,
+				DE784D8874E14F71B95C29A2 /* MetalView.m in Sources */,
+				8971E597C9394882AC2C70BE /* TouchManager.mm in Sources */,
+				96B2EC91C384499EB68F4C24 /* ViewController.mm in Sources */,
+				7003E713994F4309B6DD1BEF /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E0AACA31C98D4E25B47E51FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				675874E1455C4917A2E0BAD4 /* CubismCdiJson.cpp in Sources */,
+				129822D47C1C484EAA6B2127 /* CubismDefaultParameterId.cpp in Sources */,
+				6EF46E4F9FF44DB39D7168C3 /* CubismFramework.cpp in Sources */,
+				A2F52777F8BE414CA3455C26 /* CubismModelSettingJson.cpp in Sources */,
+				07A62EF16C26464EADB09261 /* CubismBreath.cpp in Sources */,
+				7B0D81DE01A24F49856E9705 /* CubismEyeBlink.cpp in Sources */,
+				A78842634E52453BABD484B4 /* CubismPose.cpp in Sources */,
+				A1DE2D4D818D4EDB9D5E78C7 /* CubismId.cpp in Sources */,
+				ECDA90D48EA84FCEB9039931 /* CubismIdManager.cpp in Sources */,
+				FE95E96339DE462BA42F34C0 /* CubismMath.cpp in Sources */,
+				B52643B69154425FA7FE368A /* CubismMatrix44.cpp in Sources */,
+				B846BBB9552947638631CF6B /* CubismModelMatrix.cpp in Sources */,
+				D6A40724DC1048A2A55FFAC8 /* CubismTargetPoint.cpp in Sources */,
+				C1DEFEBF818541A2A8D0B664 /* CubismVector2.cpp in Sources */,
+				E07DC9629259472FAE9ED475 /* CubismViewMatrix.cpp in Sources */,
+				0A6D910EBE244C1ABB66A5FD /* CubismMoc.cpp in Sources */,
+				AE98F732A0C946BB87A0CDE8 /* CubismModel.cpp in Sources */,
+				B6A538F5DB414FB3A65FC85D /* CubismModelUserData.cpp in Sources */,
+				9DC5583D523C4A85B179BCD3 /* CubismModelUserDataJson.cpp in Sources */,
+				38F4754853C447EB84834CAC /* CubismUserModel.cpp in Sources */,
+				9A4F2A40C7C94A7CA2B36155 /* ACubismMotion.cpp in Sources */,
+				89E80E40A8EC498E97C6C1E3 /* CubismExpressionMotion.cpp in Sources */,
+				67BD399BE3BE4F1187326B13 /* CubismExpressionMotionManager.cpp in Sources */,
+				F09149615BA14FBDAC9D5DFC /* CubismMotion.cpp in Sources */,
+				E121457725CD41749CE223BD /* CubismMotionJson.cpp in Sources */,
+				423880E0D1A944F1828E636B /* CubismMotionManager.cpp in Sources */,
+				D88652258F2545D989CCAA40 /* CubismMotionQueueEntry.cpp in Sources */,
+				CED8B9024B124473B2E910C1 /* CubismMotionQueueManager.cpp in Sources */,
+				C69FDAB790534220AD3DECD2 /* CubismPhysics.cpp in Sources */,
+				7FA8F9CEB4C64C899E397CE3 /* CubismPhysicsJson.cpp in Sources */,
+				5158B24EB3E44A3B811648B0 /* CubismRenderer.cpp in Sources */,
+				9F4B48A0FF4345C1B066E70B /* CubismCommandBuffer_Metal.mm in Sources */,
+				20C3CD87DC3346E99CDC278B /* CubismOffscreenSurface_Metal.mm in Sources */,
+				2BDED10CB7884235B6DE196D /* CubismRenderer_Metal.mm in Sources */,
+				9D0E0687E3D5426DAA03A8B1 /* CubismRenderingInstanceSingleton_Metal.m in Sources */,
+				3216C601A0E64D5094353FB1 /* CubismShader_Metal.mm in Sources */,
+				2ADE438C44144CEB914DA2CF /* csmRectF.cpp in Sources */,
+				E71ACB74BE4845B488AE7FFC /* csmString.cpp in Sources */,
+				C9A56E79DFD6403DACEE0F05 /* CubismDebug.cpp in Sources */,
+				B43F87F31CA44184B8B562F3 /* CubismJson.cpp in Sources */,
+				7D14976BDD2742D0A1A910AA /* CubismString.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2DF94E0888E24DD9B491EA78 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0C1C50C1AA790C208BD3539B /* Framework */;
+			targetProxy = E1F0B54DDB06488783CB3817 /* PBXContainerItemProxy */;
+		};
+		5B493C88B8E24F5C92E0D173 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EB14538DF70519B3A9019FE4 /* Demo */;
+			targetProxy = B1622B073A3147C588A52930 /* PBXContainerItemProxy */;
+		};
+		9D7303EBEA584E8093098A47 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0C1C50C1AA790C208BD3539B /* Framework */;
+			targetProxy = 340648BAD95847218916497E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		409E68C21638476093F1132C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = x86_64;
+				"ARCHS[sdk=iphonesimulator*]" = x86_64;
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				ENABLE_BITCODE = NO;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator17.2.sdk;
+				SYMROOT = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Samples/Metal/Demo/proj.ios.cmake/build/proj_xcode_iphonesimulator/build";
+				"VALID_ARCHS[sdk=iphonesimulator*]" = x86_64;
+			};
+			name = Debug;
+		};
+		5537FB4F16A6499D8DCCE862 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = x86_64;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Samples/Metal/Demo/proj.ios.cmake/build/proj_xcode_iphonesimulator/bin/Demo/Debug";
+				DEVELOPMENT_TEAM = "";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator17.2.sdk/System/Library/Frameworks,
+					"$(inherited)",
+				);
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					CSM_TARGET_IPHONE_ES2,
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Samples/Metal/Demo/proj.ios.cmake/../../../../Samples/Metal/thirdParty/stb",
+					"/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src",
+					/include,
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Samples/Metal/Demo/proj.ios.cmake/src/Info.plist";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = "    $(inherited)";
+				OTHER_CPLUSPLUSFLAGS = "   '-std=c++14' ";
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					"/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Samples/Metal/Demo/proj.ios.cmake/build/proj_xcode_iphonesimulator/Framework/Debug${EFFECTIVE_PLATFORM_NAME}/libFramework.a",
+					"-framework",
+					CoreGraphics,
+					"-framework",
+					Foundation,
+					"-framework",
+					MetalKit,
+					"-framework",
+					Metal,
+					"-framework",
+					QuartzCore,
+					"-framework",
+					UIKit,
+					"/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Core/lib/ios/Debug-iphonesimulator/libLive2DCubismCore.a",
+					"$(inherited)",
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.live2d.demo-5-r.2";
+				PRODUCT_NAME = Demo;
+				SECTORDER_FLAGS = "";
+				SYSTEM_HEADER_SEARCH_PATHS = (
+					"/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Samples/Metal/Demo/proj.ios.cmake/../../../../Core/include",
+					"$(inherited)",
+				);
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGET_TEMP_DIR = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Samples/Metal/Demo/proj.ios.cmake/build/proj_xcode_iphonesimulator/build/Demo.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = Debug;
+		};
+		8460FF39CB27439FAAD24A18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = x86_64;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Samples/Metal/Demo/proj.ios.cmake/build/proj_xcode_iphonesimulator/Framework/Debug${EFFECTIVE_PLATFORM_NAME}";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					CSM_TARGET_IPHONE_ES2,
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src",
+					"/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/../Core/include",
+					/include,
+					"$(inherited)",
+				);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = "    $(inherited)";
+				OTHER_CPLUSPLUSFLAGS = "   '-std=c++14' ";
+				OTHER_LIBTOOLFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Framework;
+				SECTORDER_FLAGS = "";
+				SYSTEM_HEADER_SEARCH_PATHS = (
+					"/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Samples/Metal/Demo/proj.ios.cmake/../../../../Core/include",
+					"$(inherited)",
+				);
+				TARGET_TEMP_DIR = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Samples/Metal/Demo/proj.ios.cmake/build/proj_xcode_iphonesimulator/build/Framework.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = Debug;
+		};
+		8F816F946F1F45C1B79C238E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " $(inherited)";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = Debug;
+		};
+		9EF0F1201CCA40C99E783B96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " $(inherited)";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = Release;
+		};
+		B96ECEDB04CA4925B24F16D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = x86_64;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Samples/Metal/Demo/proj.ios.cmake/build/proj_xcode_iphonesimulator/Framework/Release${EFFECTIVE_PLATFORM_NAME}";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					CSM_TARGET_IPHONE_ES2,
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src",
+					"/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/../Core/include",
+					/include,
+					"$(inherited)",
+				);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = (
+					"-DNDEBUG",
+					"$(inherited)",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNDEBUG",
+					"'-std=c++14'",
+				);
+				OTHER_LIBTOOLFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Framework;
+				SECTORDER_FLAGS = "";
+				SYSTEM_HEADER_SEARCH_PATHS = (
+					"/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Samples/Metal/Demo/proj.ios.cmake/../../../../Core/include",
+					"$(inherited)",
+				);
+				TARGET_TEMP_DIR = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Samples/Metal/Demo/proj.ios.cmake/build/proj_xcode_iphonesimulator/build/Framework.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = Release;
+		};
+		DB18668A1C2F4D99A74E93D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = x86_64;
+				"ARCHS[sdk=iphonesimulator*]" = x86_64;
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				ENABLE_BITCODE = NO;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator17.2.sdk;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SYMROOT = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Samples/Metal/Demo/proj.ios.cmake/build/proj_xcode_iphonesimulator/build";
+				"VALID_ARCHS[sdk=iphonesimulator*]" = x86_64;
+			};
+			name = Release;
+		};
+		FB73A227CFB84A479E3F8396 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = x86_64;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Samples/Metal/Demo/proj.ios.cmake/build/proj_xcode_iphonesimulator/bin/Demo/Release";
+				DEVELOPMENT_TEAM = "";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator17.2.sdk/System/Library/Frameworks,
+					"$(inherited)",
+				);
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					CSM_TARGET_IPHONE_ES2,
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Samples/Metal/Demo/proj.ios.cmake/../../../../Samples/Metal/thirdParty/stb",
+					"/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src",
+					/include,
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Samples/Metal/Demo/proj.ios.cmake/src/Info.plist";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = (
+					"-DNDEBUG",
+					"$(inherited)",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNDEBUG",
+					"'-std=c++14'",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					"/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Samples/Metal/Demo/proj.ios.cmake/build/proj_xcode_iphonesimulator/Framework/Release${EFFECTIVE_PLATFORM_NAME}/libFramework.a",
+					"-framework",
+					CoreGraphics,
+					"-framework",
+					Foundation,
+					"-framework",
+					MetalKit,
+					"-framework",
+					Metal,
+					"-framework",
+					QuartzCore,
+					"-framework",
+					UIKit,
+					"/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Core/lib/ios/Release-iphonesimulator/libLive2DCubismCore.a",
+					"$(inherited)",
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.live2d.demo-5-r.2";
+				PRODUCT_NAME = Demo;
+				SECTORDER_FLAGS = "";
+				SYSTEM_HEADER_SEARCH_PATHS = (
+					"/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Samples/Metal/Demo/proj.ios.cmake/../../../../Core/include",
+					"$(inherited)",
+				);
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGET_TEMP_DIR = "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Samples/Metal/Demo/proj.ios.cmake/build/proj_xcode_iphonesimulator/build/Demo.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		459ADC23092844FF8FB2B982 /* Build configuration list for PBXNativeTarget "Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5537FB4F16A6499D8DCCE862 /* Debug */,
+				FB73A227CFB84A479E3F8396 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		93958A9FCC764F57BAB64AA2 /* Build configuration list for PBXNativeTarget "Framework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8460FF39CB27439FAAD24A18 /* Debug */,
+				B96ECEDB04CA4925B24F16D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		9927630CBCF6499BB5DC8429 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8F816F946F1F45C1B79C238E /* Debug */,
+				9EF0F1201CCA40C99E783B96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		D0702067455C47C695F8040D /* Build configuration list for PBXProject "Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				409E68C21638476093F1132C /* Debug */,
+				DB18668A1C2F4D99A74E93D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F1B7523D7A9B47DC9A5952E2 /* Project object */;
+}

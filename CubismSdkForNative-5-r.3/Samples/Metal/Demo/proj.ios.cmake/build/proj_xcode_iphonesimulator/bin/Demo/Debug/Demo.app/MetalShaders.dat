@@ -1,0 +1,4 @@
+dependencies: \
+  /Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Rendering/Metal/MetalShaders.metal \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/metal/ios/lib/clang/32023.98/include/metal/module.modulemap \
+  /Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Rendering/Metal/MetalShaderTypes.h

@@ -1,2 +1,0 @@
-dependencies: \
-  /Users/niyao/Downloads/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/build/proj_xcode_iphonesimulator/CMakeFiles/3.31.5/CompilerIdC/CMakeCCompilerId.c

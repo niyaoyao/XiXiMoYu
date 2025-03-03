@@ -1,0 +1,4 @@
+Target dependency graph (2 targets)
+Target 'Demo' in project 'Demo'
+➜ Explicit dependency on target 'Framework' in project 'Demo'
+Target 'Framework' in project 'Demo' (no dependencies)

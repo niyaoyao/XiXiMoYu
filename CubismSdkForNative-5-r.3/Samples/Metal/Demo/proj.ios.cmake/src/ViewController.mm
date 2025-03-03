@@ -421,4 +421,12 @@ using namespace LAppDefine;
 {
     [super dealloc];
 }
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskAll;
+}
+
+- (BOOL)shouldAutorotate {
+    return YES;
+}
 @end

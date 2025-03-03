@@ -1,0 +1,12 @@
+---
+triple:          'x86_64-apple-darwin'
+binary-path:     '/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Samples/Metal/Demo/proj.ios.cmake/build/proj_xcode_iphonesimulator/CMakeFiles/3.31.5/CompilerIdCXX/CompilerIdCXX.xctest/CompilerIdCXX'
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x3E8B, symSize: 0x55 }
+  - { offsetInCU: 0x53, offset: 0x53, size: 0x8, addend: 0x0, symName: _info_compiler, symObjAddr: 0x120, symBinAddr: 0x4000, symSize: 0x0 }
+  - { offsetInCU: 0x6E, offset: 0x6E, size: 0x8, addend: 0x0, symName: _info_platform, symObjAddr: 0x128, symBinAddr: 0x4008, symSize: 0x0 }
+  - { offsetInCU: 0x84, offset: 0x84, size: 0x8, addend: 0x0, symName: _info_arch, symObjAddr: 0x130, symBinAddr: 0x4010, symSize: 0x0 }
+  - { offsetInCU: 0x9A, offset: 0x9A, size: 0x8, addend: 0x0, symName: _info_language_standard_default, symObjAddr: 0x138, symBinAddr: 0x4018, symSize: 0x0 }
+  - { offsetInCU: 0xB0, offset: 0xB0, size: 0x8, addend: 0x0, symName: _info_language_extensions_default, symObjAddr: 0x140, symBinAddr: 0x4020, symSize: 0x0 }
+  - { offsetInCU: 0xB9, offset: 0xB9, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x3E8B, symSize: 0x55 }
+...

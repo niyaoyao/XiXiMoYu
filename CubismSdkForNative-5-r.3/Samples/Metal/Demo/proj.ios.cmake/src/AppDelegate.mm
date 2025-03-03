@@ -46,6 +46,11 @@
     return YES;
 }
 
+// 设置全局支持的方向
+- (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
+    return UIInterfaceOrientationMaskAll;
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
 }
