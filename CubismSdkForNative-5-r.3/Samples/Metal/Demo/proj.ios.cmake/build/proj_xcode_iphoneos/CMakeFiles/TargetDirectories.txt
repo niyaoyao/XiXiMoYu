@@ -1,0 +1,3 @@
+/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Samples/Metal/Demo/proj.ios.cmake/build/proj_xcode_iphoneos/CMakeFiles/Demo.dir
+/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Samples/Metal/Demo/proj.ios.cmake/build/proj_xcode_iphoneos/CMakeFiles/ALL_BUILD.dir
+/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Samples/Metal/Demo/proj.ios.cmake/build/proj_xcode_iphoneos/Framework/CMakeFiles/Framework.dir
