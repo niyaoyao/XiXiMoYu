@@ -1,0 +1,11 @@
+#!/bin/sh
+set -e
+if test "$CONFIGURATION" = "Debug"; then :
+  cd /Users/ny/NY/iOS/XiXiMoYu//CubismSdkForNative-5-r.3/Samples/Metal/Demo/proj.ios.cmake/build/proj_xcode_iphoneos
+  echo Build\ all\ projects
+fi
+if test "$CONFIGURATION" = "Release"; then :
+  cd /Users/ny/NY/iOS/XiXiMoYu//CubismSdkForNative-5-r.3/Samples/Metal/Demo/proj.ios.cmake/build/proj_xcode_iphoneos
+  echo Build\ all\ projects
+fi
+
