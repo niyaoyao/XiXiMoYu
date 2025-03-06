@@ -10,8 +10,8 @@
 1. Create iOS Project ✅
 2. iOS Integration Script
     - Integrate Assets Automatic
-    - Integrate Library Automatic
-    - Integrate Demo Code Automatic
+    - Integrate Library Automatic ✅
+    - Integrate Demo Code Automatic ✅
 3. Further Development
 4. Renew Account Plan & Small business
 5. ICP
