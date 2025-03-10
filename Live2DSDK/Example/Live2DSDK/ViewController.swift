@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Live2DSDK
 
 class ViewController: UIViewController {
 

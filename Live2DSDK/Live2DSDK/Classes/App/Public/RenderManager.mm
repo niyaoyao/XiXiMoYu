@@ -29,7 +29,35 @@
 @end
 @implementation RenderManager
 
-- (void)initializeCubism {
+- (BOOL)applicationDidFinishLaunching {
+
+    _textureManager = [[LAppTextureManager alloc]init];
+
+    [self initializeCubism];
+
+//    [self.viewController initializeSprite];
+
+    return YES;
+}
+
+
+- (void)applicationDidEnterBackground
+{
+    _textureManager = nil;
+
+    _sceneIndex = [[LAppLive2DManager getInstance] sceneIndex];
+}
+
+- (void)applicationWillEnterForeground
+{
+    _textureManager = [[LAppTextureManager alloc]init];
+
+    [[LAppLive2DManager getInstance] changeScene:_sceneIndex];
+}
+
+
+- (void)initializeCubism
+{
     _cubismOption.LogFunction = LAppPal::PrintMessageLn;
     _cubismOption.LoggingLevel = LAppDefine::CubismLoggingLevel;
 
@@ -45,24 +73,17 @@
 
 }
 
-- (void)applicationDidEnterBackground:(UIApplication *)application
+
+- (void)finishApplication
 {
+    
+
     _textureManager = nil;
 
-    _sceneIndex = [[LAppLive2DManager getInstance] sceneIndex];
-}
-
-- (void)applicationWillEnterForeground:(UIApplication *)application
-{
-    _textureManager = [[LAppTextureManager alloc]init];
-
-    [[LAppLive2DManager getInstance] changeScene:_sceneIndex];
-}
-
-- (void)releaseLive2D {
-    _textureManager = nil;
     [LAppLive2DManager releaseInstance];
+
     Csm::CubismFramework::Dispose();
+    
 }
 
 @end

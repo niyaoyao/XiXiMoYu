@@ -8,6 +8,7 @@
 
 #import "TestViewController.h"
 #import "ViewController.h"
+#import "RenderManager.h"
 
 @interface TestViewController ()
 

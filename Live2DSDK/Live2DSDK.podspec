@@ -14,6 +14,8 @@ Pod::Spec.new do |s|
 
   s.subspec 'Core' do |sp|
     sp.source_files = 'Live2DSDK/Classes/Framework/**/*.{h,hpp,c,cpp,metal,tpp,m,mm}'
+    sp.private_header_files = 'Live2DSDK/Classes/Framework/**/*.{h,hpp,tpp}'
+
     sp.libraries = 'c++'
     sp.requires_arc = false
     sp.ios.vendored_library = 'Live2DSDK/Classes/Framework/Library/libLive2DCubismCore.a'
@@ -21,7 +23,9 @@ Pod::Spec.new do |s|
 
   s.subspec 'AppSource' do |sp|
     sp.source_files = 'Live2DSDK/Classes/App/**/*.{h,metal,m,mm}'
-    sp.public_header_files = 'Live2DSDK/Classes/App/**/*.{h,hpp}'
+    sp.public_header_files = 'Live2DSDK/Classes/App/Public/RenderManager.h', 'Live2DSDK/Classes/App/Public/ViewController.h'
+    sp.private_header_files = 'Live2DSDK/Classes/App/Private/**/*.{h,hpp}'
+
     sp.libraries = 'c++'
     sp.requires_arc = false
   end

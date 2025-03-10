@@ -11,6 +11,15 @@ NS_ASSUME_NONNULL_BEGIN
 @interface RenderManager : NSObject
 
 
+- (BOOL)applicationDidFinishLaunching;
+
+- (void)applicationDidEnterBackground;
+
+- (void)applicationWillEnterForeground;
+
+- (void)initializeCubism;
+
+- (void)finishApplication;
 @end
 
 NS_ASSUME_NONNULL_END
