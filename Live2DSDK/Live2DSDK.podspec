@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 
     sp.libraries = 'c++'
     sp.requires_arc = false
-    sp.ios.vendored_library = 'Live2DSDK/Classes/Framework/Library/libLive2DCubismCore.a'
+    sp.ios.vendored_library = 'Live2DSDK/Classes/Framework/Library/Debug-iphonesimulator/libLive2DCubismCore.a'
   end
 
   s.subspec 'AppSource' do |sp|

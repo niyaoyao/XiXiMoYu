@@ -141,8 +141,8 @@ Csm::csmString GetPath(CFURLRef url)
 - (void)setUpModel
 {
     _modelDir.Clear();
-
-    NSBundle* bundle = [NSBundle mainBundle];
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"Frameworks/Live2DSDK" withExtension:@"framework"];
+    NSBundle* bundle = [NSBundle bundleWithURL:url];
     NSString* resPath = [NSString stringWithUTF8String:LAppDefine::ResourcesPath];
     NSArray* resArr = [bundle pathsForResourcesOfType:NULL inDirectory:resPath];
     NSUInteger cnt = [resArr count];

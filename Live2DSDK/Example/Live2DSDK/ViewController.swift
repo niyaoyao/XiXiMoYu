@@ -34,9 +34,15 @@ class ViewController: UIViewController {
         } else {
             print("Image file not found in bundle")
         }
+        
+        
     }
     
-
+    @IBAction func routeToLive2DPage(_ sender: Any) {
+        let vc = Live2DSDK.ViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

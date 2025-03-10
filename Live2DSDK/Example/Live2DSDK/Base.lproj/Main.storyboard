@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dAI-8G-DWy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dAI-8G-DWy">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -26,7 +25,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Live2D"/>
                                 <connections>
-                                    <segue destination="8as-pd-RWC" kind="push" id="Zru-4q-0IM"/>
+                                    <action selector="routeToLive2DPage:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="fou-77-VeR"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -37,25 +36,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-670" y="-699"/>
-        </scene>
-        <!--Test View Controller-->
-        <scene sceneID="Y2Q-zg-Z3u">
-            <objects>
-                <viewController id="8as-pd-RWC" customClass="TestViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Nww-Xb-27i"/>
-                        <viewControllerLayoutGuide type="bottom" id="UlC-7A-h7t"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="xM3-ZP-X65">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="Qpp-R9-0zh"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nwz-0s-3qy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="223" y="-699"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VoN-CS-3zZ">
@@ -74,9 +54,4 @@
             <point key="canvasLocation" x="-1490" y="-698"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>
