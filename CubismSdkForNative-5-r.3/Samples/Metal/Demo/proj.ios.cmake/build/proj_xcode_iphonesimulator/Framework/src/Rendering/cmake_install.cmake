@@ -1,4 +1,4 @@
-# Install script for directory: /Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Framework/src/Rendering
+# Install script for directory: /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Rendering
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -37,7 +37,7 @@ if(NOT DEFINED CMAKE_OBJDUMP)
   set(CMAKE_OBJDUMP "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/objdump")
 endif()
 
-set(CMAKE_BINARY_DIR "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Samples/Metal/Demo/proj.ios.cmake/build/proj_xcode_iphonesimulator")
+set(CMAKE_BINARY_DIR "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/Metal/Demo/proj.ios.cmake/build/proj_xcode_iphonesimulator")
 
 if(NOT PLATFORM_NAME)
   if(NOT "$ENV{PLATFORM_NAME}" STREQUAL "")
@@ -59,13 +59,13 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Samples/Metal/Demo/proj.ios.cmake/build/proj_xcode_iphonesimulator/Framework/src/Rendering/Metal/cmake_install.cmake")
+  include("/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/Metal/Demo/proj.ios.cmake/build/proj_xcode_iphonesimulator/Framework/src/Rendering/Metal/cmake_install.cmake")
 
 endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/Users/niyao/NY/Swift/Live2DDemo/CubismSdkForNative-5-r.3/Samples/Metal/Demo/proj.ios.cmake/build/proj_xcode_iphonesimulator/Framework/src/Rendering/install_local_manifest.txt"
+  file(WRITE "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/Metal/Demo/proj.ios.cmake/build/proj_xcode_iphonesimulator/Framework/src/Rendering/install_local_manifest.txt"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()
