@@ -9,7 +9,6 @@
 #import <math.h>
 #import <QuartzCore/QuartzCore.h>
 #import <QuartzCore/CAMetalLayer.h>
-#import <Metal/Metal.h>
 #import <string>
 #import "CubismFramework.hpp"
 #import "AppDelegate.h"
@@ -25,12 +24,15 @@
 #import <CubismViewMatrix.hpp>
 #import "CubismRenderingInstanceSingleton_Metal.h"
 
+#import "LAppModel.h"
+#import "MetalView.h"
+
 #define BUFFER_OFFSET(bytes) ((GLubyte *)NULL + (bytes))
 
 using namespace std;
 using namespace LAppDefine;
 
-@interface ViewController ()
+@interface ViewController () <MetalViewDelegate>
 @property (nonatomic) LAppSprite *back; //背景画像
 @property (nonatomic) LAppSprite *gear; //歯車画像
 @property (nonatomic) LAppSprite *power; //電源画像
@@ -162,10 +164,10 @@ using namespace LAppDefine;
 
 - (void)resizeScreen
 {
-    AppDelegate* delegate = (AppDelegate*) [[UIApplication sharedApplication] delegate];
-    ViewController* view = [delegate viewController];
-    int width = view.view.frame.size.width;
-    int height = view.view.frame.size.height;
+    
+    
+    int width = self.view.frame.size.width;
+    int height = self.view.frame.size.height;
 
     // 縦サイズを基準とする
     float ratio = static_cast<float>(width) / static_cast<float>(height);

@@ -6,10 +6,9 @@
  */
 
 #import <UIKit/UIKit.h>
-#import "LAppModel.h"
-#import "MetalView.h"
+#import <Metal/Metal.h>
 
-@interface ViewController : UIViewController <MetalViewDelegate>
+@interface ViewController : UIViewController
 
 @property (nonatomic) bool anotherTarget;
 @property (nonatomic) float spriteColorR;

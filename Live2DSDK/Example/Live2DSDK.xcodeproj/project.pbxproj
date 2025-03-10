@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0E4E89932D7AA57A00722598 /* TestViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0E4E89922D7AA57A00722598 /* TestViewController.mm */; };
+		0EC0FF342D7EEF3800610053 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EC0FF332D7EEF3800610053 /* TestViewController.m */; };
 		3EBF4D6056239A65B850F2F9 /* Pods_Live2DSDK_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 354760434F172D0A773315CB /* Pods_Live2DSDK_Tests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
@@ -30,8 +30,8 @@
 
 /* Begin PBXFileReference section */
 		0E4E898E2D7AA4F000722598 /* Live2DSDK_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Live2DSDK_Example-Bridging-Header.h"; sourceTree = "<group>"; };
-		0E4E898F2D7AA4F000722598 /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
-		0E4E89922D7AA57A00722598 /* TestViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = TestViewController.mm; sourceTree = "<group>"; };
+		0EC0FF322D7EEF3700610053 /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		0EC0FF332D7EEF3800610053 /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		16D1BE0B35EC02179BBA80FB /* Pods-Live2DSDK_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Live2DSDK_Tests.debug.xcconfig"; path = "Target Support Files/Pods-Live2DSDK_Tests/Pods-Live2DSDK_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		184751EF955E20AA1A7F89B3 /* Pods-Live2DSDK_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Live2DSDK_Example.release.xcconfig"; path = "Target Support Files/Pods-Live2DSDK_Example/Pods-Live2DSDK_Example.release.xcconfig"; sourceTree = "<group>"; };
 		354760434F172D0A773315CB /* Pods_Live2DSDK_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Live2DSDK_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,8 +119,8 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
-				0E4E898F2D7AA4F000722598 /* TestViewController.h */,
-				0E4E89922D7AA57A00722598 /* TestViewController.mm */,
+				0EC0FF322D7EEF3700610053 /* TestViewController.h */,
+				0EC0FF332D7EEF3800610053 /* TestViewController.m */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -359,8 +359,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EC0FF342D7EEF3800610053 /* TestViewController.m in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
-				0E4E89932D7AA57A00722598 /* TestViewController.mm in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -510,7 +510,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = Y9KL4LC4F8;
 				INFOPLIST_FILE = Live2DSDK/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = com.qianfan.aihomework;
@@ -530,7 +530,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = Y9KL4LC4F8;
 				INFOPLIST_FILE = Live2DSDK/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = com.qianfan.aihomework;

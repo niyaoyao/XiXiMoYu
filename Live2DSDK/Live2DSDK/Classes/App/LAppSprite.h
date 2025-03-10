@@ -51,7 +51,7 @@ typedef struct
  * @brief 描画する
  */
 - (void)renderImmidiate:(id<MTLRenderCommandEncoder>)renderEncoder;
-
+ 
 /**
  * @brief 画面サイズ変更処理
  *
