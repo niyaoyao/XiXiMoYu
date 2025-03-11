@@ -50,7 +50,7 @@
 		7E0949EA1C028B6AA3439E62 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		CBF8D7647D9ADCC841FA7FD1 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		DBE519074C3C51F403B4CF3E /* Pods-Live2DSDK_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Live2DSDK_Tests.release.xcconfig"; path = "Target Support Files/Pods-Live2DSDK_Tests/Pods-Live2DSDK_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		F641B9ADB03D42D54E65C85D /* Live2DSDK.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Live2DSDK.podspec; path = ../Live2DSDK.podspec; sourceTree = "<group>"; };
+		F641B9ADB03D42D54E65C85D /* Live2DSDK.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Live2DSDK.podspec; path = ../Live2DSDK.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

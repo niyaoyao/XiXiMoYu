@@ -146,14 +146,17 @@ Csm::csmString GetPath(CFURLRef url)
     NSString* resPath = [NSString stringWithUTF8String:LAppDefine::ResourcesPath];
     NSArray* resArr = [bundle pathsForResourcesOfType:NULL inDirectory:resPath];
     NSUInteger cnt = [resArr count];
-
+    NSLog(@"bundle: %@", bundle);
+    NSLog(@"resPath: %@", resPath);
+    NSLog(@"resArr: %@", resArr);
     for (NSUInteger i = 0; i < cnt; i++)
     {
         NSString* modelName = [[resArr objectAtIndex:i] lastPathComponent];
         NSMutableString* modelDirPath = [NSMutableString stringWithString:resPath];
-        [modelDirPath appendString:@"/"];
+//        [modelDirPath appendString:@"/"];
         [modelDirPath appendString:modelName];
         NSArray* model3json = [bundle pathsForResourcesOfType:@".model3.json" inDirectory:modelDirPath];
+        NSLog(@"model3json: %@", model3json);
         if ([model3json count] == 1)
         {
             _modelDir.PushBack(Csm::csmString([modelName UTF8String]));

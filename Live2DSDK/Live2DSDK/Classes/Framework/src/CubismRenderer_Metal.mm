@@ -47,6 +47,7 @@ void CubismClippingManager_Metal::SetupClippingContext(CubismModel& model, Cubis
     MTLViewport clipVp = {0, 0, GetClippingMaskBufferSize().X, GetClippingMaskBufferSize().Y, 0.0, 1.0};
 
     // 後の計算のためにインデックスの最初をセットする。
+    NSLog(@"_currentMaskBuffer->GetRenderPassDescriptor():%@", _currentMaskBuffer->GetRenderPassDescriptor());
     _currentMaskBuffer = renderer->GetOffscreenSurface(0);
     renderEncoder = renderer->PreDraw(renderer->s_commandBuffer, _currentMaskBuffer->GetRenderPassDescriptor());
 

@@ -26,6 +26,7 @@
 
 #import "LAppModel.h"
 #import "MetalView.h"
+#import "RenderManager.h"
 
 #define BUFFER_OFFSET(bytes) ((GLubyte *)NULL + (bytes))
 
@@ -213,12 +214,11 @@ using namespace LAppDefine;
 
 - (void)initializeSprite
 {
-    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    ViewController* view = [delegate viewController];
-    float width = view.view.frame.size.width;
-    float height = view.view.frame.size.height;
+    
+    float width = self.view.frame.size.width;
+    float height = self.view.frame.size.height;
 
-    LAppTextureManager* textureManager = [delegate getTextureManager];
+    LAppTextureManager* textureManager = [[RenderManager shared] getTextureManager];
     const string resourcesPath = ResourcesPath;
 
     //背景

@@ -31,7 +31,10 @@ csmByte* LAppPal::LoadFileAsBytes(const string filePath, csmSizeInt* outSize)
     std::string pathname = filePath.substr(0,path_i);
     std::string extname = filePath.substr(ext_i,filePath.size()-ext_i);
     std::string filename = filePath.substr(path_i,ext_i-path_i);
-    NSString* castFilePath = [[NSBundle mainBundle]
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"Frameworks/Live2DSDK" withExtension:@"framework"];
+    NSString *bundlePath = [[NSBundle bundleWithURL:url] pathForResource:@"Live2DModels" ofType:@"bundle"];
+    NSBundle* bundle = [NSBundle bundleWithPath:bundlePath];
+    NSString* castFilePath = [bundle
                               pathForResource:[NSString stringWithUTF8String:filename.c_str()]
                               ofType:[NSString stringWithUTF8String:extname.c_str()]
                               inDirectory:[NSString stringWithUTF8String:pathname.c_str()]];

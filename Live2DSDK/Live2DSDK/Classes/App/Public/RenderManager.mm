@@ -27,7 +27,42 @@
 @property (nonatomic) Csm::csmInt32 sceneIndex;
 
 @end
+
 @implementation RenderManager
+
++ (instancetype)shared {
+    static RenderManager *sharedInstance = nil;
+    static dispatch_once_t onceToken;
+    
+    dispatch_once(&onceToken, ^{
+        sharedInstance = [[RenderManager alloc] init];
+    });
+    
+    return sharedInstance;
+}
+
+// Optional: Override init to customize initialization
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        // Perform any initialization here
+        NSLog(@"MySingleton initialized");
+    }
+    return self;
+}
+
++ (BOOL)applicationDidFinishLaunching {
+    return [[RenderManager shared] applicationDidFinishLaunching];
+}
+
++ (void)applicationDidEnterBackground {
+    [[RenderManager shared] applicationDidEnterBackground];
+}
+
++ (void)applicationWillEnterForeground {
+    [[RenderManager shared] applicationWillEnterForeground];
+}
+
 
 - (BOOL)applicationDidFinishLaunching {
 
@@ -72,6 +107,7 @@
     LAppPal::UpdateTime();
 
 }
+
 
 
 - (void)finishApplication

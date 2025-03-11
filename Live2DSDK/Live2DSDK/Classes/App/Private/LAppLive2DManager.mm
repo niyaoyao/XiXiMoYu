@@ -16,6 +16,7 @@
 #import "LAppPal.h"
 #import <CubismRenderer_Metal.hpp>
 #import "CubismRenderingInstanceSingleton_Metal.h"
+#import "RenderManager.h"
 
 @interface LAppLive2DManager()
 
@@ -141,19 +142,30 @@ Csm::csmString GetPath(CFURLRef url)
 - (void)setUpModel
 {
     _modelDir.Clear();
+//    let url = Bundle.main.url(forResource: "Frameworks/Live2DSDK", withExtension: "framework")
+//    
+//    
+//    guard let url = url, let bundlePath = Bundle.init(url: url)?.path(forResource: "Live2DModels", ofType: "bundle"),
+//          let bundle = Bundle(path: bundlePath) else {
+//
+    
     NSURL *url = [[NSBundle mainBundle] URLForResource:@"Frameworks/Live2DSDK" withExtension:@"framework"];
-    NSBundle* bundle = [NSBundle bundleWithURL:url];
+    NSString *bundlePath = [[NSBundle bundleWithURL:url] pathForResource:@"Live2DModels" ofType:@"bundle"];
+    NSBundle* bundle = [NSBundle bundleWithPath:bundlePath];
     NSString* resPath = [NSString stringWithUTF8String:LAppDefine::ResourcesPath];
     NSArray* resArr = [bundle pathsForResourcesOfType:NULL inDirectory:resPath];
     NSUInteger cnt = [resArr count];
-
+    NSLog(@"bundle: %@", bundle);
+    NSLog(@"resPath: %@", resPath);
+    NSLog(@"resArr: %@", resArr);
     for (NSUInteger i = 0; i < cnt; i++)
     {
         NSString* modelName = [[resArr objectAtIndex:i] lastPathComponent];
         NSMutableString* modelDirPath = [NSMutableString stringWithString:resPath];
-        [modelDirPath appendString:@"/"];
+//        [modelDirPath appendString:@"/"];
         [modelDirPath appendString:modelName];
         NSArray* model3json = [bundle pathsForResourcesOfType:@".model3.json" inDirectory:modelDirPath];
+        NSLog(@"model3json: %@", model3json);
         if ([model3json count] == 1)
         {
             _modelDir.PushBack(Csm::csmString([modelName UTF8String]));
@@ -210,7 +222,7 @@ Csm::csmString GetPath(CFURLRef url)
 
 - (void)onUpdate:(id <MTLCommandBuffer>)commandBuffer currentDrawable:(id<CAMetalDrawable>)drawable depthTexture:(id<MTLTexture>)depthTarget;
 {
-    AppDelegate* delegate = (AppDelegate*) [[UIApplication sharedApplication] delegate];
+    RenderManager *delegate = [RenderManager shared];
     ViewController* view = [delegate viewController];
 
     const CGFloat retinaScale = [[UIScreen mainScreen] scale];
@@ -400,7 +412,7 @@ Csm::csmString GetPath(CFURLRef url)
         float clearColorG = 0.0f;
         float clearColorB = 0.0f;
 
-        AppDelegate* delegate = (AppDelegate*) [[UIApplication sharedApplication] delegate];
+        RenderManager *delegate = [RenderManager shared];
         ViewController* view = [delegate viewController];
 
         [self SwitchRenderingTarget:useRenderTarget];

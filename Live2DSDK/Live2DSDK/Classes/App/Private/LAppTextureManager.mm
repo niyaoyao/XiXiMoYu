@@ -22,7 +22,7 @@
 #import "ViewController.h"
 #import "MetalUIView.h"
 #import "CubismRenderingInstanceSingleton_Metal.h"
-
+#import "RenderManager.h"
 @interface LAppTextureManager()
 
 @property (nonatomic) Csm::csmVector<TextureInfo*> textures;
@@ -118,8 +118,8 @@
                   withBytes:png
                 bytesPerRow:bytesPerRow];
 
-    AppDelegate* delegate = (AppDelegate*) [[UIApplication sharedApplication] delegate];
-    ViewController* viewController = delegate.viewController;
+    RenderManager *delegate = [RenderManager shared];
+    ViewController* viewController = [RenderManager shared].viewController;
     id<CAMetalDrawable> drawable = [((MetalUIView*)viewController.view).metalLayer nextDrawable];
     id<MTLCommandBuffer> commandBuffer = [viewController.commandQueue commandBuffer];
     id<MTLBlitCommandEncoder> blitCommandEncoder = [commandBuffer blitCommandEncoder];

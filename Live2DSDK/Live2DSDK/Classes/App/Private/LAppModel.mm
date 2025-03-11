@@ -21,6 +21,7 @@
 #import <CubismPhysics.hpp>
 #import <CubismRenderer_Metal.hpp>
 #import <CubismString.hpp>
+#import "RenderManager.h"
 
 using namespace Live2D::Cubism::Framework;
 using namespace Live2D::Cubism::Framework::DefaultParameterId;
@@ -82,8 +83,8 @@ LAppModel::~LAppModel()
         ReleaseMotionGroup(group);
     }
 
-    AppDelegate *delegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
-    LAppTextureManager *textureManager = [delegate getTextureManager];
+    
+    LAppTextureManager *textureManager = [[RenderManager shared] getTextureManager];
 
     for (csmInt32 modelTextureNumber = 0; modelTextureNumber < _modelSetting->GetTextureCount(); modelTextureNumber++)
     {
@@ -624,7 +625,7 @@ void LAppModel::SetupTextures()
         texturePath = _modelHomeDir + texturePath;
 
         AppDelegate *delegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
-        TextureInfo* texture = [[delegate getTextureManager] createTextureFromPngFile:texturePath.GetRawString()];
+        TextureInfo* texture = [[[RenderManager shared] getTextureManager] createTextureFromPngFile:texturePath.GetRawString()];
         id <MTLTexture> mtlTextueNumber = texture->id;
 
         //Metal
