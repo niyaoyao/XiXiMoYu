@@ -1,0 +1,1038 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		3327EE90512C6E1FCEAB46BA /* ALL_BUILD */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 7D9EFAB5EB7A40B49282DC76 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildPhases = (
+				2736D6699E8C923C26F457CE /* Generate CMakeFiles/ALL_BUILD */,
+			);
+			dependencies = (
+				7F445ED66D6A4E2B82184459 /* PBXTargetDependency */,
+				4BE46F612DE143299FDAA2EE /* PBXTargetDependency */,
+			);
+			name = ALL_BUILD;
+			productName = ALL_BUILD;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		0163D3B58117427A939A152E /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismExpressionMotion.cpp */ = {isa = PBXBuildFile; fileRef = D57EF4E7E36D45DFA7A9B06B /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismExpressionMotion.cpp */; };
+		01A29361D0004BA297609D48 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Utils/CubismJson.hpp */ = {isa = PBXBuildFile; fileRef = 01630EF67FB74773B4E3D742 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Utils/CubismJson.hpp */; };
+		033778B9CB0444CBAB8EFBDF /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Rendering/OpenGL/CubismShader_OpenGLES2.hpp */ = {isa = PBXBuildFile; fileRef = F331C9B59EC240FC9D00D73A /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Rendering/OpenGL/CubismShader_OpenGLES2.hpp */; };
+		05F69855FC9C4480BA863F19 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Model/CubismModel.hpp */ = {isa = PBXBuildFile; fileRef = F5739268716F48EC8275D52B /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Model/CubismModel.hpp */; };
+		07DD58223F854B698168D596 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppLive2DManager.h */ = {isa = PBXBuildFile; fileRef = 7DF8BFE743F54EEFBAE6BBC7 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppLive2DManager.h */; };
+		089D4471992E4BC5B6BB43D0 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/CubismDefaultParameterId.cpp */ = {isa = PBXBuildFile; fileRef = 7A3C0ED328584EC49BE31F63 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/CubismDefaultParameterId.cpp */; };
+		09C246DE921B4D40B1D4BD8B /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = F13D23D4B3C446F1878AD87F /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/CMakeLists.txt */; };
+		0BEA22ED76294F2585E7F704 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Effect/CubismBreath.cpp */ = {isa = PBXBuildFile; fileRef = F078527450DB4C71A345E30A /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Effect/CubismBreath.cpp */; };
+		0C1328BC97B04808A17BA834 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Id/CubismId.hpp */ = {isa = PBXBuildFile; fileRef = FD9AFFEF7D5D425CBD179B55 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Id/CubismId.hpp */; };
+		0D9F98E1FD45495E9BA51C8D /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismMatrix44.cpp */ = {isa = PBXBuildFile; fileRef = 26669D9BAFE849299A47550D /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismMatrix44.cpp */; };
+		0E4C106335C7450DA0206342 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Utils/CubismString.cpp */ = {isa = PBXBuildFile; fileRef = A3607EC0433247A39A2423CD /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Utils/CubismString.cpp */; };
+		1340F0B4143548679206C8B8 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Live2DCubismCore.hpp */ = {isa = PBXBuildFile; fileRef = 3624FA9E55554B62963BCF34 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Live2DCubismCore.hpp */; };
+		151A460FC9084052B379C018 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/AppDelegate.h */ = {isa = PBXBuildFile; fileRef = 4EE2A61204CE4206AA533DB8 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/AppDelegate.h */; };
+		1694CC352D424E6092F13299 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/CubismFramework.hpp */ = {isa = PBXBuildFile; fileRef = 25EEC0D714D143709C2D1B51 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/CubismFramework.hpp */; };
+		18AD0E6CF3BB4422A636B828 /* /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator17.2.sdk/System/Library/Frameworks/UIKit.framework */ = {isa = PBXBuildFile; fileRef = 43A8E8E4512B41949CAD9511 /* /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator17.2.sdk/System/Library/Frameworks/UIKit.framework */; };
+		1A8D8E1BF7A645E8A4E2F36D /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Model/CubismMoc.hpp */ = {isa = PBXBuildFile; fileRef = 3436B403DD1F499580DCE08D /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Model/CubismMoc.hpp */; };
+		1BD2092F34994872B2FE9B0A /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Physics/CubismPhysicsInternal.hpp */ = {isa = PBXBuildFile; fileRef = ED0AA72550284EB49E96D89B /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Physics/CubismPhysicsInternal.hpp */; };
+		1E848BEE9EF346E080E24613 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/ACubismMotion.hpp */ = {isa = PBXBuildFile; fileRef = 7AB70319FEF24E6E94A387FA /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/ACubismMotion.hpp */; };
+		21E4213ADACD479D8D3DD062 /* /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator17.2.sdk/System/Library/Frameworks/QuartzCore.framework */ = {isa = PBXBuildFile; fileRef = 02A235E1234443189CF1ACF8 /* /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator17.2.sdk/System/Library/Frameworks/QuartzCore.framework */; };
+		2ADBF1FF37734A359C185B93 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Rendering/OpenGL/CubismRenderer_OpenGLES2.hpp */ = {isa = PBXBuildFile; fileRef = 5C17BB99E3D94CA0AD61439B /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Rendering/OpenGL/CubismRenderer_OpenGLES2.hpp */; };
+		2BC51744A18B4816ACFBE9BA /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Model/CubismModelUserDataJson.cpp */ = {isa = PBXBuildFile; fileRef = 5E14A145EB7D47E984DC9D4C /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Model/CubismModelUserDataJson.cpp */; };
+		2F8EF321217544BAAFB7BD22 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppSprite.mm */ = {isa = PBXBuildFile; fileRef = B27C0F6ED826461DBE1DF8A4 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppSprite.mm */; };
+		2F939C73E8F5405AA7DABB2A /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Rendering/OpenGL/CubismOffscreenSurface_OpenGLES2.hpp */ = {isa = PBXBuildFile; fileRef = 1D14648326C74B6BA6213EE1 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Rendering/OpenGL/CubismOffscreenSurface_OpenGLES2.hpp */; };
+		3241B092588B42C8A50E0CC7 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionManager.hpp */ = {isa = PBXBuildFile; fileRef = D9D352C0D052483B82CFD38D /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionManager.hpp */; };
+		357C511B5495429B86BA6F5A /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismVector2.cpp */ = {isa = PBXBuildFile; fileRef = DF6C1BA3F8A1464DABFBB504 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismVector2.cpp */; };
+		363B85A008294951B5183F7B /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Effect/CubismPose.cpp */ = {isa = PBXBuildFile; fileRef = C64C4AA1BA7E4F48AF8FAC22 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Effect/CubismPose.cpp */; };
+		3EBD824FE6E247E193BE2B54 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Type/CubismBasicType.hpp */ = {isa = PBXBuildFile; fileRef = 34789A86DE5C493D975DDD39 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Type/CubismBasicType.hpp */; };
+		40F77EBCD36C479AA0CAC60A /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/ViewController.h */ = {isa = PBXBuildFile; fileRef = 0C344CAF84E742099F92BF7D /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/ViewController.h */; };
+		41A7F317F2C44559ACFE92FA /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/CubismCdiJson.hpp */ = {isa = PBXBuildFile; fileRef = 4791595625824ABE858DAA2B /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/CubismCdiJson.hpp */; };
+		443FD0E6F90446998CBCB7AB /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionQueueEntry.hpp */ = {isa = PBXBuildFile; fileRef = 7D982A382A6943E7B6D0D6DA /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionQueueEntry.hpp */; };
+		44A2F28F7F8B402E840DEDEE /* /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator17.2.sdk/System/Library/Frameworks/GLKit.framework */ = {isa = PBXBuildFile; fileRef = 2495F6DC45334AA69D90456A /* /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator17.2.sdk/System/Library/Frameworks/GLKit.framework */; };
+		468B03D9DCE34C3BB023073F /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Physics/CubismPhysics.hpp */ = {isa = PBXBuildFile; fileRef = B4013066E5ED4C61A8AEC30E /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Physics/CubismPhysics.hpp */; };
+		50CECCF139294FABB0121D2C /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismExpressionMotionManager.hpp */ = {isa = PBXBuildFile; fileRef = F7CE86A3585048F08ED00BE5 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismExpressionMotionManager.hpp */; };
+		56D0FCD62A9F447994A6E90A /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismVector2.hpp */ = {isa = PBXBuildFile; fileRef = E054DF72C1E94F74846E9C19 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismVector2.hpp */; };
+		57825431DC404AE29F3CF570 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismTargetPoint.cpp */ = {isa = PBXBuildFile; fileRef = D52EB4079C294BBCB437E902 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismTargetPoint.cpp */; };
+		5AB18ABCF0A148B0A5D5D354 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Type/csmString.cpp */ = {isa = PBXBuildFile; fileRef = 2E168DFB9F714E118EF97F62 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Type/csmString.cpp */; };
+		5C2D3E780D6E481E9EF30E3F /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Rendering/CubismRenderer.hpp */ = {isa = PBXBuildFile; fileRef = 96B7DC3F27DB4B9984DBC506 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Rendering/CubismRenderer.hpp */; };
+		5E2700E2A7994E2A9F3D1B77 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Model/CubismUserModel.cpp */ = {isa = PBXBuildFile; fileRef = C8DD083473A44EA5959E1DB1 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Model/CubismUserModel.cpp */; };
+		5F47C3A03C4E490B9BB0E3F5 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/CubismCdiJson.cpp */ = {isa = PBXBuildFile; fileRef = 1C147C9D96C6495B828F5614 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/CubismCdiJson.cpp */; };
+		60C8A7F77C384567A6C3956D /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppAllocator.mm */ = {isa = PBXBuildFile; fileRef = 53A84CA42CE14363BD9E8D16 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppAllocator.mm */; };
+		613A0DB60C0C489FA98645F0 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Model/CubismModelUserData.hpp */ = {isa = PBXBuildFile; fileRef = 7E16A10118CE4FFF8D719AA6 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Model/CubismModelUserData.hpp */; };
+		621099A9B8224CFCB99228C7 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/main.m */ = {isa = PBXBuildFile; fileRef = 253C7D61968647A69C97D640 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/main.m */; };
+		63EA7D2B54BF481CAD8206F5 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Model/CubismMoc.cpp */ = {isa = PBXBuildFile; fileRef = 7A966802E4DE41F1A044C514 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Model/CubismMoc.cpp */; };
+		689FDF4B5022461D829421DB /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismModelMatrix.cpp */ = {isa = PBXBuildFile; fileRef = CB6602ADAA2E4F6185D37DC1 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismModelMatrix.cpp */; };
+		6A9918207DBE4BE29B355F6A /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Model/CubismUserModel.hpp */ = {isa = PBXBuildFile; fileRef = CDCC16B4AA2A4C01B283EE6F /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Model/CubismUserModel.hpp */; };
+		6BF2D301A86746D39D7BE9F0 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Rendering/OpenGL/CubismOffscreenSurface_OpenGLES2.cpp */ = {isa = PBXBuildFile; fileRef = 7EAEA0B9B9FD4883B5FF287B /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Rendering/OpenGL/CubismOffscreenSurface_OpenGLES2.cpp */; };
+		6CD2C9C4C26249C2A05C49BC /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionJson.cpp */ = {isa = PBXBuildFile; fileRef = B0BBC0F5A71E4C06BAB82429 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionJson.cpp */; };
+		6E6589979AA141F293A427F3 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Id/CubismIdManager.cpp */ = {isa = PBXBuildFile; fileRef = C1A46379A0D04CD98BEA54CF /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Id/CubismIdManager.cpp */; };
+		70F506C974C9447796EAAFF1 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 8F0D43E75A5246F6A0FE08C9 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/CMakeLists.txt */; };
+		70FE82633BB544A7BCA2EC41 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionQueueManager.cpp */ = {isa = PBXBuildFile; fileRef = 4E8A428973C94781B5EEEAE3 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionQueueManager.cpp */; };
+		7321A258B2E44571B2C14FDB /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Physics/CubismPhysicsJson.cpp */ = {isa = PBXBuildFile; fileRef = 7D39D067632547F6B0062668 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Physics/CubismPhysicsJson.cpp */; };
+		748DCF97388E426CA469924F /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/build/proj_xcode_iphonesimulator/CMakeFiles/Demo.dir/Info.plist */ = {isa = PBXBuildFile; fileRef = FC81C299CC4E4A41BB3621D1 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/build/proj_xcode_iphonesimulator/CMakeFiles/Demo.dir/Info.plist */; };
+		74AB0FCE69024604A75AD931 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismViewMatrix.cpp */ = {isa = PBXBuildFile; fileRef = 31A778CF04CA4D45A8D462FA /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismViewMatrix.cpp */; };
+		759C54C555D64390812B8458 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppPal.h */ = {isa = PBXBuildFile; fileRef = B9E47F7379174720ADC5F2D1 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppPal.h */; };
+		792022EAC60842B4A687D08A /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/ICubismModelSetting.hpp */ = {isa = PBXBuildFile; fileRef = 40691B6499C84AFFAC21D072 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/ICubismModelSetting.hpp */; };
+		79DF4A5614C542A4BFF486B2 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismMath.cpp */ = {isa = PBXBuildFile; fileRef = D604B4D968934054B47B9E6A /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismMath.cpp */; };
+		7B9819D4619640DC896E72D0 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Effect/CubismEyeBlink.cpp */ = {isa = PBXBuildFile; fileRef = 4E9E297DD7094DB2A7969945 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Effect/CubismEyeBlink.cpp */; };
+		7CE889462F9F435EBBEA52A3 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Effect/CubismPose.hpp */ = {isa = PBXBuildFile; fileRef = 2D0B3E760B2C44FBB45232B9 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Effect/CubismPose.hpp */; };
+		7D15B94AECC8496BA271147C /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotion.hpp */ = {isa = PBXBuildFile; fileRef = 43738195EACC4974A2E2C867 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotion.hpp */; };
+		7F94FED386304588970D8518 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/AppDelegate.mm */ = {isa = PBXBuildFile; fileRef = 7A7C8AEBA65A4B2CAF9D63C7 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/AppDelegate.mm */; };
+		82C03909328A441D9A374E26 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionQueueManager.hpp */ = {isa = PBXBuildFile; fileRef = FF49B240920E49C9993C7613 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionQueueManager.hpp */; };
+		82E5EB22DC364E4599ACD6CD /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Rendering/CubismClippingManager.tpp */ = {isa = PBXBuildFile; fileRef = F5C4BE8D292E48CCB74A135F /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Rendering/CubismClippingManager.tpp */; };
+		83153FCC9F7A4EDDB97E9217 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionManager.cpp */ = {isa = PBXBuildFile; fileRef = 27BDC1EABC1C4A4A99E22A5B /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionManager.cpp */; };
+		842D1609F3B34BE8B4283281 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismMatrix44.hpp */ = {isa = PBXBuildFile; fileRef = 6D983987405744B182442630 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismMatrix44.hpp */; };
+		85BDD702B7FC4EA1A80D9676 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Type/csmMap.hpp */ = {isa = PBXBuildFile; fileRef = 6BE338670CA549A49E066A10 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Type/csmMap.hpp */; };
+		87C986969F9D41B1B31A3794 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismTargetPoint.hpp */ = {isa = PBXBuildFile; fileRef = A23EE9D827B9432D8E1A13E6 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismTargetPoint.hpp */; };
+		87EDE25317B14BECACF63A2B /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismViewMatrix.hpp */ = {isa = PBXBuildFile; fileRef = F5372D4DA2A64C0782F2DCA9 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismViewMatrix.hpp */; };
+		88C800602853498D90C1853A /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppTextureManager.h */ = {isa = PBXBuildFile; fileRef = 64C6B60B622544D6A6076951 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppTextureManager.h */; };
+		8A037A177FD245F78CE77287 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/CubismModelSettingJson.cpp */ = {isa = PBXBuildFile; fileRef = D405B0BE27284574B89601A2 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/CubismModelSettingJson.cpp */; };
+		9169F95801484FA3A5F13AA6 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/CubismModelSettingJson.hpp */ = {isa = PBXBuildFile; fileRef = 8737D714B0DE47AE8E10890E /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/CubismModelSettingJson.hpp */; };
+		94757610F6EE4EB1A1BAF85C /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/CubismFrameworkConfig.hpp */ = {isa = PBXBuildFile; fileRef = ADAE859790C64B388C342EC6 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/CubismFrameworkConfig.hpp */; };
+		96C014ADC33D4698A9421F57 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/CubismJsonHolder.hpp */ = {isa = PBXBuildFile; fileRef = C6E272A3DE7C436CB2B88177 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/CubismJsonHolder.hpp */; };
+		9B2C6753A9324759ADDEEBF6 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Utils/CubismDebug.hpp */ = {isa = PBXBuildFile; fileRef = 4911314A715E46B6B287C1CA /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Utils/CubismDebug.hpp */; };
+		9D3C0E52563244049EB2473E /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Physics/CubismPhysics.cpp */ = {isa = PBXBuildFile; fileRef = 81BFF74AAB1A42118214B07E /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Physics/CubismPhysics.cpp */; };
+		9D6977E933E8481CB33C8ABB /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Type/csmString.hpp */ = {isa = PBXBuildFile; fileRef = 12A9E5F6FE7246248EF63DE7 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Type/csmString.hpp */; };
+		A152AC82DC0A4774B6443EBD /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/TouchManager.mm */ = {isa = PBXBuildFile; fileRef = 9EDF341E28304B58BDA3DFD1 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/TouchManager.mm */; };
+		A181572FF43C48AEB485B79C /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppAllocator.h */ = {isa = PBXBuildFile; fileRef = B9F76C60750840959260D6CE /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppAllocator.h */; };
+		A21BCD3A36FD48F4ACA0BE5F /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Rendering/CubismClippingManager.hpp */ = {isa = PBXBuildFile; fileRef = CDC28DC2706B427291152F1F /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Rendering/CubismClippingManager.hpp */; };
+		A2F24677EDCE408EA5687D11 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Model/CubismModelUserDataJson.hpp */ = {isa = PBXBuildFile; fileRef = FC087648B62D4C47A46249A3 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Model/CubismModelUserDataJson.hpp */; };
+		A36CA786FF664F22AA0DAE58 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismModelMatrix.hpp */ = {isa = PBXBuildFile; fileRef = CFAD4BE956824713B26E7FDA /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismModelMatrix.hpp */; };
+		A376C2C8C310424B83608F22 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/build/proj_xcode_iphonesimulator/Framework/CMakeFiles/Framework.dir/Info.plist */ = {isa = PBXBuildFile; fileRef = 14365B218DE24FF19A07B267 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/build/proj_xcode_iphonesimulator/Framework/CMakeFiles/Framework.dir/Info.plist */; };
+		A43CBAF668E946199CA66A18 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionInternal.hpp */ = {isa = PBXBuildFile; fileRef = 29A3A63E33464F34934B36B5 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionInternal.hpp */; };
+		A52BB85CFC514F34A054AC6C /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppTextureManager.mm */ = {isa = PBXBuildFile; fileRef = 9D13776E4DF34CBEB1C64B6B /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppTextureManager.mm */; };
+		A6D4AF0ED0DA4A6FA2EF4247 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppDefine.h */ = {isa = PBXBuildFile; fileRef = CDA209E18F86485D95247A27 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppDefine.h */; };
+		A760B07924B946D194374193 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Id/CubismIdManager.hpp */ = {isa = PBXBuildFile; fileRef = 64339AA4B6A044D7ABA0A470 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Id/CubismIdManager.hpp */; };
+		A9B26003DF7E457790C20822 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Effect/CubismBreath.hpp */ = {isa = PBXBuildFile; fileRef = E351C7B89F1143CAB2776501 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Effect/CubismBreath.hpp */; };
+		AA5A0732FDD648C3B9F24351 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppModel.h */ = {isa = PBXBuildFile; fileRef = 761A3553CB8847BE9CAC8680 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppModel.h */; };
+		ACCE96D69B374B599928CE28 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Model/CubismModel.cpp */ = {isa = PBXBuildFile; fileRef = CD43CFFF4DFA4003BCA96E18 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Model/CubismModel.cpp */; };
+		B3F0E4DB5A8841E7B2419C78 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Physics/CubismPhysicsJson.hpp */ = {isa = PBXBuildFile; fileRef = 1AA1E22F295449D6949DA196 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Physics/CubismPhysicsJson.hpp */; };
+		B6489F9860C64D868CDF2321 /* /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator17.2.sdk/System/Library/Frameworks/Foundation.framework */ = {isa = PBXBuildFile; fileRef = 346C4D04A5CF43C39344D454 /* /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator17.2.sdk/System/Library/Frameworks/Foundation.framework */; };
+		B67F8AA555064A9A89697A36 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionJson.hpp */ = {isa = PBXBuildFile; fileRef = 748111BA74C84311A65B83CF /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionJson.hpp */; };
+		B8630495877F4A9ABBE27EEF /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/TouchManager.h */ = {isa = PBXBuildFile; fileRef = 325CF305D02E4E54A139340B /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/TouchManager.h */; };
+		BA88521629CF477BA6B7A1F4 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Model/CubismModelUserData.cpp */ = {isa = PBXBuildFile; fileRef = 7517DBD5B99C4D0A8F25C1BB /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Model/CubismModelUserData.cpp */; };
+		BAE3910ED46F4264AA673BFC /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppDefine.mm */ = {isa = PBXBuildFile; fileRef = F13690F957A440D3BC47632A /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppDefine.mm */; };
+		BBBCC91E26DF4E9285BE153E /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Type/csmRectF.hpp */ = {isa = PBXBuildFile; fileRef = 29F2952E2EE4438A89AB8936 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Type/csmRectF.hpp */; };
+		C2D20125D6CC46E48AEAB1D5 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Rendering/CubismRenderer.cpp */ = {isa = PBXBuildFile; fileRef = 5F4147C1D7384806AA0D5DDD /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Rendering/CubismRenderer.cpp */; };
+		CBFB9E9A78E94E3D967B8EC4 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Type/csmRectF.cpp */ = {isa = PBXBuildFile; fileRef = CFCCB2E3B3354477930BCC5A /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Type/csmRectF.cpp */; };
+		D01D0F64AF504BD6AE4E6A61 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Utils/CubismJson.cpp */ = {isa = PBXBuildFile; fileRef = 03481D11BA0B451584B63367 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Utils/CubismJson.cpp */; };
+		D0533F8475504D059F06F47C /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Type/csmVector.hpp */ = {isa = PBXBuildFile; fileRef = 1D622BD7DB4941838900237F /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Type/csmVector.hpp */; };
+		D10B2DDBACE64D9D9D158975 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/CubismFramework.cpp */ = {isa = PBXBuildFile; fileRef = 982AF4958EA14911BA5B2CB6 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/CubismFramework.cpp */; };
+		D5DBB3EF5AA5495AB5CB146E /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppLive2DManager.mm */ = {isa = PBXBuildFile; fileRef = 45C51FBB7F114393AE84DB90 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppLive2DManager.mm */; };
+		D7088F325FBC40B9BD4669A4 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Rendering/OpenGL/CubismShader_OpenGLES2.cpp */ = {isa = PBXBuildFile; fileRef = 3EB0533CD3184DE3AECF1F59 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Rendering/OpenGL/CubismShader_OpenGLES2.cpp */; };
+		D7EB8D0CDD2E47EFAB401517 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismMath.hpp */ = {isa = PBXBuildFile; fileRef = CC1ABB16C4A948C1B43FA4B0 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismMath.hpp */; };
+		D81D27A98EAF44669F35A72B /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Effect/CubismEyeBlink.hpp */ = {isa = PBXBuildFile; fileRef = FCA831F4FE2B41B18ECEB5CB /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Effect/CubismEyeBlink.hpp */; };
+		E0CD0E450F714F079C401239 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/ACubismMotion.cpp */ = {isa = PBXBuildFile; fileRef = ABD8FCCD737F441EB67D8E2A /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/ACubismMotion.cpp */; };
+		E196991219A34687A31DCA23 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Rendering/OpenGL/CubismRenderer_OpenGLES2.cpp */ = {isa = PBXBuildFile; fileRef = 37D271BBDC364E5EAA1B1F8B /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Rendering/OpenGL/CubismRenderer_OpenGLES2.cpp */; };
+		E1B3B8A03A314C4483E39414 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppModel.mm */ = {isa = PBXBuildFile; fileRef = F9F9388962D248B79E85C19F /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppModel.mm */; };
+		E1EA2177CD1045ADB6378E4E /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismExpressionMotionManager.cpp */ = {isa = PBXBuildFile; fileRef = 209857A469074F20B15FD30F /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismExpressionMotionManager.cpp */; };
+		E340521A2D5C4545BE66BF36 /* /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator17.2.sdk/System/Library/Frameworks/OpenGLES.framework */ = {isa = PBXBuildFile; fileRef = B5C2EADEE04440538DD0FC39 /* /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator17.2.sdk/System/Library/Frameworks/OpenGLES.framework */; };
+		E37648DAB9964DABAC48DE0B /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotion.cpp */ = {isa = PBXBuildFile; fileRef = F264949C8B424E03B00EB648 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotion.cpp */; };
+		E3ADC7979F614DF083F1B4F2 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Utils/CubismString.hpp */ = {isa = PBXBuildFile; fileRef = F3C8D63DFDB54006A35F5B16 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Utils/CubismString.hpp */; };
+		E6EBCB608E34499BAD922EAD /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Utils/CubismDebug.cpp */ = {isa = PBXBuildFile; fileRef = 7D1D0D1827DE4A88BEE02B60 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Utils/CubismDebug.cpp */; };
+		E71C53BAB3A74FCAB4921F7B /* /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator17.2.sdk/System/Library/Frameworks/CoreGraphics.framework */ = {isa = PBXBuildFile; fileRef = 6037CCF8F0D342C9B05E954C /* /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator17.2.sdk/System/Library/Frameworks/CoreGraphics.framework */; };
+		EE1CE7FD7BBE4464BCA9AAEE /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismExpressionMotion.hpp */ = {isa = PBXBuildFile; fileRef = 5F707ED046974554B79AABF3 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismExpressionMotion.hpp */; };
+		EF85B1649A9749B89FCCA390 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/ViewController.mm */ = {isa = PBXBuildFile; fileRef = D63F4D277B90450F84195E5F /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/ViewController.mm */; };
+		F1DFEB0BFE7B409B8AF59E21 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/ICubismAllocator.hpp */ = {isa = PBXBuildFile; fileRef = C88AC0D4B34446ED9113DA46 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/ICubismAllocator.hpp */; };
+		F2CC9CEE4DE9492285A0DD66 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Id/CubismId.cpp */ = {isa = PBXBuildFile; fileRef = 48F81158CBE24AFCA8356F7C /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Id/CubismId.cpp */; };
+		F40985A01BAA4346B7471794 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppSprite.h */ = {isa = PBXBuildFile; fileRef = 03CD1A760B6242E0AE4E9754 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppSprite.h */; };
+		FDA1F2BA040D4B7EAC8B54BA /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionQueueEntry.cpp */ = {isa = PBXBuildFile; fileRef = 8EB5B225434D4C29BEF8A2BA /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionQueueEntry.cpp */; };
+		FDB5761592C048668F3B7110 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/CubismDefaultParameterId.hpp */ = {isa = PBXBuildFile; fileRef = CDE3E934960243468344CF67 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/CubismDefaultParameterId.hpp */; };
+		FE9521EAF94A44B4A326FE4E /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppPal.mm */ = {isa = PBXBuildFile; fileRef = 69408C08CF434661AB060E85 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppPal.mm */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildStyle section */
+		08AF36F5142B412499EF04F3 /* Debug */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+		A223D6F7C4C549C2B615E437 /* Release */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Release;
+		};
+/* End PBXBuildStyle section */
+
+/* Begin PBXContainerItemProxy section */
+		167321CE0F764BDB9CEC2950 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F495130A600F4BBEB7BCD702 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0C1C50C1AA790C208BD3539B;
+			remoteInfo = Framework;
+		};
+		8B7ED0A6BEC645B18A18F1AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F495130A600F4BBEB7BCD702 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0C1C50C1AA790C208BD3539B;
+			remoteInfo = Framework;
+		};
+		FFE5D14972CC4CF3AB10EE07 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F495130A600F4BBEB7BCD702 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EB14538DF70519B3A9019FE4;
+			remoteInfo = Demo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		01630EF67FB74773B4E3D742 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Utils/CubismJson.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismJson.hpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Utils/CubismJson.hpp"; sourceTree = "<absolute>"; };
+		02A235E1234443189CF1ACF8 /* /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator17.2.sdk/System/Library/Frameworks/QuartzCore.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator17.2.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = "<absolute>"; };
+		03481D11BA0B451584B63367 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Utils/CubismJson.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismJson.cpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Utils/CubismJson.cpp"; sourceTree = "<absolute>"; };
+		03CD1A760B6242E0AE4E9754 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppSprite.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = LAppSprite.h; path = src/LAppSprite.h; sourceTree = SOURCE_ROOT; };
+		0C344CAF84E742099F92BF7D /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/ViewController.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ViewController.h; path = src/ViewController.h; sourceTree = SOURCE_ROOT; };
+		12A9E5F6FE7246248EF63DE7 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Type/csmString.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = csmString.hpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Type/csmString.hpp"; sourceTree = "<absolute>"; };
+		14365B218DE24FF19A07B267 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/build/proj_xcode_iphonesimulator/Framework/CMakeFiles/Framework.dir/Info.plist */ = {isa = PBXFileReference; explicitFileType = sourcecode.text.plist; fileEncoding = 4; name = Info.plist; path = build/proj_xcode_iphonesimulator/Framework/CMakeFiles/Framework.dir/Info.plist; sourceTree = SOURCE_ROOT; };
+		1AA1E22F295449D6949DA196 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Physics/CubismPhysicsJson.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismPhysicsJson.hpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Physics/CubismPhysicsJson.hpp"; sourceTree = "<absolute>"; };
+		1C147C9D96C6495B828F5614 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/CubismCdiJson.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismCdiJson.cpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/CubismCdiJson.cpp"; sourceTree = "<absolute>"; };
+		1D14648326C74B6BA6213EE1 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Rendering/OpenGL/CubismOffscreenSurface_OpenGLES2.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismOffscreenSurface_OpenGLES2.hpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Rendering/OpenGL/CubismOffscreenSurface_OpenGLES2.hpp"; sourceTree = "<absolute>"; };
+		1D622BD7DB4941838900237F /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Type/csmVector.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = csmVector.hpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Type/csmVector.hpp"; sourceTree = "<absolute>"; };
+		209857A469074F20B15FD30F /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismExpressionMotionManager.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismExpressionMotionManager.cpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismExpressionMotionManager.cpp"; sourceTree = "<absolute>"; };
+		20F6164F879E48998EA9E30A /* Demo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = Demo; sourceTree = BUILT_PRODUCTS_DIR; };
+		2495F6DC45334AA69D90456A /* /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator17.2.sdk/System/Library/Frameworks/GLKit.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator17.2.sdk/System/Library/Frameworks/GLKit.framework; sourceTree = "<absolute>"; };
+		253C7D61968647A69C97D640 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/main.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; name = main.m; path = src/main.m; sourceTree = SOURCE_ROOT; };
+		25EEC0D714D143709C2D1B51 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/CubismFramework.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismFramework.hpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/CubismFramework.hpp"; sourceTree = "<absolute>"; };
+		26669D9BAFE849299A47550D /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismMatrix44.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismMatrix44.cpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismMatrix44.cpp"; sourceTree = "<absolute>"; };
+		27BDC1EABC1C4A4A99E22A5B /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionManager.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismMotionManager.cpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionManager.cpp"; sourceTree = "<absolute>"; };
+		29A3A63E33464F34934B36B5 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionInternal.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismMotionInternal.hpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionInternal.hpp"; sourceTree = "<absolute>"; };
+		29F2952E2EE4438A89AB8936 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Type/csmRectF.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = csmRectF.hpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Type/csmRectF.hpp"; sourceTree = "<absolute>"; };
+		2D0B3E760B2C44FBB45232B9 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Effect/CubismPose.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismPose.hpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Effect/CubismPose.hpp"; sourceTree = "<absolute>"; };
+		2E168DFB9F714E118EF97F62 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Type/csmString.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = csmString.cpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Type/csmString.cpp"; sourceTree = "<absolute>"; };
+		31A778CF04CA4D45A8D462FA /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismViewMatrix.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismViewMatrix.cpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismViewMatrix.cpp"; sourceTree = "<absolute>"; };
+		325CF305D02E4E54A139340B /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/TouchManager.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = TouchManager.h; path = src/TouchManager.h; sourceTree = SOURCE_ROOT; };
+		3436B403DD1F499580DCE08D /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Model/CubismMoc.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismMoc.hpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Model/CubismMoc.hpp"; sourceTree = "<absolute>"; };
+		346C4D04A5CF43C39344D454 /* /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator17.2.sdk/System/Library/Frameworks/Foundation.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator17.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		34789A86DE5C493D975DDD39 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Type/CubismBasicType.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismBasicType.hpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Type/CubismBasicType.hpp"; sourceTree = "<absolute>"; };
+		3624FA9E55554B62963BCF34 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Live2DCubismCore.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Live2DCubismCore.hpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Live2DCubismCore.hpp"; sourceTree = "<absolute>"; };
+		37D271BBDC364E5EAA1B1F8B /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Rendering/OpenGL/CubismRenderer_OpenGLES2.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismRenderer_OpenGLES2.cpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Rendering/OpenGL/CubismRenderer_OpenGLES2.cpp"; sourceTree = "<absolute>"; };
+		3EB0533CD3184DE3AECF1F59 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Rendering/OpenGL/CubismShader_OpenGLES2.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismShader_OpenGLES2.cpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Rendering/OpenGL/CubismShader_OpenGLES2.cpp"; sourceTree = "<absolute>"; };
+		40691B6499C84AFFAC21D072 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/ICubismModelSetting.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = ICubismModelSetting.hpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/ICubismModelSetting.hpp"; sourceTree = "<absolute>"; };
+		43738195EACC4974A2E2C867 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotion.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismMotion.hpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotion.hpp"; sourceTree = "<absolute>"; };
+		43A8E8E4512B41949CAD9511 /* /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator17.2.sdk/System/Library/Frameworks/UIKit.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator17.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = "<absolute>"; };
+		45C51FBB7F114393AE84DB90 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppLive2DManager.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = LAppLive2DManager.mm; path = src/LAppLive2DManager.mm; sourceTree = SOURCE_ROOT; };
+		4791595625824ABE858DAA2B /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/CubismCdiJson.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismCdiJson.hpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/CubismCdiJson.hpp"; sourceTree = "<absolute>"; };
+		48F81158CBE24AFCA8356F7C /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Id/CubismId.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismId.cpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Id/CubismId.cpp"; sourceTree = "<absolute>"; };
+		4911314A715E46B6B287C1CA /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Utils/CubismDebug.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismDebug.hpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Utils/CubismDebug.hpp"; sourceTree = "<absolute>"; };
+		4E8A428973C94781B5EEEAE3 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionQueueManager.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismMotionQueueManager.cpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionQueueManager.cpp"; sourceTree = "<absolute>"; };
+		4E9E297DD7094DB2A7969945 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Effect/CubismEyeBlink.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismEyeBlink.cpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Effect/CubismEyeBlink.cpp"; sourceTree = "<absolute>"; };
+		4EE2A61204CE4206AA533DB8 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/AppDelegate.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = AppDelegate.h; path = src/AppDelegate.h; sourceTree = SOURCE_ROOT; };
+		53A84CA42CE14363BD9E8D16 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppAllocator.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = LAppAllocator.mm; path = src/LAppAllocator.mm; sourceTree = SOURCE_ROOT; };
+		56CB1785FD3E477290D13E6D /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		5C17BB99E3D94CA0AD61439B /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Rendering/OpenGL/CubismRenderer_OpenGLES2.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismRenderer_OpenGLES2.hpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Rendering/OpenGL/CubismRenderer_OpenGLES2.hpp"; sourceTree = "<absolute>"; };
+		5E14A145EB7D47E984DC9D4C /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Model/CubismModelUserDataJson.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismModelUserDataJson.cpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Model/CubismModelUserDataJson.cpp"; sourceTree = "<absolute>"; };
+		5F4147C1D7384806AA0D5DDD /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Rendering/CubismRenderer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismRenderer.cpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Rendering/CubismRenderer.cpp"; sourceTree = "<absolute>"; };
+		5F707ED046974554B79AABF3 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismExpressionMotion.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismExpressionMotion.hpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismExpressionMotion.hpp"; sourceTree = "<absolute>"; };
+		6037CCF8F0D342C9B05E954C /* /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator17.2.sdk/System/Library/Frameworks/CoreGraphics.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator17.2.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = "<absolute>"; };
+		64339AA4B6A044D7ABA0A470 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Id/CubismIdManager.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismIdManager.hpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Id/CubismIdManager.hpp"; sourceTree = "<absolute>"; };
+		64C6B60B622544D6A6076951 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppTextureManager.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = LAppTextureManager.h; path = src/LAppTextureManager.h; sourceTree = SOURCE_ROOT; };
+		69408C08CF434661AB060E85 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppPal.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = LAppPal.mm; path = src/LAppPal.mm; sourceTree = SOURCE_ROOT; };
+		6BE338670CA549A49E066A10 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Type/csmMap.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = csmMap.hpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Type/csmMap.hpp"; sourceTree = "<absolute>"; };
+		6D983987405744B182442630 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismMatrix44.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismMatrix44.hpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismMatrix44.hpp"; sourceTree = "<absolute>"; };
+		748111BA74C84311A65B83CF /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionJson.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismMotionJson.hpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionJson.hpp"; sourceTree = "<absolute>"; };
+		7517DBD5B99C4D0A8F25C1BB /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Model/CubismModelUserData.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismModelUserData.cpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Model/CubismModelUserData.cpp"; sourceTree = "<absolute>"; };
+		761A3553CB8847BE9CAC8680 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppModel.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = LAppModel.h; path = src/LAppModel.h; sourceTree = SOURCE_ROOT; };
+		7A3C0ED328584EC49BE31F63 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/CubismDefaultParameterId.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismDefaultParameterId.cpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/CubismDefaultParameterId.cpp"; sourceTree = "<absolute>"; };
+		7A7C8AEBA65A4B2CAF9D63C7 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/AppDelegate.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = AppDelegate.mm; path = src/AppDelegate.mm; sourceTree = SOURCE_ROOT; };
+		7A966802E4DE41F1A044C514 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Model/CubismMoc.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismMoc.cpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Model/CubismMoc.cpp"; sourceTree = "<absolute>"; };
+		7AB70319FEF24E6E94A387FA /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/ACubismMotion.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = ACubismMotion.hpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/ACubismMotion.hpp"; sourceTree = "<absolute>"; };
+		7D1D0D1827DE4A88BEE02B60 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Utils/CubismDebug.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismDebug.cpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Utils/CubismDebug.cpp"; sourceTree = "<absolute>"; };
+		7D39D067632547F6B0062668 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Physics/CubismPhysicsJson.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismPhysicsJson.cpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Physics/CubismPhysicsJson.cpp"; sourceTree = "<absolute>"; };
+		7D982A382A6943E7B6D0D6DA /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionQueueEntry.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismMotionQueueEntry.hpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionQueueEntry.hpp"; sourceTree = "<absolute>"; };
+		7DF8BFE743F54EEFBAE6BBC7 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppLive2DManager.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = LAppLive2DManager.h; path = src/LAppLive2DManager.h; sourceTree = SOURCE_ROOT; };
+		7E16A10118CE4FFF8D719AA6 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Model/CubismModelUserData.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismModelUserData.hpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Model/CubismModelUserData.hpp"; sourceTree = "<absolute>"; };
+		7EAEA0B9B9FD4883B5FF287B /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Rendering/OpenGL/CubismOffscreenSurface_OpenGLES2.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismOffscreenSurface_OpenGLES2.cpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Rendering/OpenGL/CubismOffscreenSurface_OpenGLES2.cpp"; sourceTree = "<absolute>"; };
+		81BFF74AAB1A42118214B07E /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Physics/CubismPhysics.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismPhysics.cpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Physics/CubismPhysics.cpp"; sourceTree = "<absolute>"; };
+		8737D714B0DE47AE8E10890E /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/CubismModelSettingJson.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismModelSettingJson.hpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/CubismModelSettingJson.hpp"; sourceTree = "<absolute>"; };
+		8EB5B225434D4C29BEF8A2BA /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionQueueEntry.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismMotionQueueEntry.cpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionQueueEntry.cpp"; sourceTree = "<absolute>"; };
+		8F0D43E75A5246F6A0FE08C9 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		96B7DC3F27DB4B9984DBC506 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Rendering/CubismRenderer.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismRenderer.hpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Rendering/CubismRenderer.hpp"; sourceTree = "<absolute>"; };
+		982AF4958EA14911BA5B2CB6 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/CubismFramework.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismFramework.cpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/CubismFramework.cpp"; sourceTree = "<absolute>"; };
+		9D13776E4DF34CBEB1C64B6B /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppTextureManager.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = LAppTextureManager.mm; path = src/LAppTextureManager.mm; sourceTree = SOURCE_ROOT; };
+		9EDF341E28304B58BDA3DFD1 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/TouchManager.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = TouchManager.mm; path = src/TouchManager.mm; sourceTree = SOURCE_ROOT; };
+		A1162C508FC442219BD6F698 /* Framework */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libFramework.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A23EE9D827B9432D8E1A13E6 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismTargetPoint.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismTargetPoint.hpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismTargetPoint.hpp"; sourceTree = "<absolute>"; };
+		A3607EC0433247A39A2423CD /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Utils/CubismString.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismString.cpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Utils/CubismString.cpp"; sourceTree = "<absolute>"; };
+		ABD8FCCD737F441EB67D8E2A /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/ACubismMotion.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ACubismMotion.cpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/ACubismMotion.cpp"; sourceTree = "<absolute>"; };
+		ADAE859790C64B388C342EC6 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/CubismFrameworkConfig.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismFrameworkConfig.hpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/CubismFrameworkConfig.hpp"; sourceTree = "<absolute>"; };
+		B0BBC0F5A71E4C06BAB82429 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionJson.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismMotionJson.cpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionJson.cpp"; sourceTree = "<absolute>"; };
+		B27C0F6ED826461DBE1DF8A4 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppSprite.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = LAppSprite.mm; path = src/LAppSprite.mm; sourceTree = SOURCE_ROOT; };
+		B4013066E5ED4C61A8AEC30E /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Physics/CubismPhysics.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismPhysics.hpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Physics/CubismPhysics.hpp"; sourceTree = "<absolute>"; };
+		B5C2EADEE04440538DD0FC39 /* /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator17.2.sdk/System/Library/Frameworks/OpenGLES.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator17.2.sdk/System/Library/Frameworks/OpenGLES.framework; sourceTree = "<absolute>"; };
+		B9E47F7379174720ADC5F2D1 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppPal.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = LAppPal.h; path = src/LAppPal.h; sourceTree = SOURCE_ROOT; };
+		B9F76C60750840959260D6CE /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppAllocator.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = LAppAllocator.h; path = src/LAppAllocator.h; sourceTree = SOURCE_ROOT; };
+		C1A46379A0D04CD98BEA54CF /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Id/CubismIdManager.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismIdManager.cpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Id/CubismIdManager.cpp"; sourceTree = "<absolute>"; };
+		C64C4AA1BA7E4F48AF8FAC22 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Effect/CubismPose.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismPose.cpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Effect/CubismPose.cpp"; sourceTree = "<absolute>"; };
+		C6E272A3DE7C436CB2B88177 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/CubismJsonHolder.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismJsonHolder.hpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/CubismJsonHolder.hpp"; sourceTree = "<absolute>"; };
+		C88AC0D4B34446ED9113DA46 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/ICubismAllocator.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = ICubismAllocator.hpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/ICubismAllocator.hpp"; sourceTree = "<absolute>"; };
+		C8DD083473A44EA5959E1DB1 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Model/CubismUserModel.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismUserModel.cpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Model/CubismUserModel.cpp"; sourceTree = "<absolute>"; };
+		CB6602ADAA2E4F6185D37DC1 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismModelMatrix.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismModelMatrix.cpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismModelMatrix.cpp"; sourceTree = "<absolute>"; };
+		CC1ABB16C4A948C1B43FA4B0 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismMath.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismMath.hpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismMath.hpp"; sourceTree = "<absolute>"; };
+		CD43CFFF4DFA4003BCA96E18 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Model/CubismModel.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismModel.cpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Model/CubismModel.cpp"; sourceTree = "<absolute>"; };
+		CDA209E18F86485D95247A27 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppDefine.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = LAppDefine.h; path = src/LAppDefine.h; sourceTree = SOURCE_ROOT; };
+		CDC28DC2706B427291152F1F /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Rendering/CubismClippingManager.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismClippingManager.hpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Rendering/CubismClippingManager.hpp"; sourceTree = "<absolute>"; };
+		CDCC16B4AA2A4C01B283EE6F /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Model/CubismUserModel.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismUserModel.hpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Model/CubismUserModel.hpp"; sourceTree = "<absolute>"; };
+		CDE3E934960243468344CF67 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/CubismDefaultParameterId.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismDefaultParameterId.hpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/CubismDefaultParameterId.hpp"; sourceTree = "<absolute>"; };
+		CFAD4BE956824713B26E7FDA /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismModelMatrix.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismModelMatrix.hpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismModelMatrix.hpp"; sourceTree = "<absolute>"; };
+		CFCCB2E3B3354477930BCC5A /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Type/csmRectF.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = csmRectF.cpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Type/csmRectF.cpp"; sourceTree = "<absolute>"; };
+		D405B0BE27284574B89601A2 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/CubismModelSettingJson.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismModelSettingJson.cpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/CubismModelSettingJson.cpp"; sourceTree = "<absolute>"; };
+		D52EB4079C294BBCB437E902 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismTargetPoint.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismTargetPoint.cpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismTargetPoint.cpp"; sourceTree = "<absolute>"; };
+		D57EF4E7E36D45DFA7A9B06B /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismExpressionMotion.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismExpressionMotion.cpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismExpressionMotion.cpp"; sourceTree = "<absolute>"; };
+		D604B4D968934054B47B9E6A /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismMath.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismMath.cpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismMath.cpp"; sourceTree = "<absolute>"; };
+		D63F4D277B90450F84195E5F /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/ViewController.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = ViewController.mm; path = src/ViewController.mm; sourceTree = SOURCE_ROOT; };
+		D9D352C0D052483B82CFD38D /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionManager.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismMotionManager.hpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionManager.hpp"; sourceTree = "<absolute>"; };
+		DF6C1BA3F8A1464DABFBB504 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismVector2.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismVector2.cpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismVector2.cpp"; sourceTree = "<absolute>"; };
+		E054DF72C1E94F74846E9C19 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismVector2.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismVector2.hpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismVector2.hpp"; sourceTree = "<absolute>"; };
+		E351C7B89F1143CAB2776501 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Effect/CubismBreath.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismBreath.hpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Effect/CubismBreath.hpp"; sourceTree = "<absolute>"; };
+		ED0AA72550284EB49E96D89B /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Physics/CubismPhysicsInternal.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismPhysicsInternal.hpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Physics/CubismPhysicsInternal.hpp"; sourceTree = "<absolute>"; };
+		F078527450DB4C71A345E30A /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Effect/CubismBreath.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismBreath.cpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Effect/CubismBreath.cpp"; sourceTree = "<absolute>"; };
+		F13690F957A440D3BC47632A /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppDefine.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = LAppDefine.mm; path = src/LAppDefine.mm; sourceTree = SOURCE_ROOT; };
+		F13D23D4B3C446F1878AD87F /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/CMakeLists.txt"; sourceTree = "<absolute>"; };
+		F264949C8B424E03B00EB648 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotion.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CubismMotion.cpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotion.cpp"; sourceTree = "<absolute>"; };
+		F331C9B59EC240FC9D00D73A /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Rendering/OpenGL/CubismShader_OpenGLES2.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismShader_OpenGLES2.hpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Rendering/OpenGL/CubismShader_OpenGLES2.hpp"; sourceTree = "<absolute>"; };
+		F3C8D63DFDB54006A35F5B16 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Utils/CubismString.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismString.hpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Utils/CubismString.hpp"; sourceTree = "<absolute>"; };
+		F5372D4DA2A64C0782F2DCA9 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismViewMatrix.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismViewMatrix.hpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismViewMatrix.hpp"; sourceTree = "<absolute>"; };
+		F5739268716F48EC8275D52B /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Model/CubismModel.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismModel.hpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Model/CubismModel.hpp"; sourceTree = "<absolute>"; };
+		F5C4BE8D292E48CCB74A135F /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Rendering/CubismClippingManager.tpp */ = {isa = PBXFileReference; explicitFileType = default; fileEncoding = 4; name = CubismClippingManager.tpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Rendering/CubismClippingManager.tpp"; sourceTree = "<absolute>"; };
+		F7CE86A3585048F08ED00BE5 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismExpressionMotionManager.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismExpressionMotionManager.hpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismExpressionMotionManager.hpp"; sourceTree = "<absolute>"; };
+		F9F9388962D248B79E85C19F /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppModel.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = LAppModel.mm; path = src/LAppModel.mm; sourceTree = SOURCE_ROOT; };
+		FC087648B62D4C47A46249A3 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Model/CubismModelUserDataJson.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismModelUserDataJson.hpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Model/CubismModelUserDataJson.hpp"; sourceTree = "<absolute>"; };
+		FC81C299CC4E4A41BB3621D1 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/build/proj_xcode_iphonesimulator/CMakeFiles/Demo.dir/Info.plist */ = {isa = PBXFileReference; explicitFileType = sourcecode.text.plist; fileEncoding = 4; name = Info.plist; path = build/proj_xcode_iphonesimulator/CMakeFiles/Demo.dir/Info.plist; sourceTree = SOURCE_ROOT; };
+		FCA831F4FE2B41B18ECEB5CB /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Effect/CubismEyeBlink.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismEyeBlink.hpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Effect/CubismEyeBlink.hpp"; sourceTree = "<absolute>"; };
+		FD9AFFEF7D5D425CBD179B55 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Id/CubismId.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismId.hpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Id/CubismId.hpp"; sourceTree = "<absolute>"; };
+		FF49B240920E49C9993C7613 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionQueueManager.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CubismMotionQueueManager.hpp; path = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionQueueManager.hpp"; sourceTree = "<absolute>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5E5EEC871D6842D3AC327587 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4568060B89E4213A6C76841 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		05E3C66981B4497490324558 = {
+			isa = PBXGroup;
+			children = (
+				6669C4AA31454BAB837FFF79 /* Demo */,
+				7FADF461A4214EAE9E93BB83 /* ALL_BUILD */,
+				139CAEB1235241EEBE49B75B /* Framework */,
+				14B0D4AA583943CB8A2162CE /* Products */,
+				1434A00C764D4CF79D2776E9 /* Frameworks */,
+				DE310831E24149378C739516 /* Resources */,
+			);
+			sourceTree = "<group>";
+		};
+		139CAEB1235241EEBE49B75B /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				8B56F3C3BE6646A182C1862D /* Source Files */,
+				9FDCA923D8814AA79625AA42 /* Header Files */,
+				99C8D110A5194B0199D95B12 /* Resources */,
+				F13D23D4B3C446F1878AD87F /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/CMakeLists.txt */,
+				F5C4BE8D292E48CCB74A135F /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Rendering/CubismClippingManager.tpp */,
+			);
+			name = Framework;
+			sourceTree = "<group>";
+		};
+		1434A00C764D4CF79D2776E9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6037CCF8F0D342C9B05E954C /* /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator17.2.sdk/System/Library/Frameworks/CoreGraphics.framework */,
+				346C4D04A5CF43C39344D454 /* /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator17.2.sdk/System/Library/Frameworks/Foundation.framework */,
+				2495F6DC45334AA69D90456A /* /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator17.2.sdk/System/Library/Frameworks/GLKit.framework */,
+				B5C2EADEE04440538DD0FC39 /* /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator17.2.sdk/System/Library/Frameworks/OpenGLES.framework */,
+				02A235E1234443189CF1ACF8 /* /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator17.2.sdk/System/Library/Frameworks/QuartzCore.framework */,
+				43A8E8E4512B41949CAD9511 /* /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator17.2.sdk/System/Library/Frameworks/UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		14B0D4AA583943CB8A2162CE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				20F6164F879E48998EA9E30A /* Demo */,
+				A1162C508FC442219BD6F698 /* Framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		437AEDF7D5F84FCA9607A75B /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		6669C4AA31454BAB837FFF79 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				FD66E67892384BE49767B710 /* Header Files */,
+				E16C1A4F2CA944B59463528D /* Source Files */,
+				8203F10EFBF6460892D09548 /* Resources */,
+				8F0D43E75A5246F6A0FE08C9 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/CMakeLists.txt */,
+			);
+			name = Demo;
+			sourceTree = "<group>";
+		};
+		7FADF461A4214EAE9E93BB83 /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				437AEDF7D5F84FCA9607A75B /* CMake Rules */,
+				56CB1785FD3E477290D13E6D /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		8203F10EFBF6460892D09548 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FC81C299CC4E4A41BB3621D1 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/build/proj_xcode_iphonesimulator/CMakeFiles/Demo.dir/Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		8B56F3C3BE6646A182C1862D /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				1C147C9D96C6495B828F5614 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/CubismCdiJson.cpp */,
+				7A3C0ED328584EC49BE31F63 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/CubismDefaultParameterId.cpp */,
+				982AF4958EA14911BA5B2CB6 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/CubismFramework.cpp */,
+				D405B0BE27284574B89601A2 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/CubismModelSettingJson.cpp */,
+				F078527450DB4C71A345E30A /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Effect/CubismBreath.cpp */,
+				4E9E297DD7094DB2A7969945 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Effect/CubismEyeBlink.cpp */,
+				C64C4AA1BA7E4F48AF8FAC22 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Effect/CubismPose.cpp */,
+				48F81158CBE24AFCA8356F7C /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Id/CubismId.cpp */,
+				C1A46379A0D04CD98BEA54CF /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Id/CubismIdManager.cpp */,
+				D604B4D968934054B47B9E6A /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismMath.cpp */,
+				26669D9BAFE849299A47550D /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismMatrix44.cpp */,
+				CB6602ADAA2E4F6185D37DC1 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismModelMatrix.cpp */,
+				D52EB4079C294BBCB437E902 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismTargetPoint.cpp */,
+				DF6C1BA3F8A1464DABFBB504 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismVector2.cpp */,
+				31A778CF04CA4D45A8D462FA /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismViewMatrix.cpp */,
+				7A966802E4DE41F1A044C514 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Model/CubismMoc.cpp */,
+				CD43CFFF4DFA4003BCA96E18 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Model/CubismModel.cpp */,
+				7517DBD5B99C4D0A8F25C1BB /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Model/CubismModelUserData.cpp */,
+				5E14A145EB7D47E984DC9D4C /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Model/CubismModelUserDataJson.cpp */,
+				C8DD083473A44EA5959E1DB1 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Model/CubismUserModel.cpp */,
+				ABD8FCCD737F441EB67D8E2A /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/ACubismMotion.cpp */,
+				D57EF4E7E36D45DFA7A9B06B /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismExpressionMotion.cpp */,
+				209857A469074F20B15FD30F /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismExpressionMotionManager.cpp */,
+				F264949C8B424E03B00EB648 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotion.cpp */,
+				B0BBC0F5A71E4C06BAB82429 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionJson.cpp */,
+				27BDC1EABC1C4A4A99E22A5B /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionManager.cpp */,
+				8EB5B225434D4C29BEF8A2BA /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionQueueEntry.cpp */,
+				4E8A428973C94781B5EEEAE3 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionQueueManager.cpp */,
+				81BFF74AAB1A42118214B07E /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Physics/CubismPhysics.cpp */,
+				7D39D067632547F6B0062668 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Physics/CubismPhysicsJson.cpp */,
+				5F4147C1D7384806AA0D5DDD /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Rendering/CubismRenderer.cpp */,
+				7EAEA0B9B9FD4883B5FF287B /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Rendering/OpenGL/CubismOffscreenSurface_OpenGLES2.cpp */,
+				37D271BBDC364E5EAA1B1F8B /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Rendering/OpenGL/CubismRenderer_OpenGLES2.cpp */,
+				3EB0533CD3184DE3AECF1F59 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Rendering/OpenGL/CubismShader_OpenGLES2.cpp */,
+				CFCCB2E3B3354477930BCC5A /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Type/csmRectF.cpp */,
+				2E168DFB9F714E118EF97F62 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Type/csmString.cpp */,
+				7D1D0D1827DE4A88BEE02B60 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Utils/CubismDebug.cpp */,
+				03481D11BA0B451584B63367 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Utils/CubismJson.cpp */,
+				A3607EC0433247A39A2423CD /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Utils/CubismString.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		99C8D110A5194B0199D95B12 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				14365B218DE24FF19A07B267 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/build/proj_xcode_iphonesimulator/Framework/CMakeFiles/Framework.dir/Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		9FDCA923D8814AA79625AA42 /* Header Files */ = {
+			isa = PBXGroup;
+			children = (
+				4791595625824ABE858DAA2B /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/CubismCdiJson.hpp */,
+				CDE3E934960243468344CF67 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/CubismDefaultParameterId.hpp */,
+				25EEC0D714D143709C2D1B51 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/CubismFramework.hpp */,
+				ADAE859790C64B388C342EC6 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/CubismFrameworkConfig.hpp */,
+				C6E272A3DE7C436CB2B88177 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/CubismJsonHolder.hpp */,
+				8737D714B0DE47AE8E10890E /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/CubismModelSettingJson.hpp */,
+				E351C7B89F1143CAB2776501 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Effect/CubismBreath.hpp */,
+				FCA831F4FE2B41B18ECEB5CB /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Effect/CubismEyeBlink.hpp */,
+				2D0B3E760B2C44FBB45232B9 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Effect/CubismPose.hpp */,
+				C88AC0D4B34446ED9113DA46 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/ICubismAllocator.hpp */,
+				40691B6499C84AFFAC21D072 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/ICubismModelSetting.hpp */,
+				FD9AFFEF7D5D425CBD179B55 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Id/CubismId.hpp */,
+				64339AA4B6A044D7ABA0A470 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Id/CubismIdManager.hpp */,
+				3624FA9E55554B62963BCF34 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Live2DCubismCore.hpp */,
+				CC1ABB16C4A948C1B43FA4B0 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismMath.hpp */,
+				6D983987405744B182442630 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismMatrix44.hpp */,
+				CFAD4BE956824713B26E7FDA /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismModelMatrix.hpp */,
+				A23EE9D827B9432D8E1A13E6 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismTargetPoint.hpp */,
+				E054DF72C1E94F74846E9C19 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismVector2.hpp */,
+				F5372D4DA2A64C0782F2DCA9 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismViewMatrix.hpp */,
+				3436B403DD1F499580DCE08D /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Model/CubismMoc.hpp */,
+				F5739268716F48EC8275D52B /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Model/CubismModel.hpp */,
+				7E16A10118CE4FFF8D719AA6 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Model/CubismModelUserData.hpp */,
+				FC087648B62D4C47A46249A3 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Model/CubismModelUserDataJson.hpp */,
+				CDCC16B4AA2A4C01B283EE6F /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Model/CubismUserModel.hpp */,
+				7AB70319FEF24E6E94A387FA /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/ACubismMotion.hpp */,
+				5F707ED046974554B79AABF3 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismExpressionMotion.hpp */,
+				F7CE86A3585048F08ED00BE5 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismExpressionMotionManager.hpp */,
+				43738195EACC4974A2E2C867 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotion.hpp */,
+				29A3A63E33464F34934B36B5 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionInternal.hpp */,
+				748111BA74C84311A65B83CF /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionJson.hpp */,
+				D9D352C0D052483B82CFD38D /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionManager.hpp */,
+				7D982A382A6943E7B6D0D6DA /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionQueueEntry.hpp */,
+				FF49B240920E49C9993C7613 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionQueueManager.hpp */,
+				B4013066E5ED4C61A8AEC30E /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Physics/CubismPhysics.hpp */,
+				ED0AA72550284EB49E96D89B /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Physics/CubismPhysicsInternal.hpp */,
+				1AA1E22F295449D6949DA196 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Physics/CubismPhysicsJson.hpp */,
+				CDC28DC2706B427291152F1F /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Rendering/CubismClippingManager.hpp */,
+				96B7DC3F27DB4B9984DBC506 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Rendering/CubismRenderer.hpp */,
+				1D14648326C74B6BA6213EE1 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Rendering/OpenGL/CubismOffscreenSurface_OpenGLES2.hpp */,
+				5C17BB99E3D94CA0AD61439B /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Rendering/OpenGL/CubismRenderer_OpenGLES2.hpp */,
+				F331C9B59EC240FC9D00D73A /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Rendering/OpenGL/CubismShader_OpenGLES2.hpp */,
+				34789A86DE5C493D975DDD39 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Type/CubismBasicType.hpp */,
+				6BE338670CA549A49E066A10 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Type/csmMap.hpp */,
+				29F2952E2EE4438A89AB8936 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Type/csmRectF.hpp */,
+				12A9E5F6FE7246248EF63DE7 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Type/csmString.hpp */,
+				1D622BD7DB4941838900237F /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Type/csmVector.hpp */,
+				4911314A715E46B6B287C1CA /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Utils/CubismDebug.hpp */,
+				01630EF67FB74773B4E3D742 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Utils/CubismJson.hpp */,
+				F3C8D63DFDB54006A35F5B16 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Utils/CubismString.hpp */,
+			);
+			name = "Header Files";
+			sourceTree = "<group>";
+		};
+		DE310831E24149378C739516 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		E16C1A4F2CA944B59463528D /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				7A7C8AEBA65A4B2CAF9D63C7 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/AppDelegate.mm */,
+				53A84CA42CE14363BD9E8D16 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppAllocator.mm */,
+				F13690F957A440D3BC47632A /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppDefine.mm */,
+				45C51FBB7F114393AE84DB90 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppLive2DManager.mm */,
+				F9F9388962D248B79E85C19F /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppModel.mm */,
+				69408C08CF434661AB060E85 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppPal.mm */,
+				B27C0F6ED826461DBE1DF8A4 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppSprite.mm */,
+				9D13776E4DF34CBEB1C64B6B /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppTextureManager.mm */,
+				9EDF341E28304B58BDA3DFD1 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/TouchManager.mm */,
+				D63F4D277B90450F84195E5F /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/ViewController.mm */,
+				253C7D61968647A69C97D640 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/main.m */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		FD66E67892384BE49767B710 /* Header Files */ = {
+			isa = PBXGroup;
+			children = (
+				4EE2A61204CE4206AA533DB8 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/AppDelegate.h */,
+				B9F76C60750840959260D6CE /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppAllocator.h */,
+				CDA209E18F86485D95247A27 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppDefine.h */,
+				7DF8BFE743F54EEFBAE6BBC7 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppLive2DManager.h */,
+				761A3553CB8847BE9CAC8680 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppModel.h */,
+				B9E47F7379174720ADC5F2D1 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppPal.h */,
+				03CD1A760B6242E0AE4E9754 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppSprite.h */,
+				64C6B60B622544D6A6076951 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppTextureManager.h */,
+				325CF305D02E4E54A139340B /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/TouchManager.h */,
+				0C344CAF84E742099F92BF7D /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/ViewController.h */,
+			);
+			name = "Header Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0C1C50C1AA790C208BD3539B /* Framework */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1E31892845FF45E7B1EF0A82 /* Build configuration list for PBXNativeTarget "Framework" */;
+			buildPhases = (
+				79323ACAC7684756839D08A6 /* Sources */,
+				C4568060B89E4213A6C76841 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Framework;
+			productName = Framework;
+			productReference = A1162C508FC442219BD6F698 /* Framework */;
+			productType = "com.apple.product-type.library.static";
+		};
+		EB14538DF70519B3A9019FE4 /* Demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C3150D9AEBAA4D93B5B19EF2 /* Build configuration list for PBXNativeTarget "Demo" */;
+			buildPhases = (
+				E39B7C3BB7484D7DBFC68E73 /* Sources */,
+				5E5EEC871D6842D3AC327587 /* Frameworks */,
+				10225654C8BCCC7D3C429755 /* CMake PostBuild Rules */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7A987451ECCF4690B95ED86D /* PBXTargetDependency */,
+			);
+			name = Demo;
+			productName = Demo;
+			productReference = 20F6164F879E48998EA9E30A /* Demo */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F495130A600F4BBEB7BCD702 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1520;
+			};
+			buildConfigurationList = 4A1154B9B86A4D20B9256BAC /* Build configuration list for PBXProject "Demo" */;
+			buildSettings = {
+			};
+			buildStyles = (
+				08AF36F5142B412499EF04F3 /* Debug */,
+				A223D6F7C4C549C2B615E437 /* Release */,
+			);
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 0;
+			mainGroup = 05E3C66981B4497490324558;
+			projectDirPath = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake";
+			projectRoot = "";
+			targets = (
+				3327EE90512C6E1FCEAB46BA /* ALL_BUILD */,
+				EB14538DF70519B3A9019FE4 /* Demo */,
+				0C1C50C1AA790C208BD3539B /* Framework */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		10225654C8BCCC7D3C429755 /* CMake PostBuild Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake PostBuild Rules";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/build/proj_xcode_iphonesimulator
+  /usr/local/bin/cmake -E copy_directory /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/../../../../Samples/Resources /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/build/proj_xcode_iphonesimulator/bin/Demo/Debug/Demo.app/Res
+fi
+if test \"$CONFIGURATION\" = \"Release\"; then :
+  cd /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/build/proj_xcode_iphonesimulator
+  /usr/local/bin/cmake -E copy_directory /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/../../../../Samples/Resources /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/build/proj_xcode_iphonesimulator/bin/Demo/Release/Demo.app/Res
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+		2736D6699E8C923C26F457CE /* Generate CMakeFiles/ALL_BUILD */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate CMakeFiles/ALL_BUILD";
+			outputPaths = (
+"/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/build/proj_xcode_iphonesimulator/CMakeFiles/ALL_BUILD"			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/build/proj_xcode_iphonesimulator
+  echo Build\\ all\\ projects
+fi
+if test \"$CONFIGURATION\" = \"Release\"; then :
+  cd /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/build/proj_xcode_iphonesimulator
+  echo Build\\ all\\ projects
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+		9B50530E35CC49C82C2FACCF = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		79323ACAC7684756839D08A6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F47C3A03C4E490B9BB0E3F5 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/CubismCdiJson.cpp */,
+				089D4471992E4BC5B6BB43D0 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/CubismDefaultParameterId.cpp */,
+				D10B2DDBACE64D9D9D158975 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/CubismFramework.cpp */,
+				8A037A177FD245F78CE77287 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/CubismModelSettingJson.cpp */,
+				0BEA22ED76294F2585E7F704 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Effect/CubismBreath.cpp */,
+				7B9819D4619640DC896E72D0 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Effect/CubismEyeBlink.cpp */,
+				363B85A008294951B5183F7B /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Effect/CubismPose.cpp */,
+				F2CC9CEE4DE9492285A0DD66 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Id/CubismId.cpp */,
+				6E6589979AA141F293A427F3 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Id/CubismIdManager.cpp */,
+				79DF4A5614C542A4BFF486B2 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismMath.cpp */,
+				0D9F98E1FD45495E9BA51C8D /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismMatrix44.cpp */,
+				689FDF4B5022461D829421DB /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismModelMatrix.cpp */,
+				57825431DC404AE29F3CF570 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismTargetPoint.cpp */,
+				357C511B5495429B86BA6F5A /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismVector2.cpp */,
+				74AB0FCE69024604A75AD931 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Math/CubismViewMatrix.cpp */,
+				63EA7D2B54BF481CAD8206F5 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Model/CubismMoc.cpp */,
+				ACCE96D69B374B599928CE28 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Model/CubismModel.cpp */,
+				BA88521629CF477BA6B7A1F4 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Model/CubismModelUserData.cpp */,
+				2BC51744A18B4816ACFBE9BA /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Model/CubismModelUserDataJson.cpp */,
+				5E2700E2A7994E2A9F3D1B77 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Model/CubismUserModel.cpp */,
+				E0CD0E450F714F079C401239 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/ACubismMotion.cpp */,
+				0163D3B58117427A939A152E /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismExpressionMotion.cpp */,
+				E1EA2177CD1045ADB6378E4E /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismExpressionMotionManager.cpp */,
+				E37648DAB9964DABAC48DE0B /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotion.cpp */,
+				6CD2C9C4C26249C2A05C49BC /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionJson.cpp */,
+				83153FCC9F7A4EDDB97E9217 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionManager.cpp */,
+				FDA1F2BA040D4B7EAC8B54BA /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionQueueEntry.cpp */,
+				70FE82633BB544A7BCA2EC41 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Motion/CubismMotionQueueManager.cpp */,
+				9D3C0E52563244049EB2473E /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Physics/CubismPhysics.cpp */,
+				7321A258B2E44571B2C14FDB /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Physics/CubismPhysicsJson.cpp */,
+				C2D20125D6CC46E48AEAB1D5 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Rendering/CubismRenderer.cpp */,
+				6BF2D301A86746D39D7BE9F0 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Rendering/OpenGL/CubismOffscreenSurface_OpenGLES2.cpp */,
+				E196991219A34687A31DCA23 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Rendering/OpenGL/CubismRenderer_OpenGLES2.cpp */,
+				D7088F325FBC40B9BD4669A4 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Rendering/OpenGL/CubismShader_OpenGLES2.cpp */,
+				CBFB9E9A78E94E3D967B8EC4 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Type/csmRectF.cpp */,
+				5AB18ABCF0A148B0A5D5D354 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Type/csmString.cpp */,
+				E6EBCB608E34499BAD922EAD /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Utils/CubismDebug.cpp */,
+				D01D0F64AF504BD6AE4E6A61 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Utils/CubismJson.cpp */,
+				0E4C106335C7450DA0206342 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src/Utils/CubismString.cpp */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E39B7C3BB7484D7DBFC68E73 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F94FED386304588970D8518 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/AppDelegate.mm */,
+				60C8A7F77C384567A6C3956D /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppAllocator.mm */,
+				BAE3910ED46F4264AA673BFC /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppDefine.mm */,
+				D5DBB3EF5AA5495AB5CB146E /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppLive2DManager.mm */,
+				E1B3B8A03A314C4483E39414 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppModel.mm */,
+				FE9521EAF94A44B4A326FE4E /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppPal.mm */,
+				2F8EF321217544BAAFB7BD22 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppSprite.mm */,
+				A52BB85CFC514F34A054AC6C /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/LAppTextureManager.mm */,
+				A152AC82DC0A4774B6443EBD /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/TouchManager.mm */,
+				EF85B1649A9749B89FCCA390 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/ViewController.mm */,
+				621099A9B8224CFCB99228C7 /* /Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/main.m */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4BE46F612DE143299FDAA2EE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0C1C50C1AA790C208BD3539B /* Framework */;
+			targetProxy = 167321CE0F764BDB9CEC2950 /* PBXContainerItemProxy */;
+		};
+		7A987451ECCF4690B95ED86D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0C1C50C1AA790C208BD3539B /* Framework */;
+			targetProxy = 8B7ED0A6BEC645B18A18F1AD /* PBXContainerItemProxy */;
+		};
+		7F445ED66D6A4E2B82184459 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EB14538DF70519B3A9019FE4 /* Demo */;
+			targetProxy = FFE5D14972CC4CF3AB10EE07 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		78300986DAE1441EAB131682 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		7AB00B1D832C47D7826C6146 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = x86_64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/build/proj_xcode_iphonesimulator/Framework/Debug${EFFECTIVE_PLATFORM_NAME}";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",CSM_TARGET_IPHONE_ES2,"$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src","/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/../Core/include",/include,"$(inherited)");
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = "   '-std=c++14' ";
+				OTHER_LIBTOOLFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Framework;
+				SECTORDER_FLAGS = "";
+				SYSTEM_HEADER_SEARCH_PATHS = ("/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/../../../../Core/include","$(inherited)");
+				TARGET_TEMP_DIR = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/build/proj_xcode_iphonesimulator/build/Framework.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		82BA9BF0144648F0A3F75447 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = x86_64;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/build/proj_xcode_iphonesimulator/bin/Demo/Debug";
+				DEVELOPMENT_TEAM = "";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator17.2.sdk/System/Library/Frameworks,"$(inherited)");
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",CSM_TARGET_IPHONE_ES2,"$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/../../../../Samples/OpenGL/thirdParty/stb","/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src",/include,"$(inherited)");
+				INFOPLIST_FILE = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/Info.plist";
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = ("   ","$(inherited)");
+				OTHER_CPLUSPLUSFLAGS = "   '-std=c++14' ";
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/build/proj_xcode_iphonesimulator/Framework/Debug${EFFECTIVE_PLATFORM_NAME}/libFramework.a","-framework CoreGraphics","-framework Foundation","-framework GLKit","-framework OpenGLES","-framework QuartzCore","-framework UIKit","/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Core/lib/ios/Debug-iphonesimulator/libLive2DCubismCore.a","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.live2d.demo-5-r.2";
+				PRODUCT_NAME = Demo;
+				SECTORDER_FLAGS = "";
+				SYSTEM_HEADER_SEARCH_PATHS = ("/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/../../../../Core/include","$(inherited)");
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGET_TEMP_DIR = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/build/proj_xcode_iphonesimulator/build/Demo.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		A48D84BAE10D42C6AA98E5B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = x86_64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/build/proj_xcode_iphonesimulator/Framework/Release${EFFECTIVE_PLATFORM_NAME}";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",CSM_TARGET_IPHONE_ES2,"$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src","/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/../Core/include",/include,"$(inherited)");
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG '-std=c++14' ";
+				OTHER_LIBTOOLFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Framework;
+				SECTORDER_FLAGS = "";
+				SYSTEM_HEADER_SEARCH_PATHS = ("/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/../../../../Core/include","$(inherited)");
+				TARGET_TEMP_DIR = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/build/proj_xcode_iphonesimulator/build/Framework.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		CD1B32B68F1E46BAA65184F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = x86_64;
+				"ARCHS[sdk=iphonesimulator*]" = x86_64;
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				ENABLE_BITCODE = NO;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator17.2.sdk;
+				SYMROOT = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/build/proj_xcode_iphonesimulator/build";
+				"VALID_ARCHS[sdk=iphonesimulator*]" = x86_64;
+			};
+			name = Debug;
+		};
+		D372893C8FDB4BF4A437C903 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = x86_64;
+				"ARCHS[sdk=iphonesimulator*]" = x86_64;
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				ENABLE_BITCODE = NO;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator17.2.sdk;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SYMROOT = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/build/proj_xcode_iphonesimulator/build";
+				"VALID_ARCHS[sdk=iphonesimulator*]" = x86_64;
+			};
+			name = Release;
+		};
+		EED64E2A81D74BD195FB8D4C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = x86_64;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/build/proj_xcode_iphonesimulator/bin/Demo/Release";
+				DEVELOPMENT_TEAM = "";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator17.2.sdk/System/Library/Frameworks,"$(inherited)");
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",CSM_TARGET_IPHONE_ES2,"$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/../../../../Samples/OpenGL/thirdParty/stb","/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Framework/src",/include,"$(inherited)");
+				INFOPLIST_FILE = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/src/Info.plist";
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = ("    -DNDEBUG ","$(inherited)");
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG '-std=c++14' ";
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/build/proj_xcode_iphonesimulator/Framework/Release${EFFECTIVE_PLATFORM_NAME}/libFramework.a","-framework CoreGraphics","-framework Foundation","-framework GLKit","-framework OpenGLES","-framework QuartzCore","-framework UIKit","/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Core/lib/ios/Release-iphonesimulator/libLive2DCubismCore.a","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.live2d.demo-5-r.2";
+				PRODUCT_NAME = Demo;
+				SECTORDER_FLAGS = "";
+				SYSTEM_HEADER_SEARCH_PATHS = ("/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/../../../../Core/include","$(inherited)");
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGET_TEMP_DIR = "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/build/proj_xcode_iphonesimulator/build/Demo.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		F35233C13C4A4E0AB51311DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1E31892845FF45E7B1EF0A82 /* Build configuration list for PBXNativeTarget "Framework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7AB00B1D832C47D7826C6146 /* Debug */,
+				A48D84BAE10D42C6AA98E5B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		4A1154B9B86A4D20B9256BAC /* Build configuration list for PBXProject "Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD1B32B68F1E46BAA65184F2 /* Debug */,
+				D372893C8FDB4BF4A437C903 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		7D9EFAB5EB7A40B49282DC76 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F35233C13C4A4E0AB51311DC /* Debug */,
+				78300986DAE1441EAB131682 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		C3150D9AEBAA4D93B5B19EF2 /* Build configuration list for PBXNativeTarget "Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				82BA9BF0144648F0A3F75447 /* Debug */,
+				EED64E2A81D74BD195FB8D4C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F495130A600F4BBEB7BCD702 /* Project object */;
+}

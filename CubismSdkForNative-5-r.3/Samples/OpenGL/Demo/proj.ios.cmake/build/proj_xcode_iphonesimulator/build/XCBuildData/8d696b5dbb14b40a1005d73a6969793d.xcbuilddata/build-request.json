@@ -1,0 +1,44 @@
+{
+  "buildCommand" : {
+    "command" : "prepareForIndexing",
+    "enableIndexBuildArena" : false,
+    "targets" : null
+  },
+  "configuredTargets" : [
+    {
+      "guid" : "eaee17aee96df92022dd96a9efbd9d1c9114038abc94d086f323cc95cf99be78"
+    }
+  ],
+  "containerPath" : "/Users/niyao/NY/XiXiMoYu/CubismSdkForNative-5-r.3/Samples/OpenGL/Demo/proj.ios.cmake/build/proj_xcode_iphonesimulator/Demo.xcodeproj",
+  "continueBuildingAfterErrors" : true,
+  "enableIndexBuildArena" : false,
+  "hideShellScriptEnvironment" : false,
+  "parameters" : {
+    "action" : "build",
+    "arenaInfo" : {
+      "buildIntermediatesPath" : "",
+      "buildProductsPath" : "",
+      "derivedDataPath" : "/Users/niyao/Library/Developer/Xcode/DerivedData",
+      "indexDataStoreFolderPath" : "/Users/niyao/Library/Developer/Xcode/DerivedData/Demo-eysdfowkxgszhedgznadqmkfhfhd/Index.noindex/DataStore",
+      "indexEnableDataStore" : true,
+      "indexPCHPath" : "/Users/niyao/Library/Developer/Xcode/DerivedData/Demo-eysdfowkxgszhedgznadqmkfhfhd/Index.noindex/PrecompiledHeaders",
+      "pchPath" : ""
+    },
+    "configurationName" : "Debug",
+    "overrides" : {
+      "synthesized" : {
+        "table" : {
+          "ENABLE_PREVIEWS" : "NO",
+          "ENABLE_XOJIT_PREVIEWS" : "NO"
+        }
+      }
+    }
+  },
+  "qos" : "default",
+  "schemeCommand" : "launch",
+  "showNonLoggedProgress" : true,
+  "useDryRun" : true,
+  "useImplicitDependencies" : true,
+  "useLegacyBuildLocations" : false,
+  "useParallelTargets" : true
+}
