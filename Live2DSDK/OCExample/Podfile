@@ -1,0 +1,10 @@
+use_frameworks!
+
+platform :ios, '15.0'
+
+target 'OCExample' do
+  pod 'Live2DSDK', :path => '../', :modular_headers => true
+
+  
+end
+
