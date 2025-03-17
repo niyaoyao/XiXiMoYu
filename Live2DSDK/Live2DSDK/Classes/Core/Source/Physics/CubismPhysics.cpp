@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Copyright(c) Live2D Inc. All rights reserved.
  *
  * Use of this source code is governed by the Live2D Open Software license
@@ -8,10 +8,10 @@
 #include "CubismPhysics.hpp"
 #include "CubismPhysicsInternal.hpp"
 #include "CubismPhysicsJson.hpp"
-#include "Model/CubismModel.hpp"
-#include "Utils/CubismString.hpp"
-#include "Math/CubismMath.hpp"
-#include "Math/CubismVector2.hpp"
+#include "CubismModel.hpp"
+#include "CubismString.hpp"
+#include "CubismMath.hpp"
+#include "CubismVector2.hpp"
 
 namespace Live2D { namespace Cubism { namespace Framework {
 

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Copyright(c) Live2D Inc. All rights reserved.
  *
  * Use of this source code is governed by the Live2D Open Software license
@@ -8,8 +8,8 @@
 #pragma once
 
 #include <cmath>
-#include "Type/CubismBasicType.hpp"
-#include "Math/CubismVector2.hpp"
+#include "CubismBasicType.hpp"
+#include "CubismVector2.hpp"
 
 //--------- LIVE2D NAMESPACE ------------
 namespace Live2D { namespace Cubism { namespace Framework {

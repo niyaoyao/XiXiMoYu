@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Copyright(c) Live2D Inc. All rights reserved.
  *
  * Use of this source code is governed by the Live2D Open Software license
@@ -6,6 +6,7 @@
  */
 
 #include "CubismOffscreenSurface_OpenGLES2.hpp"
+#import <OpenGLES/ES2/gl.h>
 
 //------------ LIVE2D NAMESPACE ------------
 namespace Live2D { namespace Cubism { namespace Framework { namespace Rendering {

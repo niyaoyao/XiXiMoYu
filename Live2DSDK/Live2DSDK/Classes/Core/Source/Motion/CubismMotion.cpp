@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Copyright(c) Live2D Inc. All rights reserved.
  *
  * Use of this source code is governed by the Live2D Open Software license
@@ -12,9 +12,9 @@
 #include "CubismMotionJson.hpp"
 #include "CubismMotionQueueManager.hpp"
 #include "CubismMotionQueueEntry.hpp"
-#include "Math/CubismMath.hpp"
-#include "Type/csmVector.hpp"
-#include "Id/CubismIdManager.hpp"
+#include "CubismMath.hpp"
+#include "csmVector.hpp"
+#include "CubismIdManager.hpp"
 
 namespace Live2D { namespace Cubism { namespace Framework {
 

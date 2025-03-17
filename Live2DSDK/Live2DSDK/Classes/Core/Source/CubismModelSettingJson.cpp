@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Copyright(c) Live2D Inc. All rights reserved.
  *
  * Use of this source code is governed by the Live2D Open Software license
@@ -7,9 +7,9 @@
 
 #include "CubismModelSettingJson.hpp"
 #include "CubismFramework.hpp"
-#include "Type/csmMap.hpp"
-#include "Id/CubismId.hpp"
-#include "Id/CubismIdManager.hpp"
+#include "csmMap.hpp"
+#include "CubismId.hpp"
+#include "CubismIdManager.hpp"
 
 namespace Live2D { namespace Cubism { namespace Framework {
 

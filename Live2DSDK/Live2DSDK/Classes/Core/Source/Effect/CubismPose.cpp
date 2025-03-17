@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Copyright(c) Live2D Inc. All rights reserved.
  *
  * Use of this source code is governed by the Live2D Open Software license
@@ -6,7 +6,7 @@
  */
 
 #include "CubismPose.hpp"
-#include "Id/CubismIdManager.hpp"
+#include "CubismIdManager.hpp"
 
 using namespace Live2D::Cubism::Framework;
 

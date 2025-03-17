@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Copyright(c) Live2D Inc. All rights reserved.
  *
  * Use of this source code is governed by the Live2D Open Software license
@@ -6,10 +6,10 @@
  */
 
 #include "CubismFramework.hpp"
-#include "Utils/CubismDebug.hpp"
-#include "Utils/CubismJson.hpp"
-#include "Id/CubismIdManager.hpp"
-#include "Rendering/CubismRenderer.hpp"
+#include "CubismDebug.hpp"
+#include "CubismJson.hpp"
+#include "CubismIdManager.hpp"
+#include "CubismRenderer.hpp"
 
 #ifdef CSM_DEBUG_MEMORY_LEAKING
 

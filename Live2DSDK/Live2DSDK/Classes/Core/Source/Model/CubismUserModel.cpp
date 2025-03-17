@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Copyright(c) Live2D Inc. All rights reserved.
  *
  * Use of this source code is governed by the Live2D Open Software license
@@ -6,8 +6,8 @@
  */
 
 #include "CubismUserModel.hpp"
-#include "Motion/CubismMotion.hpp"
-#include "Physics/CubismPhysics.hpp"
+#include "CubismMotion.hpp"
+#include "CubismPhysics.hpp"
 
 namespace Live2D { namespace Cubism { namespace Framework {
 

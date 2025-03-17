@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Copyright(c) Live2D Inc. All rights reserved.
  *
  * Use of this source code is governed by the Live2D Open Software license
@@ -9,11 +9,11 @@
 
 #include <float.h>
 #include "CubismFramework.hpp"
-#include "Type/csmVector.hpp"
-#include "Type/csmRectF.hpp"
-#include "Math/CubismVector2.hpp"
-#include "Math/CubismMatrix44.hpp"
-#include "Model/CubismModel.hpp"
+#include "csmVector.hpp"
+#include "csmRectF.hpp"
+#include "CubismVector2.hpp"
+#include "CubismMatrix44.hpp"
+#include "CubismModel.hpp"
 
 //------------ LIVE2D NAMESPACE ------------
 namespace Live2D { namespace Cubism { namespace Framework { namespace Rendering {

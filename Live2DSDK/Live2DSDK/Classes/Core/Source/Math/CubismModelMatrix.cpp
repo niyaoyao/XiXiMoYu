@@ -6,7 +6,7 @@
  */
 
 #include "CubismModelMatrix.hpp"
-#include "Type/csmString.hpp"
+#include "csmString.hpp"
 
 namespace Live2D { namespace Cubism { namespace Framework {
 

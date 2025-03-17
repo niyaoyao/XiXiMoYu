@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Copyright(c) Live2D Inc. All rights reserved.
  *
  * Use of this source code is governed by the Live2D Open Software license
@@ -6,10 +6,12 @@
  */
 
 #include "CubismRenderer_OpenGLES2.hpp"
-#include "Math/CubismMatrix44.hpp"
-#include "Type/csmVector.hpp"
-#include "Model/CubismModel.hpp"
+#include "CubismMatrix44.hpp"
+#include "csmVector.hpp"
+#include "CubismModel.hpp"
 #include <float.h>
+#import <OpenGLES/ES2/gl.h>
+#import <OpenGLES/ES2/glext.h>
 
 #ifdef CSM_TARGET_WIN_GL
 #include <Windows.h>

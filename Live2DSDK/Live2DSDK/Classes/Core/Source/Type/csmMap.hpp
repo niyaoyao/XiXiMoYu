@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Copyright(c) Live2D Inc. All rights reserved.
  *
  * Use of this source code is governed by the Live2D Open Software license
@@ -9,7 +9,7 @@
 
 #include "CubismFramework.hpp"
 #include "csmString.hpp"
-#include "Utils/CubismDebug.hpp"
+#include "CubismDebug.hpp"
 
 #ifndef NULL
 #   define  NULL 0

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Copyright(c) Live2D Inc. All rights reserved.
  *
  * Use of this source code is governed by the Live2D Open Software license
@@ -8,8 +8,8 @@
 #pragma once
 
 #include "ACubismMotion.hpp"
-#include "Type/csmVector.hpp"
-#include "Model/CubismUserModel.hpp"
+#include "csmVector.hpp"
+#include "CubismUserModel.hpp"
 
 namespace Live2D { namespace Cubism { namespace Framework {
 

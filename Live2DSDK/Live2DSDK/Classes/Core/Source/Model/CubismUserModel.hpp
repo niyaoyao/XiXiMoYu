@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Copyright(c) Live2D Inc. All rights reserved.
  *
  * Use of this source code is governed by the Live2D Open Software license
@@ -7,19 +7,19 @@
 
 #pragma once
 
-#include "Effect/CubismPose.hpp"
-#include "Effect/CubismEyeBlink.hpp"
-#include "Effect/CubismBreath.hpp"
-#include "Math/CubismModelMatrix.hpp"
-#include "Math/CubismTargetPoint.hpp"
-#include "Model/CubismMoc.hpp"
-#include "Model/CubismModel.hpp"
-#include "Motion/CubismMotionManager.hpp"
-#include "Motion/CubismExpressionMotion.hpp"
-#include "Physics/CubismPhysics.hpp"
-#include "Rendering/CubismRenderer.hpp"
-#include "Model/CubismModelUserData.hpp"
-#include "Motion/CubismExpressionMotionManager.hpp"
+#include "CubismPose.hpp"
+#include "CubismEyeBlink.hpp"
+#include "CubismBreath.hpp"
+#include "CubismModelMatrix.hpp"
+#include "CubismTargetPoint.hpp"
+#include "CubismMoc.hpp"
+#include "CubismModel.hpp"
+#include "CubismMotionManager.hpp"
+#include "CubismExpressionMotion.hpp"
+#include "CubismPhysics.hpp"
+#include "CubismRenderer.hpp"
+#include "CubismModelUserData.hpp"
+#include "CubismExpressionMotionManager.hpp"
 
 namespace Live2D { namespace Cubism { namespace Framework {
 

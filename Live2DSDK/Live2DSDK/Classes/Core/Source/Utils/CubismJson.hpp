@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Copyright(c) Live2D Inc. All rights reserved.
  *
  * Use of this source code is governed by the Live2D Open Software license
@@ -8,9 +8,9 @@
 #pragma once
 #include <stdio.h>
 #include "CubismFramework.hpp"
-#include "Type/csmVector.hpp"
-#include "Type/csmMap.hpp"
-#include "Type/csmString.hpp"
+#include "csmVector.hpp"
+#include "csmMap.hpp"
+#include "csmString.hpp"
 
 //------------ LIVE2D NAMESPACE ------------
 namespace Live2D { namespace Cubism { namespace Framework { namespace Utils {

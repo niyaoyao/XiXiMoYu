@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Copyright(c) Live2D Inc. All rights reserved.
  *
  * Use of this source code is governed by the Live2D Open Software license
@@ -7,7 +7,8 @@
 
 #include "CubismShader_OpenGLES2.hpp"
 #include <float.h>
-#include "Type/csmRectF.hpp"
+#include "csmRectF.hpp"
+#import <OpenGLES/ES2/gl.h>
 
 #ifdef CSM_TARGET_WIN_GL
 #include <Windows.h>

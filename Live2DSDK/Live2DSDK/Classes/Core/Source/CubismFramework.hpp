@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Copyright(c) Live2D Inc. All rights reserved.
  *
  * Use of this source code is governed by the Live2D Open Software license
@@ -118,7 +118,7 @@ void CsmDelete(T* address)
 //========================================================
 //  Include the definition of types for the each architectures.
 //========================================================
-#include "Type/CubismBasicType.hpp"
+#include "CubismBasicType.hpp"
 
 
 //========================================================
