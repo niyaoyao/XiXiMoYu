@@ -12,6 +12,9 @@
 @end
 
 @implementation NYViewController
+- (IBAction)modelVC:(id)sender {
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

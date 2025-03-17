@@ -9,9 +9,7 @@
 /* Begin PBXBuildFile section */
 		0D79DD5C6482EFD89032ACAE /* Pods_OCExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00642046B6ACE73F103B0D59 /* Pods_OCExample.framework */; };
 		8C5457FB2D82A457003927AE /* NYAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5457FA2D82A457003927AE /* NYAppDelegate.m */; };
-		8C5457FE2D82A457003927AE /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5457FD2D82A457003927AE /* SceneDelegate.m */; };
 		8C5458012D82A457003927AE /* NYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5458002D82A457003927AE /* NYViewController.m */; };
-		8C5458042D82A457003927AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C5458022D82A457003927AE /* Main.storyboard */; };
 		8C5458062D82A460003927AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C5458052D82A460003927AE /* Assets.xcassets */; };
 		8C5458092D82A460003927AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C5458072D82A460003927AE /* LaunchScreen.storyboard */; };
 		8C54580C2D82A460003927AE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C54580B2D82A460003927AE /* main.m */; };
@@ -24,11 +22,8 @@
 		8C5457F62D82A457003927AE /* OCExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C5457F92D82A457003927AE /* NYAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NYAppDelegate.h; sourceTree = "<group>"; };
 		8C5457FA2D82A457003927AE /* NYAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NYAppDelegate.m; sourceTree = "<group>"; };
-		8C5457FC2D82A457003927AE /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		8C5457FD2D82A457003927AE /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		8C5457FF2D82A457003927AE /* NYViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NYViewController.h; sourceTree = "<group>"; };
 		8C5458002D82A457003927AE /* NYViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NYViewController.m; sourceTree = "<group>"; };
-		8C5458032D82A457003927AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8C5458052D82A460003927AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C5458082D82A460003927AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8C54580A2D82A460003927AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -70,11 +65,8 @@
 			children = (
 				8C5457F92D82A457003927AE /* NYAppDelegate.h */,
 				8C5457FA2D82A457003927AE /* NYAppDelegate.m */,
-				8C5457FC2D82A457003927AE /* SceneDelegate.h */,
-				8C5457FD2D82A457003927AE /* SceneDelegate.m */,
 				8C5457FF2D82A457003927AE /* NYViewController.h */,
 				8C5458002D82A457003927AE /* NYViewController.m */,
-				8C5458022D82A457003927AE /* Main.storyboard */,
 				8C5458052D82A460003927AE /* Assets.xcassets */,
 				8C5458072D82A460003927AE /* LaunchScreen.storyboard */,
 				8C54580A2D82A460003927AE /* Info.plist */,
@@ -161,7 +153,6 @@
 			files = (
 				8C5458092D82A460003927AE /* LaunchScreen.storyboard in Resources */,
 				8C5458062D82A460003927AE /* Assets.xcassets in Resources */,
-				8C5458042D82A457003927AE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,21 +208,12 @@
 				8C5458012D82A457003927AE /* NYViewController.m in Sources */,
 				8C5457FB2D82A457003927AE /* NYAppDelegate.m in Sources */,
 				8C54580C2D82A460003927AE /* main.m in Sources */,
-				8C5457FE2D82A457003927AE /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		8C5458022D82A457003927AE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8C5458032D82A457003927AE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		8C5458072D82A460003927AE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -378,7 +360,6 @@
 				INFOPLIST_FILE = OCExample/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -435,7 +416,6 @@
 				INFOPLIST_FILE = OCExample/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
