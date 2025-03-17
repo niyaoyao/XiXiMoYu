@@ -109,8 +109,15 @@ Csm::csmString GetPath(CFURLRef url)
 - (void)setUpModel
 {
     _modelDir.Clear();
-
-    NSBundle* bundle = [NSBundle mainBundle];
+//    let url = Bundle.main.url(forResource: "Frameworks/Live2DSDK", withExtension: "framework")
+    
+    
+//    guard let url = url, let bundlePath = Bundle.init(url: url)?.path(forResource: "Live2DModels", ofType: "bundle"),
+//          let bundle = Bundle(path: bundlePath) else {
+//        print("Live2DModels.bundle not found in main bundle")
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"Frameworks/Live2DSDK" withExtension:@"framework"];
+    NSString *bundlePath = [[NSBundle bundleWithURL:url] pathForResource:@"Live2DModels" ofType:@"bundle"];
+    NSBundle* bundle = [NSBundle bundleWithPath:bundlePath];
     NSString* resPath = [NSString stringWithUTF8String:LAppDefine::ResourcesPath];
     NSArray* resArr = [bundle pathsForResourcesOfType:NULL inDirectory:resPath];
     NSUInteger cnt = [resArr count];
