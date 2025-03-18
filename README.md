@@ -15,7 +15,7 @@
 3. [ ] Further Development
     - [ ] Change Pose
     - [ ] Play Animation
-    - [ ] Change Backgroud
+    - [ ] Change Background
 4. [x] Renew Account Plan & Small business
 5. [ ] ICP
     - [ ]  Host
