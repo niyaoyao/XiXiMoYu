@@ -7,14 +7,19 @@
 | 第三阶段  | 3. 接入会员广告 | 2025.05~2025.06 |
 
 ### Phase 1
-1. Create iOS Project ✅
-2. iOS Integration Script
-    - Integrate Assets Automatic
-    - Integrate Library Automatic ✅
-    - Integrate Demo Code Automatic ✅
-3. Further Development
-4. Renew Account Plan & Small business
-5. ICP
-6. Submit Review
+1. [x] Create iOS Project 
+2. [x] iOS Integration Script
+    - [x] Integrate Assets Automatic
+    - [x] Integrate Library Automatic 
+    - [x] Integrate Demo Code Automatic
+3. [ ] Further Development
+    - [ ] Change Pose
+    - [ ] Play Animation
+    - [ ] Change Backgroud
+4. [x] Renew Account Plan & Small business
+5. [ ] ICP
+    - [ ]  Host
+    - [ ]  App
+6. [ ] Submit Review
 
 ## Phase 2
