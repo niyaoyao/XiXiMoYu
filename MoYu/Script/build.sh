@@ -1,0 +1,2 @@
+    build_cmd = 'xcodebuild  -scheme {} -workspace {} -configuration {} -derivedDataPath {} -destination generic/platform=iOS -archivePath {} -quiet clean archive'.format(scheme, workspace_path, nativeEnv, derived_path, archive_path, ibu_log_path)
+    export_cmd = 'xcodebuild -exportArchive -exportOptionsPlist {} -archivePath {} -exportPath {}  | xcpretty'.format(options_plist_path, archive_path, containing_directory)
