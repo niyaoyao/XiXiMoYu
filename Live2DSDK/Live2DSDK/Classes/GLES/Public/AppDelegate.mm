@@ -21,9 +21,7 @@
 
 @property (nonatomic) LAppAllocator cubismAllocator; // Cubism SDK Allocator
 @property (nonatomic) Csm::CubismFramework::Option cubismOption; // Cubism SDK Option
-@property (nonatomic) bool captured; // クリックしているか
-@property (nonatomic) float mouseX; // マウスX座標
-@property (nonatomic) float mouseY; // マウスY座標
+
 @property (nonatomic) bool isEnd; // APPを終了しているか
 @property (nonatomic, readwrite) LAppTextureManager *textureManager; // テクスチャマネージャー
 @property (nonatomic) Csm::csmInt32 sceneIndex;  //アプリケーションをバッググラウンド実行するときに一時的にシーンインデックス値を保存する

@@ -40,7 +40,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'AppSource' do |sp|
     sp.source_files = 'Live2DSDK/Classes/GLES/**/*.{h,m,mm}'
-    sp.public_header_files = 'Live2DSDK/Classes/GLES/Public/ViewController.h', 'Live2DSDK/Classes/GLES/Public/AppDelegate.h'
+    sp.public_header_files = 'Live2DSDK/Classes/GLES/Public/*.{h,hpp}'
     sp.private_header_files = 'Live2DSDK/Classes/App/Private/**/*.{h,hpp}'
 
     sp.libraries = 'c++'

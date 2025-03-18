@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Live2DSDK
 
 class ViewController: UIViewController {
 
@@ -39,10 +38,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func routeToLive2DPage(_ sender: Any) {
-        let vc = Live2DSDK.ViewController()
-        vc.initializeSprite()
-        RenderManager.shared().viewController = vc
-        self.navigationController?.pushViewController(vc, animated: true)
+        
     }
     
     override func didReceiveMemoryWarning() {

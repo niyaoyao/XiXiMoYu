@@ -13,6 +13,7 @@
     - [x] Integrate Library Automatic 
     - [x] Integrate Demo Code Automatic
 3. [ ] Further Development
+    - [ ] Basic Foundation: Convert the C++ Class to Objective-C Class
     - [ ] Change Pose
     - [ ] Play Animation
     - [ ] Change Background

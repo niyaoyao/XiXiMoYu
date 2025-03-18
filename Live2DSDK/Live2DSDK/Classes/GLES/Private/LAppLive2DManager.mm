@@ -41,17 +41,6 @@ int CompareCsmString(const void* a, const void* b)
         reinterpret_cast<const Csm::csmString*>(b)->GetRawString());
 }
 
-Csm::csmString GetPath(CFURLRef url)
-{
-  CFStringRef cfstr = CFURLCopyFileSystemPath(url, CFURLPathStyle::kCFURLPOSIXPathStyle);
-  CFIndex size = CFStringGetLength(cfstr) * 4 + 1; // Length * UTF-16 Max Character size + null-terminated-byte
-  char* buf = new char[size];
-  CFStringGetCString(cfstr, buf, size, CFStringBuiltInEncodings::kCFStringEncodingUTF8);
-  Csm::csmString result(buf);
-  delete[] buf;
-  return result;
-}
-
 + (LAppLive2DManager*)getInstance
 {
     @synchronized(self)
@@ -83,7 +72,7 @@ Csm::csmString GetPath(CFURLRef url)
 
         [self setUpModel];
 
-        [self changeScene:_sceneIndex];
+        [self changeScene:2];
     }
     return self;
 }
