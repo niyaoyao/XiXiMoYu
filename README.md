@@ -21,10 +21,15 @@
     - [x] Integrate Demo Code Automatic
 3. [ ] Further Development
     - [ ] Basic Foundation: Convert the C++ Class to Objective-C Class
+        - [ ] `NYLDModelManager` instead of `LAppLive2DManager`
+        - [ ] `NYLDSDKManager` instead of `AppDelegate`
+        - [ ] Wrap `LAppModel` 🌟
+        - [ ] `NYLDStagingGLViewController` to render GL Model.
         - `ViewController` remove C++ interface/type in header files.
         - `LAppLive2DManager`  remove C++ interface/type in header files.
         - `LAppLive2DManager` optimize the flow for manage model, bridge C++ functions.
-        - Wrap `LAppModel` `LAppPal` `LAppSprite`
+        - Wrap `LAppPal` `LAppSprite`
+        - Wrap `LAppSprite`
     - [ ] Change Pose
     - [ ] Play Animation
     - [ ] Change Background
