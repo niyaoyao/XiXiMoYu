@@ -15,7 +15,7 @@
 #import "LAppDefine.h"
 #import "LAppLive2DManager.h"
 #import "LAppTextureManager.h"
-
+#import "NYLDModelManager.h"
 @interface NYLDSDKManager () {
     LAppAllocator _cubismAllocator; // Cubism SDK Allocator
     Csm::CubismFramework::Option _cubismOption;
@@ -52,32 +52,42 @@
 - (void)initializeCubism {
     _cubismOption.LogFunction = LAppPal::PrintMessageLn;
     _cubismOption.LoggingLevel = LAppDefine::CubismLoggingLevel;
-
     Csm::CubismFramework::StartUp(&_cubismAllocator,&_cubismOption);
-
     Csm::CubismFramework::Initialize();
-
-    [LAppLive2DManager getInstance];
-
     Csm::CubismMatrix44 projection;
-
     LAppPal::UpdateTime();
 
 }
 
+- (void)setup {
+    [self initializeCubism];
+    [NYLDModelManager setup];
+}
+
+- (void)suspend {
+    _textureManager = [[LAppTextureManager alloc] init];
+
+    [[LAppLive2DManager getInstance] changeScene:sceneIndex];
+}
+
+- (void)resume {
+    _textureManager = nil;
+
+    sceneIndex = [[LAppLive2DManager getInstance] sceneIndex];
+}
 
 
-+ (void)initializeCubism {
-    [[NYLDSDKManager shared] initializeCubism];
++ (void)setup {
+    [[NYLDSDKManager shared] setup];
 }
 
 
 + (void)suspend {
-    
+    [[NYLDSDKManager shared] suspend];
 }
 
 + (void)resume {
-    
+    [[NYLDSDKManager shared] resume];
 }
 
 @end

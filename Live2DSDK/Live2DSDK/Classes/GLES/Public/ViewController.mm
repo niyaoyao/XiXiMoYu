@@ -70,7 +70,7 @@ using namespace LAppDefine;
 {
     [super viewDidLoad];
     mOpenGLRun = true;
-
+    NSLog(@"1");
     _anotherTarget = false;
     _spriteColorR = _spriteColorG = _spriteColorB = _spriteColorA = 1.0f;
     _clearColorR = _clearColorG = _clearColorB = 1.0f;
@@ -117,6 +117,7 @@ using namespace LAppDefine;
 
 - (void)initializeScreen
 {
+    NSLog(@"2");
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     int width = screenRect.size.width;
     int height = screenRect.size.height;
@@ -162,7 +163,7 @@ using namespace LAppDefine;
 {
     //時間更新
     LAppPal::UpdateTime();
-
+    NSLog(@"4");
     if(mOpenGLRun)
     {
         // 画面クリア
@@ -210,6 +211,7 @@ using namespace LAppDefine;
 
 - (void)initializeSprite
 {
+    NSLog(@"3");
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     int width = screenRect.size.width;
     int height = screenRect.size.height;
@@ -342,6 +344,7 @@ using namespace LAppDefine;
 
 - (void)PreModelDraw:(LAppModel&)refModel
 {
+    NSLog(@"5");
     // 別のレンダリングターゲットへ向けて描画する場合の使用するフレームバッファ
     Csm::Rendering::CubismOffscreenSurface_OpenGLES2* useTarget = NULL;
 
@@ -369,6 +372,7 @@ using namespace LAppDefine;
 
 - (void)PostModelDraw:(LAppModel&)refModel
 {
+    NSLog(@"6");
     // 別のレンダリングターゲットへ向けて描画する場合の使用するフレームバッファ
     Csm::Rendering::CubismOffscreenSurface_OpenGLES2* useTarget = NULL;
 

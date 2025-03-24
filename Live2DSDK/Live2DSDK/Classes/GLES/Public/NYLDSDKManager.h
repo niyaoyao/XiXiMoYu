@@ -7,18 +7,17 @@
 
 #import <Foundation/Foundation.h>
 
-@class LAppView;
 @class LAppTextureManager;
 
 NS_ASSUME_NONNULL_BEGIN
-
+/// Manage Live2D SDK
 @interface NYLDSDKManager : NSObject
 
 @property (nonatomic, readonly, getter=getTextureManager) LAppTextureManager *textureManager;
 
 + (instancetype)shared;
 /// init
-+ (void)initializeCubism;
++ (void)setup;
 
 /// Suspend when background
 + (void)suspend;

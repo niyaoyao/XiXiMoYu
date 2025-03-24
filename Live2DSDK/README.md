@@ -22,7 +22,7 @@ pod 'Live2DSDK'
 
 ## Author
 
-NY, niyao@zuoyebang.com
+NY, nycode.jn@gmail.com
 
 ## License
 

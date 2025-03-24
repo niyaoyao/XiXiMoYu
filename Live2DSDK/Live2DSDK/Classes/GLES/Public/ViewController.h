@@ -81,12 +81,12 @@ typedef NS_ENUM(NSUInteger, SelectTarget)
 /**
  * @brief   モデル1体を描画する直前にコールされる
  */
-- (void)PreModelDraw:(LAppModel&) refModel;
-
-/**
- * @brief   モデル1体を描画した直後にコールされる
- */
-- (void)PostModelDraw:(LAppModel&) refModel;
+//- (void)PreModelDraw:(LAppModel&) refModel;
+//
+///**
+// * @brief   モデル1体を描画した直後にコールされる
+// */
+//- (void)PostModelDraw:(LAppModel&) refModel;
 
 /**
  * @brief   別レンダリングターゲットにモデルを描画するサンプルで
