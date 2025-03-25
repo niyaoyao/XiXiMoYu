@@ -210,12 +210,12 @@ int CompareCsmString(const void* a, const void* b)
           projection.MultiplyByMatrix(_viewMatrix);
         }
 
-        [view PreModelDraw:*model];
+//        [view PreModelDraw:*model];
 
         model->Update();
         model->Draw(projection);///< 参照渡しなのでprojectionは変質する
 
-        [view PostModelDraw:*model];
+//        [view PostModelDraw:*model];
     }
 }
 
