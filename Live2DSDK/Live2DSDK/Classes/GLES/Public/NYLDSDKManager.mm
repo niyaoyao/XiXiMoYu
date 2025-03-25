@@ -24,6 +24,7 @@
 
 @property (nonatomic, readwrite) LAppTextureManager *textureManager;
 
+
 @end
 
 @implementation NYLDSDKManager
@@ -42,7 +43,7 @@
 {
     self = [super init];
     if (self) {
-        
+        _textureManager = [[LAppTextureManager alloc] init];
     }
     return self;
 }

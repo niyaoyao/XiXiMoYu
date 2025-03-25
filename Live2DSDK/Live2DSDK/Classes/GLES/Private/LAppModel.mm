@@ -21,6 +21,7 @@
 #import "LAppPal.h"
 #import "LAppTextureManager.h"
 #import "AppDelegate.h"
+#import "NYLDSDKManager.h"
 
 using namespace Live2D::Cubism::Framework;
 using namespace Live2D::Cubism::Framework::DefaultParameterId;
@@ -599,7 +600,7 @@ void LAppModel::SetupTextures()
         csmString texturePath = _modelSetting->GetTextureFileName(modelTextureNumber);
         texturePath = _modelHomeDir + texturePath;
 
-        AppDelegate *delegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+        NYLDSDKManager *delegate = [NYLDSDKManager shared]; //(AppDelegate *) [[UIApplication sharedApplication] delegate];
         TextureInfo* texture = [[delegate getTextureManager] createTextureFromPngFile:texturePath.GetRawString()];
         csmInt32 glTextueNumber = texture->id;
 
