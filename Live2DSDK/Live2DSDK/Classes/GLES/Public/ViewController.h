@@ -8,7 +8,6 @@
 #import <UIKit/UIKit.h>
 #import <GLKit/GLKit.h>
 
-#include <LAppModel.h>
 @interface ViewController : GLKViewController <GLKViewDelegate>
 
 typedef NS_ENUM(NSUInteger, SelectTarget)
