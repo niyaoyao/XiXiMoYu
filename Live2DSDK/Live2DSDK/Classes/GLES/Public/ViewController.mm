@@ -226,14 +226,14 @@ using namespace LAppDefine;
     float y = height * 0.5f;
     float fWidth = 300.0f;
     float fHeight = 300.0f;
-    fWidth = static_cast<float>(width * 0.75f);
-    fHeight = static_cast<float>(height * 0.95f);
+    fWidth = static_cast<float>(width );
+    fHeight = static_cast<float>(height);
     _back = [[LAppSprite alloc] initWithMyVar:x Y:y Width:fWidth Height:fHeight TextureId:backgroundTexture->id];
 
     imageName = GearImageName;
     TextureInfo* gearTexture = [textureManager createTextureFromPngFile:resourcesPath+imageName];
-    x = static_cast<float>(width - gearTexture->width * 0.5f);
-    y = static_cast<float>(height - gearTexture->height * 0.5f);
+    x = static_cast<float>(gearTexture->width * 0.5f);
+    y = static_cast<float>(gearTexture->height * 0.5f);
     fWidth = static_cast<float>(gearTexture->width);
     fHeight = static_cast<float>(gearTexture->height);
     _gear = [[LAppSprite alloc] initWithMyVar:x Y:y Width:fWidth Height:fHeight TextureId:gearTexture->id];
