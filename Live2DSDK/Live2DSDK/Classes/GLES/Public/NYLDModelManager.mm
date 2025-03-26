@@ -16,7 +16,6 @@
 #import "LAppTextureManager.h"
 #import <string.h>
 #import <stdlib.h>
-#import <GLKit/GLKit.h>
 #import "AppDelegate.h"
 #import "ViewController.h"
 #import "LAppModel.h"
@@ -327,6 +326,22 @@ void NYLDFinishedMotion(Csm::ACubismMotion* motion)
     }
 }
 
+- (float)getModelOpacityWithIndex:(int)index {
+    LAppModel* model = [self getModel:index];
+    return model->GetOpacity();
+}
+
+- (BOOL)modelExistsWithIndex:(int)index {
+    LAppModel* model = [self getModel:index];
+    return model != nil;
+}
+
+- (GLuint)modelTextureIdWithIndex:(int)index {
+    LAppModel* model = [self getModel:index];
+    Csm::Rendering::CubismOffscreenSurface_OpenGLES2& useTarget = model->GetRenderBuffer();
+    GLuint textureId = useTarget.GetColorBuffer();
+    return textureId;
+}
 
 + (void)setup {
     [[NYLDModelManager shared] setup];

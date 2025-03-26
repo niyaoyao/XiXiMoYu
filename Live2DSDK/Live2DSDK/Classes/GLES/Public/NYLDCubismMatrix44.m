@@ -12,6 +12,7 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
+        _tr  = (float *)malloc(16 * sizeof(float));
         [self loadIdentity];
     }
     return self;
