@@ -20,7 +20,8 @@
 #import "LAppDefine.h"
 #import "LAppPal.h"
 #import "AppDelegate.h"
-#import "NYLDSDKManager.h"
+#import "NYLDModelManager.h"
+#import "LAppTextureManager.h"
 
 using namespace Live2D::Cubism::Framework;
 using namespace Live2D::Cubism::Framework::DefaultParameterId;
@@ -79,13 +80,7 @@ LAppModel::~LAppModel()
     delete _modelSetting;
 }
 
-Live2D::Cubism::Framework::csmString LAppModel::getModelTexturePath() {
-    csmString texturePath = _modelSetting->GetTextureFileName(modelTextureNumber);
-    texturePath = _modelHomeDir + texturePath;
-    return texturePath;
-}
-
-void LAppModel::LoadAssets(const csmChar* dir, const csmChar* fileName, TextureInfo* texture)
+void LAppModel::LoadAssets(const csmChar* dir, const csmChar* fileName)
 {
     _modelHomeDir = dir;
 
@@ -111,7 +106,7 @@ void LAppModel::LoadAssets(const csmChar* dir, const csmChar* fileName, TextureI
     
     CreateRenderer();
 
-    SetupTextures(texture);
+    SetupTextures();
 }
 
 void LAppModel::SetupModel(ICubismModelSetting* setting)
@@ -582,16 +577,16 @@ void LAppModel::SetRandomExpression()
     }
 }
 
-void LAppModel::ReloadRenderer(TextureInfo* texture)
+void LAppModel::ReloadRenderer()
 {
     DeleteRenderer();
 
     CreateRenderer();
 
-    SetupTextures(texture);
+    SetupTextures();
 }
 
-void LAppModel::SetupTextures(TextureInfo* texture)
+void LAppModel::SetupTextures()
 {
     for (csmInt32 modelTextureNumber = 0; modelTextureNumber < _modelSetting->GetTextureCount(); modelTextureNumber++)
     {
@@ -606,7 +601,7 @@ void LAppModel::SetupTextures(TextureInfo* texture)
         texturePath = _modelHomeDir + texturePath;
 
 //        AppDelegate *delegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
-//        TextureInfo* texture = [[delegate getTextureManager] createTextureFromPngFile:texturePath.GetRawString()];
+        TextureInfo *texture = [[NYLDModelManager shared].textureManager createTextureFromPngFile:texturePath.GetRawString()];
         csmInt32 glTextueNumber = texture->id;
 
         //OpenGL

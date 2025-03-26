@@ -79,6 +79,13 @@ void NYLDFinishedMotion(Csm::ACubismMotion* motion)
     return self;
 }
 
+- (LAppTextureManager *)textureManager {
+    if (!_textureManager) {
+        _textureManager = [[LAppTextureManager alloc] init];
+    }
+    return _textureManager;
+}
+
 - (void)setup {
     _modelDir.Clear();
     NSFileManager *fileManager = [NSFileManager defaultManager];
@@ -159,7 +166,7 @@ void NYLDFinishedMotion(Csm::ACubismMotion* motion)
     [self releaseAllModel];
     _models.PushBack(new LAppModel());
     TextureInfo *texture = nil;
-    _models[0]->LoadAssets(modelPath.GetRawString(), modelJsonName.GetRawString(), texture);
+    _models[0]->LoadAssets(modelPath.GetRawString(), modelJsonName.GetRawString());
 
     /*
      * モデル半透明表示を行うサンプルを提示する。
