@@ -19,7 +19,6 @@ class ViewController: UIViewController {
     
     @IBAction func routeToLive2DPage(_ sender: Any) {
         let vc = Live2DSDK.NYLDRenderStageVC(nibName: nil, bundle: nil)
-        vc.initializeSprite()
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

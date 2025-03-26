@@ -78,7 +78,7 @@ using namespace LAppDefine;
 {
     [super viewDidLoad];
     mOpenGLRun = true;
-    NSLog(@"1");
+    NYLog(@"1");
     _anotherTarget = false;
     _spriteColorR = _spriteColorG = _spriteColorB = _spriteColorA = 1.0f;
     _clearColorR = _clearColorG = _clearColorB = 1.0f;
@@ -121,11 +121,12 @@ using namespace LAppDefine;
 
     glGenBuffers(1, &_fragmentBufferId);
     glBindBuffer(GL_ARRAY_BUFFER,  _fragmentBufferId);
+    [self initializeSprite];
 }
 
 - (void)initializeScreen
 {
-    NSLog(@"2");
+    NYLog(@"2");
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     int width = screenRect.size.width;
     int height = screenRect.size.height;
@@ -181,7 +182,7 @@ using namespace LAppDefine;
 {
     //時間更新
     LAppPal::UpdateTime();
-    NSLog(@"4");
+    NYLog(@"4");
     if(mOpenGLRun)
     {
         // 画面クリア
@@ -235,7 +236,7 @@ using namespace LAppDefine;
 
 - (void)initializeSprite
 {
-    NSLog(@"3");
+    NYLog(@"3");
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     int width = screenRect.size.width;
     int height = screenRect.size.height;
@@ -301,7 +302,7 @@ using namespace LAppDefine;
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     UITouch *touch = [touches anyObject];
-    NSLog(@"%@", touch.view);
+    NYLog(@"%@", touch.view);
 
     CGPoint point = [touch locationInView:self.view];
     float pointY = [self transformTapY:point.y];
@@ -369,7 +370,7 @@ using namespace LAppDefine;
 
 - (void)PreModelDraw:(LAppModel&)refModel
 {
-    NSLog(@"5");
+    NYLog(@"5");
     // 別のレンダリングターゲットへ向けて描画する場合の使用するフレームバッファ
     Csm::Rendering::CubismOffscreenSurface_OpenGLES2* useTarget = NULL;
 
@@ -397,7 +398,7 @@ using namespace LAppDefine;
 
 - (void)PostModelDraw:(LAppModel&)refModel
 {
-    NSLog(@"6");
+    NYLog(@"6");
     // 別のレンダリングターゲットへ向けて描画する場合の使用するフレームバッファ
     Csm::Rendering::CubismOffscreenSurface_OpenGLES2* useTarget = NULL;
 
