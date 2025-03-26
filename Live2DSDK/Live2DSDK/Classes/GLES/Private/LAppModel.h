@@ -32,12 +32,13 @@ public:
      *
      */
     virtual ~LAppModel();
+    
 
     /**
      * @brief model3.jsonが置かれたディレクトリとファイルパスからモデルを生成する
      *
      */
-    void LoadAssets(const Csm::csmChar* dir, const  Csm::csmChar* fileName);
+    void LoadAssets(const char* dir, const char* fileName);
 
     /**
      * @brief レンダラを再構築する
@@ -114,6 +115,7 @@ public:
      * @brief   別ターゲットに描画する際に使用するバッファの取得
      */
     Csm::Rendering::CubismOffscreenSurface_OpenGLES2& GetRenderBuffer();
+    
 
 protected:
     /**

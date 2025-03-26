@@ -16,7 +16,7 @@
 #import <OpenGLES/ES2/gl.h>
 #import <OpenGLES/ES2/glext.h>
 #import "LAppDefine.h"
-
+#import "NYCommon.h"
 using std::endl;
 using namespace Csm;
 using namespace std;
@@ -78,7 +78,7 @@ void LAppPal::PrintLogLn(const csmChar* format, ...)
     Csm::csmChar buf[256];
     va_start(args, format);
     vsnprintf(buf, sizeof(buf), format, args); // 標準出力でレンダリング;
-    NSLog(@"%@",[NSString stringWithCString:buf encoding:NSUTF8StringEncoding]);
+    NYLog(@"%@",[NSString stringWithCString:buf encoding:NSUTF8StringEncoding]);
     va_end(args);
 }
 

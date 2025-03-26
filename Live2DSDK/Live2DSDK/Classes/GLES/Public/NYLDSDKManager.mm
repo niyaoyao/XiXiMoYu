@@ -13,16 +13,16 @@
 #import <OpenGLES/ES2/glext.h>
 #import "LAppPal.h"
 #import "LAppDefine.h"
-#import "LAppLive2DManager.h"
+
+#import <CubismMatrix44.hpp>
 #import "LAppTextureManager.h"
 #import "NYLDModelManager.h"
 @interface NYLDSDKManager () {
     LAppAllocator _cubismAllocator; // Cubism SDK Allocator
     Csm::CubismFramework::Option _cubismOption;
-    Csm::csmInt32 sceneIndex;
 }
 
-@property (nonatomic, readwrite) LAppTextureManager *textureManager;
+@property (nonatomic, assign) NSInteger sceneIndex;
 
 
 @end
@@ -43,7 +43,7 @@
 {
     self = [super init];
     if (self) {
-        _textureManager = [[LAppTextureManager alloc] init];
+        
     }
     return self;
 }
@@ -66,15 +66,15 @@
 }
 
 - (void)suspend {
-    _textureManager = [[LAppTextureManager alloc] init];
+    [NYLDModelManager shared].textureManager = [[LAppTextureManager alloc] init];
 
-    [[LAppLive2DManager getInstance] changeScene:sceneIndex];
+    [[NYLDModelManager shared] changeScene: self.sceneIndex];
 }
 
 - (void)resume {
-    _textureManager = nil;
+    [NYLDModelManager shared].textureManager = nil;
 
-    sceneIndex = [[LAppLive2DManager getInstance] sceneIndex];
+    self.sceneIndex = [[NYLDModelManager shared] sceneIndex];
 }
 
 

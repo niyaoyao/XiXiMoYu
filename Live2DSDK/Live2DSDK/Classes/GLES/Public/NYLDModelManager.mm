@@ -12,7 +12,8 @@
 #import <csmVector.hpp>
 #import <csmString.hpp>
 #import "LAppModel.h"
-
+#import <CubismUserModel.hpp>
+#import "LAppTextureManager.h"
 #import <string.h>
 #import <stdlib.h>
 #import <GLKit/GLKit.h>
@@ -21,6 +22,18 @@
 #import "LAppModel.h"
 #import "LAppDefine.h"
 #import "LAppPal.h"
+
+
+void NYLDBeganMotion(Csm::ACubismMotion* motion)
+{
+    LAppPal::PrintLogLn("Motion began: %x", motion);
+}
+
+void NYLDFinishedMotion(Csm::ACubismMotion* motion)
+{
+    LAppPal::PrintLogLn("Motion Finished: %x", motion);
+}
+
 @interface NYLDModelManager()
 
 @property (nonatomic) Csm::CubismMatrix44 *viewMatrix; //モデル描画に用いるView行列
@@ -64,6 +77,13 @@
         _viewMatrix = new Csm::CubismMatrix44();
     }
     return self;
+}
+
+- (LAppTextureManager *)textureManager {
+    if (!_textureManager) {
+        _textureManager = [[LAppTextureManager alloc] init];
+    }
+    return _textureManager;
 }
 
 - (void)setup {
@@ -145,6 +165,7 @@
 
     [self releaseAllModel];
     _models.PushBack(new LAppModel());
+    TextureInfo *texture = nil;
     _models[0]->LoadAssets(modelPath.GetRawString(), modelJsonName.GetRawString());
 
     /*
@@ -192,6 +213,120 @@
 
     _models.Clear();
 }
+
+
+- (LAppModel*)getModel:(Csm::csmUint32)no
+{
+    if (no < _models.GetSize())
+    {
+        return _models[no];
+    }
+    return nil;
+}
+
+- (void)onDrag:(float)x floatY:(float)y
+{
+    for (Csm::csmUint32 i = 0; i < _models.GetSize(); i++)
+    {
+        Csm::CubismUserModel* model = static_cast<Csm::CubismUserModel*>([self getModel:i]);
+        model->SetDragging(x,y);
+    }
+}
+
+- (void)onTap:(float)x floatY:(float)y;
+{
+    if (LAppDefine::DebugLogEnable)
+    {
+        LAppPal::PrintLogLn("[APP]tap point: {x:%.2f y:%.2f}", x, y);
+    }
+
+    for (Csm::csmUint32 i = 0; i < _models.GetSize(); i++)
+    {
+        if(_models[i]->HitTest(LAppDefine::HitAreaNameHead,x,y))
+        {
+            if (LAppDefine::DebugLogEnable)
+            {
+                LAppPal::PrintLogLn("[APP]hit area: [%s]", LAppDefine::HitAreaNameHead);
+            }
+            _models[i]->SetRandomExpression();
+        }
+        else if (_models[i]->HitTest(LAppDefine::HitAreaNameBody, x, y))
+        {
+            if (LAppDefine::DebugLogEnable)
+            {
+                LAppPal::PrintLogLn("[APP]hit area: [%s]", LAppDefine::HitAreaNameBody);
+            }
+            _models[i]->StartRandomMotion(LAppDefine::MotionGroupTapBody, LAppDefine::PriorityNormal, NYLDFinishedMotion, NYLDBeganMotion);
+        }
+    }
+}
+
+- (void)onUpdate
+{
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    int width = screenRect.size.width;
+    int height = screenRect.size.height;
+
+//    AppDelegate* delegate = (AppDelegate*) [[UIApplication sharedApplication] delegate];
+//    ViewController* view = [delegate viewController];
+
+    Csm::csmUint32 modelCount = _models.GetSize();
+    for (Csm::csmUint32 i = 0; i < modelCount; ++i)
+    {
+        Csm::CubismMatrix44 projection;
+        LAppModel* model = [self getModel:i];
+
+        if (model->GetModel() == NULL)
+        {
+            LAppPal::PrintLogLn("Failed to model->GetModel().");
+            continue;
+        }
+
+        if (model->GetModel()->GetCanvasWidth() > 1.0f && width < height)
+        {
+          // 横に長いモデルを縦長ウィンドウに表示する際モデルの横サイズでscaleを算出する
+          model->GetModelMatrix()->SetWidth(2.0f);
+          projection.Scale(1.0f, static_cast<float>(width) / static_cast<float>(height));
+        }
+        else
+        {
+          projection.Scale(static_cast<float>(height) / static_cast<float>(width), 1.0f);
+        }
+
+        // 必要があればここで乗算
+        if (_viewMatrix != NULL)
+        {
+          projection.MultiplyByMatrix(_viewMatrix);
+        }
+
+//        [view PreModelDraw:*model];
+
+        model->Update();
+        model->Draw(projection);///< 参照渡しなのでprojectionは変質する
+
+//        [view PostModelDraw:*model];
+    }
+}
+
+- (void)nextScene;
+{
+    Csm::csmInt32 no = ((int)_sceneIndex + 1) % _modelDir.GetSize();
+    [self changeScene:no];
+}
+
+
+- (unsigned int)GetModelNum
+{
+    return _models.GetSize();
+}
+
+- (void)SetViewMatrix:(NYLDCubismMatrix44 *)m
+{
+    for (int i = 0; i < 16; i++) {
+        _viewMatrix->GetArray()[i] = [m getArray][i];
+    }
+}
+
 
 + (void)setup {
     [[NYLDModelManager shared] setup];

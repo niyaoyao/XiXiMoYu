@@ -7,38 +7,20 @@
 //
 
 import UIKit
+import Live2DSDK
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Get the bundle for the Live2DSDK framework
-        guard let bundle = loadLive2DModelsBundle() else { return }
-        if let imagePath = bundle.path(forResource: "back_class_normal", ofType: "png") {
-            
-            // 3. Load the image
-            if let image = UIImage(contentsOfFile: imagePath) {
-                
-                // 4. Create UIImageView to display the image
-                let imageView = UIImageView(image: image)
-                imageView.frame = CGRect(x: 0, y: 200, width: 200, height: 200) // Adjust size as needed
-                imageView.contentMode = .scaleAspectFit
-                
-                // 5. Add to view
-                view.addSubview(imageView)
-            } else {
-                print("Failed to load image")
-            }
-        } else {
-            print("Image file not found in bundle")
-        }
-        
         
     }
     
     @IBAction func routeToLive2DPage(_ sender: Any) {
-        
+        let vc = Live2DSDK.ViewController(nibName: nil, bundle: nil)
+        vc.initializeSprite()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     override func didReceiveMemoryWarning() {

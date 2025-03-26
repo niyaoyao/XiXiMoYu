@@ -19,9 +19,9 @@
 #import <CubismMotionQueueEntry.hpp>
 #import "LAppDefine.h"
 #import "LAppPal.h"
-#import "LAppTextureManager.h"
 #import "AppDelegate.h"
-#import "NYLDSDKManager.h"
+#import "NYLDModelManager.h"
+#import "LAppTextureManager.h"
 
 using namespace Live2D::Cubism::Framework;
 using namespace Live2D::Cubism::Framework::DefaultParameterId;
@@ -103,7 +103,7 @@ void LAppModel::LoadAssets(const csmChar* dir, const csmChar* fileName)
         LAppPal::PrintLogLn("Failed to LoadAssets().");
         return;
     }
-
+    
     CreateRenderer();
 
     SetupTextures();
@@ -600,8 +600,8 @@ void LAppModel::SetupTextures()
         csmString texturePath = _modelSetting->GetTextureFileName(modelTextureNumber);
         texturePath = _modelHomeDir + texturePath;
 
-        NYLDSDKManager *delegate = [NYLDSDKManager shared]; //(AppDelegate *) [[UIApplication sharedApplication] delegate];
-        TextureInfo* texture = [[delegate getTextureManager] createTextureFromPngFile:texturePath.GetRawString()];
+//        AppDelegate *delegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+        TextureInfo *texture = [[NYLDModelManager shared].textureManager createTextureFromPngFile:texturePath.GetRawString()];
         csmInt32 glTextueNumber = texture->id;
 
         //OpenGL
