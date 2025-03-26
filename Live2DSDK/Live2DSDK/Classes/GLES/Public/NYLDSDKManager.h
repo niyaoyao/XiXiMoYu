@@ -13,8 +13,6 @@ NS_ASSUME_NONNULL_BEGIN
 /// Manage Live2D SDK
 @interface NYLDSDKManager : NSObject
 
-@property (nonatomic, readonly, getter=getTextureManager) LAppTextureManager *textureManager;
-
 + (instancetype)shared;
 /// init
 + (void)setup;

@@ -32,8 +32,8 @@ Pod::Spec.new do |s|
   s.subspec 'Core' do |sp|
     sp.source_files = 'Live2DSDK/Classes/Core/Source/**/*.{h,hpp,c,cpp,tpp,m,mm}','Live2DSDK/Classes/Core/include/*.{h,hpp,tpp}'
     sp.private_header_files = 'Live2DSDK/Classes/Core/Source/**/*.{h,hpp,tpp}','Live2DSDK/Classes/Core/include/*.{h,hpp,tpp}'
-    sp.ios.vendored_library = 'Live2DSDK/Classes/Core/Library/Release-iphoneos/libLive2DCubismCore.a'
-    # sp.ios.vendored_library = 'Live2DSDK/Classes/Core/Library/Debug-iphonesimulator/libLive2DCubismCore.a'
+    # sp.ios.vendored_library = 'Live2DSDK/Classes/Core/Library/Release-iphoneos/libLive2DCubismCore.a'
+    sp.ios.vendored_library = 'Live2DSDK/Classes/Core/Library/Debug-iphonesimulator/libLive2DCubismCore.a'
 
     sp.libraries = 'c++'
     sp.requires_arc = false

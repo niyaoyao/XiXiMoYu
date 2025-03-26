@@ -246,7 +246,10 @@ int CompareCsmString(const void* a, const void* b)
 
     [self releaseAllModel];
     _models.PushBack(new LAppModel());
-    _models[0]->LoadAssets(modelPath.GetRawString(), modelJsonName.GetRawString());
+    
+//    AppDelegate* delegate = (AppDelegate*) [[UIApplication sharedApplication] delegate];
+    TextureInfo* texture = nil;//[[delegate getTextureManager] createTextureFromPngFile:texturePath.GetRawString()];
+    _models[0]->LoadAssets(modelPath.GetRawString(), modelJsonName.GetRawString(), texture);
 
     /*
      * モデル半透明表示を行うサンプルを提示する。

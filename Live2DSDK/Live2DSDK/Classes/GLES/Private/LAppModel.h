@@ -13,7 +13,9 @@
 #import <ICubismModelSetting.hpp>
 #import <csmRectF.hpp>
 #import <CubismOffscreenSurface_OpenGLES2.hpp>
+#import "LAppTextureManager.h"
 
+#include "csmString.hpp"
 /**
  * @brief ユーザーが実際に使用するモデルの実装クラス<br>
  *         モデル生成、機能コンポーネント生成、更新処理とレンダリングの呼び出しを行う。
@@ -32,18 +34,22 @@ public:
      *
      */
     virtual ~LAppModel();
+    /**
+     * @brief get model texture path
+     */
+    Live2D::Cubism::Framework::csmString getModelTexturePath();
 
     /**
      * @brief model3.jsonが置かれたディレクトリとファイルパスからモデルを生成する
      *
      */
-    void LoadAssets(const Csm::csmChar* dir, const  Csm::csmChar* fileName);
+    void LoadAssets(const char* dir, const char* fileName, TextureInfo* texture);
 
     /**
      * @brief レンダラを再構築する
      *
      */
-    void ReloadRenderer();
+    void ReloadRenderer(TextureInfo* texture);
 
     /**
      * @brief   モデルの更新処理。モデルのパラメータから描画状態を決定する。
@@ -114,6 +120,7 @@ public:
      * @brief   別ターゲットに描画する際に使用するバッファの取得
      */
     Csm::Rendering::CubismOffscreenSurface_OpenGLES2& GetRenderBuffer();
+    
 
 protected:
     /**
@@ -136,7 +143,7 @@ private:
      * @brief OpenGLのテクスチャユニットにテクスチャをロードする
      *
      */
-    void SetupTextures();
+    void SetupTextures(TextureInfo* texture);
 
     /**
      * @brief   モーションデータをグループ名から一括でロードする。<br>

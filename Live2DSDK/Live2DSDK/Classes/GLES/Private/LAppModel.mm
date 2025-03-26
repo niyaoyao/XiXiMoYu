@@ -19,7 +19,6 @@
 #import <CubismMotionQueueEntry.hpp>
 #import "LAppDefine.h"
 #import "LAppPal.h"
-#import "LAppTextureManager.h"
 #import "AppDelegate.h"
 #import "NYLDSDKManager.h"
 
@@ -80,7 +79,13 @@ LAppModel::~LAppModel()
     delete _modelSetting;
 }
 
-void LAppModel::LoadAssets(const csmChar* dir, const csmChar* fileName)
+Live2D::Cubism::Framework::csmString LAppModel::getModelTexturePath() {
+    csmString texturePath = _modelSetting->GetTextureFileName(modelTextureNumber);
+    texturePath = _modelHomeDir + texturePath;
+    return texturePath;
+}
+
+void LAppModel::LoadAssets(const csmChar* dir, const csmChar* fileName, TextureInfo* texture)
 {
     _modelHomeDir = dir;
 
@@ -103,10 +108,10 @@ void LAppModel::LoadAssets(const csmChar* dir, const csmChar* fileName)
         LAppPal::PrintLogLn("Failed to LoadAssets().");
         return;
     }
-
+    
     CreateRenderer();
 
-    SetupTextures();
+    SetupTextures(texture);
 }
 
 void LAppModel::SetupModel(ICubismModelSetting* setting)
@@ -577,16 +582,16 @@ void LAppModel::SetRandomExpression()
     }
 }
 
-void LAppModel::ReloadRenderer()
+void LAppModel::ReloadRenderer(TextureInfo* texture)
 {
     DeleteRenderer();
 
     CreateRenderer();
 
-    SetupTextures();
+    SetupTextures(texture);
 }
 
-void LAppModel::SetupTextures()
+void LAppModel::SetupTextures(TextureInfo* texture)
 {
     for (csmInt32 modelTextureNumber = 0; modelTextureNumber < _modelSetting->GetTextureCount(); modelTextureNumber++)
     {
@@ -600,8 +605,8 @@ void LAppModel::SetupTextures()
         csmString texturePath = _modelSetting->GetTextureFileName(modelTextureNumber);
         texturePath = _modelHomeDir + texturePath;
 
-        NYLDSDKManager *delegate = [NYLDSDKManager shared]; //(AppDelegate *) [[UIApplication sharedApplication] delegate];
-        TextureInfo* texture = [[delegate getTextureManager] createTextureFromPngFile:texturePath.GetRawString()];
+//        AppDelegate *delegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+//        TextureInfo* texture = [[delegate getTextureManager] createTextureFromPngFile:texturePath.GetRawString()];
         csmInt32 glTextueNumber = texture->id;
 
         //OpenGL
