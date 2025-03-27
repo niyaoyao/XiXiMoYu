@@ -164,8 +164,10 @@ using namespace LAppDefine;
     //時間更新
     LAppPal::UpdateTime();
     NYLog(@"4");
+    NYLog(@"mOpenGLRun:%d", mOpenGLRun);
     if(mOpenGLRun)
     {
+        
         // 画面クリア
         glClear(GL_COLOR_BUFFER_BIT);
 
@@ -182,6 +184,7 @@ using namespace LAppDefine;
         // 各モデルが持つ描画ターゲットをテクスチャとする場合はスプライトへの描画はここ
         if (_renderTarget == SelectTarget_ModelFrameBuffer && _renderSprite)
         {
+            NYLog(@"??????????????????????");
             float uvVertex[] =
             {
                 0.0f, 0.0f,
@@ -228,7 +231,8 @@ using namespace LAppDefine;
     float fHeight = 300.0f;
     fWidth = static_cast<float>(width );
     fHeight = static_cast<float>(height);
-    _back = [[LAppSprite alloc] initWithMyVar:x Y:y Width:fWidth Height:fHeight TextureId:backgroundTexture->id];
+    _back = [[LAppSprite alloc] initWithMyVar:x Y:y Width:fWidth Height:fHeight TextureId:backgroundTexture->textureId];
+    NYLog(@"backgroundTexture->textureId]: %d", backgroundTexture->textureId);
 
     imageName = GearImageName;
     TextureInfo* gearTexture = [textureManager createTextureFromPngFile:resourcesPath+imageName];
@@ -236,7 +240,8 @@ using namespace LAppDefine;
     y = static_cast<float>(gearTexture->height * 0.5f);
     fWidth = static_cast<float>(gearTexture->width);
     fHeight = static_cast<float>(gearTexture->height);
-    _gear = [[LAppSprite alloc] initWithMyVar:x Y:y Width:fWidth Height:fHeight TextureId:gearTexture->id];
+    _gear = [[LAppSprite alloc] initWithMyVar:x Y:y Width:fWidth Height:fHeight TextureId:gearTexture->textureId];
+    NYLog(@"gearTexture->textureId]: %d", gearTexture->textureId);
 
     imageName = PowerImageName;
     TextureInfo* powerTexture = [textureManager createTextureFromPngFile:resourcesPath+imageName];
@@ -244,7 +249,8 @@ using namespace LAppDefine;
     y = static_cast<float>(powerTexture->height * 0.5f);
     fWidth = static_cast<float>(powerTexture->width);
     fHeight = static_cast<float>(powerTexture->height);
-    _power = [[LAppSprite alloc] initWithMyVar:x Y:y Width:fWidth Height:fHeight TextureId:powerTexture->id];
+    _power = [[LAppSprite alloc] initWithMyVar:x Y:y Width:fWidth Height:fHeight TextureId:powerTexture->textureId];
+    NYLog(@"powerTexture->textureId]: %d", powerTexture->textureId);
 
     x = static_cast<float>(width) * 0.5f;
     y = static_cast<float>(height) * 0.5f;

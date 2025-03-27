@@ -602,7 +602,7 @@ void LAppModel::SetupTextures()
 
 //        AppDelegate *delegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
         TextureInfo *texture = [[NYLDModelManager shared].textureManager createTextureFromPngFile:texturePath.GetRawString()];
-        csmInt32 glTextueNumber = texture->id;
+        csmInt32 glTextueNumber = texture->textureId;
 
         //OpenGL
         GetRenderer<Rendering::CubismRenderer_OpenGLES2>()->BindTexture(modelTextureNumber, glTextueNumber);

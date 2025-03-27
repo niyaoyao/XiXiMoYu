@@ -270,11 +270,13 @@ void NYLDFinishedMotion(Csm::ACubismMotion* motion)
 //    ViewController* view = [delegate viewController];
 
     Csm::csmUint32 modelCount = _models.GetSize();
+    NYLog(@"modelCount: %d", modelCount);
     for (Csm::csmUint32 i = 0; i < modelCount; ++i)
     {
         Csm::CubismMatrix44 projection;
         LAppModel* model = [self getModel:i];
-
+        NYLog(@"LAppModel: %p", model);
+        NYLog(@"projection: %p", projection.GetArray());
         if (model->GetModel() == NULL)
         {
             LAppPal::PrintLogLn("Failed to model->GetModel().");
@@ -323,6 +325,7 @@ void NYLDFinishedMotion(Csm::ACubismMotion* motion)
 {
     for (int i = 0; i < 16; i++) {
         _viewMatrix->GetArray()[i] = [m getArray][i];
+        NYLog(@"m->GetArray()[i]:%.2f _viewMatrix->GetArray()[i]:%.2f", [m getArray][i], _viewMatrix->GetArray()[i] );
     }
 }
 

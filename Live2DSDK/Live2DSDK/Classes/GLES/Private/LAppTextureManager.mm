@@ -99,7 +99,7 @@
     textureInfo->fileName = fileName;
     textureInfo->width = width;
     textureInfo->height = height;
-    textureInfo->id = textureId;
+    textureInfo->textureId = textureId;
     _textures.PushBack(textureInfo);
 
     return textureInfo;
@@ -118,7 +118,7 @@
 {
     for (Csm::csmUint32 i = 0; i < _textures.GetSize(); i++)
     {
-        glDeleteTextures(1, &(_textures[i]->id));
+        glDeleteTextures(1, &(_textures[i]->textureId));
         delete _textures[i];
     }
 
@@ -129,11 +129,11 @@
 {
     for (Csm::csmUint32 i = 0; i < _textures.GetSize(); i++)
     {
-        if (_textures[i]->id != textureId)
+        if (_textures[i]->textureId != textureId)
         {
             continue;
         }
-        glDeleteTextures(1, &(_textures[i]->id));
+        glDeleteTextures(1, &(_textures[i]->textureId));
         delete _textures[i];
         _textures.Remove(i);
         break;
@@ -146,7 +146,7 @@
     {
         if (_textures[i]->fileName == fileName)
         {
-            glDeleteTextures(1, &(_textures[i]->id));
+            glDeleteTextures(1, &(_textures[i]->textureId));
             delete _textures[i];
             _textures.Remove(i);
             break;

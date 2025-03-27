@@ -14,6 +14,7 @@
 #import "LAppModel.h"
 #import "LAppDefine.h"
 #import "LAppPal.h"
+#import "NYCommon.h"
 
 @interface LAppLive2DManager()
 
@@ -182,11 +183,13 @@ int CompareCsmString(const void* a, const void* b)
     ViewController* view = [delegate viewController];
 
     Csm::csmUint32 modelCount = _models.GetSize();
+    NYLog(@"modelCount: %d", modelCount);
     for (Csm::csmUint32 i = 0; i < modelCount; ++i)
     {
         Csm::CubismMatrix44 projection;
         LAppModel* model = [self getModel:i];
-
+        NYLog(@"LAppModel: %p", model);
+        NYLog(@"projection: %p", projection.GetArray());
         if (model->GetModel() == NULL)
         {
             LAppPal::PrintLogLn("Failed to model->GetModel().");
@@ -293,6 +296,7 @@ int CompareCsmString(const void* a, const void* b)
 {
     for (int i = 0; i < 16; i++) {
         _viewMatrix->GetArray()[i] = m->GetArray()[i];
+        NYLog(@"m->GetArray()[i]:%.2f _viewMatrix->GetArray()[i]:%.2f", m->GetArray()[i], _viewMatrix->GetArray()[i]);
     }
 }
 

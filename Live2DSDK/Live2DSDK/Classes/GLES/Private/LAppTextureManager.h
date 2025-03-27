@@ -20,7 +20,7 @@
  */
 typedef struct
 {
-    GLuint id;              ///< テクスチャID
+    GLuint textureId;              ///< テクスチャID
     int width;              ///< 横幅
     int height;             ///< 高さ
     std::string fileName;       ///< ファイル名
