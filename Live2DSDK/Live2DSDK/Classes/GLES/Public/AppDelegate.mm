@@ -13,9 +13,11 @@
 #import <OpenGLES/ES2/glext.h>
 #import "LAppPal.h"
 #import "LAppDefine.h"
-#import "LAppLive2DManager.h"
+//#import "LAppLive2DManager.h"
 #import "LAppTextureManager.h"
-
+#import "NYLDSDKManager.h"
+#import "NYLDModelManager.h"
+#import <CubismMatrix44.hpp>
 
 @interface AppDelegate ()
 
@@ -38,10 +40,10 @@
     self.viewController = [[ViewController alloc] initWithNibName:nil bundle:nil];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
+    [NYLDSDKManager setup];
+//    [self initializeCubism];
 
-    [self initializeCubism];
-
-    [self.viewController initializeSprite];
+//    [self.viewController initializeSprite];
 
 
     return YES;
@@ -59,7 +61,7 @@
 
     _textureManager = nil;
 
-    _sceneIndex = [[LAppLive2DManager getInstance] sceneIndex];
+//    _sceneIndex = [[LAppLive2DManager getInstance] sceneIndex];
 }
 
 
@@ -69,7 +71,8 @@
 
     _textureManager = [[LAppTextureManager alloc]init];
 
-    [[LAppLive2DManager getInstance] changeScene:_sceneIndex];
+//    [[LAppLive2DManager getInstance] changeScene:_sceneIndex];
+    
 }
 
 
@@ -85,18 +88,18 @@
 
 - (void)initializeCubism
 {
-    _cubismOption.LogFunction = LAppPal::PrintMessageLn;
-    _cubismOption.LoggingLevel = LAppDefine::CubismLoggingLevel;
+//    _cubismOption.LogFunction = LAppPal::PrintMessageLn;
+//    _cubismOption.LoggingLevel = LAppDefine::CubismLoggingLevel;
+//
+//    Csm::CubismFramework::StartUp(&_cubismAllocator,&_cubismOption);
+//
+//    Csm::CubismFramework::Initialize();
+    
+//    [LAppLive2DManager getInstance];
 
-    Csm::CubismFramework::StartUp(&_cubismAllocator,&_cubismOption);
-
-    Csm::CubismFramework::Initialize();
-
-    [LAppLive2DManager getInstance];
-
-    Csm::CubismMatrix44 projection;
-
-    LAppPal::UpdateTime();
+//    Csm::CubismMatrix44 projection;
+//
+//    LAppPal::UpdateTime();
 
 }
 
@@ -111,7 +114,7 @@
 
     _textureManager = nil;
 
-    [LAppLive2DManager releaseInstance];
+//    [LAppLive2DManager releaseInstance];
 
     Csm::CubismFramework::Dispose();
 

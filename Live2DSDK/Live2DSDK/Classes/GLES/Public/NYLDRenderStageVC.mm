@@ -118,6 +118,8 @@ using namespace LAppDefine;
 
     glGenBuffers(1, &_fragmentBufferId);
     glBindBuffer(GL_ARRAY_BUFFER,  _fragmentBufferId);
+    
+    [self initializeSprite];
 }
 
 - (void)initializeScreen

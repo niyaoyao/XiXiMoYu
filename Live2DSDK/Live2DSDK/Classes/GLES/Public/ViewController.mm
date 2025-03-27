@@ -19,12 +19,13 @@
 #import "LAppSprite.h"
 #import "TouchManager.h"
 #import "LAppDefine.h"
-#import "LAppLive2DManager.h"
+//#import "LAppLive2DManager.h"
 #import "LAppTextureManager.h"
 #import "LAppPal.h"
 #import "NYCommon.h"
 #include "CubismOffscreenSurface_OpenGLES2.hpp"
 #import "CubismMatrix44.hpp"
+#import "NYLDModelManager.h"
 
 #define BUFFER_OFFSET(bytes) ((GLubyte *)NULL + (bytes))
 
@@ -41,6 +42,7 @@ using namespace LAppDefine;
 @property (nonatomic) Csm::CubismViewMatrix *viewMatrix;
 
 @property (nonatomic) Csm::Rendering::CubismOffscreenSurface_OpenGLES2 renderBuffer;
+@property (nonatomic, assign) BOOL hasInitSprite;
 @end
 
 @implementation ViewController
@@ -115,6 +117,10 @@ using namespace LAppDefine;
     glBindBuffer(GL_ARRAY_BUFFER,  _fragmentBufferId);
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [self initializeSprite];
+}
+
 - (void)initializeScreen
 {
     NYLog(@"2");
@@ -177,8 +183,10 @@ using namespace LAppDefine;
 
         [_power render:_vertexBufferId fragmentBufferID:_fragmentBufferId];
 
-        LAppLive2DManager* Live2DManager = [LAppLive2DManager getInstance];
-        [Live2DManager SetViewMatrix:_viewMatrix];
+//        LAppLive2DManager* Live2DManager = [LAppLive2DManager getInstance];
+        NYLDModelManager *Live2DManager = [NYLDModelManager shared];
+        [Live2DManager SetViewMatrix:_viewMatrix->_tr];
+//        [Live2DManager SetViewMatrix:_viewMatrix];
         [Live2DManager onUpdate];
 
         // 各モデルが持つ描画ターゲットをテクスチャとする場合はスプライトへの描画はここ
@@ -195,16 +203,16 @@ using namespace LAppDefine;
 
             for(csmUint32 i=0; i<[Live2DManager GetModelNum]; i++)
             {
-                LAppModel* model = [Live2DManager getModel:i];
-                float a = i < 1 ? 1.0f : model->GetOpacity(); // 片方のみ不透明度を取得できるようにする
-                [_renderSprite SetColor:1.0f g:1.0f b:1.0f a:a];
-
-                if (model)
-                {
-                    Csm::Rendering::CubismOffscreenSurface_OpenGLES2& useTarget = model->GetRenderBuffer();
-                    GLuint textureId = useTarget.GetColorBuffer();
-                    [_renderSprite renderImmidiate:_vertexBufferId fragmentBufferID:_fragmentBufferId TextureId:textureId uvArray:uvVertex];
-                }
+//                LAppModel* model = [Live2DManager getModel:i];
+//                float a = i < 1 ? 1.0f : model->GetOpacity(); // 片方のみ不透明度を取得できるようにする
+//                [_renderSprite SetColor:1.0f g:1.0f b:1.0f a:a];
+//
+//                if (model)
+//                {
+//                    Csm::Rendering::CubismOffscreenSurface_OpenGLES2& useTarget = model->GetRenderBuffer();
+//                    GLuint textureId = useTarget.GetColorBuffer();
+//                    [_renderSprite renderImmidiate:_vertexBufferId fragmentBufferID:_fragmentBufferId TextureId:textureId uvArray:uvVertex];
+//                }
             }
         }
 
@@ -214,13 +222,17 @@ using namespace LAppDefine;
 
 - (void)initializeSprite
 {
+    if (self.hasInitSprite) {
+        return;
+    }
+    self.hasInitSprite = YES;
     NYLog(@"3");
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     int width = screenRect.size.width;
     int height = screenRect.size.height;
 
-    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    LAppTextureManager* textureManager = [delegate getTextureManager];
+    //AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    LAppTextureManager* textureManager = [NYLDModelManager shared].textureManager;// getTextureManager];
     const string resourcesPath = ResourcesPath;
 
     string imageName = BackImageName;
@@ -276,7 +288,8 @@ using namespace LAppDefine;
     float viewY = [self transformViewY:[_touchManager getY]];
 
     [_touchManager touchesMoved:point.x DeviceY:point.y];
-    [[LAppLive2DManager getInstance] onDrag:viewX floatY:viewY];
+    //    [[LAppLive2DManager getInstance] onDrag:viewX floatY:viewY];
+        [[NYLDModelManager shared] onDrag:viewX floatY:viewY];
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
@@ -288,7 +301,8 @@ using namespace LAppDefine;
     float pointY = [self transformTapY:point.y];
 
     // タッチ終了
-    LAppLive2DManager* live2DManager = [LAppLive2DManager getInstance];
+//    LAppLive2DManager* live2DManager = [LAppLive2DManager getInstance];
+    NYLDModelManager *live2DManager = [NYLDModelManager shared];
     [live2DManager onDrag:0.0f floatY:0.0f];
     {
         // シングルタップ
@@ -347,67 +361,67 @@ using namespace LAppDefine;
     int height = screenRect.size.height;
     return deviceY * -1 + height;
 }
-
-- (void)PreModelDraw:(LAppModel&)refModel
-{
-    NYLog(@"5");
-    // 別のレンダリングターゲットへ向けて描画する場合の使用するフレームバッファ
-    Csm::Rendering::CubismOffscreenSurface_OpenGLES2* useTarget = NULL;
-
-    if (_renderTarget != SelectTarget_None)
-    {// 別のレンダリングターゲットへ向けて描画する場合
-
-        // 使用するターゲット
-        useTarget = (_renderTarget == SelectTarget_ViewFrameBuffer) ? &_renderBuffer : &refModel.GetRenderBuffer();
-
-        if (!useTarget->IsValid())
-        {// 描画ターゲット内部未作成の場合はここで作成
-            CGRect screenRect = [[UIScreen mainScreen] nativeBounds];
-            int width = screenRect.size.width;
-            int height = screenRect.size.height;
-
-            // モデル描画キャンバス
-            useTarget->CreateOffscreenSurface(height, width);
-        }
-
-        // レンダリング開始
-        useTarget->BeginDraw();
-        useTarget->Clear(_clearColorR, _clearColorG, _clearColorB, _clearColorA); // 背景クリアカラー
-    }
-}
-
-- (void)PostModelDraw:(LAppModel&)refModel
-{
-    NYLog(@"6");
-    // 別のレンダリングターゲットへ向けて描画する場合の使用するフレームバッファ
-    Csm::Rendering::CubismOffscreenSurface_OpenGLES2* useTarget = NULL;
-
-    if (_renderTarget != SelectTarget_None)
-    {// 別のレンダリングターゲットへ向けて描画する場合
-
-        // 使用するターゲット
-        useTarget = (_renderTarget == SelectTarget_ViewFrameBuffer) ? &_renderBuffer : &refModel.GetRenderBuffer();
-
-        // レンダリング終了
-        useTarget->EndDraw();
-
-        // LAppViewの持つフレームバッファを使うなら、スプライトへの描画はここ
-        if (_renderTarget == SelectTarget_ViewFrameBuffer && _renderSprite)
-        {
-            float uvVertex[] =
-            {
-                0.0f, 0.0f,
-                1.0f, 0.0f,
-                0.0f, 1.0f,
-                1.0f, 1.0f,
-            };
-
-            float a = [self GetSpriteAlpha:0];
-            [_renderSprite SetColor:1.0f g:1.0f b:1.0f a:a];
-            [_renderSprite renderImmidiate:_vertexBufferId fragmentBufferID:_fragmentBufferId TextureId:useTarget->GetColorBuffer() uvArray:uvVertex];
-        }
-    }
-}
+//
+//- (void)PreModelDraw:(LAppModel&)refModel
+//{
+//    NYLog(@"5");
+//    // 別のレンダリングターゲットへ向けて描画する場合の使用するフレームバッファ
+//    Csm::Rendering::CubismOffscreenSurface_OpenGLES2* useTarget = NULL;
+//
+//    if (_renderTarget != SelectTarget_None)
+//    {// 別のレンダリングターゲットへ向けて描画する場合
+//
+//        // 使用するターゲット
+//        useTarget = (_renderTarget == SelectTarget_ViewFrameBuffer) ? &_renderBuffer : &refModel.GetRenderBuffer();
+//
+//        if (!useTarget->IsValid())
+//        {// 描画ターゲット内部未作成の場合はここで作成
+//            CGRect screenRect = [[UIScreen mainScreen] nativeBounds];
+//            int width = screenRect.size.width;
+//            int height = screenRect.size.height;
+//
+//            // モデル描画キャンバス
+//            useTarget->CreateOffscreenSurface(height, width);
+//        }
+//
+//        // レンダリング開始
+//        useTarget->BeginDraw();
+//        useTarget->Clear(_clearColorR, _clearColorG, _clearColorB, _clearColorA); // 背景クリアカラー
+//    }
+//}
+//
+//- (void)PostModelDraw:(LAppModel&)refModel
+//{
+//    NYLog(@"6");
+//    // 別のレンダリングターゲットへ向けて描画する場合の使用するフレームバッファ
+//    Csm::Rendering::CubismOffscreenSurface_OpenGLES2* useTarget = NULL;
+//
+//    if (_renderTarget != SelectTarget_None)
+//    {// 別のレンダリングターゲットへ向けて描画する場合
+//
+//        // 使用するターゲット
+//        useTarget = (_renderTarget == SelectTarget_ViewFrameBuffer) ? &_renderBuffer : &refModel.GetRenderBuffer();
+//
+//        // レンダリング終了
+//        useTarget->EndDraw();
+//
+//        // LAppViewの持つフレームバッファを使うなら、スプライトへの描画はここ
+//        if (_renderTarget == SelectTarget_ViewFrameBuffer && _renderSprite)
+//        {
+//            float uvVertex[] =
+//            {
+//                0.0f, 0.0f,
+//                1.0f, 0.0f,
+//                0.0f, 1.0f,
+//                1.0f, 1.0f,
+//            };
+//
+//            float a = [self GetSpriteAlpha:0];
+//            [_renderSprite SetColor:1.0f g:1.0f b:1.0f a:a];
+//            [_renderSprite renderImmidiate:_vertexBufferId fragmentBufferID:_fragmentBufferId TextureId:useTarget->GetColorBuffer() uvArray:uvVertex];
+//        }
+//    }
+//}
 
 - (void)SwitchRenderingTarget:(SelectTarget)targetType
 {
