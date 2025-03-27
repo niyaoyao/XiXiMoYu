@@ -179,8 +179,8 @@ int CompareCsmString(const void* a, const void* b)
     int width = screenRect.size.width;
     int height = screenRect.size.height;
 
-    AppDelegate* delegate = (AppDelegate*) [[UIApplication sharedApplication] delegate];
-    ViewController* view = [delegate viewController];
+//    AppDelegate* delegate = (AppDelegate*) [[UIApplication sharedApplication] delegate];
+//    ViewController* view = [delegate viewController];
 
     Csm::csmUint32 modelCount = _models.GetSize();
     NYLog(@"modelCount: %d", modelCount);

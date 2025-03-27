@@ -34,32 +34,26 @@ using namespace std;
 using namespace LAppDefine;
 
 
-@interface NYLDRenderStageVC () {
-    Csm::Rendering::CubismOffscreenSurface_OpenGLES2 renderBuffer;
-}
+@interface NYLDRenderStageVC () 
 
-@property (nonatomic, strong) LAppSprite *back; //背景画像
-@property (nonatomic, strong) LAppSprite *gear; //歯車画像
-@property (nonatomic, strong) LAppSprite *power; //電源画像
-@property (nonatomic, strong) LAppSprite *renderSprite; //レンダリングターゲット描画用
-@property (nonatomic, strong) TouchManager *touchManager; ///< タッチマネージャー
-@property (nonatomic, strong) NYLDCubismMatrix44 *deviceToScreen;///< デバイスからスクリーンへの行列
-@property (nonatomic, strong) NYLDCubismViewMatrix *viewMatrix;
+@property (nonatomic) LAppSprite *back; //背景画像
+@property (nonatomic) LAppSprite *gear; //歯車画像
+@property (nonatomic) LAppSprite *power; //電源画像
+@property (nonatomic) LAppSprite *renderSprite; //レンダリングターゲット描画用
+@property (nonatomic) TouchManager *touchManager; ///< タッチマネージャー
+@property (nonatomic) Csm::CubismMatrix44 *deviceToScreen;///< デバイスからスクリーンへの行列
+@property (nonatomic) Csm::CubismViewMatrix *viewMatrix;
+
+@property (nonatomic) Csm::Rendering::CubismOffscreenSurface_OpenGLES2 renderBuffer;
 
 @end
 
 @implementation NYLDRenderStageVC
 @synthesize mOpenGLRun;
 
-- (void)dealloc
-{
-    [self releaseView];
-    [super dealloc];
-}
-
 - (void)releaseView
 {
-    renderBuffer.DestroyOffscreenSurface();
+    _renderBuffer.DestroyOffscreenSurface();
 
     _renderSprite = nil;
     _gear = nil;
@@ -69,7 +63,10 @@ using namespace LAppDefine;
     GLKView *view = (GLKView*)self.view;
 
     view = nil;
+
+    delete(_viewMatrix);
     _viewMatrix = nil;
+    delete(_deviceToScreen);
     _deviceToScreen = nil;
     _touchManager = nil;
 }
@@ -88,10 +85,10 @@ using namespace LAppDefine;
     _touchManager = [[TouchManager alloc]init];
 
     // デバイス座標からスクリーン座標に変換するための
-    _deviceToScreen = [[NYLDCubismMatrix44 alloc] init];//new CubismMatrix44();
+    _deviceToScreen = new CubismMatrix44();
 
     // 画面の表示の拡大縮小や移動の変換を行う行列
-    _viewMatrix = [[NYLDCubismViewMatrix alloc] init]; //new CubismViewMatrix();
+    _viewMatrix = new CubismViewMatrix();
 
     [self initializeScreen];
 
@@ -121,7 +118,6 @@ using namespace LAppDefine;
 
     glGenBuffers(1, &_fragmentBufferId);
     glBindBuffer(GL_ARRAY_BUFFER,  _fragmentBufferId);
-    [self initializeSprite];
 }
 
 - (void)initializeScreen
@@ -139,43 +135,33 @@ using namespace LAppDefine;
     float top = ViewLogicalRight;
 
     // デバイスに対応する画面の範囲。 Xの左端, Xの右端, Yの下端, Yの上端
-    [_viewMatrix setScreenRectWithLeft:left right:right bottom:bottom top:top];
-//    _viewMatrix->SetScreenRect(left, right, bottom, top);
-//    _viewMatrix->Scale(ViewScale, ViewScale);
-    [_viewMatrix scaleX:ViewScale y:ViewScale];
-    [_deviceToScreen loadIdentity];
-//    _deviceToScreen->LoadIdentity(); // サイズが変わった際などリセット必須
+    _viewMatrix->SetScreenRect(left, right, bottom, top);
+    _viewMatrix->Scale(ViewScale, ViewScale);
+
+    _deviceToScreen->LoadIdentity(); // サイズが変わった際などリセット必須
     if (width > height)
     {
       float screenW = fabsf(right - left);
-//      _deviceToScreen->ScaleRelative(screenW / width, -screenW / width);
-        [_deviceToScreen scaleRelativeX:screenW / width y:-screenW / width];
+      _deviceToScreen->ScaleRelative(screenW / width, -screenW / width);
     }
     else
     {
       float screenH = fabsf(top - bottom);
-//      _deviceToScreen->ScaleRelative(screenH / height, -screenH / height);
-        [_deviceToScreen scaleRelativeX:screenH / height y:-screenH / height];
+      _deviceToScreen->ScaleRelative(screenH / height, -screenH / height);
     }
-//    _deviceToScreen->TranslateRelative(-width * 0.5f, -height * 0.5f);
-    [_deviceToScreen translateRelativeX:-width * 0.5f y:-height * 0.5f];
+    _deviceToScreen->TranslateRelative(-width * 0.5f, -height * 0.5f);
+
     // 表示範囲の設定
-    [_viewMatrix setMaxScale:ViewMaxScale];
-    [_viewMatrix setMinScale:ViewMinScale];
-//    _viewMatrix->SetMaxScale(ViewMaxScale); // 限界拡大率
-//    _viewMatrix->SetMinScale(ViewMinScale); // 限界縮小率
+    _viewMatrix->SetMaxScale(ViewMaxScale); // 限界拡大率
+    _viewMatrix->SetMinScale(ViewMinScale); // 限界縮小率
 
     // 表示できる最大範囲
-//    _viewMatrix->SetMaxScreenRect(
-//                                  ViewLogicalMaxLeft,
-//                                  ViewLogicalMaxRight,
-//                                  ViewLogicalMaxBottom,
-//                                  ViewLogicalMaxTop
-//                                  );
-    [_viewMatrix setMaxScreenRectWithLeft:ViewLogicalMaxLeft
-                                    right:ViewLogicalMaxRight
-                                   bottom:ViewLogicalMaxBottom
-                                      top:ViewLogicalMaxTop];
+    _viewMatrix->SetMaxScreenRect(
+                                  ViewLogicalMaxLeft,
+                                  ViewLogicalMaxRight,
+                                  ViewLogicalMaxBottom,
+                                  ViewLogicalMaxTop
+                                  );
 }
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect
@@ -186,6 +172,7 @@ using namespace LAppDefine;
     NYLog(@"mOpenGLRun:%d", mOpenGLRun);
     if(mOpenGLRun)
     {
+        
         // 画面クリア
         glClear(GL_COLOR_BUFFER_BIT);
 
@@ -196,16 +183,14 @@ using namespace LAppDefine;
         [_power render:_vertexBufferId fragmentBufferID:_fragmentBufferId];
 
 //        LAppLive2DManager* Live2DManager = [LAppLive2DManager getInstance];
-//        [Live2DManager SetViewMatrix:_viewMatrix];
-//        [Live2DManager onUpdate];
-        
         NYLDModelManager *manager = [NYLDModelManager shared];
-        [manager SetViewMatrix:_viewMatrix];
+        [manager SetViewMatrix:_viewMatrix->_tr];
         [manager onUpdate];
 
         // 各モデルが持つ描画ターゲットをテクスチャとする場合はスプライトへの描画はここ
         if (_renderTarget == NYLDSelectTargetModelFrameBuffer && _renderSprite)
         {
+            NYLog(@"??????????????????????");
             float uvVertex[] =
             {
                 0.0f, 0.0f,
@@ -214,8 +199,7 @@ using namespace LAppDefine;
                 1.0f, 1.0f,
             };
             int num = [manager GetModelNum];
-            NYLog(@"GetModelNum: %d", num);
-            for(csmUint32 i=0; i<num; i++)
+            for(csmUint32 i=0; i < num; i++)
             {
                 float opacity = [manager getModelOpacityWithIndex:i];
                 float a = i < 1 ? 1.0f : opacity; // 片方のみ不透明度を取得できるようにする
@@ -223,12 +207,9 @@ using namespace LAppDefine;
 
                 if ([manager modelExistsWithIndex:i])
                 {
-                   
-                    GLuint textureId = [manager modelTextureIdWithIndex:i];
-                    [_renderSprite renderImmidiate:_vertexBufferId
-                                  fragmentBufferID:_fragmentBufferId
-                                         TextureId:textureId
-                                           uvArray:uvVertex];
+                    
+                    GLuint textureId = [manager modelTextureIdWithIndex:i] ;
+                    [_renderSprite renderImmidiate:_vertexBufferId fragmentBufferID:_fragmentBufferId TextureId:textureId uvArray:uvVertex];
                 }
             }
         }
@@ -244,8 +225,8 @@ using namespace LAppDefine;
     int width = screenRect.size.width;
     int height = screenRect.size.height;
 
-//    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    LAppTextureManager* textureManager = [NYLDModelManager shared].textureManager; //[delegate getTextureManager];
+    
+    LAppTextureManager* textureManager = [NYLDModelManager shared].textureManager;
     const string resourcesPath = ResourcesPath;
 
     string imageName = BackImageName;
@@ -258,6 +239,7 @@ using namespace LAppDefine;
     fHeight = static_cast<float>(height);
     _back = [[LAppSprite alloc] initWithMyVar:x Y:y Width:fWidth Height:fHeight TextureId:backgroundTexture->textureId];
     NYLog(@"backgroundTexture->textureId]: %d", backgroundTexture->textureId);
+
     imageName = GearImageName;
     TextureInfo* gearTexture = [textureManager createTextureFromPngFile:resourcesPath+imageName];
     x = static_cast<float>(gearTexture->width * 0.5f);
@@ -266,6 +248,7 @@ using namespace LAppDefine;
     fHeight = static_cast<float>(gearTexture->height);
     _gear = [[LAppSprite alloc] initWithMyVar:x Y:y Width:fWidth Height:fHeight TextureId:gearTexture->textureId];
     NYLog(@"gearTexture->textureId]: %d", gearTexture->textureId);
+
     imageName = PowerImageName;
     TextureInfo* powerTexture = [textureManager createTextureFromPngFile:resourcesPath+imageName];
     x = static_cast<float>(width - powerTexture->width * 0.5f);
@@ -274,6 +257,7 @@ using namespace LAppDefine;
     fHeight = static_cast<float>(powerTexture->height);
     _power = [[LAppSprite alloc] initWithMyVar:x Y:y Width:fWidth Height:fHeight TextureId:powerTexture->textureId];
     NYLog(@"powerTexture->textureId]: %d", powerTexture->textureId);
+
     x = static_cast<float>(width) * 0.5f;
     y = static_cast<float>(height) * 0.5f;
     fWidth = static_cast<float>(width*2);
@@ -298,7 +282,6 @@ using namespace LAppDefine;
     float viewY = [self transformViewY:[_touchManager getY]];
 
     [_touchManager touchesMoved:point.x DeviceY:point.y];
-//    [[LAppLive2DManager getInstance] onDrag:viewX floatY:viewY];
     [[NYLDModelManager shared] onDrag:viewX floatY:viewY];
 }
 
@@ -311,32 +294,30 @@ using namespace LAppDefine;
     float pointY = [self transformTapY:point.y];
 
     // タッチ終了
-//    LAppLive2DManager* live2DManager = [LAppLive2DManager getInstance];
-    [[NYLDModelManager shared] onDrag:0.0f floatY:0.0f];
+    NYLDModelManager *live2DManager = [NYLDModelManager shared];
+    [live2DManager onDrag:0.0f floatY:0.0f];
     {
         // シングルタップ
         float getX = [_touchManager getX];// 論理座標変換した座標を取得。
         float getY = [_touchManager getY]; // 論理座標変換した座標を取得。
-        float x = [_deviceToScreen transformX:getX];//->TransformX(getX);
-        float y = [_deviceToScreen transformY:getY];//->TransformY(getY);
+        float x = _deviceToScreen->TransformX(getX);
+        float y = _deviceToScreen->TransformY(getY);
 
         if (DebugTouchLogEnable)
         {
             LAppPal::PrintLogLn("[APP]touchesEnded x:%.2f y:%.2f", x, y);
         }
-        [[NYLDModelManager shared] onTap:x floatY:y];
+        [live2DManager onTap:x floatY:y];
 
         // 歯車にタップしたか
         if ([_gear isHit:point.x PointY:pointY])
         {
-            [[NYLDModelManager shared] nextScene];
+            [live2DManager nextScene];
         }
 
         // 電源ボタンにタップしたか
         if ([_power isHit:point.x PointY:pointY])
         {
-//            AppDelegate *delegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
-//            [delegate finishApplication];
 
         }
     }
@@ -344,24 +325,24 @@ using namespace LAppDefine;
 
 - (float)transformViewX:(float)deviceX
 {
-    float screenX = [_deviceToScreen transformX:deviceX];//->TransformX(deviceX); // 論理座標変換した座標を取得。
-    return [_viewMatrix invertTransformX:screenX];//->InvertTransformX(screenX); // 拡大、縮小、移動後の値。
+    float screenX = _deviceToScreen->TransformX(deviceX); // 論理座標変換した座標を取得。
+    return _viewMatrix->InvertTransformX(screenX); // 拡大、縮小、移動後の値。
 }
 
 - (float)transformViewY:(float)deviceY
 {
-    float screenY = [_deviceToScreen transformY:deviceY];//->TransformY(deviceY); // 論理座標変換した座標を取得。
-    return [_viewMatrix invertTransformY:screenY];//->InvertTransformY(screenY); // 拡大、縮小、移動後の値。
+    float screenY = _deviceToScreen->TransformY(deviceY); // 論理座標変換した座標を取得。
+    return _viewMatrix->InvertTransformY(screenY); // 拡大、縮小、移動後の値。
 }
 
 - (float)transformScreenX:(float)deviceX
 {
-    return [_deviceToScreen transformX:deviceX]; //->TransformX(deviceX);
+    return _deviceToScreen->TransformX(deviceX);
 }
 
 - (float)transformScreenY:(float)deviceY
 {
-    return [_deviceToScreen transformY:deviceY];//->TransformY(deviceY);
+    return _deviceToScreen->TransformY(deviceY);
 }
 
 - (float)transformTapY:(float)deviceY
@@ -381,7 +362,7 @@ using namespace LAppDefine;
     {// 別のレンダリングターゲットへ向けて描画する場合
 
         // 使用するターゲット
-        useTarget = (_renderTarget == NYLDSelectTargetViewFrameBuffer) ? &renderBuffer : &refModel.GetRenderBuffer();
+        useTarget = (_renderTarget == NYLDSelectTargetViewFrameBuffer) ? &_renderBuffer : &refModel.GetRenderBuffer();
 
         if (!useTarget->IsValid())
         {// 描画ターゲット内部未作成の場合はここで作成
@@ -409,7 +390,7 @@ using namespace LAppDefine;
     {// 別のレンダリングターゲットへ向けて描画する場合
 
         // 使用するターゲット
-        useTarget = (_renderTarget == NYLDSelectTargetViewFrameBuffer) ? &renderBuffer : &refModel.GetRenderBuffer();
+        useTarget = (_renderTarget == NYLDSelectTargetViewFrameBuffer) ? &_renderBuffer : &refModel.GetRenderBuffer();
 
         // レンダリング終了
         useTarget->EndDraw();
@@ -459,5 +440,4 @@ using namespace LAppDefine;
 
     return alpha;
 }
-
 @end

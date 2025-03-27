@@ -7,7 +7,6 @@
 
 #import <Foundation/Foundation.h>
 #import "NYCommon.h"
-#import "NYLDCubismMatrix44.h"
 
 #import <GLKit/GLKit.h>
 @class LAppTextureManager;
@@ -72,7 +71,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * @brief   viewMatrixをセットする
  */
-- (void)SetViewMatrix:(NYLDCubismMatrix44 *)m;
+- (void)SetViewMatrix:(float *)m;
 
 
 - (float)getModelOpacityWithIndex:(int)index;

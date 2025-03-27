@@ -26,7 +26,7 @@ public:
      * Destructor
      */
     virtual ~CubismMatrix44();
-
+    csmFloat32  _tr[16];
     /**
      * Multiplies the two given matrices and stores the result in the destination matrix.
      *
@@ -172,8 +172,8 @@ public:
      */
     void            MultiplyByMatrix(CubismMatrix44* m);
 
-protected:
-    csmFloat32  _tr[16];
+    
+    
 };
 
 }}}

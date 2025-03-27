@@ -13,11 +13,5 @@
     #define NYLog(fmt, ...) do {} while (0)
 #endif
 
-typedef NS_ENUM(NSUInteger, NYLDSelectTarget)
-{
-    NYLDSelectTargetNone,                ///< デフォルトのフレームバッファにレンダリング
-    NYLDSelectTargetModelFrameBuffer,    ///< LAppModelが各自持つフレームバッファにレンダリング
-    NYLDSelectTargetViewFrameBuffer,     ///< LAppViewの持つフレームバッファにレンダリング
-};
 
 #endif /* NYCommon_h */

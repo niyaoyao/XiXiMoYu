@@ -202,8 +202,8 @@ using namespace LAppDefine;
                 if (model)
                 {
                     Csm::Rendering::CubismOffscreenSurface_OpenGLES2& useTarget = model->GetRenderBuffer();
-                    GLuint id = useTarget.GetColorBuffer();
-                    [_renderSprite renderImmidiate:_vertexBufferId fragmentBufferID:_fragmentBufferId TextureId:id uvArray:uvVertex];
+                    GLuint textureId = useTarget.GetColorBuffer();
+                    [_renderSprite renderImmidiate:_vertexBufferId fragmentBufferID:_fragmentBufferId TextureId:textureId uvArray:uvVertex];
                 }
             }
         }

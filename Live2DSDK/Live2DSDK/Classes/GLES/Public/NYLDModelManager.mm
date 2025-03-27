@@ -37,6 +37,7 @@ void NYLDFinishedMotion(Csm::ACubismMotion* motion)
 
 @property (nonatomic) Csm::CubismMatrix44 *viewMatrix; //モデル描画に用いるView行列
 @property (nonatomic) Csm::csmVector<LAppModel*> models; //モデルインスタンスのコンテナ
+
 @property (nonatomic) Csm::csmVector<Csm::csmString> modelDir; ///< モデルディレクトリ名のコンテナ
 
 @property (nonatomic, strong, readwrite) NSBundle *modelBundle;
@@ -78,6 +79,26 @@ void NYLDFinishedMotion(Csm::ACubismMotion* motion)
     return self;
 }
 
+
+- (void)dealloc
+{
+    delete _viewMatrix;
+    _viewMatrix = nil;
+
+    [self releaseAllModel];
+    [super dealloc];
+}
+
+- (void)releaseAllModel
+{
+    for (Csm::csmUint32 i = 0; i < _models.GetSize(); i++)
+    {
+        delete _models[i];
+    }
+
+    _models.Clear();
+}
+
 - (LAppTextureManager *)textureManager {
     if (!_textureManager) {
         _textureManager = [[LAppTextureManager alloc] init];
@@ -111,109 +132,6 @@ void NYLDFinishedMotion(Csm::ACubismMotion* motion)
     NYLog(@"modelDirectories: %@", self.modelDirectories);
 }
 
-- (void)changeScene:(NSInteger)sceneIndex {
-    if (sceneIndex >= self.modelDirectories.count || sceneIndex < 0) {
-        return;
-    }
-    _sceneIndex = sceneIndex;
-    NSString *path = [self.modelDirectories objectAtIndex:_sceneIndex];
-    NSString *modelName = [path lastPathComponent];
-    NSString *targetFile = [path stringByAppendingPathComponent: [NSString stringWithFormat: @"%@.model3.json", modelName]];
-    if (![[NSFileManager defaultManager] fileExistsAtPath:targetFile]) {
-        NYLog(@"文件不存在: %@", targetFile);
-        return ;
-    }
-    
-    NSError *error = nil;
-    NSData *jsonData = [NSData dataWithContentsOfFile:targetFile options:0 error:&error];
-    
-    if (!jsonData) {
-        NSLog(@"Error reading file: %@", error.localizedDescription);
-        return ;
-    }
-    
-    // 使用 NSJSONReadingMutableContainers 选项可以直接得到可变容器
-    id jsonObject = [NSJSONSerialization JSONObjectWithData:jsonData
-                                                    options:NSJSONReadingMutableContainers
-                                                      error:&error];
-    
-    if (error) {
-        NSLog(@"JSON parsing error: %@", error.localizedDescription);
-        return ;
-    }
-    
-    if ([jsonObject isKindOfClass:[NSDictionary class]]) {
-        self.currentModel = (NSDictionary *)jsonObject;
-    }
-    
-    if (LAppDefine::DebugLogEnable)
-    {
-        LAppPal::PrintLogLn("[APP]model index: %d", _sceneIndex);
-    }
-
-    // model3.jsonのパスを決定する.
-    // ディレクトリ名とmodel3.jsonの名前を一致させておくこと.
-    const Csm::csmString& model = [[self.modelDirectories[sceneIndex].lastPathComponent stringByReplacingOccurrencesOfString:@".model3.json" withString:@""] UTF8String]; // _modelDir[sceneIndex];
-
-    Csm::csmString modelPath(LAppDefine::ResourcesPath);
-    modelPath += model;
-    modelPath.Append(1, '/');
-
-    Csm::csmString modelJsonName(model);
-    modelJsonName += ".model3.json";
-
-    [self releaseAllModel];
-    _models.PushBack(new LAppModel());
-    TextureInfo *texture = nil;
-    _models[0]->LoadAssets(modelPath.GetRawString(), modelJsonName.GetRawString());
-
-    /*
-     * モデル半透明表示を行うサンプルを提示する。
-     * ここでUSE_RENDER_TARGET、USE_MODEL_RENDER_TARGETが定義されている場合
-     * 別のレンダリングターゲットにモデルを描画し、描画結果をテクスチャとして別のスプライトに張り付ける。
-     */
-    {
-#if defined(USE_RENDER_TARGET)
-        // LAppViewの持つターゲットに描画を行う場合、こちらを選択
-        SelectTarget useRenderTarget = SelectTarget_ViewFrameBuffer;
-#elif defined(USE_MODEL_RENDER_TARGET)
-        // 各LAppModelの持つターゲットに描画を行う場合、こちらを選択
-        SelectTarget useRenderTarget = SelectTarget_ModelFrameBuffer;
-#else
-        // デフォルトのメインフレームバッファへレンダリングする(通常)
-        SelectTarget useRenderTarget = SelectTarget_None;
-#endif
-
-#if defined(USE_RENDER_TARGET) || defined(USE_MODEL_RENDER_TARGET)
-        // モデル個別にαを付けるサンプルとして、もう1体モデルを作成し、少し位置をずらす
-        _models.PushBack(new LAppModel());
-        _models[1]->LoadAssets(modelPath.GetRawString(), modelJsonName.GetRawString());
-        _models[1]->GetModelMatrix()->TranslateX(0.2f);
-#endif
-
-        float clearColorR = 0.0f;
-        float clearColorG = 0.0f;
-        float clearColorB = 0.0f;
-
-//        AppDelegate* delegate = (AppDelegate*) [[UIApplication sharedApplication] delegate];
-//        ViewController* view = [delegate viewController];
-//
-//        [view SwitchRenderingTarget:useRenderTarget];
-//        [view SetRenderTargetClearColor:clearColorR g:clearColorG b:clearColorB];
-    }
-}
-
-- (void)releaseAllModel
-{
-    for (Csm::csmUint32 i = 0; i < _models.GetSize(); i++)
-    {
-        delete _models[i];
-    }
-
-    _models.Clear();
-}
-
-
 - (LAppModel*)getModel:(Csm::csmUint32)no
 {
     if (no < _models.GetSize())
@@ -223,7 +141,7 @@ void NYLDFinishedMotion(Csm::ACubismMotion* motion)
     return nil;
 }
 
-- (void)onDrag:(float)x floatY:(float)y
+- (void)onDrag:(Csm::csmFloat32)x floatY:(Csm::csmFloat32)y
 {
     for (Csm::csmUint32 i = 0; i < _models.GetSize(); i++)
     {
@@ -232,7 +150,7 @@ void NYLDFinishedMotion(Csm::ACubismMotion* motion)
     }
 }
 
-- (void)onTap:(float)x floatY:(float)y;
+- (void)onTap:(Csm::csmFloat32)x floatY:(Csm::csmFloat32)y;
 {
     if (LAppDefine::DebugLogEnable)
     {
@@ -260,7 +178,7 @@ void NYLDFinishedMotion(Csm::ACubismMotion* motion)
     }
 }
 
-- (void)onUpdate
+- (void)onUpdate;
 {
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     int width = screenRect.size.width;
@@ -315,17 +233,75 @@ void NYLDFinishedMotion(Csm::ACubismMotion* motion)
     [self changeScene:no];
 }
 
+- (void)changeScene:(NSInteger)index;
+{
+    _sceneIndex = index;
+    if (LAppDefine::DebugLogEnable)
+    {
+        LAppPal::PrintLogLn("[APP]model index: %d", _sceneIndex);
+    }
 
-- (unsigned int)GetModelNum
+    // model3.jsonのパスを決定する.
+    // ディレクトリ名とmodel3.jsonの名前を一致させておくこと.
+    const Csm::csmString& model = _modelDir[(int)index];
+
+    Csm::csmString modelPath(LAppDefine::ResourcesPath);
+    modelPath += model;
+    modelPath.Append(1, '/');
+
+    Csm::csmString modelJsonName(model);
+    modelJsonName += ".model3.json";
+
+    [self releaseAllModel];
+    _models.PushBack(new LAppModel());
+    _models[0]->LoadAssets(modelPath.GetRawString(), modelJsonName.GetRawString());
+
+    /*
+     * モデル半透明表示を行うサンプルを提示する。
+     * ここでUSE_RENDER_TARGET、USE_MODEL_RENDER_TARGETが定義されている場合
+     * 別のレンダリングターゲットにモデルを描画し、描画結果をテクスチャとして別のスプライトに張り付ける。
+     */
+    {
+#if defined(USE_RENDER_TARGET)
+        // LAppViewの持つターゲットに描画を行う場合、こちらを選択
+        SelectTarget useRenderTarget = SelectTarget_ViewFrameBuffer;
+#elif defined(USE_MODEL_RENDER_TARGET)
+        // 各LAppModelの持つターゲットに描画を行う場合、こちらを選択
+        SelectTarget useRenderTarget = SelectTarget_ModelFrameBuffer;
+#else
+        // デフォルトのメインフレームバッファへレンダリングする(通常)
+        SelectTarget useRenderTarget = SelectTarget_None;
+#endif
+
+#if defined(USE_RENDER_TARGET) || defined(USE_MODEL_RENDER_TARGET)
+        // モデル個別にαを付けるサンプルとして、もう1体モデルを作成し、少し位置をずらす
+        _models.PushBack(new LAppModel());
+        _models[1]->LoadAssets(modelPath.GetRawString(), modelJsonName.GetRawString());
+        _models[1]->GetModelMatrix()->TranslateX(0.2f);
+#endif
+
+//        float clearColorR = 0.0f;
+//        float clearColorG = 0.0f;
+//        float clearColorB = 0.0f;
+
+//        AppDelegate* delegate = (AppDelegate*) [[UIApplication sharedApplication] delegate];
+//        ViewController* view = [delegate viewController];
+//
+//        [view SwitchRenderingTarget:useRenderTarget];
+//        [view SetRenderTargetClearColor:clearColorR g:clearColorG b:clearColorB];
+    }
+}
+
+- (Csm::csmUint32)GetModelNum;
 {
     return _models.GetSize();
 }
 
-- (void)SetViewMatrix:(NYLDCubismMatrix44 *)m
+- (void)SetViewMatrix:(float *)m;
 {
     for (int i = 0; i < 16; i++) {
-        _viewMatrix->GetArray()[i] = [m getArray][i];
-        NYLog(@"m->GetArray()[i]:%.2f _viewMatrix->GetArray()[i]:%.2f", [m getArray][i], _viewMatrix->GetArray()[i] );
+        _viewMatrix->GetArray()[i] = m[i];
+        NYLog(@"m->GetArray()[i]:%.2f _viewMatrix->GetArray()[i]:%.2f", m[i], _viewMatrix->GetArray()[i]);
     }
 }
 
