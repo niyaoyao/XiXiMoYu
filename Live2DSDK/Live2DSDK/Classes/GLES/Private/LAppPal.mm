@@ -36,14 +36,15 @@ csmByte* LAppPal::LoadFileAsBytes(const string filePath, csmSizeInt* outSize)
     NSURL *url = [[NSBundle mainBundle] URLForResource:@"Frameworks/Live2DSDK" withExtension:@"framework"];
     NSString *bundlePath = [[NSBundle bundleWithURL:url] pathForResource:@"Live2DModels" ofType:@"bundle"];
     NSBundle* bundle = [NSBundle bundleWithPath:bundlePath];
+    NYLog(@"JSON bundle: %@", bundle);
     NSString* castFilePath = [bundle
                               pathForResource:[NSString stringWithUTF8String:filename.c_str()]
                               ofType:[NSString stringWithUTF8String:extname.c_str()]
                               inDirectory:[NSString stringWithUTF8String:pathname.c_str()]];
-
+    
     NSError *errorMsg = nil;
     NSData *data = [NSData dataWithContentsOfFile:castFilePath options:NULL error: &errorMsg];
-
+    NYLog(@"JSON data: %@", data);
     if (data == nil)
     {
         PrintLogLn("Failed to read file");

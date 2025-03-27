@@ -356,6 +356,7 @@ void LAppModel::Update()
 
     // 不透明度
     _opacity = _model->GetModelOpacity();
+    NYLog(@"_opacity: %.2f", _opacity);
 
     // まばたき
     if (!motionUpdated)

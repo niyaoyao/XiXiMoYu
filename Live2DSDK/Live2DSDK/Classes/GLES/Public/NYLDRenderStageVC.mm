@@ -183,6 +183,7 @@ using namespace LAppDefine;
     //時間更新
     LAppPal::UpdateTime();
     NYLog(@"4");
+    NYLog(@"mOpenGLRun:%d", mOpenGLRun);
     if(mOpenGLRun)
     {
         // 画面クリア
@@ -200,6 +201,7 @@ using namespace LAppDefine;
         
         NYLDModelManager *manager = [NYLDModelManager shared];
         [manager SetViewMatrix:_viewMatrix];
+        [manager onUpdate];
 
         // 各モデルが持つ描画ターゲットをテクスチャとする場合はスプライトへの描画はここ
         if (_renderTarget == NYLDSelectTargetModelFrameBuffer && _renderSprite)
@@ -211,11 +213,12 @@ using namespace LAppDefine;
                 0.0f, 1.0f,
                 1.0f, 1.0f,
             };
-
-            for(csmUint32 i=0; i<[manager GetModelNum]; i++)
+            int num = [manager GetModelNum];
+            NYLog(@"GetModelNum: %d", num);
+            for(csmUint32 i=0; i<num; i++)
             {
-                
-                float a = i < 1 ? 1.0f : [manager getModelOpacityWithIndex:i]; // 片方のみ不透明度を取得できるようにする
+                float opacity = [manager getModelOpacityWithIndex:i];
+                float a = i < 1 ? 1.0f : opacity; // 片方のみ不透明度を取得できるようにする
                 [_renderSprite SetColor:1.0f g:1.0f b:1.0f a:a];
 
                 if ([manager modelExistsWithIndex:i])
