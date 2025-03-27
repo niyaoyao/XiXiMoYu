@@ -275,15 +275,15 @@ int CompareCsmString(const void* a, const void* b)
         _models[1]->GetModelMatrix()->TranslateX(0.2f);
 #endif
 
-        float clearColorR = 0.0f;
-        float clearColorG = 0.0f;
-        float clearColorB = 0.0f;
+//        float clearColorR = 0.0f;
+//        float clearColorG = 0.0f;
+//        float clearColorB = 0.0f;
 
-        AppDelegate* delegate = (AppDelegate*) [[UIApplication sharedApplication] delegate];
-        ViewController* view = [delegate viewController];
-
-        [view SwitchRenderingTarget:useRenderTarget];
-        [view SetRenderTargetClearColor:clearColorR g:clearColorG b:clearColorB];
+//        AppDelegate* delegate = (AppDelegate*) [[UIApplication sharedApplication] delegate];
+//        ViewController* view = [delegate viewController];
+//
+//        [view SwitchRenderingTarget:useRenderTarget];
+//        [view SetRenderTargetClearColor:clearColorR g:clearColorG b:clearColorB];
     }
 }
 
