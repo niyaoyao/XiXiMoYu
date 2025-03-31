@@ -20,23 +20,24 @@
     - [x] Integrate Library Automatic 
     - [x] Integrate Demo Code Automatic
 3. [ ] Further Development
-    - [ ] Basic Foundation: Convert the C++ Class to Objective-C Class
-        - [ ] `NYLDModelManager` instead of `LAppLive2DManager`
-        - [ ] `NYLDSDKManager` instead of `AppDelegate`
-        - [ ] Wrap `LAppModel` 🌟
-        - [ ] `NYLDStagingGLViewController` to render GL Model.
-        - `ViewController` remove C++ interface/type in header files.
-        - `LAppLive2DManager`  remove C++ interface/type in header files.
-        - `LAppLive2DManager` optimize the flow for manage model, bridge C++ functions.
-        - Wrap `LAppPal` `LAppSprite`
-        - Wrap `LAppSprite`
+    - [x] Basic Foundation: Convert the C++ Class to Objective-C Class
+        - [x] `NYLDModelManager` instead of `LAppLive2DManager`
+        - [x] `NYLDSDKManager` instead of `AppDelegate`
+        - [x] `NYLDStagingGLViewController` to render GL Model.
+        ~~- Wrap `LAppModel` 🌟~~
+        - [x] `ViewController` remove C++ interface/type in header files.
+        ~~- `LAppLive2DManager`  remove C++ interface/type in header files.~~
+        ~~- `LAppLive2DManager` optimize the flow for manage model, bridge C++ functions.~~
+        ~~- Wrap `LAppPal` `LAppSprite`~~
+        ~~- Wrap `LAppSprite`~~
     - [ ] Change Pose
     - [ ] Play Animation
     - [ ] Change Background
-4. [x] Renew Account Plan & Small business
-5. [ ] ICP
+4. [x] Renew Account Plan & 
+5. [ ] Small Business Plan
+6. [ ] ICP
     - [ ]  Host
     - [ ]  App
-6. [ ] Submit Review
+7. [ ] Submit Review
 
 ### Phase 2
