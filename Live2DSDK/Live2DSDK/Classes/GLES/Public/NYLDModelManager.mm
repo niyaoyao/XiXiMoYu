@@ -16,8 +16,7 @@
 #import "LAppTextureManager.h"
 #import <string.h>
 #import <stdlib.h>
-#import "AppDelegate.h"
-#import "ViewController.h"
+
 #import "LAppModel.h"
 #import "LAppDefine.h"
 #import "LAppPal.h"
@@ -45,6 +44,8 @@ void NYLDFinishedMotion(Csm::ACubismMotion* motion)
 @property (nonatomic, assign, readwrite) NSInteger sceneIndex;
 @property (nonatomic, assign, readwrite) NSDictionary *currentModel;
 @property (nonatomic, strong) NSMutableArray <NSString *> *modelDirectories;
+@property (nonatomic, strong) NSMutableArray <NSString *> *modelJSONs;
+@property (nonatomic, copy) NSString *resPath;
 
 @end
 
@@ -68,11 +69,12 @@ void NYLDFinishedMotion(Csm::ACubismMotion* motion)
         NSString *bundlePath = [[NSBundle bundleWithURL:url] pathForResource:@"Live2DModels" ofType:@"bundle"];
         NSBundle *bundle = [NSBundle bundleWithPath:bundlePath];
         _modelBundle = bundle;
-        NSString *resPath = @"Res";
-        _resourcePath = [bundlePath stringByAppendingPathComponent:resPath];
+        _resPath = @"Resources";
+        _resourcePath = [bundlePath stringByAppendingPathComponent:self.resPath];
         NYLog(@"resourcePath: %@", self.resourcePath);
         
         _modelDirectories = [[NSMutableArray alloc] init];
+        _modelJSONs = [[NSMutableArray alloc] init];
         _sceneIndex = 0;
         _viewMatrix = new Csm::CubismMatrix44();
     }
@@ -84,7 +86,10 @@ void NYLDFinishedMotion(Csm::ACubismMotion* motion)
 {
     delete _viewMatrix;
     _viewMatrix = nil;
-
+    [_modelDirectories removeAllObjects];
+    _modelDirectories = nil;
+    [_modelJSONs removeAllObjects];
+    _modelJSONs = nil;
     [self releaseAllModel];
     [super dealloc];
 }
@@ -106,6 +111,10 @@ void NYLDFinishedMotion(Csm::ACubismMotion* motion)
     return _textureManager;
 }
 
++ (NSString *)backgroundDir {
+    return @"Background/";
+}
+
 - (void)setup {
     _modelDir.Clear();
     NSFileManager *fileManager = [NSFileManager defaultManager];
@@ -124,6 +133,7 @@ void NYLDFinishedMotion(Csm::ACubismMotion* motion)
             NYLog(@"targetFile: %@", targetFile);
             if ([fileManager fileExistsAtPath:targetFile]) {
                 [self.modelDirectories addObject:path];
+                [self.modelJSONs addObject:path];
                 _modelDir.PushBack(Csm::csmString([modelName UTF8String]));
             }
         }
@@ -245,7 +255,8 @@ void NYLDFinishedMotion(Csm::ACubismMotion* motion)
     // ディレクトリ名とmodel3.jsonの名前を一致させておくこと.
     const Csm::csmString& model = _modelDir[(int)index];
 
-    Csm::csmString modelPath(LAppDefine::ResourcesPath);
+    Csm::csmString modelPath(self.resPath.UTF8String);
+    modelPath.Append(1, '/');
     modelPath += model;
     modelPath.Append(1, '/');
 
@@ -270,7 +281,7 @@ void NYLDFinishedMotion(Csm::ACubismMotion* motion)
         SelectTarget useRenderTarget = SelectTarget_ModelFrameBuffer;
 #else
         // デフォルトのメインフレームバッファへレンダリングする(通常)
-        SelectTarget useRenderTarget = SelectTarget_None;
+        NYLDSelectTarget useRenderTarget = NYLDSelectTargetNone;
 #endif
 
 #if defined(USE_RENDER_TARGET) || defined(USE_MODEL_RENDER_TARGET)
@@ -279,16 +290,7 @@ void NYLDFinishedMotion(Csm::ACubismMotion* motion)
         _models[1]->LoadAssets(modelPath.GetRawString(), modelJsonName.GetRawString());
         _models[1]->GetModelMatrix()->TranslateX(0.2f);
 #endif
-
-//        float clearColorR = 0.0f;
-//        float clearColorG = 0.0f;
-//        float clearColorB = 0.0f;
-
-//        AppDelegate* delegate = (AppDelegate*) [[UIApplication sharedApplication] delegate];
-//        ViewController* view = [delegate viewController];
-//
-//        [view SwitchRenderingTarget:useRenderTarget];
-//        [view SetRenderTargetClearColor:clearColorR g:clearColorG b:clearColorB];
+        
     }
 }
 

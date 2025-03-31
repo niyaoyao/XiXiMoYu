@@ -14,4 +14,10 @@
 #endif
 
 
+typedef NS_ENUM(NSUInteger, NYLDSelectTarget)
+{
+    NYLDSelectTargetNone,                ///< デフォルトのフレームバッファにレンダリング
+    NYLDSelectTargetModelFrameBuffer,    ///< LAppModelが各自持つフレームバッファにレンダリング
+    NYLDSelectTargetViewFrameBuffer,     ///< LAppViewの持つフレームバッファにレンダリング
+};
 #endif /* NYCommon_h */

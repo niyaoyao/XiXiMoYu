@@ -9,12 +9,6 @@
 #import "NYCommon.h"
 
 
-typedef NS_ENUM(NSUInteger, NYLDSelectTarget)
-{
-    NYLDSelectTargetNone,                ///< デフォルトのフレームバッファにレンダリング
-    NYLDSelectTargetModelFrameBuffer,    ///< LAppModelが各自持つフレームバッファにレンダリング
-    NYLDSelectTargetViewFrameBuffer,     ///< LAppViewの持つフレームバッファにレンダリング
-};
 
 NS_ASSUME_NONNULL_BEGIN
 

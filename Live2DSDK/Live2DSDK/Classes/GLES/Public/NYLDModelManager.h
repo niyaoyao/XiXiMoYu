@@ -25,6 +25,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void)setup;
 
++ (NSString *)backgroundDir;
+
 - (void)changeScene:(NSInteger)sceneIndex;
 
 

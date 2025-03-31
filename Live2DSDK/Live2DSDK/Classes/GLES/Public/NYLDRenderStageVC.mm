@@ -19,13 +19,11 @@
 #import "LAppSprite.h"
 #import "TouchManager.h"
 #import "LAppDefine.h"
-#import "NYLDCubismMatrix44.h"
+
 #import "LAppTextureManager.h"
 #import "LAppPal.h"
 #import "NYLDSDKManager.h"
 #include "CubismOffscreenSurface_OpenGLES2.hpp"
-#import "NYLDCubismMatrix44.h"
-#import "NYLDCubismViewMatrix.h"
 #import "LAppModel.h"
 
 #define BUFFER_OFFSET(bytes) ((GLubyte *)NULL + (bytes))
@@ -36,9 +34,7 @@ using namespace LAppDefine;
 
 @interface NYLDRenderStageVC () 
 
-@property (nonatomic) LAppSprite *back; //背景画像
-@property (nonatomic) LAppSprite *gear; //歯車画像
-@property (nonatomic) LAppSprite *power; //電源画像
+@property (nonatomic) LAppSprite *back;
 @property (nonatomic) LAppSprite *renderSprite; //レンダリングターゲット描画用
 @property (nonatomic) TouchManager *touchManager; ///< タッチマネージャー
 @property (nonatomic) Csm::CubismMatrix44 *deviceToScreen;///< デバイスからスクリーンへの行列
@@ -46,6 +42,7 @@ using namespace LAppDefine;
 
 @property (nonatomic) Csm::Rendering::CubismOffscreenSurface_OpenGLES2 renderBuffer;
 @property (nonatomic, assign) BOOL hasInitSprite;
+@property (nonatomic, assign) BOOL viewDidLoadTag;
 @end
 
 @implementation NYLDRenderStageVC
@@ -56,9 +53,9 @@ using namespace LAppDefine;
     _renderBuffer.DestroyOffscreenSurface();
 
     _renderSprite = nil;
-    _gear = nil;
+    
     _back = nil;
-    _power = nil;
+    
 
     GLKView *view = (GLKView*)self.view;
 
@@ -73,7 +70,11 @@ using namespace LAppDefine;
 
 - (void)viewDidLoad
 {
+    if (self.viewDidLoadTag) {
+        return;
+    }
     [super viewDidLoad];
+    
     mOpenGLRun = true;
     NYLog(@"1");
     _anotherTarget = false;
@@ -118,9 +119,11 @@ using namespace LAppDefine;
 
     glGenBuffers(1, &_fragmentBufferId);
     glBindBuffer(GL_ARRAY_BUFFER,  _fragmentBufferId);
+    self.viewDidLoadTag = YES;
+    
 }
-
-- (void)viewDidAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     [self initializeSprite];
 }
 
@@ -181,10 +184,7 @@ using namespace LAppDefine;
         glClear(GL_COLOR_BUFFER_BIT);
 
         [_back render:_vertexBufferId fragmentBufferID:_fragmentBufferId];
-
-        [_gear render:_vertexBufferId fragmentBufferID:_fragmentBufferId];
-
-        [_power render:_vertexBufferId fragmentBufferID:_fragmentBufferId];
+        
 
 //        LAppLive2DManager* Live2DManager = [LAppLive2DManager getInstance];
         NYLDModelManager *Live2DManager = [NYLDModelManager shared];
@@ -234,9 +234,8 @@ using namespace LAppDefine;
     int width = screenRect.size.width;
     int height = screenRect.size.height;
 
-    //AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    LAppTextureManager* textureManager = [NYLDModelManager shared].textureManager;// getTextureManager];
-    const string resourcesPath = ResourcesPath;
+    LAppTextureManager* textureManager = [NYLDModelManager shared].textureManager;
+    const string resourcesPath = [NYLDModelManager backgroundDir].UTF8String;
 
     string imageName = BackImageName;
     TextureInfo* backgroundTexture = [textureManager createTextureFromPngFile:resourcesPath+imageName];
@@ -249,24 +248,7 @@ using namespace LAppDefine;
     _back = [[LAppSprite alloc] initWithMyVar:x Y:y Width:fWidth Height:fHeight TextureId:backgroundTexture->textureId];
     NYLog(@"backgroundTexture->textureId]: %d", backgroundTexture->textureId);
 
-    imageName = GearImageName;
-    TextureInfo* gearTexture = [textureManager createTextureFromPngFile:resourcesPath+imageName];
-    x = static_cast<float>(gearTexture->width * 0.5f);
-    y = static_cast<float>(gearTexture->height * 0.5f);
-    fWidth = static_cast<float>(gearTexture->width);
-    fHeight = static_cast<float>(gearTexture->height);
-    _gear = [[LAppSprite alloc] initWithMyVar:x Y:y Width:fWidth Height:fHeight TextureId:gearTexture->textureId];
-    NYLog(@"gearTexture->textureId]: %d", gearTexture->textureId);
-
-    imageName = PowerImageName;
-    TextureInfo* powerTexture = [textureManager createTextureFromPngFile:resourcesPath+imageName];
-    x = static_cast<float>(width - powerTexture->width * 0.5f);
-    y = static_cast<float>(powerTexture->height * 0.5f);
-    fWidth = static_cast<float>(powerTexture->width);
-    fHeight = static_cast<float>(powerTexture->height);
-    _power = [[LAppSprite alloc] initWithMyVar:x Y:y Width:fWidth Height:fHeight TextureId:powerTexture->textureId];
-    NYLog(@"powerTexture->textureId]: %d", powerTexture->textureId);
-
+    
     x = static_cast<float>(width) * 0.5f;
     y = static_cast<float>(height) * 0.5f;
     fWidth = static_cast<float>(width*2);
@@ -320,11 +302,11 @@ using namespace LAppDefine;
         }
         [live2DManager onTap:x floatY:y];
 
-        // 歯車にタップしたか
-        if ([_gear isHit:point.x PointY:pointY])
-        {
-            [live2DManager nextScene];
-        }
+//        // 歯車にタップしたか
+//        if ([_gear isHit:point.x PointY:pointY])
+//        {
+//            [live2DManager nextScene];
+//        }
 
     }
 }

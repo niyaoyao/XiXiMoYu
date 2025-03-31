@@ -62,7 +62,6 @@
 }
 
 - (void)setup {
-//    let vc = Live2DSDK.ViewController(nibName: nil, bundle: nil)
     self.stageVC = [[NYLDRenderStageVC alloc] initWithNibName:nil bundle:nil];
     [self.stageVC viewDidLoad];
     [self initializeCubism];

@@ -19,7 +19,7 @@
 #import <CubismMotionQueueEntry.hpp>
 #import "LAppDefine.h"
 #import "LAppPal.h"
-#import "AppDelegate.h"
+
 #import "NYLDModelManager.h"
 #import "LAppTextureManager.h"
 

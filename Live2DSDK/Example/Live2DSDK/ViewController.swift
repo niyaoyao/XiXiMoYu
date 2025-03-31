@@ -26,18 +26,6 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    func loadLive2DModelsBundle() -> Bundle? {
-        let url = Bundle.main.url(forResource: "Frameworks/Live2DSDK", withExtension: "framework")
-        
-        
-        guard let url = url, let bundlePath = Bundle.init(url: url)?.path(forResource: "Live2DModels", ofType: "bundle"),
-              let bundle = Bundle(path: bundlePath) else {
-            print("Live2DModels.bundle not found in main bundle")
-            let resources = Bundle.main.paths(forResourcesOfType: "bundle", inDirectory: nil)
-            print("All bundles in main bundle: \(resources)")
-            return nil
-        }
-        return bundle
-    }
+    
 }
 

@@ -31,9 +31,13 @@
         ~~- Wrap `LAppPal` `LAppSprite`~~
         ~~- Wrap `LAppSprite`~~
     - [ ] Change Background
-    - [ ] Render Stage Controller
-    - [ ] Change Pose
+    - [ ] Change Model No.
+    - [ ] Change Model Scale (Gesture)
+    - [ ] Change Model (x,y) (Drag Gesture)
+    - [ ] Add Stiker
+    - [ ] Change Model Angle
     - [ ] Play Animation
+    - [ ] Render Stage Controller
     
 4. [x] Renew Account Plan & 
 5. [ ] Small Business Plan
