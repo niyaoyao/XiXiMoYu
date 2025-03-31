@@ -25,7 +25,7 @@
 @property (nonatomic) Csm::CubismFramework::Option cubismOption; // Cubism SDK Option
 
 @property (nonatomic) bool isEnd; // APPを終了しているか
-@property (nonatomic, readwrite) LAppTextureManager *textureManager; // テクスチャマネージャー
+//@property (nonatomic, readwrite) LAppTextureManager *textureManager; // テクスチャマネージャー
 @property (nonatomic) Csm::csmInt32 sceneIndex;  //アプリケーションをバッググラウンド実行するときに一時的にシーンインデックス値を保存する
 
 @end
@@ -34,7 +34,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    _textureManager = [[LAppTextureManager alloc]init];
+    _textureManager = [NYLDModelManager shared].textureManager; //[[LAppTextureManager alloc]init];
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.viewController = [[ViewController alloc] initWithNibName:nil bundle:nil];
@@ -69,7 +69,7 @@
 {
     self.viewController.mOpenGLRun = true;
 
-    _textureManager = [[LAppTextureManager alloc]init];
+    _textureManager = [NYLDModelManager shared].textureManager;
 
 //    [[LAppLive2DManager getInstance] changeScene:_sceneIndex];
     

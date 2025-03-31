@@ -17,6 +17,7 @@
 #import <CubismMatrix44.hpp>
 #import "LAppTextureManager.h"
 #import "NYLDModelManager.h"
+#import "ViewController.h"
 @interface NYLDSDKManager () {
     LAppAllocator _cubismAllocator; // Cubism SDK Allocator
     Csm::CubismFramework::Option _cubismOption;
@@ -61,6 +62,9 @@
 }
 
 - (void)setup {
+//    let vc = Live2DSDK.ViewController(nibName: nil, bundle: nil)
+    self.stageVC = [[ViewController alloc] initWithNibName:nil bundle:nil];
+    [self.stageVC viewDidLoad];
     [self initializeCubism];
     [NYLDModelManager setup];
 }

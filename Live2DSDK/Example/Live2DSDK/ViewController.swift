@@ -18,8 +18,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func routeToLive2DPage(_ sender: Any) {
-        let vc = Live2DSDK.ViewController(nibName: nil, bundle: nil)
-        self.navigationController?.pushViewController(vc, animated: true)
+        
+        self.navigationController?.pushViewController(NYLDSDKManager.shared().stageVC, animated: true)
     }
     
     override func didReceiveMemoryWarning() {

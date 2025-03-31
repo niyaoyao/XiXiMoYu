@@ -6,12 +6,14 @@
 //
 
 #import <Foundation/Foundation.h>
-
+@class UIViewController;
 @class LAppTextureManager;
 
 NS_ASSUME_NONNULL_BEGIN
 /// Manage Live2D SDK
 @interface NYLDSDKManager : NSObject
+
+@property (nonatomic, strong) UIViewController *stageVC;
 
 + (instancetype)shared;
 /// init
