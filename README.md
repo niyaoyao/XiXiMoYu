@@ -37,7 +37,7 @@
 4. [x] Renew Account Plan & 
 5. [ ] Small Business Plan
 6. [ ] ICP
-    - [ ]  Host
+    - [ ]  Host 2025-03-27 ~ 
     - [ ]  App
 7. [ ] Submit Review
 
