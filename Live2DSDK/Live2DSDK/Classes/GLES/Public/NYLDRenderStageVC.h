@@ -21,21 +21,21 @@ NS_ASSUME_NONNULL_BEGIN
 @interface NYLDRenderStageVC : GLKViewController <GLKViewDelegate>
 
 @property (nonatomic, assign) bool mOpenGLRun;
-@property (nonatomic, assign) GLuint vertexBufferId;
-@property (nonatomic, assign) GLuint fragmentBufferId;
-@property (nonatomic, assign) GLuint programId;
+@property (nonatomic) GLuint vertexBufferId;
+@property (nonatomic) GLuint fragmentBufferId;
+@property (nonatomic) GLuint programId;
 
-@property (nonatomic, assign) bool anotherTarget;
+@property (nonatomic) bool anotherTarget;
 
-@property (nonatomic, assign) float spriteColorR;
-@property (nonatomic, assign) float spriteColorG;
-@property (nonatomic, assign) float spriteColorB;
-@property (nonatomic, assign) float spriteColorA;
-@property (nonatomic, assign) float clearColorR;
-@property (nonatomic, assign) float clearColorG;
-@property (nonatomic, assign) float clearColorB;
-@property (nonatomic, assign) float clearColorA;
-@property (nonatomic, assign) NYLDSelectTarget renderTarget;
+@property (nonatomic) float spriteColorR;
+@property (nonatomic) float spriteColorG;
+@property (nonatomic) float spriteColorB;
+@property (nonatomic) float spriteColorA;
+@property (nonatomic) float clearColorR;
+@property (nonatomic) float clearColorG;
+@property (nonatomic) float clearColorB;
+@property (nonatomic) float clearColorA;
+@property (nonatomic) NYLDSelectTarget renderTarget;
 
 /**
  * @brief 解放処理
@@ -99,7 +99,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * @brief レンダリング先を切り替える
  */
-- (void)SwitchRenderingTarget:(NYLDSelectTarget)targetType;
+- (void)SwitchRenderingTarget:(NYLDSelectTarget) targetType;
 
 /**
  * @brief レンダリング先をデフォルト以外に切り替えた際の背景クリア色設定
@@ -108,6 +108,7 @@ NS_ASSUME_NONNULL_BEGIN
  * @param[in]   b   青(0.0~1.0)
  */
 - (void)SetRenderTargetClearColor:(float)r g:(float)g b:(float)b;
+
 @end
 
 NS_ASSUME_NONNULL_END
