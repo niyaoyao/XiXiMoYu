@@ -30,10 +30,11 @@
         ~~- `LAppLive2DManager` optimize the flow for manage model, bridge C++ functions.~~
         ~~- Wrap `LAppPal` `LAppSprite`~~
         ~~- Wrap `LAppSprite`~~
+    - [ ] Change Background
     - [ ] Render Stage Controller
     - [ ] Change Pose
     - [ ] Play Animation
-    - [ ] Change Background
+    
 4. [x] Renew Account Plan & 
 5. [ ] Small Business Plan
 6. [ ] ICP

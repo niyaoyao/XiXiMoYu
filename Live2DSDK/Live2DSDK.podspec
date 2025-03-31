@@ -12,23 +12,6 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '15.0'
 
-  # s.subspec 'Core' do |sp|
-  #   sp.source_files = 'Live2DSDK/Classes/Framework/**/*.{h,hpp,c,cpp,metal,tpp,m,mm}'
-  #   sp.private_header_files = 'Live2DSDK/Classes/Framework/**/*.{h,hpp,tpp}'
-
-  #   sp.libraries = 'c++'
-  #   sp.requires_arc = false
-  #   sp.ios.vendored_library = 'Live2DSDK/Classes/Framework/Library/Debug-iphonesimulator/libLive2DCubismCore.a'
-  # end
-
-  # s.subspec 'AppSource' do |sp|
-  #   sp.source_files = 'Live2DSDK/Classes/App/**/*.{h,metal,m,mm}'
-  #   sp.public_header_files = 'Live2DSDK/Classes/App/Public/RenderManager.h', 'Live2DSDK/Classes/App/Public/ViewController.h'
-  #   sp.private_header_files = 'Live2DSDK/Classes/App/Private/**/*.{h,hpp}'
-
-  #   sp.libraries = 'c++'
-  #   sp.requires_arc = false
-  # end
   s.subspec 'Core' do |sp|
     sp.source_files = 'Live2DSDK/Classes/Core/Source/**/*.{h,hpp,c,cpp,tpp,m,mm}','Live2DSDK/Classes/Core/include/*.{h,hpp,tpp}'
     sp.private_header_files = 'Live2DSDK/Classes/Core/Source/**/*.{h,hpp,tpp}','Live2DSDK/Classes/Core/include/*.{h,hpp,tpp}'
