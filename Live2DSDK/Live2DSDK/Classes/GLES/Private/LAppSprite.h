@@ -31,39 +31,12 @@ typedef struct
     float down;     ///< 下辺
 }SpriteRect;
 
-/**
- * @brief 初期化
- *
- * @param[in]       x            x座標
- * @param[in]       y            y座標
- * @param[in]       width        横幅
- * @param[in]       height       高さ
- * @param[in]       textureId    テクスチャID
- */
-- (id)initWithMyVar:(float)x Y:(float)y Width:(float)width Height:(float)height TextureId:(GLuint) textureId;
-
-/**
- * @brief 解放処理
- */
-- (void)dealloc;
-
-/**
- * @brief 描画する
- *
- * @param[in]     vertexBufferID    フラグメントシェーダID
- * @param[in]     fragmentBufferID  バーテックスシェーダID
- */
-- (void)render:(GLuint)vertexBufferID fragmentBufferID:(GLuint)fragmentBufferID;
 
 
-/**
- * @brief 描画する
- *
- * @param[in]     vertexBufferID    フラグメントシェーダID
- * @param[in]     fragmentBufferID  バーテックスシェーダID
- */
-- (void)renderImmidiate:(GLuint)vertexBufferID fragmentBufferID:(GLuint)fragmentBufferID TextureId:(GLuint) textureId uvArray:(float *)uvArray;
+- (id)initWithImageName:(NSString *)imageName;
 
+
+- (void)renderBackgroundImageTexture;
 
 /**
  * @brief コンストラクタ

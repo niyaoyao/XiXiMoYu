@@ -92,8 +92,7 @@ using namespace LAppDefine;
     _viewMatrix = new CubismViewMatrix();
 
     [self initializeScreen];
-
-    [super viewDidLoad];
+    
     GLKView *view = (GLKView*)self.view;
 
     // GL描画周期を60FPSに設定
@@ -181,15 +180,15 @@ using namespace LAppDefine;
     {
         
         // 画面クリア
-        glClear(GL_COLOR_BUFFER_BIT);
-
-        [_back render:_vertexBufferId fragmentBufferID:_fragmentBufferId];
+//        glClear(GL_COLOR_BUFFER_BIT);
+        glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         
+        [_back renderBackgroundImageTexture];
 
-//        LAppLive2DManager* Live2DManager = [LAppLive2DManager getInstance];
+        
         NYLDModelManager *Live2DManager = [NYLDModelManager shared];
         [Live2DManager SetViewMatrix:_viewMatrix->_tr];
-//        [Live2DManager SetViewMatrix:_viewMatrix];
         [Live2DManager onUpdate];
 
         // 各モデルが持つ描画ターゲットをテクスチャとする場合はスプライトへの描画はここ
@@ -234,26 +233,14 @@ using namespace LAppDefine;
     int width = screenRect.size.width;
     int height = screenRect.size.height;
 
-    LAppTextureManager* textureManager = [NYLDModelManager shared].textureManager;
-    const string resourcesPath = [NYLDModelManager backgroundDir].UTF8String;
-
-    string imageName = BackImageName;
-    TextureInfo* backgroundTexture = [textureManager createTextureFromPngFile:resourcesPath+imageName];
-    float x = width * 0.5f;
-    float y = height * 0.5f;
-    float fWidth = 300.0f;
-    float fHeight = 300.0f;
-    fWidth = static_cast<float>(width );
-    fHeight = static_cast<float>(height);
-    _back = [[LAppSprite alloc] initWithMyVar:x Y:y Width:fWidth Height:fHeight TextureId:backgroundTexture->textureId];
-    NYLog(@"backgroundTexture->textureId]: %d", backgroundTexture->textureId);
-
     
-    x = static_cast<float>(width) * 0.5f;
-    y = static_cast<float>(height) * 0.5f;
-    fWidth = static_cast<float>(width*2);
-    fHeight = static_cast<float>(height*2);
-    _renderSprite = [[LAppSprite alloc] initWithMyVar:x Y:y Width:fWidth/2 Height:fHeight/2 TextureId:0];
+    [self changeBackgroundWithImageName:@"00"];
+    
+//    float x = static_cast<float>(width) * 0.5f;
+//    float y = static_cast<float>(height) * 0.5f;
+//    float fWidth = static_cast<float>(width*2);
+//    float fHeight = static_cast<float>(height*2);
+//    _renderSprite = [[LAppSprite alloc] initWithMyVar:x Y:y Width:fWidth/2 Height:fHeight/2 TextureId:0 vertexBufferObject:_vertexBufferId elementBufferObject:_fragmentBufferId];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -427,6 +414,11 @@ using namespace LAppDefine;
     }
 
     return alpha;
+}
+
+- (void)changeBackgroundWithImageName:(NSString *)imageName {
+    
+    _back = [[LAppSprite alloc] initWithImageName:imageName];
 }
 
 @end
