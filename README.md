@@ -30,7 +30,7 @@
         ~~- `LAppLive2DManager` optimize the flow for manage model, bridge C++ functions.~~
         ~~- Wrap `LAppPal` `LAppSprite`~~
         ~~- Wrap `LAppSprite`~~
-    - [ ] Change Background
+    - [x] Change Background
     - [ ] Change Model No.
     - [ ] Change Model Scale (Gesture)
     - [ ] Change Model (x,y) (Drag Gesture)
