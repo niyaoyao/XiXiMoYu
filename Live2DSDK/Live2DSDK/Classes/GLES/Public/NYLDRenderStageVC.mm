@@ -20,11 +20,12 @@
 #import "TouchManager.h"
 #import "LAppDefine.h"
 
-#import "LAppTextureManager.h"
+
 #import "LAppPal.h"
 #import "NYLDSDKManager.h"
 #include "CubismOffscreenSurface_OpenGLES2.hpp"
 #import "LAppModel.h"
+#import "NYGLTextureLoader.h"
 
 #define BUFFER_OFFSET(bytes) ((GLubyte *)NULL + (bytes))
 
@@ -34,7 +35,7 @@ using namespace LAppDefine;
 
 @interface NYLDRenderStageVC () 
 
-@property (nonatomic) LAppSprite *back;
+@property (nonatomic, strong) NYGLTextureLoader *backgroundTexture;
 @property (nonatomic) LAppSprite *renderSprite; //レンダリングターゲット描画用
 @property (nonatomic) TouchManager *touchManager; ///< タッチマネージャー
 @property (nonatomic) Csm::CubismMatrix44 *deviceToScreen;///< デバイスからスクリーンへの行列
@@ -53,8 +54,8 @@ using namespace LAppDefine;
     _renderBuffer.DestroyOffscreenSurface();
 
     _renderSprite = nil;
-    
-    _back = nil;
+    NSString *imagePath = [NYLDModelManager.shared.modelBundle  pathForResource:@"02" ofType:@"png" inDirectory:@"Background"];
+    _backgroundTexture = [[NYGLTextureLoader alloc] initWithImagePath:imagePath];
     
 
     GLKView *view = (GLKView*)self.view;
@@ -184,7 +185,8 @@ using namespace LAppDefine;
         glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         
-        [_back renderBackgroundImageTexture];
+//        [_back renderBackgroundImageTexture];
+        [self.backgroundTexture renderGLTexture];
 
         
         NYLDModelManager *Live2DManager = [NYLDModelManager shared];
@@ -418,7 +420,8 @@ using namespace LAppDefine;
 
 - (void)changeBackgroundWithImageName:(NSString *)imageName {
     
-    _back = [[LAppSprite alloc] initWithImageName:imageName];
+    NSString *imagePath = [NYLDModelManager.shared.modelBundle  pathForResource:imageName ofType:@"png" inDirectory:@"Background"];
+    self.backgroundTexture = [[NYGLTextureLoader alloc] initWithImagePath:imagePath];
 }
 
 @end
