@@ -31,11 +31,16 @@
         ~~- Wrap `LAppPal` `LAppSprite`~~
         ~~- Wrap `LAppSprite`~~
     - [x] Change Background
-    - [ ] Change Model No.
+    - [x] Change Model No.
+    - [ ] Change Model Body Angle
+    - [ ] Change Model Mouth Angle
+    - [ ] Change Model Eyes Angle
+    - [ ] Change Model Arms Angle
+    - [ ] Change Model Legs Angle
     - [ ] Change Model Scale (Gesture)
     - [ ] Change Model (x,y) (Drag Gesture)
     - [ ] Add Stiker
-    - [ ] Change Model Angle
+    
     - [ ] Play Animation
     - [ ] Render Stage Controller
     
