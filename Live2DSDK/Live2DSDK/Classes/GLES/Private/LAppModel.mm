@@ -385,7 +385,6 @@ void LAppModel::Update()
     //ドラッグによる目の向きの調整
     _model->AddParameterValue(_idParamEyeBallX, _dragX); // -1から1の値を加える
     _model->AddParameterValue(_idParamEyeBallY, _dragY);
-
     // 呼吸など
     if (_breath != NULL)
     {
@@ -401,11 +400,11 @@ void LAppModel::Update()
     // リップシンクの設定
     if (_lipSync)
     {
-        csmFloat32 value = 0; // リアルタイムでリップシンクを行う場合、システムから音量を取得して0〜1の範囲で値を入力します。
+        csmFloat32 value = NYLDModelManager.shared.mouthOpenRate; // リアルタイムでリップシンクを行う場合、システムから音量を取得して0〜1の範囲で値を入力します。
 
         for (csmUint32 i = 0; i < _lipSyncIds.GetSize(); ++i)
         {
-            _model->AddParameterValue(_lipSyncIds[i], value, 0.8f);
+            _model->AddParameterValue(_lipSyncIds[i], value, 1.0f);
         }
     }
 

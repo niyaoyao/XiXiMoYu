@@ -23,6 +23,9 @@
 
 
 
+- (instancetype)initWithImageBundle:(NSBundle *)bundle imageName:(NSString *)name ext:(NSString *)ext inDirectory:(NSString *)inDirectory {
+    return  [self initWithImagePath:[bundle  pathForResource:name ofType:ext inDirectory:inDirectory]];
+}
 - (instancetype)initWithImagePath:(NSString *)imagePath
 {
     self = [super init];

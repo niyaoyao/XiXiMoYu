@@ -42,7 +42,7 @@ csmFloat32 CubismModel::GetParameterValue(CubismIdHandle parameterId)
 }
 
 void CubismModel::SetParameterValue(CubismIdHandle parameterId, csmFloat32 value, csmFloat32 weight)
-{
+{   // Eye
     const csmInt32 index = GetParameterIndex(parameterId);
     SetParameterValue(index, value, weight);
 }

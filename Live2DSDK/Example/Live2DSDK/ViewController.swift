@@ -17,18 +17,30 @@ class ViewController: UIViewController {
         let iv = UIImageView(frame: CGRect(x: 10, y: 40, width: 100, height: 100))
         return iv
     }()
+    
+    // 定义 UISlider
+    private let slider: UISlider = {
+        let slider = UISlider()
+        slider.minimumValue = 0.0 // 最小值
+        slider.maximumValue = 1.0 // 最大值
+        slider.value = 0.5        // 默认值
+        slider.translatesAutoresizingMaskIntoConstraints = false
+        return slider
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         EAGLContext.setCurrent(EAGLContext(api: .openGLES2))
         self.view.addSubview(NYLDSDKManager.shared().stageVC.view)
-        let btn = UIButton(frame: CGRect(x: UIScreen.main.bounds.size.width - 220, y: UIScreen.main.bounds.size.height - 50 - 60, width: 200, height: 50))
+        let w = (UIScreen.main.bounds.size.width - 45 )/2.0
+        let btn = UIButton(frame: CGRect(x: 15, y: UIScreen.main.bounds.size.height - 50 - 60, width: w, height: 50))
         btn.setTitle("Change Background", for: .normal)
         btn.setTitleColor(.white, for: .normal)
         btn.backgroundColor = .blue.withAlphaComponent(0.5)
         btn.addTarget(self, action: #selector(changeBackground), for: .touchUpInside)
         self.view.addSubview(btn)
         
-        let mbtn = UIButton(frame: CGRect(x: UIScreen.main.bounds.size.width - 220, y:  UIScreen.main.bounds.size.height - 50 - 30 - 110, width: 200, height: 50))
+        let mbtn = UIButton(frame: CGRect(x: w + 30, y:  UIScreen.main.bounds.size.height - 50 - 60, width: w, height: 50))
         mbtn.setTitle("Change Model", for: .normal)
         mbtn.setTitleColor(.white, for: .normal)
         mbtn.backgroundColor = .blue.withAlphaComponent(0.5)
@@ -36,6 +48,18 @@ class ViewController: UIViewController {
         self.view.addSubview(mbtn)
         
         self.view.addSubview(self.tmpIV)
+        // 添加 UI 元素到视图
+        slider.addTarget(self, action: #selector(sliderValueChanged(_:)), for: .valueChanged)
+        view.addSubview(slider)
+        slider.frame = CGRect(x: 15, y: mbtn.frame.origin.y - 40, width: UIScreen.main.bounds.size.width - 30, height: 20)
+    }
+    // 滑动条值变化时的回调
+    @objc private func sliderValueChanged(_ sender: UISlider) {
+        let value = sender.value
+        
+        // 在这里处理 value（范围 0 到 1）
+        print("Slider value: \(value)")
+        NYLDModelManager.shared().mouthOpenRate = value
     }
     
     @objc func changeModel() {

@@ -42,8 +42,7 @@ using namespace LAppDefine;
 @property (nonatomic) Csm::CubismViewMatrix *viewMatrix;
 
 @property (nonatomic) Csm::Rendering::CubismOffscreenSurface_OpenGLES2 renderBuffer;
-@property (nonatomic, assign) BOOL hasInitSprite;
-@property (nonatomic, assign) BOOL viewDidLoadTag;
+
 @end
 
 @implementation NYLDRenderStageVC
@@ -54,9 +53,6 @@ using namespace LAppDefine;
     _renderBuffer.DestroyOffscreenSurface();
 
     _renderSprite = nil;
-    NSString *imagePath = [NYLDModelManager.shared.modelBundle  pathForResource:@"02" ofType:@"png" inDirectory:@"Background"];
-    _backgroundTexture = [[NYGLTextureLoader alloc] initWithImagePath:imagePath];
-    
 
     GLKView *view = (GLKView*)self.view;
 
@@ -71,9 +67,6 @@ using namespace LAppDefine;
 
 - (void)viewDidLoad
 {
-    if (self.viewDidLoadTag) {
-        return;
-    }
     [super viewDidLoad];
     
     mOpenGLRun = true;
@@ -82,6 +75,8 @@ using namespace LAppDefine;
     _spriteColorR = _spriteColorG = _spriteColorB = _spriteColorA = 1.0f;
     _clearColorR = _clearColorG = _clearColorB = 1.0f;
     _clearColorA = 0.0f;
+    
+  
 
     // タッチ関係のイベント管理
     _touchManager = [[TouchManager alloc]init];
@@ -119,7 +114,9 @@ using namespace LAppDefine;
 
     glGenBuffers(1, &_fragmentBufferId);
     glBindBuffer(GL_ARRAY_BUFFER,  _fragmentBufferId);
-    self.viewDidLoadTag = YES;
+    NSString *imagePath = [NYLDModelManager.shared.modelBundle  pathForResource:@"02" ofType:@"png" inDirectory:@"Background"];
+    self.backgroundTexture = [[NYGLTextureLoader alloc] initWithImagePath:imagePath];
+    
     
 }
 - (void)viewWillAppear:(BOOL)animated {
@@ -226,15 +223,7 @@ using namespace LAppDefine;
 
 - (void)initializeSprite
 {
-    if (self.hasInitSprite) {
-        return;
-    }
-    self.hasInitSprite = YES;
-    NYLog(@"3");
-    CGRect screenRect = [[UIScreen mainScreen] bounds];
-    int width = screenRect.size.width;
-    int height = screenRect.size.height;
-
+    NYLog(@"initializeSprite 3");
     
     [self changeBackgroundWithImageName:@"00"];
     
@@ -262,8 +251,9 @@ using namespace LAppDefine;
     float viewY = [self transformViewY:[_touchManager getY]];
 
     [_touchManager touchesMoved:point.x DeviceY:point.y];
-    //    [[LAppLive2DManager getInstance] onDrag:viewX floatY:viewY];
-        [[NYLDModelManager shared] onDrag:viewX floatY:viewY];
+    
+    [[NYLDModelManager shared] onDrag:viewX floatY:viewY];
+    
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
@@ -290,13 +280,7 @@ using namespace LAppDefine;
             LAppPal::PrintLogLn("[APP]touchesEnded x:%.2f y:%.2f", x, y);
         }
         [live2DManager onTap:x floatY:y];
-
-//        // 歯車にタップしたか
-//        if ([_gear isHit:point.x PointY:pointY])
-//        {
-//            [live2DManager nextScene];
-//        }
-
+        
     }
 }
 

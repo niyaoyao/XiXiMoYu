@@ -22,6 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, nullable) LAppTextureManager *textureManager;
 @property (nonatomic, strong, readonly) NSBundle *modelBundle;
 @property (nonatomic, assign, readonly) NSInteger sceneIndex;
+@property (nonatomic, assign) float mouthOpenRate;
 
 + (instancetype)shared;
 
