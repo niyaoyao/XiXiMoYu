@@ -12,7 +12,7 @@ import GLKit
 
 class ViewController: UIViewController {
     var count = 0
-    let imageNames = ["bg0.jpg","bg1.jpg","bg2.jpg","bg3.jpg","bg4.jpg"]
+    
     lazy var tmpIV: UIImageView = {
         let iv = UIImageView(frame: CGRect(x: 10, y: 40, width: 100, height: 100))
         return iv
@@ -67,7 +67,7 @@ class ViewController: UIViewController {
     }
     @objc func changeBackground() {
         count += 1
-        let nameIndex = count % imageNames.count
+        let nameIndex = count % 8
         let name = "0\(nameIndex)"
         NYLDSDKManager.shared().stageVC.changeBackground(withImageName: name)
         let filePath =  NYLDModelManager.shared().modelBundle.path(forResource: "0\(nameIndex)", ofType: "png", inDirectory: "Background") ?? ""

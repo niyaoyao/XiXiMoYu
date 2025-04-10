@@ -30,19 +30,32 @@
         ~~- `LAppLive2DManager` optimize the flow for manage model, bridge C++ functions.~~
         ~~- Wrap `LAppPal` `LAppSprite`~~
         ~~- Wrap `LAppSprite`~~
-    - [x] Change Background
-    - [x] Change Model No.
-    - [ ] Change Model Body Angle
-    - [ ] Change Model Mouth Angle
-    - [ ] Change Model Eyes Angle
-    - [ ] Change Model Arms Angle
-    - [ ] Change Model Legs Angle
-    - [ ] Change Model Scale (Gesture)
-    - [ ] Change Model (x,y) (Drag Gesture)
-    - [ ] Add Stiker
-    
-    - [ ] Play Animation
-    - [ ] Render Stage Controller
+        - [x] Change Background
+        - [x] Change Model No.
+        - [x] Render Stage Controller
+    - [ ] `NYLDModel` instead of `LAppModel`
+        - [ ] Change Model Body Angle
+        - [x] Change Model Mouth Angle
+        - [ ] Change Model Eyes Angle
+        - [ ] Change Model Arms Angle
+        - [ ] Change Model Legs Angle
+        - [ ] Change Model Scale (Gesture)
+        - [ ] Change Model (x,y) (Drag Gesture)
+        - [ ] Play Animation
+The Core Control Code is as Below
+```cpp
+void CubismModel::SetParameterValue(CubismIdHandle parameterId, csmFloat32 value, csmFloat32 weight)
+{   // Eye
+    const csmInt32 index = GetParameterIndex(parameterId);
+    SetParameterValue(index, value, weight);
+}
+
+void CubismModel::AddParameterValue(CubismIdHandle parameterId, csmFloat32 value, csmFloat32 weight)
+{
+    const csmInt32 index = GetParameterIndex(parameterId);
+    AddParameterValue(index, value, weight);
+}
+```
     
 4. [x] Renew Account Plan & 
 5. [ ] Small Business Plan
