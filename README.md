@@ -42,6 +42,14 @@
         - [ ] Change Model Scale (Gesture)
         - [ ] Change Model (x,y) (Drag Gesture)
         - [ ] Play Animation
+    - [ ] App Development
+        - [ ] Menu List Bar
+            - [ ] Change Model: Collection View Circle Transmation
+            - [ ] Change Background
+            - [ ] Change Pose
+            - [ ] Change Eyes
+            - [ ] Play Sound
+
 The Core Control Code is as Below
 ```cpp
 void CubismModel::SetParameterValue(CubismIdHandle parameterId, csmFloat32 value, csmFloat32 weight)
@@ -56,12 +64,13 @@ void CubismModel::AddParameterValue(CubismIdHandle parameterId, csmFloat32 value
     AddParameterValue(index, value, weight);
 }
 ```
-    
-4. [x] Renew Account Plan & 
-5. [ ] Small Business Plan
-6. [ ] ICP
-    - [ ]  Host 2025-03-27 ~ 
+
+4. [ ] App Icon
+5. [x] Renew Account Plan 
+6. [ ] Small Business Plan
+7. [ ] ICP
+    - [x]  Host 2025-03-27 ~ 2025-04-09
     - [ ]  App
-7. [ ] Submit Review
+8. [ ] Submit Review
 
 ### Phase 2
