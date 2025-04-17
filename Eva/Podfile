@@ -1,0 +1,9 @@
+use_frameworks!
+
+platform :ios, '15.0'
+
+target 'Eva' do
+  pod 'Live2DSDK', :path => '../Live2DSDK', :modular_headers => true
+
+  
+end
