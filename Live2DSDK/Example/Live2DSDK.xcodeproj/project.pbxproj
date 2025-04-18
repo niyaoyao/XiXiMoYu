@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0EC0FF342D7EEF3800610053 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EC0FF332D7EEF3800610053 /* TestViewController.m */; };
+		0ECC630C2DB10313009C4302 /* launch_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0ECC630B2DB10313009C4302 /* launch_logo.png */; };
 		3EBF4D6056239A65B850F2F9 /* Pods_Live2DSDK_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 354760434F172D0A773315CB /* Pods_Live2DSDK_Tests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
@@ -31,6 +32,7 @@
 		0E4E898E2D7AA4F000722598 /* Live2DSDK_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Live2DSDK_Example-Bridging-Header.h"; sourceTree = "<group>"; };
 		0EC0FF322D7EEF3700610053 /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		0EC0FF332D7EEF3800610053 /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		0ECC630B2DB10313009C4302 /* launch_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch_logo.png; sourceTree = "<group>"; };
 		16D1BE0B35EC02179BBA80FB /* Pods-Live2DSDK_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Live2DSDK_Tests.debug.xcconfig"; path = "Target Support Files/Pods-Live2DSDK_Tests/Pods-Live2DSDK_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		184751EF955E20AA1A7F89B3 /* Pods-Live2DSDK_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Live2DSDK_Example.release.xcconfig"; path = "Target Support Files/Pods-Live2DSDK_Example/Pods-Live2DSDK_Example.release.xcconfig"; sourceTree = "<group>"; };
 		354760434F172D0A773315CB /* Pods_Live2DSDK_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Live2DSDK_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,6 +122,7 @@
 				0EC0FF322D7EEF3700610053 /* TestViewController.h */,
 				0EC0FF332D7EEF3800610053 /* TestViewController.m */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
+				0ECC630B2DB10313009C4302 /* launch_logo.png */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 				0E4E898E2D7AA4F000722598 /* Live2DSDK_Example-Bridging-Header.h */,
@@ -254,6 +257,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0ECC630C2DB10313009C4302 /* launch_logo.png in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
@@ -497,7 +501,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = P66P3CXU58;
@@ -507,13 +511,14 @@
 					"GLES_SILENCE_DEPRECATION=1",
 				);
 				INFOPLIST_FILE = Live2DSDK/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Eva;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bear.yao.xi.MoYu;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bear.yao.xi.eva;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = MoYu_AdHoc;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "EvaAI-Development";
 				SWIFT_OBJC_BRIDGING_HEADER = "Live2DSDK/Live2DSDK_Example-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
@@ -537,13 +542,14 @@
 					"GLES_SILENCE_DEPRECATION=1",
 				);
 				INFOPLIST_FILE = Live2DSDK/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Eva;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bear.yao.xi.MoYu;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bear.yao.xi.eva;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = MoYu_AdHoc;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "EvaAI-AdHoc";
 				SWIFT_OBJC_BRIDGING_HEADER = "Live2DSDK/Live2DSDK_Example-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
