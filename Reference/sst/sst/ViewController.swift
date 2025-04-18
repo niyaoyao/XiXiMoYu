@@ -8,9 +8,8 @@
 import UIKit
 
 class NYScaleCenterItemCollectionFlowLayout: UICollectionViewFlowLayout {
-    init(width: CGFloat, height: CGFloat) {
+    init(width: CGFloat, height: CGFloat, padding: CGFloat) {
         super.init()
-        let padding = (UIScreen.main.bounds.width - width)/2.0
         itemSize = CGSize(width: width, height: height)
         scrollDirection = .horizontal
         minimumLineSpacing = 0.0
@@ -43,7 +42,7 @@ class NYScaleCenterItemCollectionFlowLayout: UICollectionViewFlowLayout {
             
             let cellCenterX = attribuite.center.x
             let distance = abs(cellCenterX - centerX)
-            let scale: CGFloat = 1/(1 + distance * 0.005)
+            let scale: CGFloat = 1/(1 + distance * 0.004)
             attribuite.transform3D = CATransform3DMakeScale(scale, scale, scale)
         }
         
@@ -71,6 +70,9 @@ class NYScaleCenterItemCollectionFlowLayout: UICollectionViewFlowLayout {
 class NYScaleCenterCollectionCell: UICollectionViewCell {
     lazy var label: UILabel = {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height))
+        label.textAlignment = .center
+        label.adjustsFontSizeToFitWidth = true
+        label.numberOfLines = 0
         return label
     }()
     static let identifier = "kNYScaleCenterCollectionCell"
@@ -93,19 +95,20 @@ class NYScaleCenterCollectionCell: UICollectionViewCell {
 }
 
 class ViewController: UIViewController {
-    let titles = ["100000","200000","3333333","444444","555555","666666" ]
+    let titles = ["TTS&SST","Real Time \nAmplitudes","Sound Wave","444444","555555","666666" ]
     
     lazy var collectionView: UICollectionView = {
+        let width = 80.0
         let frame = CGRect(x: 0.0, y: 100, width: UIScreen.main.bounds.width, height: 80)
-        
-        let layout = NYScaleCenterItemCollectionFlowLayout(width:80, height: frame.size.height)
+        let padding = (frame.width - 80)/2.0
+        let layout = NYScaleCenterItemCollectionFlowLayout(width:width, height: frame.size.height, padding: padding)
         let collectionView = UICollectionView(frame: frame, collectionViewLayout: layout)
         collectionView.backgroundColor = .clear
         collectionView.isPagingEnabled = false
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.showsHorizontalScrollIndicator = false
-        collectionView.bounces = false
+        collectionView.bounces = true
         collectionView.clipsToBounds = false
         collectionView.register(NYScaleCenterCollectionCell.self, forCellWithReuseIdentifier: NYScaleCenterCollectionCell.identifier)
         
@@ -115,7 +118,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(collectionView)
-        
     }
     
     
@@ -143,12 +145,17 @@ extension ViewController: UICollectionViewDataSource {
 
 // MARK: - UICollectionViewDelegate
 extension ViewController: UICollectionViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        updateCellScaling()
-    }
-    
-    private func updateCellScaling() {
-        
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        var vc = UIViewController()
+        let item = indexPath.item
+        if item == 0 {
+            vc = BackupViewController()
+        } else if item == 1 {
+            vc = Backup2ViewController()
+        } else if item == 2 {
+            vc = Backup3ViewController()
+        }
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 

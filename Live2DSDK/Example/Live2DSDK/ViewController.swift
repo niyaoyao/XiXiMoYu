@@ -13,11 +13,6 @@ import GLKit
 class ViewController: UIViewController {
     var count = 0
     
-    lazy var tmpIV: UIImageView = {
-        let iv = UIImageView(frame: CGRect(x: 10, y: 40, width: 100, height: 100))
-        return iv
-    }()
-    
     // 定义 UISlider
     private let slider: UISlider = {
         let slider = UISlider()
@@ -47,7 +42,6 @@ class ViewController: UIViewController {
         mbtn.addTarget(self, action: #selector(changeModel), for: .touchUpInside)
         self.view.addSubview(mbtn)
         
-        self.view.addSubview(self.tmpIV)
         // 添加 UI 元素到视图
         slider.addTarget(self, action: #selector(sliderValueChanged(_:)), for: .valueChanged)
         view.addSubview(slider)
@@ -67,34 +61,9 @@ class ViewController: UIViewController {
     }
     @objc func changeBackground() {
         count += 1
-        let nameIndex = count % 8
+        let nameIndex = count % 9
         let name = "0\(nameIndex)"
         NYLDSDKManager.shared().stageVC.changeBackground(withImageName: name)
-        let filePath =  NYLDModelManager.shared().modelBundle.path(forResource: "0\(nameIndex)", ofType: "png", inDirectory: "Background") ?? ""
-//        let filePath =  Bundle.main.path(forResource: "0\(nameIndex)", ofType: "png") ?? ""
-        debugPrint("Background: \(filePath)")
-        var image = UIImage(contentsOfFile: filePath)
-        
-        self.tmpIV.image = image
-//        var texture:GLKTextureInfo
-//        if let image = image, let cgimage = image.cgImage {
-//            let outputImage:CIImage = CIImage(cgImage: cgimage)
-//
-//            let context:CIContext = CIContext.init(options: nil)
-//            let pixelData = context.createCGImage(outputImage, from: outputImage.extent,
-//                                                  format: kCIFormatARGB8,
-//                                                  colorSpace: CGColorSpaceCreateDeviceRGB())!
-//
-//            do {
-//                //失敗する。
-//                texture = try GLKTextureLoader.texture(with: pixelData, options: nil)
-//                debugPrint("texture:\(texture)")
-//            } catch {
-//                //ここに来る。
-//                debugPrint("GLKTextureLoaderError:2\(error)")
-//            }
-////            GLKTextureLoader.texture(with: cgimage, options: [:])
-//        }
     }
     
     override func didReceiveMemoryWarning() {

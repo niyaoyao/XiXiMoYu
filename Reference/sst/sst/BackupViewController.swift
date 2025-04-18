@@ -136,7 +136,7 @@ class BackupViewController: UIViewController {
     
     // TTS: 文字转语音
     @objc private func speakText() {
-        self.view.endEditing(true)
+//        self.view.endEditing(true)
         let text = textView.text.trimmingCharacters(in: .whitespacesAndNewlines)
         if text.isEmpty { return }
         
