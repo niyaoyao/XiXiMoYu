@@ -10,6 +10,11 @@ import UIKit
 import AVFoundation // TTS
 import Speech     // STT
 
+import AVFoundation // TTS
+import Speech     // STT
+import UIKit
+import AVFAudio
+
 class BackupViewController: UIViewController {
     // UI 元素
     private let textView = UITextView()
@@ -24,11 +29,13 @@ class BackupViewController: UIViewController {
     
     // TTS
     private let synthesizer = AVSpeechSynthesizer()
+    private var amplitudes: [Float] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         requestPermissions()
+        setupAudioSession()
     }
     
     // 设置 UI
@@ -53,6 +60,7 @@ class BackupViewController: UIViewController {
         speakButton.frame = CGRect(x: recordButton.frame.maxX + 20, y: textView.frame.maxY + 20, width: 100, height: 40)
         speakButton.addTarget(self, action: #selector(speakText), for: .touchUpInside)
         view.addSubview(speakButton)
+        synthesizer.delegate = self
     }
     
     // 请求权限
@@ -75,6 +83,17 @@ class BackupViewController: UIViewController {
             }
         }
     }
+    
+    private func setupAudioSession() {
+        let audioSession = AVAudioSession.sharedInstance()
+        do {
+            try audioSession.setCategory(.playAndRecord, mode: .default, options: [.mixWithOthers, .defaultToSpeaker])
+            try audioSession.setActive(true)
+        } catch {
+            print("音频会话配置失败: \(error)")
+        }
+    }
+    
     
     // STT: 录音并转文字
     @objc private func toggleRecording() {
@@ -134,9 +153,51 @@ class BackupViewController: UIViewController {
         try? AVAudioSession.sharedInstance().setActive(false)
     }
     
+    private func setupAmplitudeAudioEngine() {
+        let inputNode = audioEngine.inputNode
+        let format = inputNode.outputFormat(forBus: 0)
+        
+        inputNode.installTap(onBus: 0, bufferSize: 1024, format: format) { buffer, _ in
+            guard let floatChannelData = buffer.floatChannelData else { return }
+            let frameLength = Int(buffer.frameLength)
+            let samples = floatChannelData[0]
+            
+            let batchSize = 64
+            var batchAmplitudes: [Float] = []
+            
+            for i in stride(from: 0, to: frameLength, by: batchSize) {
+                let end = min(i + batchSize, frameLength)
+                var sum: Float = 0
+                let count = end - i
+                
+                for j in i..<end {
+                    sum += abs(samples[j])
+                }
+                
+                let averageAmplitude = count > 0 ? sum / Float(count) : 0
+                batchAmplitudes.append(averageAmplitude)
+            }
+            
+            self.amplitudes.append(contentsOf: batchAmplitudes)
+            print("实时振幅（最新）: \(batchAmplitudes.last ?? 0)")
+        }
+        
+        do {
+            audioEngine.prepare()
+            try audioEngine.start()
+        } catch {
+            print("音频引擎启动失败: \(error)")
+        }
+    }
+    
+    func stopAmplitudeAudioEngine() {
+        audioEngine.stop()
+        audioEngine.inputNode.removeTap(onBus: 0)
+    }
+    
     // TTS: 文字转语音
     @objc private func speakText() {
-//        self.view.endEditing(true)
+        setupAmplitudeAudioEngine()
         let text = textView.text.trimmingCharacters(in: .whitespacesAndNewlines)
         if text.isEmpty { return }
         
@@ -159,5 +220,21 @@ class BackupViewController: UIViewController {
         })
         alert.addAction(UIAlertAction(title: "取消", style: .cancel))
         present(alert, animated: true)
+    }
+}
+
+// MARK: - AVSpeechSynthesizerDelegate
+extension BackupViewController: AVSpeechSynthesizerDelegate {
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didStart utterance: AVSpeechUtterance) {
+        
+    }
+    
+    
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, willSpeakRangeOfSpeechString characterRange: NSRange, utterance: AVSpeechUtterance) {
+        print("characterRange: \(characterRange)")
+    }
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
+        print("语音合成完成，振幅数据（前 10 个）: \(amplitudes)")
+        stopAmplitudeAudioEngine()
     }
 }
