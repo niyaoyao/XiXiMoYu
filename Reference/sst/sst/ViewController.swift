@@ -1,0 +1,156 @@
+//
+//  ViewController.swift
+//  sst
+//
+//  Created by NY on 2025/3/27.
+//
+
+import UIKit
+
+class NYScaleCenterItemCollectionFlowLayout: UICollectionViewFlowLayout {
+    init(width: CGFloat, height: CGFloat) {
+        super.init()
+        let padding = (UIScreen.main.bounds.width - width)/2.0
+        itemSize = CGSize(width: width, height: height)
+        scrollDirection = .horizontal
+        minimumLineSpacing = 0.0
+        minimumInteritemSpacing = 0.0
+        sectionInset = UIEdgeInsets(top: 0, left: padding, bottom: 0, right: padding)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
+        return true
+    }
+    
+    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+        let collectionViewLayoutAttribuites: [UICollectionViewLayoutAttributes] = super.layoutAttributesForElements(in: rect) ?? []
+        guard let collectionView = self.collectionView else {
+            return collectionViewLayoutAttribuites
+        }
+        let centerX = collectionView.contentOffset.x + collectionView.bounds.size.width/2.0
+        let visableRect = CGRect(x: collectionView.contentOffset.x,
+                                 y: collectionView.contentOffset.y,
+                                 width: collectionView.frame.size.width,
+                                 height: collectionView.frame.size.height)
+        for attribuite in collectionViewLayoutAttribuites {
+            if !visableRect.intersects(attribuite.frame) {
+                continue
+            }
+            
+            let cellCenterX = attribuite.center.x
+            let distance = abs(cellCenterX - centerX)
+            let scale: CGFloat = 1/(1 + distance * 0.005)
+            attribuite.transform3D = CATransform3DMakeScale(scale, scale, scale)
+        }
+        
+        return collectionViewLayoutAttribuites
+    }
+    
+    override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
+        guard let collectionView = self.collectionView else { return CGPoint.zero }
+        let lastRect = CGRect(x: proposedContentOffset.x, y: proposedContentOffset.y, width: collectionView.frame.width, height: collectionView.frame.height)
+        let centerX = proposedContentOffset.x + collectionView.frame.width * 0.5
+        guard let layoutAttributesForElements =  self.layoutAttributesForElements(in: lastRect) else { return CGPoint.zero }
+        let attributes: [UICollectionViewLayoutAttributes] = layoutAttributesForElements
+        var adjustOffsetX = CGFloat(MAXFLOAT)
+        var tempOffsetX : CGFloat = 0.0
+        for attribute in attributes {
+            tempOffsetX = attribute.center.x - centerX
+            if abs(tempOffsetX) < abs(adjustOffsetX) {
+                adjustOffsetX = tempOffsetX
+            }
+        }
+        return CGPoint(x: proposedContentOffset.x + adjustOffsetX, y: proposedContentOffset.y)
+    }
+}
+
+class NYScaleCenterCollectionCell: UICollectionViewCell {
+    lazy var label: UILabel = {
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height))
+        return label
+    }()
+    static let identifier = "kNYScaleCenterCollectionCell"
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        backgroundColor = .gray
+        layer.cornerRadius = frame.width/2.0
+        layer.masksToBounds = true
+        contentView.addSubview(label)
+        
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func update(title: String)  {
+        label.text = title
+    }
+}
+
+class ViewController: UIViewController {
+    let titles = ["100000","200000","3333333","444444","555555","666666" ]
+    
+    lazy var collectionView: UICollectionView = {
+        let frame = CGRect(x: 0.0, y: 100, width: UIScreen.main.bounds.width, height: 80)
+        
+        let layout = NYScaleCenterItemCollectionFlowLayout(width:80, height: frame.size.height)
+        let collectionView = UICollectionView(frame: frame, collectionViewLayout: layout)
+        collectionView.backgroundColor = .clear
+        collectionView.isPagingEnabled = false
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.bounces = false
+        collectionView.clipsToBounds = false
+        collectionView.register(NYScaleCenterCollectionCell.self, forCellWithReuseIdentifier: NYScaleCenterCollectionCell.identifier)
+        
+        return collectionView
+    }()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.addSubview(collectionView)
+        
+    }
+    
+    
+}
+
+// MARK: - UICollectionViewDataSource
+extension ViewController: UICollectionViewDataSource {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return titles.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NYScaleCenterCollectionCell.identifier, for: indexPath) as? NYScaleCenterCollectionCell else {
+            return UICollectionViewCell()
+        }
+        cell.update(title: titles[indexPath.item])
+        return cell
+    }
+}
+
+// MARK: - UICollectionViewDelegate
+extension ViewController: UICollectionViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        updateCellScaling()
+    }
+    
+    private func updateCellScaling() {
+        
+    }
+}
+
+
+

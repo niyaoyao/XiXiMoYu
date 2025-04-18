@@ -1,7 +1,0 @@
-Target dependency graph (3 targets)
-Target 'ALL_BUILD' in project 'Demo'
-➜ Explicit dependency on target 'Framework' in project 'Demo'
-➜ Explicit dependency on target 'Demo' in project 'Demo'
-Target 'Demo' in project 'Demo'
-➜ Explicit dependency on target 'Framework' in project 'Demo'
-Target 'Framework' in project 'Demo' (no dependencies)
