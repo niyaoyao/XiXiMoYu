@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0EC0FF342D7EEF3800610053 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EC0FF332D7EEF3800610053 /* TestViewController.m */; };
 		0ECC630C2DB10313009C4302 /* launch_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0ECC630B2DB10313009C4302 /* launch_logo.png */; };
+		0ECC636E2DB36E5D009C4302 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECC636D2DB36E5D009C4302 /* NetworkClient.swift */; };
+		0ECC63702DB38C37009C4302 /* SwiftCombineSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECC636F2DB38C37009C4302 /* SwiftCombineSupport.swift */; };
 		3EBF4D6056239A65B850F2F9 /* Pods_Live2DSDK_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 354760434F172D0A773315CB /* Pods_Live2DSDK_Tests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
@@ -33,6 +35,8 @@
 		0EC0FF322D7EEF3700610053 /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		0EC0FF332D7EEF3800610053 /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		0ECC630B2DB10313009C4302 /* launch_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch_logo.png; sourceTree = "<group>"; };
+		0ECC636D2DB36E5D009C4302 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		0ECC636F2DB38C37009C4302 /* SwiftCombineSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftCombineSupport.swift; sourceTree = "<group>"; };
 		16D1BE0B35EC02179BBA80FB /* Pods-Live2DSDK_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Live2DSDK_Tests.debug.xcconfig"; path = "Target Support Files/Pods-Live2DSDK_Tests/Pods-Live2DSDK_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		184751EF955E20AA1A7F89B3 /* Pods-Live2DSDK_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Live2DSDK_Example.release.xcconfig"; path = "Target Support Files/Pods-Live2DSDK_Example/Pods-Live2DSDK_Example.release.xcconfig"; sourceTree = "<group>"; };
 		354760434F172D0A773315CB /* Pods_Live2DSDK_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Live2DSDK_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,6 +125,8 @@
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				0EC0FF322D7EEF3700610053 /* TestViewController.h */,
 				0EC0FF332D7EEF3800610053 /* TestViewController.m */,
+				0ECC636D2DB36E5D009C4302 /* NetworkClient.swift */,
+				0ECC636F2DB38C37009C4302 /* SwiftCombineSupport.swift */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				0ECC630B2DB10313009C4302 /* launch_logo.png */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -361,8 +367,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EC0FF342D7EEF3800610053 /* TestViewController.m in Sources */,
+				0ECC63702DB38C37009C4302 /* SwiftCombineSupport.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				0ECC636E2DB36E5D009C4302 /* NetworkClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

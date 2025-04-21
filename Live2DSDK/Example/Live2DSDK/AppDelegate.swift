@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // EvaKey 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
+        
         NYLDSDKManager.setup()
         // Override point for customization after application launch.
         self.window = UIWindow(frame: UIScreen.main.bounds)

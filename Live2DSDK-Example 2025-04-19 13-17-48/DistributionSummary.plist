@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Live2DSDK_Example.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>arm64</string>
+			</array>
+			<key>buildNumber</key>
+			<string>3</string>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>7759D52A9509CFAA81780970B4496A734A38D2CB</string>
+				<key>dateExpires</key>
+				<string>2026/3/18</string>
+				<key>type</key>
+				<string>Apple Distribution</string>
+			</dict>
+			<key>embeddedBinaries</key>
+			<array>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>arm64</string>
+					</array>
+					<key>buildNumber</key>
+					<string>1</string>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>7759D52A9509CFAA81780970B4496A734A38D2CB</string>
+						<key>dateExpires</key>
+						<string>2026/3/18</string>
+						<key>type</key>
+						<string>Apple Distribution</string>
+					</dict>
+					<key>name</key>
+					<string>Live2DSDK.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>P66P3CXU58</string>
+						<key>name</key>
+						<string>Yao Ni</string>
+					</dict>
+					<key>versionNumber</key>
+					<string>0.1.0</string>
+				</dict>
+			</array>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>P66P3CXU58.com.bear.yao.xi.eva</string>
+				<key>com.apple.developer.team-identifier</key>
+				<string>P66P3CXU58</string>
+				<key>get-task-allow</key>
+				<false/>
+			</dict>
+			<key>name</key>
+			<string>Live2DSDK_Example.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>de1ecae1-8bc1-42c6-93e9-9ed988ab51a2</string>
+				<key>dateExpires</key>
+				<string>2026/4/19</string>
+				<key>name</key>
+				<string>iOS Team Ad Hoc Provisioning Profile: com.bear.yao.xi.eva</string>
+			</dict>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>P66P3CXU58</string>
+				<key>name</key>
+				<string>Yao Ni</string>
+			</dict>
+			<key>versionNumber</key>
+			<string>1.0.0</string>
+		</dict>
+	</array>
+</dict>
+</plist>
