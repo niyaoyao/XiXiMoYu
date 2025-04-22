@@ -126,7 +126,7 @@ class ViewController: UIViewController {
         textView.layer.borderWidth = 1
         textView.layer.cornerRadius = 8
         textView.font = .systemFont(ofSize: 16)
-        textView.text = "Let’s start the AI ​​journey together~"
+        textView.text = "Hi,welcome! Let’s start the AI ​​journey together~"
         return textView
     }()
     
@@ -214,7 +214,7 @@ class ViewController: UIViewController {
         textView.frame = CGRect(x: slider.frame.origin.x, y: 0, width: UIScreen.main.bounds.size.width - 30 - sbtnw - 10, height: th)
         speakBtn.frame = CGRect(x: textView.frame.maxX + 10.0, y: textView.frame.origin.y, width: sbtnw, height: th)
         
-        view.addSubview(aiAnswerTV)
+//        view.addSubview(aiAnswerTV)
         let aiTVh = 230.0
         let aiTVy = inputWrapperEndRect.origin.y - 50 - aiTVh
         aiAnswerTV.frame = CGRect(x: slider.frame.origin.x, y: aiTVy, width: slider.frame.width, height: aiTVh)
@@ -314,7 +314,7 @@ extension ViewController {
             self.amplitudes.append(contentsOf: batchAmplitudes)
             print("实时振幅（最新）: \(batchAmplitudes.last ?? 0)")
             if let amplitude = batchAmplitudes.last {
-                NYLDModelManager.shared().mouthOpenRate = amplitude * 10
+                NYLDModelManager.shared().mouthOpenRate = amplitude * 20
             }
         }
         
