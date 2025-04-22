@@ -36,11 +36,11 @@
 
     - [ ] App Development
         - [ ] Menu List Bar
-            - [ ] Change Model: Collection View Circle Transmation
+            - [ ] Change Model
+                - [x] Collection View Circle Transmation
             - [ ] Change Background
-            - [ ] Change Pose
-            - [ ] Change Eyes
-            - [ ] Play Sound
+            - [ ] Creative Functions( Pose/Animation/Play Music)
+            - [ ] Settings/Me
     - [ ] AI Speech
         - [ ] SSE Text Stream
         - [ ] Mouth Control
