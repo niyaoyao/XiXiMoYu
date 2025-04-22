@@ -33,15 +33,7 @@
         - [x] Change Background
         - [x] Change Model No.
         - [x] Render Stage Controller
-    - [ ] `NYLDModel` instead of `LAppModel`
-        - [ ] Change Model Body Angle
-        - [x] Change Model Mouth Angle
-        - [ ] Change Model Eyes Angle
-        - [ ] Change Model Arms Angle
-        - [ ] Change Model Legs Angle
-        - [ ] Change Model Scale (Gesture)
-        - [ ] Change Model (x,y) (Drag Gesture)
-        - [ ] Play Animation
+
     - [ ] App Development
         - [ ] Menu List Bar
             - [ ] Change Model: Collection View Circle Transmation
@@ -49,28 +41,26 @@
             - [ ] Change Pose
             - [ ] Change Eyes
             - [ ] Play Sound
+    - [ ] AI Speech
+        - [ ] SSE Text Stream
+        - [ ] Mouth Control
+        - [ ] Text to Speech
 
-The Core Control Code is as Below
-```cpp
-void CubismModel::SetParameterValue(CubismIdHandle parameterId, csmFloat32 value, csmFloat32 weight)
-{   // Eye
-    const csmInt32 index = GetParameterIndex(parameterId);
-    SetParameterValue(index, value, weight);
-}
-
-void CubismModel::AddParameterValue(CubismIdHandle parameterId, csmFloat32 value, csmFloat32 weight)
-{
-    const csmInt32 index = GetParameterIndex(parameterId);
-    AddParameterValue(index, value, weight);
-}
-```
+    - [ ] `NYLDModel` instead of `LAppModel`
+        - [x] Change Model Mouth Angle
 
 4. [ ] App Icon
 5. [x] Renew Account Plan 
 6. [ ] Small Business Plan
 7. [ ] ICP
-    - [x]  Host 2025-03-27 ~ 2025-04-09
-    - [ ]  App
+    - [x] Host 2025-03-27 ~ 2025-04-09
+    - [ ] App 2025-04-09 ~ 
+    - [ ] Host Police (Optional)
+    - [ ] Host App (Optional)
 8. [ ] Submit Review
 
 ### Phase 2
+- 3D Model Control
+- 3D Model Render (Unity3D/**Metal** )
+- User System & VIP
+- Advertise
