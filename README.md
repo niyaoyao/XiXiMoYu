@@ -49,7 +49,7 @@
     - [ ] `NYLDModel` instead of `LAppModel`
         - [x] Change Model Mouth Angle
 
-4. [ ] App Icon
+4. [x] App Icon
 5. [x] Renew Account Plan 
 6. [ ] Small Business Plan
 7. [ ] ICP
