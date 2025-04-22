@@ -56,7 +56,7 @@
     - [x] Host 2025-03-27 ~ 2025-04-09
     - [ ] App 2025-04-09 ~ 
     - [ ] Host Police (Optional)
-    - [ ] Host App (Optional)
+    - [ ] App Police (Optional)
 8. [ ] Submit Review
 
 ### Phase 2
