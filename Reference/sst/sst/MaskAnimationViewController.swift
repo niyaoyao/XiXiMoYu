@@ -12,7 +12,7 @@ class MaskAnimationViewController: UIViewController {
     // 目标视图（需要显示的内容）
     private let contentView: UIView = {
         let view = UIView()
-        view.backgroundColor = .blue // 可替换为 UIImageView 等
+        view.backgroundColor = .systemBlue // 使用 systemBlue 确保可见
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -24,19 +24,29 @@ class MaskAnimationViewController: UIViewController {
         // 添加目标视图
         view.addSubview(contentView)
         
-        // 设置布局
+        // 设置布局约束
         NSLayoutConstraint.activate([
             contentView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             contentView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             contentView.widthAnchor.constraint(equalToConstant: 200),
             contentView.heightAnchor.constraint(equalToConstant: 200)
         ])
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         
-        // 设置遮罩并启动动画
+        // 在布局完成后设置遮罩动画
         setupMaskAnimation()
     }
     
     private func setupMaskAnimation() {
+        // 移除旧的遮罩（防止重复调用）
+        contentView.layer.mask = nil
+        
+        // 打印 bounds 以调试
+        print("ContentView bounds: \(contentView.bounds)")
+        
         // 创建 CAShapeLayer 作为遮罩
         let maskLayer = CAShapeLayer()
         
@@ -52,8 +62,8 @@ class MaskAnimationViewController: UIViewController {
         let finalRect = CGRect(x: 0, y: 0, width: contentView.bounds.width, height: contentView.bounds.height)
         animation.fromValue = maskLayer.path
         animation.toValue = CGPath(rect: finalRect, transform: nil)
-        animation.duration = 1.0 // 动画持续时间
-        animation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut) // 缓动效果
+        animation.duration = 1.0
+        animation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         animation.fillMode = .forwards
         animation.isRemovedOnCompletion = false
         
@@ -61,4 +71,3 @@ class MaskAnimationViewController: UIViewController {
         maskLayer.add(animation, forKey: "expandAnimation")
     }
 }
-
