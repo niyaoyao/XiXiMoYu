@@ -1,9 +1,9 @@
-use_frameworks!
+source 'https://github.com/CocoaPods/Specs.git'
 
 platform :ios, '15.0'
 
 target 'Eva' do
   pod 'Live2DSDK', :path => '../Live2DSDK', :modular_headers => true
-
-  
+  pod 'Kingfisher', '~> 8.0'
+  pod 'SnapKit', '~> 5.7.0'
 end
