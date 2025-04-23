@@ -95,7 +95,7 @@ class NYScaleCenterCollectionCell: UICollectionViewCell {
 }
 
 class ViewController: UIViewController {
-    let titles = ["TTS&SST","Real Time \nAmplitudes","Sound Wave","444444","555555","666666" ]
+    let titles = ["TTS&SST","Real Time \nAmplitudes","Sound Wave","Mask Animation","555555","666666" ]
     
     lazy var collectionView: UICollectionView = {
         let width = 80.0
@@ -156,6 +156,8 @@ extension ViewController: UICollectionViewDelegate {
             vc = Backup2ViewController()
         } else if item == 2 {
             vc = Backup3ViewController()
+        } else if item == 3 {
+            vc = MaskAnimationViewController()
         }
         self.navigationController?.pushViewController(vc, animated: true)
     }
