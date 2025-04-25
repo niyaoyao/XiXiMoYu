@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6DB21A97648B49A5AFA798EB /* Pods_Eva.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13DE917E70D1F3C75B8DF11C /* Pods_Eva.framework */; };
+		59DC4FF82B8F75228E12F5C4 /* libPods-Eva.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 465389745AECEFD96AFE6EA0 /* libPods-Eva.a */; };
 		8CAA9E8F2DB164D600C48B27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAA9E8E2DB164D600C48B27 /* AppDelegate.swift */; };
 		8CAA9E932DB164D600C48B27 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAA9E922DB164D600C48B27 /* ViewController.swift */; };
 		8CAA9E982DB164D900C48B27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CAA9E972DB164D900C48B27 /* Assets.xcassets */; };
@@ -15,7 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		13DE917E70D1F3C75B8DF11C /* Pods_Eva.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Eva.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		465389745AECEFD96AFE6EA0 /* libPods-Eva.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Eva.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A10D700A5C0AF96271F8C2E /* Pods-Eva.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eva.debug.xcconfig"; path = "Target Support Files/Pods-Eva/Pods-Eva.debug.xcconfig"; sourceTree = "<group>"; };
 		8CAA9E8B2DB164D600C48B27 /* Eva.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eva.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CAA9E8E2DB164D600C48B27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -31,7 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DB21A97648B49A5AFA798EB /* Pods_Eva.framework in Frameworks */,
+				59DC4FF82B8F75228E12F5C4 /* libPods-Eva.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,7 +80,7 @@
 		FA38594E9667C4F6661B8DEF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				13DE917E70D1F3C75B8DF11C /* Pods_Eva.framework */,
+				465389745AECEFD96AFE6EA0 /* libPods-Eva.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -96,7 +96,7 @@
 				8CAA9E872DB164D600C48B27 /* Sources */,
 				8CAA9E882DB164D600C48B27 /* Frameworks */,
 				8CAA9E892DB164D600C48B27 /* Resources */,
-				A22524F60AA481F4579459CB /* [CP] Embed Pods Frameworks */,
+				FD380A71C5621831D64AC5D4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -153,21 +153,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		A22524F60AA481F4579459CB /* [CP] Embed Pods Frameworks */ = {
+		FD380A71C5621831D64AC5D4 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Eva/Pods-Eva-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Eva/Pods-Eva-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Eva/Pods-Eva-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Eva/Pods-Eva-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Eva/Pods-Eva-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Eva/Pods-Eva-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FE4D97F4976EE03C31F0B00B /* [CP] Check Pods Manifest.lock */ = {
