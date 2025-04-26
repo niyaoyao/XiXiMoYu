@@ -8,7 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		59DC4FF82B8F75228E12F5C4 /* libPods-Eva.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 465389745AECEFD96AFE6EA0 /* libPods-Eva.a */; };
-		8CAA9E8F2DB164D600C48B27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAA9E8E2DB164D600C48B27 /* AppDelegate.swift */; };
+		8C94E4C52DBB540C0005D4B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C94E4C42DBB540C0005D4B5 /* AppDelegate.swift */; };
+		8C94E4C72DBB54310005D4B5 /* EvaBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C94E4C62DBB54310005D4B5 /* EvaBaseViewController.swift */; };
+		8C94E4C92DBB59040005D4B5 /* EvaExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C94E4C82DBB59040005D4B5 /* EvaExtension.swift */; };
+		8C94E4CB2DBB59810005D4B5 /* EvaBaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C94E4CA2DBB59810005D4B5 /* EvaBaseNavigationController.swift */; };
+		8C94E4CD2DBB59CB0005D4B5 /* EvaBaseTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C94E4CC2DBB59CB0005D4B5 /* EvaBaseTabbarController.swift */; };
+		8C94E4CF2DBB5A310005D4B5 /* EvaConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C94E4CE2DBB5A310005D4B5 /* EvaConstant.swift */; };
 		8CAA9E932DB164D600C48B27 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAA9E922DB164D600C48B27 /* ViewController.swift */; };
 		8CAA9E982DB164D900C48B27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CAA9E972DB164D900C48B27 /* Assets.xcassets */; };
 		8CAA9E9B2DB164D900C48B27 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CAA9E992DB164D900C48B27 /* LaunchScreen.storyboard */; };
@@ -17,8 +22,13 @@
 /* Begin PBXFileReference section */
 		465389745AECEFD96AFE6EA0 /* libPods-Eva.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Eva.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A10D700A5C0AF96271F8C2E /* Pods-Eva.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eva.debug.xcconfig"; path = "Target Support Files/Pods-Eva/Pods-Eva.debug.xcconfig"; sourceTree = "<group>"; };
+		8C94E4C42DBB540C0005D4B5 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8C94E4C62DBB54310005D4B5 /* EvaBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaBaseViewController.swift; sourceTree = "<group>"; };
+		8C94E4C82DBB59040005D4B5 /* EvaExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaExtension.swift; sourceTree = "<group>"; };
+		8C94E4CA2DBB59810005D4B5 /* EvaBaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaBaseNavigationController.swift; sourceTree = "<group>"; };
+		8C94E4CC2DBB59CB0005D4B5 /* EvaBaseTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaBaseTabbarController.swift; sourceTree = "<group>"; };
+		8C94E4CE2DBB5A310005D4B5 /* EvaConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaConstant.swift; sourceTree = "<group>"; };
 		8CAA9E8B2DB164D600C48B27 /* Eva.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eva.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		8CAA9E8E2DB164D600C48B27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CAA9E922DB164D600C48B27 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8CAA9E972DB164D900C48B27 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8CAA9E9A2DB164D900C48B27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +57,26 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		8C94E4C22DBB53DC0005D4B5 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		8C94E4C32DBB53F10005D4B5 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				8C94E4C42DBB540C0005D4B5 /* AppDelegate.swift */,
+				8C94E4C82DBB59040005D4B5 /* EvaExtension.swift */,
+				8C94E4C62DBB54310005D4B5 /* EvaBaseViewController.swift */,
+				8C94E4CA2DBB59810005D4B5 /* EvaBaseNavigationController.swift */,
+				8C94E4CC2DBB59CB0005D4B5 /* EvaBaseTabbarController.swift */,
+				8C94E4CE2DBB5A310005D4B5 /* EvaConstant.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		8CAA9E822DB164D600C48B27 = {
 			isa = PBXGroup;
 			children = (
@@ -68,7 +98,8 @@
 		8CAA9E8D2DB164D600C48B27 /* Eva */ = {
 			isa = PBXGroup;
 			children = (
-				8CAA9E8E2DB164D600C48B27 /* AppDelegate.swift */,
+				8C94E4C32DBB53F10005D4B5 /* Common */,
+				8C94E4C22DBB53DC0005D4B5 /* Modules */,
 				8CAA9E922DB164D600C48B27 /* ViewController.swift */,
 				8CAA9E972DB164D900C48B27 /* Assets.xcassets */,
 				8CAA9E992DB164D900C48B27 /* LaunchScreen.storyboard */,
@@ -199,8 +230,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C94E4C72DBB54310005D4B5 /* EvaBaseViewController.swift in Sources */,
+				8C94E4CD2DBB59CB0005D4B5 /* EvaBaseTabbarController.swift in Sources */,
+				8C94E4CB2DBB59810005D4B5 /* EvaBaseNavigationController.swift in Sources */,
+				8C94E4CF2DBB5A310005D4B5 /* EvaConstant.swift in Sources */,
+				8C94E4C52DBB540C0005D4B5 /* AppDelegate.swift in Sources */,
+				8C94E4C92DBB59040005D4B5 /* EvaExtension.swift in Sources */,
 				8CAA9E932DB164D600C48B27 /* ViewController.swift in Sources */,
-				8CAA9E8F2DB164D600C48B27 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +379,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
@@ -377,6 +414,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
