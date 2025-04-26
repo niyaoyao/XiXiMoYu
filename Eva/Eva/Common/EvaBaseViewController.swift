@@ -14,14 +14,13 @@ class EvaBaseViewController: UIViewController {
     var statusbarHidden: Bool {
         return false
     }
-    var hideNavigationBar: Bool {
-        return false
-    }
     
     var backButtonTapAction: (()->())?
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+        
         self.setBackButton()
     }
     
@@ -50,24 +49,43 @@ class EvaBaseViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    deinit {
+        debugPrint("\(self) 销毁成功！")
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(hideNavigationBar, animated: false)
+        
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        tabBarController?.tabBar.isHidden = true
     }
-
     
-    @objc func isRootNavigationController() -> Bool {
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+    }
+    
+    @objc var isRootNavigationController: Bool {
         return self.navigationController?.topViewController == self && self.navigationController?.viewControllers.count == 1
+    }
+    
+    @objc func backToPrevious() {
+        guard let count = self.navigationController?.viewControllers.count else { return }
+        if self.navigationController?.topViewController == self && count > 1 {
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     
     @objc func goBack() {
         if backButtonTapAction != nil {
             self.backButtonTapAction?()
         }
-        guard let count = self.navigationController?.viewControllers.count else { return }
-        if self.navigationController?.topViewController == self && count > 1 {
-            self.navigationController?.popViewController(animated: true)
-        }
+        backToPrevious()
     }
     
     @objc func goBackRoot() {
@@ -75,10 +93,7 @@ class EvaBaseViewController: UIViewController {
         if backButtonTapAction != nil {
             self.backButtonTapAction?()
         }
-        guard let count = self.navigationController?.viewControllers.count else { return }
-        if self.navigationController?.topViewController == self && count > 1 {
-            self.navigationController?.popToRootViewController(animated: true)
-        }
+        backToPrevious()
     }
     
     @objc func setBackButton() {
@@ -134,8 +149,15 @@ class EvaBaseViewController: UIViewController {
         let customButton = UIButton(type: .system)
         customButton.tintColor = tintColor
         customButton.setImage(image, for: .normal) // Set your image
-        customButton.frame = CGRect(x: 0, y: 0, width: image?.size.width ?? 30.0, height: image?.size.height ?? 30.0)
-    
+        customButton.frame = CGRect(x: 0, y: 0, width: image?.size.width ?? 32.0, height: image?.size.height ?? 44.0)
+        if customButton.frame.size.height < 44.0 {
+            customButton.frame = CGRect(x: 0, y: 0, width: customButton.frame.size.width, height: 44.0)
+        }
+        
+        if customButton.frame.size.width < 44.0 {
+            customButton.frame = CGRect(x: 0, y: 0, width: 44, height: customButton.frame.size.height)
+        }
+        
 
         let text = title ?? ""
         if text.count > 0 {
@@ -156,7 +178,15 @@ class EvaBaseViewController: UIViewController {
                                              context: nil)
             let textWidth = textRect.width
             customButton.frame = CGRect(x: 0, y: 0, width: imageSize.width + textWidth + 8, height: 30)
-        }// Adjust size as needed
+        } else {
+            if let img = image {
+                let size = img.size
+                
+                customButton.imageEdgeInsets = UIEdgeInsets(top: (44-size.height)/2.0, left: 0, bottom: (44-size.height)/2.0, right: 44-size.width)
+            }
+            
+                    
+        }
         customButton.addActionHandler(tapHandler)
         // Create a UIBarButtonItem with the custom view
         let customBarButtonItem = UIBarButtonItem(customView: customButton)
@@ -164,5 +194,4 @@ class EvaBaseViewController: UIViewController {
         // Set the custom UIBarButtonItem as the right bar button item
         self.navigationItem.leftBarButtonItem = customBarButtonItem
     }
-
 }

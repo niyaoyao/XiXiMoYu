@@ -11,6 +11,9 @@ import Combine
 
 extension UIColor {
     
+    convenience init(_ hex: String) {
+        self.init(hex: hex, alpha: 1)
+    }
     convenience init(hex: String, alpha: CGFloat = 1) {
         let hex = (hex as NSString).trimmingCharacters(in: .whitespacesAndNewlines)
         let scanner = Scanner(string: hex)
@@ -142,7 +145,6 @@ extension UIButton {
     }
 }
 
-
 extension UIButton {
     var tapPublisher: AnyPublisher<Void, Never> {
         let publisher = ControlEventPublisher(control: self, events: .touchUpInside)
@@ -217,6 +219,39 @@ extension UIImage {
 }
 
 
+
+extension UIImageView {
+    private struct AssociatedKeys {
+        static var tapAction = "tapAction"
+    }
+    
+    private var tapAction: (() -> Void)? {
+        get {
+            return objc_getAssociatedObject(self, &AssociatedKeys.tapAction) as? (() -> Void)
+        }
+        set {
+            objc_setAssociatedObject(self, &AssociatedKeys.tapAction, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }
+    
+    func addTapGesture(action: @escaping () -> Void) {
+        // 确保用户交互是开启的
+        isUserInteractionEnabled = true
+        
+        // 保存闭包
+        tapAction = action
+        
+        // 创建手势识别器
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        self.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc private func handleTap() {
+        tapAction?()
+    }
+}
+
+
 extension Date {
     static func createTimeStr(date: Date = Date()) -> String {
         // 创建 NSDateFormatter 实例
@@ -243,20 +278,17 @@ extension Date {
         // 1. 创建日期格式化器
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        dateFormatter.timeZone = TimeZone(identifier: "Asia/Shanghai")
+//        dateFormatter.timeZone = TimeZone(identifier: "Asia/Shanghai")
 
         // 2. 解析指定时间的字符串
-        guard let pastDate = dateFormatter.date(from: dateString) else {
-            print("日期解析失败")
-            return ""
-        }
+        let pastDate = dateFormatter.date(from: dateString)
 
         // 3. 获取当前时间
         let currentDate = Date()
 
         // 4. 计算时间差
         let calendar = Calendar.current
-        let components = calendar.dateComponents([.hour, .minute, .second], from: pastDate, to: currentDate)
+        let components = calendar.dateComponents([.hour, .minute, .second], from: pastDate ?? Date(), to: currentDate)
 
         // 5. 将时间差格式化为 "HH:mm:ss" 字符串
         let hours = components.hour ?? 0
@@ -268,7 +300,7 @@ extension Date {
     }
     
     // 函数：将秒数转换为 "HH:mm:ss" 格式的字符串
-    func formatSeconds(_ totalSeconds: Int) -> String {
+    static func formatSeconds(_ totalSeconds: Int) -> String {
         // 计算小时、分钟和秒
         let hours = totalSeconds / 3600
         let minutes = (totalSeconds % 3600) / 60
