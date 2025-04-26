@@ -24,17 +24,21 @@ class EvaRouter: NSObject {
     }
     
     @objc static func showLoginView() {
-//        appdelegate().window.rootViewController =  WeStudyLoginViewController()
-//        appdelegate().window.makeKeyAndVisible()
-//        // TODO: Change to Swift
-//        WSLocalUserDataManager.shared().userInfo?.isLoginLocal = false
-//        WSLocalUserDataManager.shared().saveUserInfo()
+        //        appdelegate().window.rootViewController =  WeStudyLoginViewController()
+        //        appdelegate().window.makeKeyAndVisible()
+        //        // TODO: Change to Swift
+        //        WSLocalUserDataManager.shared().userInfo?.isLoginLocal = false
+        //        WSLocalUserDataManager.shared().saveUserInfo()
+        
+        guard let window = UIApplication.shared.delegate?.window else { return }
+        
     }
     
     @objc static func showHomePage()  {
-//        let home =
-//        appdelegate().window.rootViewController = tabvc
-//        appdelegate().window.makeKeyAndVisible()
-//        
+        let aiChat = AIChatViewController()
+        let homeNav = EvaBaseNavigationController(rootViewController: aiChat)
+        guard let window = UIApplication.shared.delegate?.window as? UIWindow else { return }
+        window.rootViewController = homeNav
+        window.makeKeyAndVisible()
     }
 }
