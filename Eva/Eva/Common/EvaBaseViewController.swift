@@ -18,7 +18,7 @@ class EvaBaseViewController: UIViewController {
     var backButtonTapAction: (()->())?
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .white
+        
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
         
         self.setBackButton()

@@ -17,6 +17,7 @@
 		8C94E4D12DBD38870005D4B5 /* EvaRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C94E4D02DBD38870005D4B5 /* EvaRouter.swift */; };
 		8C94E4D32DBD3FDC0005D4B5 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C94E4D22DBD3FDC0005D4B5 /* NetworkClient.swift */; };
 		8C94E4D52DBD46AA0005D4B5 /* AIChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C94E4D42DBD46AA0005D4B5 /* AIChatViewController.swift */; };
+		8CA23EA52DBE988C00ECFA51 /* SwiftCombineSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA23EA42DBE988C00ECFA51 /* SwiftCombineSupport.swift */; };
 		8CAA9E982DB164D900C48B27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CAA9E972DB164D900C48B27 /* Assets.xcassets */; };
 		8CAA9E9B2DB164D900C48B27 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CAA9E992DB164D900C48B27 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -33,6 +34,7 @@
 		8C94E4D02DBD38870005D4B5 /* EvaRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaRouter.swift; sourceTree = "<group>"; };
 		8C94E4D22DBD3FDC0005D4B5 /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkClient.swift; path = ../../../Live2DSDK/Example/Live2DSDK/NetworkClient.swift; sourceTree = "<group>"; };
 		8C94E4D42DBD46AA0005D4B5 /* AIChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIChatViewController.swift; sourceTree = "<group>"; };
+		8CA23EA42DBE988C00ECFA51 /* SwiftCombineSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftCombineSupport.swift; path = ../../../Live2DSDK/Example/Live2DSDK/SwiftCombineSupport.swift; sourceTree = "<group>"; };
 		8CAA9E8B2DB164D600C48B27 /* Eva.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eva.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CAA9E972DB164D900C48B27 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8CAA9E9A2DB164D900C48B27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				8C94E4CE2DBB5A310005D4B5 /* EvaConstant.swift */,
 				8C94E4D02DBD38870005D4B5 /* EvaRouter.swift */,
 				8C94E4D22DBD3FDC0005D4B5 /* NetworkClient.swift */,
+				8CA23EA42DBE988C00ECFA51 /* SwiftCombineSupport.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C94E4C72DBB54310005D4B5 /* EvaBaseViewController.swift in Sources */,
+				8CA23EA52DBE988C00ECFA51 /* SwiftCombineSupport.swift in Sources */,
 				8C94E4CD2DBB59CB0005D4B5 /* EvaBaseTabbarController.swift in Sources */,
 				8C94E4CB2DBB59810005D4B5 /* EvaBaseNavigationController.swift in Sources */,
 				8C94E4CF2DBB5A310005D4B5 /* EvaConstant.swift in Sources */,
@@ -387,7 +391,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
@@ -422,7 +426,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;

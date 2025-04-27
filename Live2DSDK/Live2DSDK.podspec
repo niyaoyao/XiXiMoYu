@@ -42,6 +42,7 @@ Pod::Spec.new do |s|
     'OTHER_CPLUSPLUSFLAGS' => '-std=c++11',            # Ensure C++11 is used
     'CLANG_CXX_LANGUAGE_STANDARD' => 'c++11',           # Specify C++11 language standard
     'OTHER_CFLAGS' => '-DDEBUG',                        # Optional: Set any preprocessor flags
-    'GCC_PREPROCESSOR_DEFINITIONS' => '$(inherited) COCOAPODS=1 CSM_TARGET_IPHONE_ES2=1 GLES_SILENCE_DEPRECATION=1' 
+    'GCC_PREPROCESSOR_DEFINITIONS' => '$(inherited) COCOAPODS=1 CSM_TARGET_IPHONE_ES2=1 GLES_SILENCE_DEPRECATION=1',
+    'BUILD_LIBRARY_FOR_DISTRIBUTION' => 'NO'
   }
 end

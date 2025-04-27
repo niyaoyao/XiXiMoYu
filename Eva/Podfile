@@ -10,17 +10,11 @@ end
 
 post_install do |installer|
   installer.pods_project.targets.each do |target|
-    target.build_configurations.each do |config|
-      config.build_settings['OTHER_SWIFT_FLAGS'] = '-no-verify-emitted-module-interface'
+    if target.name == 'Kingfisher' or target.name == 'SnapKit'
+      target.build_configurations.each do |config|
+        config.build_settings['OTHER_SWIFT_FLAGS'] = '-no-verify-emitted-module-interface'
+        config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
+      end
     end
   end
 end
-#post_install do |installer|
-#  installer.pods_project.targets.each do |target|
-#    if target.name == 'Kingfisher'
-#      target.build_configurations.each do |config|
-#        config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
-#      end
-#    end
-#  end
-#end
