@@ -158,7 +158,7 @@ class AIChatViewController: EvaBaseViewController {
         view.addSubview(modelBtn)
         
         settingsBtn.snp.makeConstraints { make in
-            make.bottom.equalTo(view).offset(-kBottomSafeHeight-160)
+            make.bottom.equalTo(view).offset(-kBottomSafeHeight-120)
             make.right.equalTo(view).offset(-15)
             make.size.equalTo(btnSize)
         }
