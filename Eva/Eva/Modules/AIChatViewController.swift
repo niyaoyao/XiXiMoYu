@@ -100,10 +100,27 @@ class AIChatViewController: EvaBaseViewController {
     private var keyboardObserver: KeyboardObserver =  KeyboardObserver()
     private var cancellables = Set<AnyCancellable>()
     
+    lazy var endEditBtn: UIButton = {
+        let btn = UIButton(frame: .zero)
+        btn.backgroundColor = .clear
+        btn.addActionHandler { [weak self] in
+            self?.endEditing()
+        }
+        return btn
+    }()
+    
     lazy var modelBtn: UIButton = {
         let btn = UIButton(frame: .zero)
         btn.setImage( UIImage(named: "menu_model"), for: .normal)
-        btn.addActionHandler {
+        let layer = btn.layer
+                
+        // 启用阴影
+        layer.shadowOpacity = 0.3 // 对应 rgba 的透明度 (0.3)
+        layer.shadowColor = UIColor("#333333").cgColor
+        layer.shadowOffset = CGSize(width: 0, height: 6) // 对应 offset-x: 0px, offset-y: 11px
+        layer.shadowRadius = 12
+        btn.addActionHandler { [weak self] in
+            self?.endEditing()
         }
         return btn
     }()
@@ -111,25 +128,54 @@ class AIChatViewController: EvaBaseViewController {
     lazy var backgroundBtn: UIButton = {
         let btn = UIButton(frame: .zero)
         btn.setImage(UIImage(named: "menu_background"), for: .normal)
+        let layer = btn.layer
+                
+        // 启用阴影
+        layer.shadowOpacity = 0.3 // 对应 rgba 的透明度 (0.3)
+        layer.shadowColor = UIColor("#333333").cgColor // 对应 rgba(255, 89, 0)
+        layer.shadowOffset = CGSize(width: 0, height: 6) // 对应 offset-x: 0px, offset-y: 11px
+        layer.shadowRadius = 12
         return btn
     }()
     
     lazy var controlBtn: UIButton = {
         let btn = UIButton(frame: .zero)
         btn.setImage(UIImage(named: "menu_control"), for: .normal)
+        let layer = btn.layer
+                
+        // 启用阴影
+        layer.shadowOpacity = 0.3 // 对应 rgba 的透明度 (0.3)
+        layer.shadowColor = UIColor("#333333").cgColor // 对应 rgba(255, 89, 0)
+        layer.shadowOffset = CGSize(width: 0, height: 6) // 对应 offset-x: 0px, offset-y: 11px
+        layer.shadowRadius = 12
         return btn
     }()
     
     lazy var settingsBtn: UIButton = {
         let btn = UIButton(frame: .zero)
         btn.setImage(UIImage(named: "menu_settings"), for: .normal)
+        let layer = btn.layer
+                
+        // 启用阴影
+        layer.shadowOpacity = 0.3 // 对应 rgba 的透明度 (0.3)
+        layer.shadowColor = UIColor("#333333").cgColor // 对应 rgba(255, 89, 0)
+        layer.shadowOffset = CGSize(width: 0, height: 6) // 对应 offset-x: 0px, offset-y: 11px
+        layer.shadowRadius = 12
         return btn
     }()
     
     lazy var speakBtn: UIButton = {
         let speakButton = UIButton(frame: .zero)// Speak Button
-        speakButton.setTitle("Speak", for: .normal)
+        speakButton.setTitle("Send", for: .normal)
+        speakButton.setTitle("Waiting", for: .disabled)
         speakButton.addTarget(self, action: #selector(speakText), for: .touchUpInside)
+        let layer = speakButton.layer
+                
+        // 启用阴影
+        layer.shadowOpacity = 1 // 对应 rgba 的透明度 (0.3)
+        layer.shadowColor = UIColor("#333333").cgColor // 对应 rgba(255, 89, 0)
+        layer.shadowOffset = CGSize(width: 0, height: 0) // 对应 offset-x: 0px, offset-y: 11px
+        layer.shadowRadius = 12
         return speakButton
     }()
     
@@ -146,19 +192,70 @@ class AIChatViewController: EvaBaseViewController {
     
     lazy var inputWrapper: UIView = {
         let v = UIView(frame: .zero)
+        v.addSubview(inputBackground)
+        inputBackground.snp.makeConstraints({ $0.edges.equalTo(v) })
         return v
+    }()
+    
+    lazy var inputBackground: UIView = {
+        let v = UIView(frame: .zero)
+        v.backgroundColor = .white
+        v.alpha = 0.0
+        return v
+    }()
+    
+    var inputWrapperEndRect = CGRect()
+    
+    lazy var modelBackgroudBtn: UIButton = {
+        let btn = UIButton(frame: .zero)
+        btn.addActionHandler { [weak self] in
+            self?.endEditing()
+        }
+        return btn
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        requestPermissions()
+        setupAudioSession()
+        keyboardObserver.keyboardHeightPublisher
+           .sink { [weak self] keyRect in
+               guard let `self` = self else { return }
 
+               
+               var rect = self.inputWrapperEndRect
+               let keyboardH =  keyRect.size.height
+               var alpha = 0.0
+               if keyRect.origin.y >= UIScreen.main.bounds.height {
+                   rect = self.inputWrapperEndRect
+                   alpha = 0.0
+               } else {
+                   rect.origin.y =  UIScreen.main.bounds.height - keyboardH - self.inputWrapperEndRect.height
+                   alpha = 1.0
+               }
+               UIView.animate(withDuration: 0.35) {
+                   self.inputWrapper.frame = rect
+                   self.inputBackground.alpha = alpha
+               } completion: { success in
+
+               }
+           }.store(in: &cancellables)
+        setupUI()
+        
+    }
+    
+    func setupUI() {
+        view.backgroundColor = .white
+        view.addSubview(endEditBtn)
+        endEditBtn.snp.makeConstraints({ $0.edges.equalTo(view) })
+        view.addSubview(modelBackgroudBtn)
         view.addSubview(settingsBtn)
         view.addSubview(controlBtn)
         view.addSubview(backgroundBtn)
         view.addSubview(modelBtn)
-        
+        let bottomH = 120.0
         settingsBtn.snp.makeConstraints { make in
-            make.bottom.equalTo(view).offset(-kBottomSafeHeight-120)
+            make.bottom.equalTo(view).offset(-kBottomSafeHeight-bottomH)
             make.right.equalTo(view).offset(-15)
             make.size.equalTo(btnSize)
         }
@@ -180,9 +277,25 @@ class AIChatViewController: EvaBaseViewController {
             make.right.equalTo(backgroundBtn)
             make.size.equalTo(btnSize)
         }
+        
+        // tts
+        let th = 50.0
+        let sbtnw = 80.0
+        view.addSubview(inputWrapper)
+        let inputY = UIScreen.main.bounds.height - kBottomSafeHeight - (bottomH - th)/2.0 - th
+        inputWrapper.frame = CGRect(x: 0, y: inputY, width: UIScreen.main.bounds.size.width, height: th + 20)
+        inputWrapperEndRect = inputWrapper.frame
+        inputWrapper.addSubview(self.textView)
+        inputWrapper.addSubview(speakBtn)
+        textView.frame = CGRect(x: 15, y: 10, width: UIScreen.main.bounds.size.width - 30 - sbtnw - 10, height: th)
+        speakBtn.frame = CGRect(x: textView.frame.maxX + 10.0, y: textView.frame.origin.y, width: sbtnw, height: th)
     }
+    
 
 }
+
+
+
 
 // MARK: - TTS
 extension AIChatViewController {
