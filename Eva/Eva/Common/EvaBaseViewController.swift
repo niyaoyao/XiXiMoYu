@@ -97,7 +97,7 @@ class EvaBaseViewController: UIViewController {
     }
     
     @objc func setBackButton() {
-        setCustomLeftNavButton(image: UIImage(named: "back")) { [weak self] in
+        setCustomLeftNavButton(image: UIImage(named: "nav_back")) { [weak self] in
             self?.goBack()
         }
     }

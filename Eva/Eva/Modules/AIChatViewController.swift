@@ -99,6 +99,25 @@ class AIChatViewController: EvaBaseViewController {
     private var amplitudes: [Float] = []
     private var keyboardObserver: KeyboardObserver =  KeyboardObserver()
     private var cancellables = Set<AnyCancellable>()
+    let titles = ["TTS&SST","Real Time \nAmplitudes","Sound Wave","Mask Animation","555555","666666" ]
+    
+    lazy var collectionView: UICollectionView = {
+        let width = 80.0
+        let frame = CGRect(x: 0.0, y: 100, width: UIScreen.main.bounds.width, height: 80)
+        let padding = (frame.width - 80)/2.0
+        let layout = NYScaleCenterItemCollectionFlowLayout(width:width, height: frame.size.height, padding: padding)
+        let collectionView = UICollectionView(frame: frame, collectionViewLayout: layout)
+        collectionView.backgroundColor = .clear
+        collectionView.isPagingEnabled = false
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.bounces = true
+        collectionView.clipsToBounds = false
+        collectionView.register(NYScaleCenterCollectionCell.self, forCellWithReuseIdentifier: NYScaleCenterCollectionCell.identifier)
+        collectionView.alpha = 0.0
+        return collectionView
+    }()
     
     lazy var endEditBtn: UIButton = {
         let btn = UIButton(frame: .zero)
@@ -121,6 +140,7 @@ class AIChatViewController: EvaBaseViewController {
         layer.shadowRadius = 12
         btn.addActionHandler { [weak self] in
             self?.endEditing()
+            self?.showCollectionView()
         }
         return btn
     }()
@@ -135,6 +155,10 @@ class AIChatViewController: EvaBaseViewController {
         layer.shadowColor = UIColor("#333333").cgColor // 对应 rgba(255, 89, 0)
         layer.shadowOffset = CGSize(width: 0, height: 6) // 对应 offset-x: 0px, offset-y: 11px
         layer.shadowRadius = 12
+        btn.addActionHandler { [weak self] in
+            self?.endEditing()
+            self?.showCollectionView()
+        }
         return btn
     }()
     
@@ -161,6 +185,12 @@ class AIChatViewController: EvaBaseViewController {
         layer.shadowColor = UIColor("#333333").cgColor // 对应 rgba(255, 89, 0)
         layer.shadowOffset = CGSize(width: 0, height: 6) // 对应 offset-x: 0px, offset-y: 11px
         layer.shadowRadius = 12
+        
+        btn.addActionHandler { [weak self] in
+            self?.endEditing()
+            let vc = EvaSettingViewController()
+            self?.navigationController?.pushViewController(vc, animated: true)
+        }
         return btn
     }()
     
@@ -289,8 +319,14 @@ class AIChatViewController: EvaBaseViewController {
         inputWrapper.addSubview(speakBtn)
         textView.frame = CGRect(x: 15, y: 10, width: UIScreen.main.bounds.size.width - 30 - sbtnw - 10, height: th)
         speakBtn.frame = CGRect(x: textView.frame.maxX + 10.0, y: textView.frame.origin.y, width: sbtnw, height: th)
+        
+        view.addSubview(collectionView)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
 
 }
 
@@ -468,6 +504,7 @@ extension AIChatViewController {
     
     @objc func endEditing() {
         self.view.endEditing(true)
+        self.hideCollectionView()
     }
     // 提示用户前往设置
     private func showAlert(message: String) {
@@ -496,5 +533,60 @@ extension AIChatViewController: AVSpeechSynthesizerDelegate {
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
         print("语音合成完成，振幅数据（前 10 个）: \(amplitudes)")
         stopAmplitudeAudioEngine()
+    }
+}
+
+
+
+// MARK: - UICollectionViewDataSource
+extension AIChatViewController: UICollectionViewDataSource {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return titles.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NYScaleCenterCollectionCell.identifier, for: indexPath) as? NYScaleCenterCollectionCell else {
+            return UICollectionViewCell()
+        }
+        cell.update(title: titles[indexPath.item])
+        return cell
+    }
+}
+
+// MARK: - UICollectionViewDelegate
+extension AIChatViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.hideCollectionView()
+        var vc = UIViewController()
+        let item = indexPath.item
+//        if item == 0 {
+//            vc = BackupViewController()
+//        } else if item == 1 {
+//            vc = Backup2ViewController()
+//        } else if item == 2 {
+//            vc = Backup3ViewController()
+//        } else if item == 3 {
+//            vc = MaskAnimationViewController()
+//        }
+//        self.navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+extension AIChatViewController {
+    func showCollectionView() {
+        UIView.animate(withDuration: 0.35) { [weak self] in
+            self?.collectionView.alpha = 1.0
+        }
+    }
+    
+    func hideCollectionView() {
+        UIView.animate(withDuration: 0.35) { [weak self] in
+            self?.collectionView.alpha = 0.0
+        }
     }
 }

@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		59DC4FF82B8F75228E12F5C4 /* libPods-Eva.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 465389745AECEFD96AFE6EA0 /* libPods-Eva.a */; };
+		8C944D142DC9D016000B4168 /* ScaleCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C944D132DC9D016000B4168 /* ScaleCollectionCell.swift */; };
+		8C944D162DC9D646000B4168 /* EvaSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C944D152DC9D646000B4168 /* EvaSettingViewController.swift */; };
+		8C944D182DC9D6DC000B4168 /* RoundCornerCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C944D172DC9D6DC000B4168 /* RoundCornerCollectionLayout.swift */; };
+		8C944D1A2DC9D780000B4168 /* EvaUserProfileListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C944D192DC9D780000B4168 /* EvaUserProfileListItemViewModel.swift */; };
+		8C944D1C2DC9D8A5000B4168 /* EvaSettingsCommonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C944D1B2DC9D8A5000B4168 /* EvaSettingsCommonCell.swift */; };
 		8C94E4C52DBB540C0005D4B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C94E4C42DBB540C0005D4B5 /* AppDelegate.swift */; };
 		8C94E4C72DBB54310005D4B5 /* EvaBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C94E4C62DBB54310005D4B5 /* EvaBaseViewController.swift */; };
 		8C94E4C92DBB59040005D4B5 /* EvaExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C94E4C82DBB59040005D4B5 /* EvaExtension.swift */; };
@@ -25,6 +30,11 @@
 /* Begin PBXFileReference section */
 		465389745AECEFD96AFE6EA0 /* libPods-Eva.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Eva.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A10D700A5C0AF96271F8C2E /* Pods-Eva.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eva.debug.xcconfig"; path = "Target Support Files/Pods-Eva/Pods-Eva.debug.xcconfig"; sourceTree = "<group>"; };
+		8C944D132DC9D016000B4168 /* ScaleCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleCollectionCell.swift; sourceTree = "<group>"; };
+		8C944D152DC9D646000B4168 /* EvaSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaSettingViewController.swift; sourceTree = "<group>"; };
+		8C944D172DC9D6DC000B4168 /* RoundCornerCollectionLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundCornerCollectionLayout.swift; sourceTree = "<group>"; };
+		8C944D192DC9D780000B4168 /* EvaUserProfileListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaUserProfileListItemViewModel.swift; sourceTree = "<group>"; };
+		8C944D1B2DC9D8A5000B4168 /* EvaSettingsCommonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaSettingsCommonCell.swift; sourceTree = "<group>"; };
 		8C94E4C42DBB540C0005D4B5 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C94E4C62DBB54310005D4B5 /* EvaBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaBaseViewController.swift; sourceTree = "<group>"; };
 		8C94E4C82DBB59040005D4B5 /* EvaExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaExtension.swift; sourceTree = "<group>"; };
@@ -67,6 +77,8 @@
 			isa = PBXGroup;
 			children = (
 				8C94E4D42DBD46AA0005D4B5 /* AIChatViewController.swift */,
+				8C944D152DC9D646000B4168 /* EvaSettingViewController.swift */,
+				8C944D192DC9D780000B4168 /* EvaUserProfileListItemViewModel.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -83,6 +95,9 @@
 				8C94E4D02DBD38870005D4B5 /* EvaRouter.swift */,
 				8C94E4D22DBD3FDC0005D4B5 /* NetworkClient.swift */,
 				8CA23EA42DBE988C00ECFA51 /* SwiftCombineSupport.swift */,
+				8C944D132DC9D016000B4168 /* ScaleCollectionCell.swift */,
+				8C944D172DC9D6DC000B4168 /* RoundCornerCollectionLayout.swift */,
+				8C944D1B2DC9D8A5000B4168 /* EvaSettingsCommonCell.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -240,6 +255,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C94E4C72DBB54310005D4B5 /* EvaBaseViewController.swift in Sources */,
+				8C944D142DC9D016000B4168 /* ScaleCollectionCell.swift in Sources */,
+				8C944D162DC9D646000B4168 /* EvaSettingViewController.swift in Sources */,
 				8CA23EA52DBE988C00ECFA51 /* SwiftCombineSupport.swift in Sources */,
 				8C94E4CD2DBB59CB0005D4B5 /* EvaBaseTabbarController.swift in Sources */,
 				8C94E4CB2DBB59810005D4B5 /* EvaBaseNavigationController.swift in Sources */,
@@ -247,6 +264,9 @@
 				8C94E4C52DBB540C0005D4B5 /* AppDelegate.swift in Sources */,
 				8C94E4D32DBD3FDC0005D4B5 /* NetworkClient.swift in Sources */,
 				8C94E4D52DBD46AA0005D4B5 /* AIChatViewController.swift in Sources */,
+				8C944D1C2DC9D8A5000B4168 /* EvaSettingsCommonCell.swift in Sources */,
+				8C944D182DC9D6DC000B4168 /* RoundCornerCollectionLayout.swift in Sources */,
+				8C944D1A2DC9D780000B4168 /* EvaUserProfileListItemViewModel.swift in Sources */,
 				8C94E4C92DBB59040005D4B5 /* EvaExtension.swift in Sources */,
 				8C94E4D12DBD38870005D4B5 /* EvaRouter.swift in Sources */,
 			);
