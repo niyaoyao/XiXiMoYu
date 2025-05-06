@@ -445,16 +445,14 @@ extension AIChatViewController {
         synthesizer.speak(utterance)
     }
     
-    func aiRequest(prompt: String, model:String = "deepseek/deepseek-r1-zero:free", completion: ((String?)->())?) {
-        let key = "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"
+    func aiRequest(prompt: String, model:String = "qwen/qwen3-14b:free", completion: ((String?)->())?) {
+        let key = "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"
         let headers: [String: String] = ["Authorization" : "Bearer \(key)"]
         let body: [String: Any] = [
             "model" : model,
             "messages": [
-                [
-                    "role": "user",
-                    "content": prompt
-                ]
+                ["role":"user","content":"I'm fired now. I'm so sad and frustrated."],
+                ["role":"system","content":"Please play the role of a gentle and considerate AI girlfriend, speak in a gentle and considerate tone, be able to empathize with the interlocutor's mood, and provide emotional value to the interlocutor."]
             ]
         ]
         guard let url = URL(string: "https://openrouter.ai/api/v1/chat/completions") else { return }

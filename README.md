@@ -24,12 +24,7 @@
         - [x] `NYLDModelManager` instead of `LAppLive2DManager`
         - [x] `NYLDSDKManager` instead of `AppDelegate`
         - [x] `NYLDStagingGLViewController` to render GL Model.
-        ~~- Wrap `LAppModel` 🌟~~
         - [x] `ViewController` remove C++ interface/type in header files.
-        ~~- `LAppLive2DManager`  remove C++ interface/type in header files.~~
-        ~~- `LAppLive2DManager` optimize the flow for manage model, bridge C++ functions.~~
-        ~~- Wrap `LAppPal` `LAppSprite`~~
-        ~~- Wrap `LAppSprite`~~
         - [x] Change Background
         - [x] Change Model No.
         - [x] Render Stage Controller
@@ -42,13 +37,19 @@
             - [ ] Creative Functions( Pose/Animation/Play Music)
             - [ ] Settings/Me
                 - [ ] Privacy
-                - [ ] User 
+                - [ ] User
+                - [ ] **OpenRouter Key Request JSON**
+                - [ ] AI Model Settings
+                    - [ ] Model List: **Request JSON**
+                    - [ ] Request Message
+                        - [ ] user
+                        - [ ] system
                 - [x] ICP
                 - [x] Version
                 - [ ] Locale
                 - [ ] Change Model
     - [ ] AI Speech
-        - [ ] **SSE Text Stream**
+        - [ ] **SSE Text Stream** 
         - [ ] Mouth Control
         - [ ] Text to Speech
 
@@ -60,7 +61,7 @@
 6. [ ] Small Business Plan
 7. [ ] ICP
     - [x] Host 2025-03-27 ~ 2025-04-09
-    - [ ] App 2025-04-09 ~ 
+    - [x] App 2025-04-09 ~ 2025-04-28/ (EvaAI 2025-05-06)
     - [ ] Host Police (Optional)
     - [ ] App Police (Optional)
 8. [ ] Submit Review
