@@ -174,7 +174,7 @@ extension EvaSettingViewController : UICollectionViewDelegateFlowLayout {
 extension EvaSettingViewController: RoundCornerCollectionDelegateLayout {
     func collectionView(_: UICollectionView, layout: RoundCornerCollectionLayout, configModelForSection: NSInteger) -> RoundCornerCollectionDecorateModel? {
         
-        let configModel = RoundCornerCollectionDecorateModel(borderEdgeInsets: UIEdgeInsets(top: 0, left: 10.0, bottom: 0, right: 10.0),
+        let configModel = RoundCornerCollectionDecorateModel(borderEdgeInsets: UIEdgeInsets(top: 0, left: 15.0, bottom: 0, right: 15.0),
                                                              backgroundColor: .white,
                                                              cornerRadius: 8)
         return configModel

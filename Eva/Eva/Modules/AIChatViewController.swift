@@ -93,17 +93,20 @@ struct Usage: Codable {
 }
 class AIChatViewController: EvaBaseViewController {
     let btnSize = CGSize(width: 35, height: 35)
+    let bottomH = 120.0
     // TTS
     private let synthesizer = AVSpeechSynthesizer()
     private let audioEngine = AVAudioEngine()
     private var amplitudes: [Float] = []
     private var keyboardObserver: KeyboardObserver =  KeyboardObserver()
     private var cancellables = Set<AnyCancellable>()
-    let titles = ["TTS&SST","Real Time \nAmplitudes","Sound Wave","Mask Animation","555555","666666" ]
+    let collectionDatas = ["TTS&SST","Real Time \nAmplitudes","Sound Wave","Mask Animation","555555","666666" ]
     
     lazy var collectionView: UICollectionView = {
         let width = 80.0
-        let frame = CGRect(x: 0.0, y: 100, width: UIScreen.main.bounds.width, height: 80)
+        let y = UIScreen.main.bounds.size.height - kBottomSafeHeight - bottomH - 4.0 * (btnSize.height + 25.0) - width
+        
+        let frame = CGRect(x: 0.0, y: y, width: UIScreen.main.bounds.width, height: width)
         let padding = (frame.width - 80)/2.0
         let layout = NYScaleCenterItemCollectionFlowLayout(width:width, height: frame.size.height, padding: padding)
         let collectionView = UICollectionView(frame: frame, collectionViewLayout: layout)
@@ -116,6 +119,7 @@ class AIChatViewController: EvaBaseViewController {
         collectionView.clipsToBounds = false
         collectionView.register(NYScaleCenterCollectionCell.self, forCellWithReuseIdentifier: NYScaleCenterCollectionCell.identifier)
         collectionView.alpha = 0.0
+        
         return collectionView
     }()
     
@@ -275,7 +279,7 @@ class AIChatViewController: EvaBaseViewController {
     }
     
     func setupUI() {
-        view.backgroundColor = .white
+        
         view.addSubview(endEditBtn)
         endEditBtn.snp.makeConstraints({ $0.edges.equalTo(view) })
         view.addSubview(modelBackgroudBtn)
@@ -283,7 +287,7 @@ class AIChatViewController: EvaBaseViewController {
         view.addSubview(controlBtn)
         view.addSubview(backgroundBtn)
         view.addSubview(modelBtn)
-        let bottomH = 120.0
+        
         settingsBtn.snp.makeConstraints { make in
             make.bottom.equalTo(view).offset(-kBottomSafeHeight-bottomH)
             make.right.equalTo(view).offset(-15)
@@ -546,14 +550,14 @@ extension AIChatViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return titles.count
+        return collectionDatas.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NYScaleCenterCollectionCell.identifier, for: indexPath) as? NYScaleCenterCollectionCell else {
             return UICollectionViewCell()
         }
-        cell.update(title: titles[indexPath.item])
+        cell.update(title: collectionDatas[indexPath.item])
         return cell
     }
 }
@@ -578,7 +582,19 @@ extension AIChatViewController: UICollectionViewDelegate {
 }
 
 extension AIChatViewController {
+    private func scrollToMiddleItem() {
+        guard !collectionDatas.isEmpty else { return }
+            
+        // 计算中间 item 的索引
+        let middleIndex = collectionDatas.count / 2
+        let indexPath = IndexPath(item: middleIndex, section: 0)
+        
+        // 滚动到中间 item，水平居中
+        collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: false)
+    }
+    
     func showCollectionView() {
+        scrollToMiddleItem()
         UIView.animate(withDuration: 0.35) { [weak self] in
             self?.collectionView.alpha = 1.0
         }
