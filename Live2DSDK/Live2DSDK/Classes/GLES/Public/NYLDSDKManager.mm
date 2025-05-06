@@ -70,8 +70,8 @@
 
 - (void)suspend {
     self.stageVC.paused = true;
-    [NYLDModelManager shared].textureManager = [[LAppTextureManager alloc] init];
-    [[NYLDModelManager shared] changeScene: self.sceneIndex];
+    [NYLDModelManager shared].textureManager = nil;
+    self.sceneIndex = [[NYLDModelManager shared] sceneIndex];
     self.isSuspend = YES;
 }
 
@@ -79,7 +79,7 @@
     if (self.isSuspend) {
         self.stageVC.paused = false;
         [NYLDModelManager shared].textureManager = [[LAppTextureManager alloc] init];
-        self.sceneIndex = [[NYLDModelManager shared] sceneIndex];
+        [[NYLDModelManager shared] changeScene: self.sceneIndex];
         self.isSuspend = NO;
     }
 }
