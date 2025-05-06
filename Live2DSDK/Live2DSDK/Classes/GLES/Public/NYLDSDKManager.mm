@@ -24,7 +24,7 @@
 }
 
 @property (nonatomic, assign) NSInteger sceneIndex;
-
+@property (nonatomic, assign, readwrite) BOOL isSuspend;
 
 @end
 
@@ -62,22 +62,26 @@
 }
 
 - (void)setup {
-    self.stageVC = [[NYLDRenderStageVC alloc] initWithNibName:nil bundle:nil];
+    self.stageVC = [[NYLDRenderStageVC alloc] init];
     [self.stageVC viewDidLoad];
     [self initializeCubism];
     [NYLDModelManager setup];
 }
 
 - (void)suspend {
+    self.stageVC.paused = true;
     [NYLDModelManager shared].textureManager = [[LAppTextureManager alloc] init];
-
     [[NYLDModelManager shared] changeScene: self.sceneIndex];
+    self.isSuspend = YES;
 }
 
 - (void)resume {
-    [NYLDModelManager shared].textureManager = nil;
-
-    self.sceneIndex = [[NYLDModelManager shared] sceneIndex];
+    if (self.isSuspend) {
+        self.stageVC.paused = false;
+        [NYLDModelManager shared].textureManager = [[LAppTextureManager alloc] init];
+        self.sceneIndex = [[NYLDModelManager shared] sceneIndex];
+        self.isSuspend = NO;
+    }
 }
 
 

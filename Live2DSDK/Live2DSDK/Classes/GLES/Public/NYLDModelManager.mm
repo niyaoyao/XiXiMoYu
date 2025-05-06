@@ -21,6 +21,7 @@
 #import "LAppDefine.h"
 #import "LAppPal.h"
 
+NSErrorDomain const BundleErrorDomain = @"NYLDModelManagerBundleErrorDomain";
 
 void NYLDBeganMotion(Csm::ACubismMotion* motion)
 {
@@ -66,7 +67,13 @@ void NYLDFinishedMotion(Csm::ACubismMotion* motion)
     self = [super init];
     if (self) {
         NSURL *url = [[NSBundle mainBundle] URLForResource:@"Frameworks/Live2DSDK" withExtension:@"framework"];
-        NSString *bundlePath = [[NSBundle bundleWithURL:url] pathForResource:@"Live2DModels" ofType:@"bundle"];
+        NSString *bundlePath = nil;
+        if (url != nil) {
+            bundlePath = [[NSBundle bundleWithURL:url] pathForResource:@"Live2DModels" ofType:@"bundle"];
+        } else {
+            bundlePath = [[NSBundle mainBundle] pathForResource:@"Live2DModels" ofType:@"bundle"];
+        }
+         
         NSBundle *bundle = [NSBundle bundleWithPath:bundlePath];
         _modelBundle = bundle;
         _resPath = @"Resources";
@@ -111,8 +118,62 @@ void NYLDFinishedMotion(Csm::ACubismMotion* motion)
     return _textureManager;
 }
 
-+ (NSString *)backgroundDir {
-    return @"Background/";
+
++ (NSString * _Nullable)backgroundDirWithError:(NSError ** _Nullable)error {
+    // 加载 Live2DModels.bundle
+    NSBundle *resourceBundle = [NYLDModelManager shared].modelBundle;
+    
+    if (!resourceBundle) {
+        if (error) {
+            *error = [NSError errorWithDomain:BundleErrorDomain
+                                         code:-1
+                                     userInfo:@{NSLocalizedDescriptionKey: @"Live2DModels.bundle not found"}];
+        }
+        return nil;
+    }
+    
+    // 获取 backgroundDir 目录路径
+    NSString *backgroundDirPath = [resourceBundle pathForResource:@"Background" ofType:nil];
+    if (!backgroundDirPath) {
+        if (error) {
+            *error = [NSError errorWithDomain:BundleErrorDomain
+                                         code:-1
+                                     userInfo:@{NSLocalizedDescriptionKey: @"backgroundDir not found in Live2DModels.bundle"}];
+        }
+        return nil;
+    }
+    return backgroundDirPath;
+}
+
++ (NSArray<NSString *> * _Nullable )backgroundDirFilePathsWithError:(NSError ** _Nullable)error {
+    
+    // 获取 backgroundDir 目录路径
+    NSString *backgroundDirPath = [self backgroundDirWithError:error];
+    if (!backgroundDirPath) {
+        if (error) {
+            *error = [NSError errorWithDomain:BundleErrorDomain
+                                         code:-1
+                                     userInfo:@{NSLocalizedDescriptionKey: @"backgroundDir not found in Live2DModels.bundle"}];
+        }
+        return nil;
+    }
+    
+    // 使用 NSFileManager 枚举 backgroundDir 下的所有文件
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSMutableArray<NSString *> *filePaths = [NSMutableArray array];
+    
+    // 枚举目录（包括子目录）
+    NSDirectoryEnumerator *enumerator = [fileManager enumeratorAtPath:backgroundDirPath];
+    NSString *filePath;
+    while ((filePath = [enumerator nextObject])) {
+        NSString *fullPath = [backgroundDirPath stringByAppendingPathComponent:filePath];
+        BOOL isDirectory;
+        if ([fileManager fileExistsAtPath:fullPath isDirectory:&isDirectory] && !isDirectory) {
+            [filePaths addObject:fullPath];
+        }
+    }
+    
+    return [filePaths copy];
 }
 
 - (void)setup {
@@ -245,6 +306,10 @@ void NYLDFinishedMotion(Csm::ACubismMotion* motion)
 
 - (void)changeScene:(NSInteger)index;
 {
+    if (index < 0 || index >= self.modelJSONs.count ) {
+        NYLog(@"Invalid Index!!!!");
+        return;
+    }
     _sceneIndex = index;
     if (LAppDefine::DebugLogEnable)
     {

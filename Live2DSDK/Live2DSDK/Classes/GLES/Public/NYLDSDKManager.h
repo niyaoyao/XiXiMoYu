@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface NYLDSDKManager : NSObject
 
 @property (nonatomic, strong) NYLDRenderStageVC *stageVC;
+@property (nonatomic, assign, readonly) BOOL isSuspend;
 
 + (instancetype)shared;
 /// init

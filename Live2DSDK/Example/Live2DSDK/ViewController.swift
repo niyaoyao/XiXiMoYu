@@ -8,7 +8,7 @@
 
 import UIKit
 import Live2DSDK
-import GLKit
+//import GLKit
 
 import AVFoundation // TTS
 import Speech     // STT // STT
@@ -180,7 +180,7 @@ class ViewController: UIViewController {
  
     
     func setupUI() {
-        EAGLContext.setCurrent(EAGLContext(api: .openGLES2))
+//        EAGLContext.setCurrent(EAGLContext(api: .openGLES2))
         self.view.addSubview(NYLDSDKManager.shared().stageVC.view)
         let w = (UIScreen.main.bounds.size.width - 45 )/2.0
         let btn = UIButton(frame: CGRect(x: 15, y: UIScreen.main.bounds.size.height - 50 - 60, width: w, height: 50))

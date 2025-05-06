@@ -13,6 +13,7 @@
 		8C944D182DC9D6DC000B4168 /* RoundCornerCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C944D172DC9D6DC000B4168 /* RoundCornerCollectionLayout.swift */; };
 		8C944D1A2DC9D780000B4168 /* EvaUserProfileListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C944D192DC9D780000B4168 /* EvaUserProfileListItemViewModel.swift */; };
 		8C944D1C2DC9D8A5000B4168 /* EvaSettingsCommonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C944D1B2DC9D8A5000B4168 /* EvaSettingsCommonCell.swift */; };
+		8C944D1E2DCA7A28000B4168 /* EvaRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C944D1D2DCA7A28000B4168 /* EvaRequest.swift */; };
 		8C94E4C52DBB540C0005D4B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C94E4C42DBB540C0005D4B5 /* AppDelegate.swift */; };
 		8C94E4C72DBB54310005D4B5 /* EvaBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C94E4C62DBB54310005D4B5 /* EvaBaseViewController.swift */; };
 		8C94E4C92DBB59040005D4B5 /* EvaExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C94E4C82DBB59040005D4B5 /* EvaExtension.swift */; };
@@ -35,6 +36,7 @@
 		8C944D172DC9D6DC000B4168 /* RoundCornerCollectionLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundCornerCollectionLayout.swift; sourceTree = "<group>"; };
 		8C944D192DC9D780000B4168 /* EvaUserProfileListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaUserProfileListItemViewModel.swift; sourceTree = "<group>"; };
 		8C944D1B2DC9D8A5000B4168 /* EvaSettingsCommonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaSettingsCommonCell.swift; sourceTree = "<group>"; };
+		8C944D1D2DCA7A28000B4168 /* EvaRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaRequest.swift; sourceTree = "<group>"; };
 		8C94E4C42DBB540C0005D4B5 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C94E4C62DBB54310005D4B5 /* EvaBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaBaseViewController.swift; sourceTree = "<group>"; };
 		8C94E4C82DBB59040005D4B5 /* EvaExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaExtension.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				8C944D132DC9D016000B4168 /* ScaleCollectionCell.swift */,
 				8C944D172DC9D6DC000B4168 /* RoundCornerCollectionLayout.swift */,
 				8C944D1B2DC9D8A5000B4168 /* EvaSettingsCommonCell.swift */,
+				8C944D1D2DCA7A28000B4168 /* EvaRequest.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C944D1E2DCA7A28000B4168 /* EvaRequest.swift in Sources */,
 				8C94E4C72DBB54310005D4B5 /* EvaBaseViewController.swift in Sources */,
 				8C944D142DC9D016000B4168 /* ScaleCollectionCell.swift in Sources */,
 				8C944D162DC9D646000B4168 /* EvaSettingViewController.swift in Sources */,
@@ -425,6 +429,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -460,6 +465,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

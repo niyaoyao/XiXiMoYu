@@ -69,12 +69,10 @@ class NYScaleCenterItemCollectionFlowLayout: UICollectionViewFlowLayout {
 }
 
 class NYScaleCenterCollectionCell: UICollectionViewCell {
-    lazy var label: UILabel = {
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height))
-        label.textAlignment = .center
-        label.adjustsFontSizeToFitWidth = true
-        label.numberOfLines = 0
-        return label
+    
+    lazy var imageView: UIImageView = {
+        let iv = UIImageView(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height))
+        return iv
     }()
     static let identifier = "kNYScaleCenterCollectionCell"
     override init(frame: CGRect) {
@@ -82,8 +80,9 @@ class NYScaleCenterCollectionCell: UICollectionViewCell {
         backgroundColor = .gray
         layer.cornerRadius = frame.width/2.0
         layer.masksToBounds = true
-        contentView.addSubview(label)
-        
+        layer.borderColor = UIColor.white.withAlphaComponent(0.5).cgColor
+        layer.borderWidth = 3
+        contentView.addSubview(imageView)
     }
     
     required init?(coder: NSCoder) {
@@ -91,6 +90,6 @@ class NYScaleCenterCollectionCell: UICollectionViewCell {
     }
     
     func update(title: String)  {
-        label.text = title
+        imageView.image = UIImage(contentsOfFile: title)
     }
 }

@@ -16,81 +16,10 @@ import AVFAudio
 
 import Combine
 
-// 顶级响应结构体
-struct ChatCompletionError: Codable {
-    let message: String?
-    let code: Int?
-    enum CodingKeys: String, CodingKey {
-        case message, code
-    }
+enum EvaModelChangeType {
+    case avatar, background
 }
 
-struct ChatCompletionResponse: Codable {
-    let error: ChatCompletionError?
-    let id: String?
-    let provider: String?
-    let model: String?
-    let object: String?
-    let created: Int?
-    let choices: [Choice]?
-    let usage: Usage?
-    let user_id: String?
-    enum CodingKeys: String, CodingKey {
-        case id, provider, model, object, created, choices, usage, error, user_id
-    }
-}
-
-// Choice 结构体
-struct Choice: Codable {
-    let logprobs: Logprobs?
-    let finishReason: String?
-    let nativeFinishReason: String?
-    let index: Int?
-    let message: Message?
-    let refusal: String?
-    let reasoning: String?
-    
-    enum CodingKeys: String, CodingKey {
-        case logprobs
-        case finishReason = "finish_reason"
-        case nativeFinishReason = "native_finish_reason"
-        case index, message, refusal, reasoning
-    }
-}
-
-// Logprobs 结构体（处理 null）
-struct Logprobs: Codable {
-    let value: Bool? // JSON 中为 null，设为可选类型
-    
-    init(from decoder: Decoder) throws {
-        let container = try decoder.singleValueContainer()
-        self.value = try? container.decode(Bool.self)
-    }
-    
-    func encode(to encoder: Encoder) throws {
-        var container = encoder.singleValueContainer()
-        try container.encodeNil()
-    }
-}
-
-// Message 结构体
-struct Message: Codable {
-    let role: String
-    let content: String
-}
-
-// Usage 结构体
-struct Usage: Codable {
-    let promptTokens: Int
-    let completionTokens: Int
-    let totalTokens: Int
-    
-    enum CodingKeys: String, CodingKey {
-        case promptTokens = "prompt_tokens"
-        case completionTokens = "completion_tokens"
-        case totalTokens = "total_tokens"
-    }
-}
 class AIChatViewController: EvaBaseViewController {
     let btnSize = CGSize(width: 35, height: 35)
     let bottomH = 120.0
@@ -100,11 +29,11 @@ class AIChatViewController: EvaBaseViewController {
     private var amplitudes: [Float] = []
     private var keyboardObserver: KeyboardObserver =  KeyboardObserver()
     private var cancellables = Set<AnyCancellable>()
-    let collectionDatas = ["TTS&SST","Real Time \nAmplitudes","Sound Wave","Mask Animation","555555","666666" ]
-    
+    var collectionDatas = ["TTS&SST","Real Time \nAmplitudes","Sound Wave","Mask Animation","555555","666666" ]
+    var modelChangeType:EvaModelChangeType = .avatar
     lazy var collectionView: UICollectionView = {
         let width = 80.0
-        let y = UIScreen.main.bounds.size.height - kBottomSafeHeight - bottomH - 4.0 * (btnSize.height + 25.0) - width
+        let y = UIScreen.main.bounds.size.height - kBottomSafeHeight - bottomH - 4.0 * btnSize.height - 3 * 25.0 - width
         
         let frame = CGRect(x: 0.0, y: y, width: UIScreen.main.bounds.width, height: width)
         let padding = (frame.width - 80)/2.0
@@ -123,15 +52,6 @@ class AIChatViewController: EvaBaseViewController {
         return collectionView
     }()
     
-    lazy var endEditBtn: UIButton = {
-        let btn = UIButton(frame: .zero)
-        btn.backgroundColor = .clear
-        btn.addActionHandler { [weak self] in
-            self?.endEditing()
-        }
-        return btn
-    }()
-    
     lazy var modelBtn: UIButton = {
         let btn = UIButton(frame: .zero)
         btn.setImage( UIImage(named: "menu_model"), for: .normal)
@@ -143,6 +63,8 @@ class AIChatViewController: EvaBaseViewController {
         layer.shadowOffset = CGSize(width: 0, height: 6) // 对应 offset-x: 0px, offset-y: 11px
         layer.shadowRadius = 12
         btn.addActionHandler { [weak self] in
+            self?.modelChangeType = .avatar
+            
             self?.endEditing()
             self?.showCollectionView()
         }
@@ -160,6 +82,13 @@ class AIChatViewController: EvaBaseViewController {
         layer.shadowOffset = CGSize(width: 0, height: 6) // 对应 offset-x: 0px, offset-y: 11px
         layer.shadowRadius = 12
         btn.addActionHandler { [weak self] in
+            self?.modelChangeType = .background
+            do {
+                self?.collectionDatas = try NYLDModelManager.backgroundDirFilePaths()
+                self?.collectionView.reloadData()
+            } catch {
+                debugPrint("Error: \(error)")
+            }
             self?.endEditing()
             self?.showCollectionView()
         }
@@ -279,9 +208,10 @@ class AIChatViewController: EvaBaseViewController {
     }
     
     func setupUI() {
-        
-        view.addSubview(endEditBtn)
-        endEditBtn.snp.makeConstraints({ $0.edges.equalTo(view) })
+        self.view.addSubview(NYLDSDKManager.shared().stageVC.view)
+        NYLDSDKManager.shared().stageVC.didEndTouchActionHandler = { [weak self] in
+            self?.endEditing()
+        }
         view.addSubview(modelBackgroudBtn)
         view.addSubview(settingsBtn)
         view.addSubview(controlBtn)
@@ -330,6 +260,13 @@ class AIChatViewController: EvaBaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+        NYLDSDKManager.resume()
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NYLDSDKManager.suspend()
     }
 
 }
@@ -445,50 +382,6 @@ extension AIChatViewController {
         synthesizer.speak(utterance)
     }
     
-    func aiRequest(prompt: String, model:String = "qwen/qwen3-14b:free", completion: ((String?)->())?) {
-        let key = "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"
-        let headers: [String: String] = ["Authorization" : "Bearer \(key)"]
-        let body: [String: Any] = [
-            "model" : model,
-            "messages": [
-                ["role":"user","content":"I'm fired now. I'm so sad and frustrated."],
-                ["role":"system","content":"Please play the role of a gentle and considerate AI girlfriend, speak in a gentle and considerate tone, be able to empathize with the interlocutor's mood, and provide emotional value to the interlocutor."]
-            ]
-        ]
-        guard let url = URL(string: "https://openrouter.ai/api/v1/chat/completions") else { return }
-        NetworkClient.shared.post(url: url, headers: headers, body: body) { result in
-            print(result)
-            switch result {
-            case .success(let data):
-                do {
-                    let decoder = JSONDecoder()
-                    let response = try decoder.decode(ChatCompletionResponse.self, from: data)
-                    if let error = response.error {
-                        print("USPictureSearchIntent error: \(error.message)")
-                    } else {
-                        print("ID: \(response.id)")
-                        print("Provider: \(response.provider)")
-                        if let firstChoice = response.choices?.first {
-                            print("USPictureSearchIntent Assistant response: \(firstChoice.message?.content)")
-                            DispatchQueue.main.async {
-                                completion?(firstChoice.message?.content)
-                            }
-                        }
-                    }
-//                    let responseDict = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
-//                    print("USPictureSearchIntent ID: \(responseDict)")
-//                    print("USPictureSearchIntent Provider: \(responseDict)")
-//
-                } catch  {
-                    debugPrint("USPictureSearchIntent log request 错误: \(error.localizedDescription)")
-                }
-            case .failure(let error):
-                print("USPictureSearchIntent error: \(error)")
-                
-            }
-        }
-    }
-    
     // TTS: 文字转语音
     @objc private func speakText() {
         self.endEditing()
@@ -564,18 +457,15 @@ extension AIChatViewController: UICollectionViewDataSource {
 extension AIChatViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.hideCollectionView()
-        var vc = UIViewController()
-        let item = indexPath.item
-//        if item == 0 {
-//            vc = BackupViewController()
-//        } else if item == 1 {
-//            vc = Backup2ViewController()
-//        } else if item == 2 {
-//            vc = Backup3ViewController()
-//        } else if item == 3 {
-//            vc = MaskAnimationViewController()
-//        }
-//        self.navigationController?.pushViewController(vc, animated: true)
+        switch modelChangeType {
+        case .avatar:
+            NYLDModelManager.shared().changeScene(indexPath.item)
+        case .background:
+            let path = collectionDatas[indexPath.item]
+            let url = URL(fileURLWithPath: path)
+            let name = url.deletingPathExtension().lastPathComponent
+            NYLDSDKManager.shared().stageVC.changeBackground(withImageName: name)
+        }
     }
 }
 

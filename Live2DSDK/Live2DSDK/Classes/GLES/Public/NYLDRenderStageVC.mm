@@ -114,14 +114,13 @@ using namespace LAppDefine;
 
     glGenBuffers(1, &_fragmentBufferId);
     glBindBuffer(GL_ARRAY_BUFFER,  _fragmentBufferId);
-    NSString *imagePath = [NYLDModelManager.shared.modelBundle  pathForResource:@"02" ofType:@"png" inDirectory:@"Background"];
-    self.backgroundTexture = [[NYGLTextureLoader alloc] initWithImagePath:imagePath];
     
-    
+    [self changeBackgroundWithImageName:@"00"];
+    self.paused = false;
 }
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self initializeSprite];
+    self.paused = false;
 }
 
 - (void)initializeScreen
@@ -221,18 +220,6 @@ using namespace LAppDefine;
     }
 }
 
-- (void)initializeSprite
-{
-    NYLog(@"initializeSprite 3");
-    
-    [self changeBackgroundWithImageName:@"00"];
-    
-//    float x = static_cast<float>(width) * 0.5f;
-//    float y = static_cast<float>(height) * 0.5f;
-//    float fWidth = static_cast<float>(width*2);
-//    float fHeight = static_cast<float>(height*2);
-//    _renderSprite = [[LAppSprite alloc] initWithMyVar:x Y:y Width:fWidth/2 Height:fHeight/2 TextureId:0 vertexBufferObject:_vertexBufferId elementBufferObject:_fragmentBufferId];
-}
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
@@ -281,6 +268,9 @@ using namespace LAppDefine;
         }
         [live2DManager onTap:x floatY:y];
         
+    }
+    if (self.didEndTouchActionHandler) {
+        self.didEndTouchActionHandler();
     }
 }
 
@@ -402,9 +392,14 @@ using namespace LAppDefine;
     return alpha;
 }
 
+
 - (void)changeBackgroundWithImageName:(NSString *)imageName {
+    [self changeBackgroundWithImageName:imageName fileType:@"png"];
+}
+
+- (void)changeBackgroundWithImageName:(NSString *)imageName fileType:(NSString *)type {
     
-    NSString *imagePath = [NYLDModelManager.shared.modelBundle  pathForResource:imageName ofType:@"png" inDirectory:@"Background"];
+    NSString *imagePath = [NYLDModelManager.shared.modelBundle  pathForResource:imageName ofType:type inDirectory:@"Background"];
     self.backgroundTexture = [[NYGLTextureLoader alloc] initWithImagePath:imagePath];
 }
 

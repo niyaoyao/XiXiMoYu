@@ -28,7 +28,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void)setup;
 
-+ (NSString *)backgroundDir;
+
++ (NSString * _Nullable)backgroundDirWithError:(NSError ** _Nullable)error;
+
++ (NSArray<NSString *> * _Nullable )backgroundDirFilePathsWithError:(NSError ** _Nullable)error;
 
 - (void)changeScene:(NSInteger)sceneIndex;
 

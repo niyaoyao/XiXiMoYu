@@ -21,20 +21,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic) bool anotherTarget;
 
-@property (nonatomic) float spriteColorR;
-@property (nonatomic) float spriteColorG;
-@property (nonatomic) float spriteColorB;
-@property (nonatomic) float spriteColorA;
-@property (nonatomic) float clearColorR;
-@property (nonatomic) float clearColorG;
-@property (nonatomic) float clearColorB;
-@property (nonatomic) float clearColorA;
-@property (nonatomic) NYLDSelectTarget renderTarget;
-
-/**
- * @brief 解放処理
- */
-- (void)dealloc;
+@property (nonatomic, assign) float spriteColorR;
+@property (nonatomic, assign) float spriteColorG;
+@property (nonatomic, assign) float spriteColorB;
+@property (nonatomic, assign) float spriteColorA;
+@property (nonatomic, assign) float clearColorR;
+@property (nonatomic, assign) float clearColorG;
+@property (nonatomic, assign) float clearColorB;
+@property (nonatomic, assign) float clearColorA;
+@property (nonatomic, assign) NYLDSelectTarget renderTarget;
+@property (nonatomic, copy) void (^didEndTouchActionHandler)();
 
 /**
  * @brief 解放する。
@@ -105,6 +101,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// Change Background Image
 - (void)changeBackgroundWithImageName:(NSString *)imageName;
+
+- (void)changeBackgroundWithImageName:(NSString *)imageName fileType:(NSString *)type;
 @end
 
 NS_ASSUME_NONNULL_END
