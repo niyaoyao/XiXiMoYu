@@ -41,7 +41,7 @@ class EvaSettingViewController: EvaBaseViewController {
         privacy.showBottomLine = true
         var icp = EvaUserProfileListItemViewModel(type: .icp)
         icp.title = "ICP备案号"
-        icp.content = "京ICP备2024085692号-2A"
+        icp.content = "鲁ICP备2025154436号-2A"
         icp.hideArrow = true
         
         return [version, userProtocol, privacy, icp]

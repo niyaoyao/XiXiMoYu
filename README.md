@@ -41,8 +41,14 @@
             - [ ] Change Background
             - [ ] Creative Functions( Pose/Animation/Play Music)
             - [ ] Settings/Me
+                - [ ] Privacy
+                - [ ] User 
+                - [x] ICP
+                - [x] Version
+                - [ ] Locale
+                - [ ] Change Model
     - [ ] AI Speech
-        - [ ] SSE Text Stream
+        - [ ] **SSE Text Stream**
         - [ ] Mouth Control
         - [ ] Text to Speech
 
