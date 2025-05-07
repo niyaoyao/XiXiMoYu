@@ -31,9 +31,9 @@
 
     - [ ] App Development
         - [ ] Menu List Bar
-            - [ ] Change Model
+            - [x] Change Model
                 - [x] Collection View Circle Transmation
-            - [ ] Change Background
+            - [x] Change Background
             - [ ] Creative Functions( Pose/Animation/Play Music)
             - [ ] Settings/Me
                 - [ ] Privacy
@@ -47,7 +47,6 @@
                 - [x] ICP
                 - [x] Version
                 - [ ] Locale
-                - [ ] Change Model
     - [ ] AI Speech
         - [ ] **SSE Text Stream** 
         - [ ] Mouth Control

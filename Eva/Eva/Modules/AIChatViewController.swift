@@ -22,7 +22,7 @@ enum EvaModelChangeType {
 
 class AIChatViewController: EvaBaseViewController {
     let btnSize = CGSize(width: 35, height: 35)
-    let bottomH = 120.0
+    let bottomH = 100.0
     // TTS
     private let synthesizer = AVSpeechSynthesizer()
     private let audioEngine = AVAudioEngine()
@@ -58,7 +58,7 @@ class AIChatViewController: EvaBaseViewController {
         let layer = btn.layer
                 
         // 启用阴影
-        layer.shadowOpacity = 0.3 // 对应 rgba 的透明度 (0.3)
+        layer.shadowOpacity = 0.35 // 对应 rgba 的透明度 (0.3)
         layer.shadowColor = UIColor("#333333").cgColor
         layer.shadowOffset = CGSize(width: 0, height: 6) // 对应 offset-x: 0px, offset-y: 11px
         layer.shadowRadius = 12
@@ -77,7 +77,7 @@ class AIChatViewController: EvaBaseViewController {
         let layer = btn.layer
                 
         // 启用阴影
-        layer.shadowOpacity = 0.3 // 对应 rgba 的透明度 (0.3)
+        layer.shadowOpacity = 0.35 // 对应 rgba 的透明度 (0.3)
         layer.shadowColor = UIColor("#333333").cgColor // 对应 rgba(255, 89, 0)
         layer.shadowOffset = CGSize(width: 0, height: 6) // 对应 offset-x: 0px, offset-y: 11px
         layer.shadowRadius = 12
@@ -101,7 +101,7 @@ class AIChatViewController: EvaBaseViewController {
         let layer = btn.layer
                 
         // 启用阴影
-        layer.shadowOpacity = 0.3 // 对应 rgba 的透明度 (0.3)
+        layer.shadowOpacity = 0.35 // 对应 rgba 的透明度 (0.3)
         layer.shadowColor = UIColor("#333333").cgColor // 对应 rgba(255, 89, 0)
         layer.shadowOffset = CGSize(width: 0, height: 6) // 对应 offset-x: 0px, offset-y: 11px
         layer.shadowRadius = 12
@@ -114,7 +114,7 @@ class AIChatViewController: EvaBaseViewController {
         let layer = btn.layer
                 
         // 启用阴影
-        layer.shadowOpacity = 0.3 // 对应 rgba 的透明度 (0.3)
+        layer.shadowOpacity = 0.35 // 对应 rgba 的透明度 (0.3)
         layer.shadowColor = UIColor("#333333").cgColor // 对应 rgba(255, 89, 0)
         layer.shadowOffset = CGSize(width: 0, height: 6) // 对应 offset-x: 0px, offset-y: 11px
         layer.shadowRadius = 12
@@ -196,7 +196,7 @@ class AIChatViewController: EvaBaseViewController {
                    rect.origin.y =  UIScreen.main.bounds.height - keyboardH - self.inputWrapperEndRect.height
                    alpha = 1.0
                }
-               UIView.animate(withDuration: 0.35) {
+               UIView.animate(withDuration: 0.3) {
                    self.inputWrapper.frame = rect
                    self.inputBackground.alpha = alpha
                } completion: { success in
@@ -246,7 +246,7 @@ class AIChatViewController: EvaBaseViewController {
         let th = 50.0
         let sbtnw = 80.0
         view.addSubview(inputWrapper)
-        let inputY = UIScreen.main.bounds.height - kBottomSafeHeight - (bottomH - th)/2.0 - th
+        let inputY = UIScreen.main.bounds.height - kBottomSafeHeight - bottomH//(bottomH - th)/2.0 - th
         inputWrapper.frame = CGRect(x: 0, y: inputY, width: UIScreen.main.bounds.size.width, height: th + 20)
         inputWrapperEndRect = inputWrapper.frame
         inputWrapper.addSubview(self.textView)
