@@ -179,6 +179,7 @@ class AIChatViewController: EvaBaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // TODO: Permission Guide Page
         requestPermissions()
         setupAudioSession()
         keyboardObserver.keyboardHeightPublisher
@@ -268,7 +269,7 @@ class AIChatViewController: EvaBaseViewController {
         super.viewWillDisappear(animated)
         NYLDSDKManager.suspend()
     }
-
+    
 }
 
 
@@ -279,17 +280,21 @@ extension AIChatViewController {
     // 请求权限
     private func requestPermissions() {
        // 麦克风权限
-       AVAudioSession.sharedInstance().requestRecordPermission { granted in
-           DispatchQueue.main.async {
-               if !granted {
-                   self.showAlert(message: "请在设置中启用麦克风权限")
-               }
+//        NYLDSDKManager.suspend()
+        AVAudioSession.sharedInstance().requestRecordPermission { granted in
+            DispatchQueue.main.async {
+//                NYLDSDKManager.resume()
+                if !granted {
+                    self.showAlert(message: "请在设置中启用麦克风权限")
+                }
            }
        }
        
        // 语音识别权限
+//        NYLDSDKManager.suspend()
        SFSpeechRecognizer.requestAuthorization { status in
            DispatchQueue.main.async {
+//               NYLDSDKManager.resume()
                if status != .authorized {
                    self.showAlert(message: "请在设置中启用语音识别权限")
                }
@@ -405,9 +410,7 @@ extension AIChatViewController {
     private func showAlert(message: String) {
         let alert = UIAlertController(title: "权限错误", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "前往设置", style: .default) { _ in
-//            if let url = URL(string: UIApplication.UIApplicationOpenSettingsURLString) {
-//                UIApplication.shared.open(url)
-//            }
+            openAppSettings()
         })
         alert.addAction(UIAlertAction(title: "取消", style: .cancel))
         present(alert, animated: true)
@@ -462,9 +465,7 @@ extension AIChatViewController: UICollectionViewDelegate {
             NYLDModelManager.shared().changeScene(indexPath.item)
         case .background:
             let path = collectionDatas[indexPath.item]
-            let url = URL(fileURLWithPath: path)
-            let name = url.deletingPathExtension().lastPathComponent
-            NYLDSDKManager.shared().stageVC.changeBackground(withImageName: name)
+            NYLDSDKManager.shared().stageVC.changeBackground(withImagePath: path)
         }
     }
 }

@@ -72,6 +72,7 @@ class NYScaleCenterCollectionCell: UICollectionViewCell {
     
     lazy var imageView: UIImageView = {
         let iv = UIImageView(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height))
+        iv.contentMode = .scaleAspectFill
         return iv
     }()
     static let identifier = "kNYScaleCenterCollectionCell"

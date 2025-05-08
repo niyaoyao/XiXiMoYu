@@ -24,18 +24,17 @@ let kBottomSafeHeight: CGFloat = isIPhoneX == true ? 34.0: 0.0
 let kScreenHeight: CGFloat = UIScreen.main.bounds.size.height
 let kScreenWidth: CGFloat = UIScreen.main.bounds.size.width
 
-enum WeStudyResponseStatus {
-    case initialized
-    case loading
-    case failed
-    case success
-    case noData
+func openAppSettings() {
+    guard let settingsURL = URL(string: UIApplication.openSettingsURLString) else {
+        return
+    }
+    
+    if UIApplication.shared.canOpenURL(settingsURL) {
+        UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
+    }
 }
 
-enum WeStudyResponseError: Error {
-    case requestFailed
-    case decodingError
-}
+
 
 
 // 将字典转换为 Data
@@ -101,6 +100,7 @@ func dataToModel<T: Codable>(data: Data, type: T.Type) -> T? {
     let decoder = JSONDecoder()
     return try? decoder.decode(T.self, from: data)
 }
+
 
 
 import Foundation
