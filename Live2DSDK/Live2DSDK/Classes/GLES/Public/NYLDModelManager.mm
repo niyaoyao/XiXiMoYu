@@ -118,6 +118,10 @@ void NYLDFinishedMotion(Csm::ACubismMotion* motion)
     return _textureManager;
 }
 
++ (NSArray<NSString *> *)modelJSONPaths {
+    return  [NYLDModelManager shared].modelJSONs;
+}
+
 
 + (NSString * _Nullable)backgroundDirWithError:(NSError ** _Nullable)error {
     // 加载 Live2DModels.bundle
@@ -280,7 +284,7 @@ void NYLDFinishedMotion(Csm::ACubismMotion* motion)
         }
         else
         {
-          projection.Scale(static_cast<float>(height) / static_cast<float>(width), 1.0f);
+          projection.Scale(0.5 * static_cast<float>(height) / static_cast<float>(width), 0.5f);
         }
 //        projection.TranslateRelative(0.5, 0.5);
         // 必要があればここで乗算

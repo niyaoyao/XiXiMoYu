@@ -9,6 +9,7 @@
 
 #import <OpenGLES/ES2/glext.h>
 #import <GLKit/GLKit.h>
+#import "NYCommon.h"
 
 @interface NYGLTextureLoader ()
 
@@ -60,10 +61,13 @@
 
 
 - (void)loadTextureWithImagePath:(NSString *)imagePath {
-//    NSString *imagePath = [[self imageBundle] pathForResource:@"02" ofType:@"png" inDirectory:@"Background"];
+    if (imagePath == nil) {
+        return;
+    }
+    
     UIImage *image = [UIImage imageWithContentsOfFile:imagePath];
     if (!image) {
-        NSLog(@"Error: Image not found!");
+        NYLog(@"Error: Image not found!");
         return;
     }
 

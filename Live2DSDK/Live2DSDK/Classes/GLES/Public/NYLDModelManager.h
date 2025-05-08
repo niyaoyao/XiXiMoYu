@@ -28,6 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void)setup;
 
++ (NSArray <NSString *> * _Nullable)modelJSONPaths;
 
 + (NSString * _Nullable)backgroundDirWithError:(NSError ** _Nullable)error;
 

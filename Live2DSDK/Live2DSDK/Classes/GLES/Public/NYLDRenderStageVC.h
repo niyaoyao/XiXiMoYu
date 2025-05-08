@@ -99,10 +99,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)SetRenderTargetClearColor:(float)r g:(float)g b:(float)b;
 
-/// Change Background Image
-- (void)changeBackgroundWithImageName:(NSString *)imageName;
-
-- (void)changeBackgroundWithImageName:(NSString *)imageName fileType:(NSString *)type;
+- (void)changeBackgroundWithImagePath:(NSString *)imagePath;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -115,7 +115,8 @@ using namespace LAppDefine;
     glGenBuffers(1, &_fragmentBufferId);
     glBindBuffer(GL_ARRAY_BUFFER,  _fragmentBufferId);
     
-    [self changeBackgroundWithImageName:@"00"];
+    
+    [self changeBackgroundWithImagePath:[NYLDModelManager backgroundDirFilePathsWithError:nil].firstObject];
     self.paused = false;
 }
 - (void)viewWillAppear:(BOOL)animated {
@@ -392,14 +393,7 @@ using namespace LAppDefine;
     return alpha;
 }
 
-
-- (void)changeBackgroundWithImageName:(NSString *)imageName {
-    [self changeBackgroundWithImageName:imageName fileType:@"png"];
-}
-
-- (void)changeBackgroundWithImageName:(NSString *)imageName fileType:(NSString *)type {
-    
-    NSString *imagePath = [NYLDModelManager.shared.modelBundle  pathForResource:imageName ofType:type inDirectory:@"Background"];
+- (void)changeBackgroundWithImagePath:(NSString *)imagePath {
     self.backgroundTexture = [[NYGLTextureLoader alloc] initWithImagePath:imagePath];
 }
 
