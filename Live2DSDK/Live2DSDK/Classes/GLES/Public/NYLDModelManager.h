@@ -30,6 +30,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSArray <NSString *> * _Nullable)modelJSONPaths;
 
++ (NSArray <NSString *> * _Nullable)modelAvatarPaths;
+
 + (NSString * _Nullable)backgroundDirWithError:(NSError ** _Nullable)error;
 
 + (NSArray<NSString *> * _Nullable )backgroundDirFilePathsWithError:(NSError ** _Nullable)error;

@@ -29,8 +29,10 @@ class AIChatViewController: EvaBaseViewController {
     private var amplitudes: [Float] = []
     private var keyboardObserver: KeyboardObserver =  KeyboardObserver()
     private var cancellables = Set<AnyCancellable>()
-    var collectionDatas = ["TTS&SST","Real Time \nAmplitudes","Sound Wave","Mask Animation","555555","666666" ]
+    var collectionDatas:[String] = []
     var modelChangeType:EvaModelChangeType = .avatar
+    var selectedModelIndex:IndexPath?
+    var selectedBackgroundIndex:IndexPath?
     lazy var collectionView: UICollectionView = {
         let width = 80.0
         let y = UIScreen.main.bounds.size.height - kBottomSafeHeight - bottomH - 4.0 * btnSize.height - 3 * 25.0 - width
@@ -64,9 +66,10 @@ class AIChatViewController: EvaBaseViewController {
         layer.shadowRadius = 12
         btn.addActionHandler { [weak self] in
             self?.modelChangeType = .avatar
-            
+            self?.collectionDatas = NYLDModelManager.modelAvatarPaths() ?? []
+            self?.collectionView.reloadData()
             self?.endEditing()
-            self?.showCollectionView()
+            self?.showCollectionView(selectedIndex: self?.selectedModelIndex)
         }
         return btn
     }()
@@ -90,7 +93,7 @@ class AIChatViewController: EvaBaseViewController {
                 debugPrint("Error: \(error)")
             }
             self?.endEditing()
-            self?.showCollectionView()
+            self?.showCollectionView(selectedIndex: self?.selectedBackgroundIndex)
         }
         return btn
     }()
@@ -462,8 +465,10 @@ extension AIChatViewController: UICollectionViewDelegate {
         self.hideCollectionView()
         switch modelChangeType {
         case .avatar:
+            selectedModelIndex = indexPath
             NYLDModelManager.shared().changeScene(indexPath.item)
         case .background:
+            selectedBackgroundIndex = indexPath
             let path = collectionDatas[indexPath.item]
             NYLDSDKManager.shared().stageVC.changeBackground(withImagePath: path)
         }
@@ -471,19 +476,23 @@ extension AIChatViewController: UICollectionViewDelegate {
 }
 
 extension AIChatViewController {
-    private func scrollToMiddleItem() {
+    private func scrollToMiddleItem(selectedIndex: IndexPath?) {
         guard !collectionDatas.isEmpty else { return }
             
         // 计算中间 item 的索引
         let middleIndex = collectionDatas.count / 2
-        let indexPath = IndexPath(item: middleIndex, section: 0)
+        var indexPath = IndexPath(item: middleIndex, section: 0)
+        
+        if let selected = selectedIndex {
+            indexPath = selected
+        }
         
         // 滚动到中间 item，水平居中
         collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: false)
     }
     
-    func showCollectionView() {
-        scrollToMiddleItem()
+    func showCollectionView(selectedIndex: IndexPath?) {
+        scrollToMiddleItem(selectedIndex: selectedIndex)
         UIView.animate(withDuration: 0.35) { [weak self] in
             self?.collectionView.alpha = 1.0
         }

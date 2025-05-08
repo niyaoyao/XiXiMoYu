@@ -1,5 +1,6 @@
 {
 	"Version": 3,
+	"Avatar": "avatar.jpg",
 	"FileReferences": {
 		"Moc": "Mao.moc3",
 		"Textures": [

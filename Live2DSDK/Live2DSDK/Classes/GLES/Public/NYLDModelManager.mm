@@ -44,8 +44,9 @@ void NYLDFinishedMotion(Csm::ACubismMotion* motion)
 @property (nonatomic, strong, readwrite) NSString *resourcePath;
 @property (nonatomic, assign, readwrite) NSInteger sceneIndex;
 @property (nonatomic, assign, readwrite) NSDictionary *currentModel;
-@property (nonatomic, strong) NSMutableArray <NSString *> *modelDirectories;
-@property (nonatomic, strong) NSMutableArray <NSString *> *modelJSONs;
+@property (nonatomic, strong, readwrite) NSMutableArray <NSString *> *modelDirectories;
+@property (nonatomic, strong, readwrite) NSMutableArray <NSString *> *modelJSONs;
+@property (nonatomic, strong, readwrite) NSMutableArray <NSString *> *modelAvatarPaths;
 @property (nonatomic, copy) NSString *resPath;
 
 @end
@@ -82,6 +83,7 @@ void NYLDFinishedMotion(Csm::ACubismMotion* motion)
         
         _modelDirectories = [[NSMutableArray alloc] init];
         _modelJSONs = [[NSMutableArray alloc] init];
+        _modelAvatarPaths = [[NSMutableArray alloc] init];
         _sceneIndex = 0;
         _viewMatrix = new Csm::CubismMatrix44();
     }
@@ -120,6 +122,10 @@ void NYLDFinishedMotion(Csm::ACubismMotion* motion)
 
 + (NSArray<NSString *> *)modelJSONPaths {
     return  [NYLDModelManager shared].modelJSONs;
+}
+
++ (NSArray<NSString *> *)modelAvatarPaths {
+    return  [[NYLDModelManager shared].modelAvatarPaths copy];
 }
 
 
@@ -195,10 +201,12 @@ void NYLDFinishedMotion(Csm::ACubismMotion* motion)
         BOOL exists = [fileManager fileExistsAtPath:path isDirectory:&isDirectory];
         if (isDirectory && exists) {
             NSString *targetFile = [path stringByAppendingPathComponent: [NSString stringWithFormat: @"%@.model3.json", modelName]];
+            NSString *avatarPath = [path stringByAppendingPathComponent: @"avatar.jpg"];
             NYLog(@"targetFile: %@", targetFile);
             if ([fileManager fileExistsAtPath:targetFile]) {
                 [self.modelDirectories addObject:path];
-                [self.modelJSONs addObject:path];
+                [self.modelJSONs addObject:targetFile];
+                [self.modelAvatarPaths addObject:avatarPath];
                 _modelDir.PushBack(Csm::csmString([modelName UTF8String]));
             }
         }
