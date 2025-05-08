@@ -46,7 +46,7 @@
                         - [ ] system
                 - [x] ICP
                 - [x] Version
-                - [ ] Locale
+                - [ ] Localesd
     - [ ] AI Speech
         - [ ] **SSE Text Stream** 
         - [ ] Mouth Control

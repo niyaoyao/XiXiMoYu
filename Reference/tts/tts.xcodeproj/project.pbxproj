@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C69D4E92DCBCEFA007B495B /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8C69D4E32DCBCEF9007B495B /* .swiftlint.yml */; };
+		8C69D4EA2DCBCEFA007B495B /* Logs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C69D4E42DCBCEF9007B495B /* Logs.swift */; };
+		8C69D4EB2DCBCEFA007B495B /* UTF8LineParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C69D4E52DCBCEF9007B495B /* UTF8LineParser.swift */; };
+		8C69D4EC2DCBCEFA007B495B /* EventParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C69D4E62DCBCEF9007B495B /* EventParser.swift */; };
+		8C69D4ED2DCBCEFA007B495B /* LDSwiftEventSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C69D4E72DCBCEF9007B495B /* LDSwiftEventSource.swift */; };
+		8C69D4EE2DCBCEFA007B495B /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C69D4E82DCBCEF9007B495B /* Types.swift */; };
 		8C8E09972DC19C0000A4772B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8E09962DC19C0000A4772B /* AppDelegate.swift */; };
 		8C8E09992DC19C0000A4772B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8E09982DC19C0000A4772B /* SceneDelegate.swift */; };
 		8C8E099B2DC19C0000A4772B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8E099A2DC19C0000A4772B /* ViewController.swift */; };
@@ -16,6 +22,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8C69D4E32DCBCEF9007B495B /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		8C69D4E42DCBCEF9007B495B /* Logs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logs.swift; sourceTree = "<group>"; };
+		8C69D4E52DCBCEF9007B495B /* UTF8LineParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UTF8LineParser.swift; sourceTree = "<group>"; };
+		8C69D4E62DCBCEF9007B495B /* EventParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventParser.swift; sourceTree = "<group>"; };
+		8C69D4E72DCBCEF9007B495B /* LDSwiftEventSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LDSwiftEventSource.swift; sourceTree = "<group>"; };
+		8C69D4E82DCBCEF9007B495B /* Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 		8C8E09932DC19C0000A4772B /* tts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C8E09962DC19C0000A4772B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C8E09982DC19C0000A4772B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +49,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8C69D4E22DCBCEF9007B495B /* LDSwiftEventSource */ = {
+			isa = PBXGroup;
+			children = (
+				8C69D4E32DCBCEF9007B495B /* .swiftlint.yml */,
+				8C69D4E42DCBCEF9007B495B /* Logs.swift */,
+				8C69D4E52DCBCEF9007B495B /* UTF8LineParser.swift */,
+				8C69D4E62DCBCEF9007B495B /* EventParser.swift */,
+				8C69D4E72DCBCEF9007B495B /* LDSwiftEventSource.swift */,
+				8C69D4E82DCBCEF9007B495B /* Types.swift */,
+			);
+			path = LDSwiftEventSource;
+			sourceTree = "<group>";
+		};
 		8C8E098A2DC19C0000A4772B = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +81,7 @@
 		8C8E09952DC19C0000A4772B /* tts */ = {
 			isa = PBXGroup;
 			children = (
+				8C69D4E22DCBCEF9007B495B /* LDSwiftEventSource */,
 				8C8E09962DC19C0000A4772B /* AppDelegate.swift */,
 				8C8E09982DC19C0000A4772B /* SceneDelegate.swift */,
 				8C8E099A2DC19C0000A4772B /* ViewController.swift */,
@@ -125,6 +151,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C69D4E92DCBCEFA007B495B /* .swiftlint.yml in Resources */,
 				8C8E09A32DC19C0A00A4772B /* LaunchScreen.storyboard in Resources */,
 				8C8E09A02DC19C0A00A4772B /* Assets.xcassets in Resources */,
 				8C8E099E2DC19C0000A4772B /* Main.storyboard in Resources */,
@@ -139,8 +166,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C8E099B2DC19C0000A4772B /* ViewController.swift in Sources */,
+				8C69D4EC2DCBCEFA007B495B /* EventParser.swift in Sources */,
+				8C69D4EB2DCBCEFA007B495B /* UTF8LineParser.swift in Sources */,
+				8C69D4EE2DCBCEFA007B495B /* Types.swift in Sources */,
 				8C8E09972DC19C0000A4772B /* AppDelegate.swift in Sources */,
+				8C69D4EA2DCBCEFA007B495B /* Logs.swift in Sources */,
 				8C8E09992DC19C0000A4772B /* SceneDelegate.swift in Sources */,
+				8C69D4ED2DCBCEFA007B495B /* LDSwiftEventSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
