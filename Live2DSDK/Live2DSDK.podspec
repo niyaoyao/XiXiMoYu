@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.author           = { 'NY' => 'nycode.jn@gmail.com' }
   s.source           = { :git => 'https://github.com/NY/Live2DSDK.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '15.0'
+  s.ios.deployment_target = '13.0'
 
   s.subspec 'Core' do |sp|
     sp.source_files = 'Live2DSDK/Classes/Core/Source/**/*.{h,hpp,c,cpp,tpp,m,mm}','Live2DSDK/Classes/Core/include/*.{h,hpp,tpp}'

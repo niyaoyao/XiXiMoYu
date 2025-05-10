@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         EvaRouter.showHomePage()
         
+        
         return true
     }
 
