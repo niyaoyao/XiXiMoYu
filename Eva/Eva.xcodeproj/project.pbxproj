@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0EDFAD2D2DCEE8F2004E9526 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFAD2B2DCEE8F2004E9526 /* NetworkClient.swift */; };
+		0EDFAD2E2DCEE8F2004E9526 /* SwiftCombineSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFAD2C2DCEE8F2004E9526 /* SwiftCombineSupport.swift */; };
 		59DC4FF82B8F75228E12F5C4 /* libPods-Eva.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 465389745AECEFD96AFE6EA0 /* libPods-Eva.a */; };
 		8C944D142DC9D016000B4168 /* ScaleCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C944D132DC9D016000B4168 /* ScaleCollectionCell.swift */; };
 		8C944D162DC9D646000B4168 /* EvaSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C944D152DC9D646000B4168 /* EvaSettingViewController.swift */; };
@@ -21,14 +23,14 @@
 		8C94E4CD2DBB59CB0005D4B5 /* EvaBaseTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C94E4CC2DBB59CB0005D4B5 /* EvaBaseTabbarController.swift */; };
 		8C94E4CF2DBB5A310005D4B5 /* EvaConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C94E4CE2DBB5A310005D4B5 /* EvaConstant.swift */; };
 		8C94E4D12DBD38870005D4B5 /* EvaRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C94E4D02DBD38870005D4B5 /* EvaRouter.swift */; };
-		8C94E4D32DBD3FDC0005D4B5 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C94E4D22DBD3FDC0005D4B5 /* NetworkClient.swift */; };
 		8C94E4D52DBD46AA0005D4B5 /* AIChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C94E4D42DBD46AA0005D4B5 /* AIChatViewController.swift */; };
-		8CA23EA52DBE988C00ECFA51 /* SwiftCombineSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA23EA42DBE988C00ECFA51 /* SwiftCombineSupport.swift */; };
 		8CAA9E982DB164D900C48B27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CAA9E972DB164D900C48B27 /* Assets.xcassets */; };
 		8CAA9E9B2DB164D900C48B27 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CAA9E992DB164D900C48B27 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0EDFAD2B2DCEE8F2004E9526 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		0EDFAD2C2DCEE8F2004E9526 /* SwiftCombineSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftCombineSupport.swift; sourceTree = "<group>"; };
 		465389745AECEFD96AFE6EA0 /* libPods-Eva.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Eva.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A10D700A5C0AF96271F8C2E /* Pods-Eva.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eva.debug.xcconfig"; path = "Target Support Files/Pods-Eva/Pods-Eva.debug.xcconfig"; sourceTree = "<group>"; };
 		8C944D132DC9D016000B4168 /* ScaleCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleCollectionCell.swift; sourceTree = "<group>"; };
@@ -44,9 +46,7 @@
 		8C94E4CC2DBB59CB0005D4B5 /* EvaBaseTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaBaseTabbarController.swift; sourceTree = "<group>"; };
 		8C94E4CE2DBB5A310005D4B5 /* EvaConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaConstant.swift; sourceTree = "<group>"; };
 		8C94E4D02DBD38870005D4B5 /* EvaRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaRouter.swift; sourceTree = "<group>"; };
-		8C94E4D22DBD3FDC0005D4B5 /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkClient.swift; path = ../../../Live2DSDK/Example/Live2DSDK/NetworkClient.swift; sourceTree = "<group>"; };
 		8C94E4D42DBD46AA0005D4B5 /* AIChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIChatViewController.swift; sourceTree = "<group>"; };
-		8CA23EA42DBE988C00ECFA51 /* SwiftCombineSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftCombineSupport.swift; path = ../../../Live2DSDK/Example/Live2DSDK/SwiftCombineSupport.swift; sourceTree = "<group>"; };
 		8CAA9E8B2DB164D600C48B27 /* Eva.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eva.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CAA9E972DB164D900C48B27 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8CAA9E9A2DB164D900C48B27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -95,12 +95,12 @@
 				8C94E4CC2DBB59CB0005D4B5 /* EvaBaseTabbarController.swift */,
 				8C94E4CE2DBB5A310005D4B5 /* EvaConstant.swift */,
 				8C94E4D02DBD38870005D4B5 /* EvaRouter.swift */,
-				8C94E4D22DBD3FDC0005D4B5 /* NetworkClient.swift */,
-				8CA23EA42DBE988C00ECFA51 /* SwiftCombineSupport.swift */,
 				8C944D132DC9D016000B4168 /* ScaleCollectionCell.swift */,
 				8C944D172DC9D6DC000B4168 /* RoundCornerCollectionLayout.swift */,
 				8C944D1B2DC9D8A5000B4168 /* EvaSettingsCommonCell.swift */,
 				8C944D1D2DCA7A28000B4168 /* EvaRequest.swift */,
+				0EDFAD2B2DCEE8F2004E9526 /* NetworkClient.swift */,
+				0EDFAD2C2DCEE8F2004E9526 /* SwiftCombineSupport.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -261,18 +261,18 @@
 				8C94E4C72DBB54310005D4B5 /* EvaBaseViewController.swift in Sources */,
 				8C944D142DC9D016000B4168 /* ScaleCollectionCell.swift in Sources */,
 				8C944D162DC9D646000B4168 /* EvaSettingViewController.swift in Sources */,
-				8CA23EA52DBE988C00ECFA51 /* SwiftCombineSupport.swift in Sources */,
 				8C94E4CD2DBB59CB0005D4B5 /* EvaBaseTabbarController.swift in Sources */,
 				8C94E4CB2DBB59810005D4B5 /* EvaBaseNavigationController.swift in Sources */,
 				8C94E4CF2DBB5A310005D4B5 /* EvaConstant.swift in Sources */,
 				8C94E4C52DBB540C0005D4B5 /* AppDelegate.swift in Sources */,
-				8C94E4D32DBD3FDC0005D4B5 /* NetworkClient.swift in Sources */,
 				8C94E4D52DBD46AA0005D4B5 /* AIChatViewController.swift in Sources */,
 				8C944D1C2DC9D8A5000B4168 /* EvaSettingsCommonCell.swift in Sources */,
 				8C944D182DC9D6DC000B4168 /* RoundCornerCollectionLayout.swift in Sources */,
 				8C944D1A2DC9D780000B4168 /* EvaUserProfileListItemViewModel.swift in Sources */,
 				8C94E4C92DBB59040005D4B5 /* EvaExtension.swift in Sources */,
 				8C94E4D12DBD38870005D4B5 /* EvaRouter.swift in Sources */,
+				0EDFAD2D2DCEE8F2004E9526 /* NetworkClient.swift in Sources */,
+				0EDFAD2E2DCEE8F2004E9526 /* SwiftCombineSupport.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
