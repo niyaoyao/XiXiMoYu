@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0EDFAD332DCEFC40004E9526 /* NYSSEManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFAD322DCEFC40004E9526 /* NYSSEManager.swift */; };
 		8C69D4E92DCBCEFA007B495B /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8C69D4E32DCBCEF9007B495B /* .swiftlint.yml */; };
 		8C69D4EA2DCBCEFA007B495B /* Logs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C69D4E42DCBCEF9007B495B /* Logs.swift */; };
 		8C69D4EB2DCBCEFA007B495B /* UTF8LineParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C69D4E52DCBCEF9007B495B /* UTF8LineParser.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0EDFAD322DCEFC40004E9526 /* NYSSEManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYSSEManager.swift; sourceTree = "<group>"; };
 		8C69D4E32DCBCEF9007B495B /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		8C69D4E42DCBCEF9007B495B /* Logs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logs.swift; sourceTree = "<group>"; };
 		8C69D4E52DCBCEF9007B495B /* UTF8LineParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UTF8LineParser.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 				8C69D4E62DCBCEF9007B495B /* EventParser.swift */,
 				8C69D4E72DCBCEF9007B495B /* LDSwiftEventSource.swift */,
 				8C69D4E82DCBCEF9007B495B /* Types.swift */,
+				0EDFAD322DCEFC40004E9526 /* NYSSEManager.swift */,
 			);
 			path = LDSwiftEventSource;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 				8C69D4EE2DCBCEFA007B495B /* Types.swift in Sources */,
 				8C8E09972DC19C0000A4772B /* AppDelegate.swift in Sources */,
 				8C69D4EA2DCBCEFA007B495B /* Logs.swift in Sources */,
+				0EDFAD332DCEFC40004E9526 /* NYSSEManager.swift in Sources */,
 				8C8E09992DC19C0000A4772B /* SceneDelegate.swift in Sources */,
 				8C69D4ED2DCBCEFA007B495B /* LDSwiftEventSource.swift in Sources */,
 			);
@@ -324,6 +328,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P66P3CXU58;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = tts/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -331,6 +336,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -351,6 +357,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P66P3CXU58;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = tts/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -358,6 +365,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

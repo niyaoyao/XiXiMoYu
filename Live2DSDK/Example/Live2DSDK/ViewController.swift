@@ -240,7 +240,7 @@ class ViewController: UIViewController {
         count += 1
         let nameIndex = count % 9
         let name = "0\(nameIndex)"
-        NYLDSDKManager.shared().stageVC.changeBackground(withImageName: name)
+//        NYLDSDKManager.shared().stageVC.changeBackground(withImageName: name)
     }
     
     override func didReceiveMemoryWarning() {

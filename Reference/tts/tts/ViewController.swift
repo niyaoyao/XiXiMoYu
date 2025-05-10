@@ -118,7 +118,22 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(collectionView)
-        
+        // google/gemini-2.5-pro-exp-03-25 google/gemini-2.0-flash-exp:free
+        // deepseek/deepseek-v3-base:free deepseek/deepseek-r1-zero:free
+        // qwen/qwen3-32b:free
+        let key = "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"
+        let headers: [String: String] = [
+            "Authorization" : "Bearer \(key)",
+            "stream": "1"
+        ]
+        let body: [String: Any] = [
+            "model" : "deepseek/deepseek-chat-v3-0324:free",
+            "messages": [
+                ["role":"user","content":"I'm fired now. I'm so sad and frustrated."],
+                ["role":"system","content":"Please play the role of a gentle and considerate AI girlfriend, speak in a gentle and considerate tone, be able to empathize with the interlocutor's mood, and provide emotional value to the interlocutor."]
+            ]
+        ]
+        NYSSEManager.shared.send(urlStr: kOpenRouterUrl, headers: headers, body: body)
     }
     
     

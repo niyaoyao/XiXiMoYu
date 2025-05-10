@@ -155,7 +155,7 @@ class ReconnectionTimer {
 class EventSourceDelegate: NSObject, URLSessionDataDelegate {
     private let delegateQueue: DispatchQueue = DispatchQueue(label: "ESDelegateQueue")
     
-    public var logger: InternalLogging
+    public var logger = NoOpLogging()
     
     private let config: EventSource.Config
 
@@ -173,14 +173,6 @@ class EventSourceDelegate: NSObject, URLSessionDataDelegate {
 
     init(config: EventSource.Config) {
         self.config = config
-        
-#if canImport(os)
-        self.logger = OSLogAdapter(osLog: config.logger)
-#else
-        self.logger = NoOpLogging()
-#endif
-        
-        
         self.eventParser = EventParser(handler: config.handler,
                                        initialEventId: config.lastEventId,
                                        initialRetry: config.reconnectTime)
