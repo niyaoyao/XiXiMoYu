@@ -202,11 +202,11 @@ class NYSSEManager {
 //                    print("Provider: \(chunk.provider)")
 //                    print("Model: \(chunk.model)")
 //                    print("Created: \(chunk.created)")
-                    if let firstChoice = chunk.choices.first, let content =  firstChoice.delta.content, let reasoning = firstChoice.delta.reasoning {
+                    if let firstChoice = chunk.choices.first, let content =  firstChoice.delta.content {
 //                        print("Choice Index: \(firstChoice.index)")
 //                        print("Delta Content: \(firstChoice.delta.content ?? "nil")")
 //                        print("Finish Reason: \(firstChoice.finishReason ?? "nil")")
-                        self.messageHandler?(.message, ["content" : content, "reasoning": reasoning])
+                        self.messageHandler?(.message, ["content" : content])
                     } else {
                         self.messageHandler?(.message, nil)
                     }

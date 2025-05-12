@@ -474,7 +474,7 @@ extension AIChatViewController {
     @objc private func speakText() {
         self.endEditing()
         let text = textView.text.trimmingCharacters(in: .whitespacesAndNewlines)
-        self.startTTS(content: "好的，亲爱的，让我想想如何回答你关于「\(text)」的问题")
+        self.startTTS(content: "好的，亲爱的，让我想想如何回答你的问题")
         if text.isEmpty || text.count <= 0 { return }
         self.startAISpeak(answer: text)
         textView.text = ""
@@ -597,7 +597,7 @@ extension AIChatViewController {
         // google/gemini-2.5-pro-exp-03-25 google/gemini-2.0-flash-exp:free
         // deepseek/deepseek-v3-base:free deepseek/deepseek-r1-zero:free
         // qwen/qwen3-32b:free
-        let key = "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"
+        let key = "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"
         let headers: [String: String] = [
             "Authorization" : "Bearer \(key)",
             "Content-Type": "application/json"
@@ -608,7 +608,7 @@ extension AIChatViewController {
             "model" : model,
             "messages": [
                 ["role":"user", "content": userContent],
-                ["role":"system", "content": "Please play the role of a gentle and considerate AI girlfriend, speak in a gentle and considerate tone, be able to empathize with the interlocutor's mood, and provide emotional value to the interlocutor. Not more than 300 words"]
+                ["role":"system", "content": "请扮演一位温柔体贴的AI女友，用温柔体贴的语气说话，能够体会对话者的心情，并为对话者提供情感价值。请直接提供最终答案，不要包含推理过程，不超过300字"]
             ],
             "stream": true
         ]
@@ -624,20 +624,15 @@ extension AIChatViewController {
     }
     
     func handleMessage(type: NYSSEMessageHandleType, data: [String: Any]?) {
-        if let data = data, let content = data["content"] as? String,
-            let reasoning = data["reasoning"] as? String, type == .message {
+        if let data = data, let content = data["content"] as? String, type == .message {
             // print("OpenRouter Content: \(content)")
             setSpeakBtn(enabled: false)
-            if (reasoning == "." ||  reasoning == "。" || content == "." ||  content == "。") && !self.isSpeaking  {
+            if (content == "." ||  content == "。") && !self.isSpeaking  {
                 let ttsContent = contentsManager.getAllContentsString()
                 self.startTTS(content: ttsContent)
                 contentsManager.removeAllContents()
             } else {
-                if reasoning.count > 0 {
-                    contentsManager.appendContent(reasoning)
-                } else {
-                    contentsManager.appendContent(content)
-                }
+                contentsManager.appendContent(content)
             }
             
             
@@ -650,8 +645,10 @@ extension AIChatViewController {
             
         } else if type == .comment {
             let mod = generateRandomIntMod3()
-            if mod == 0 {
+            if mod == 9 {
                 self.startTTS(content: "亲爱的，不要着急哈，再让我思考下该如何回答")
+            } else if mod == 51 {
+                self.startTTS(content: "宝贝，这个问题真的好难哦～ 让我再想想哈～")
             }
             setSpeakBtn(enabled: false)
         }
@@ -669,7 +666,7 @@ extension AIChatViewController {
         // 生成随机整数
         let randomInt = Int.random(in: range)
         // 对 3 取余
-        let result = randomInt % 3
+        let result = randomInt
         return result
     }
 
