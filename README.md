@@ -48,7 +48,7 @@
                 - [x] Version
                 - [ ] Locale Language
     - [ ] AI Speech
-        - [ ] **SSE Text Stream** 
+        - [x] **SSE Text Stream** 
         - [ ] Mouth Control
         - [ ] Text to Speech
 
