@@ -628,23 +628,18 @@ extension AIChatViewController {
             let reasoning = data["reasoning"] as? String, type == .message {
             // print("OpenRouter Content: \(content)")
             setSpeakBtn(enabled: false)
-            if reasoning.count > 0 {
-                if (reasoning == "." ||  reasoning == "。") && !self.isSpeaking  {
-                    let ttsContent = contentsManager.getAllContentsString()
-                    self.startTTS(content: ttsContent)
-                    contentsManager.removeAllContents()
-                } else {
-                    contentsManager.appendContent(reasoning)
-                }
+            if (reasoning == "." ||  reasoning == "。" || content == "." ||  content == "。") && !self.isSpeaking  {
+                let ttsContent = contentsManager.getAllContentsString()
+                self.startTTS(content: ttsContent)
+                contentsManager.removeAllContents()
             } else {
-                if (content == "." ||  content == "。") && !self.isSpeaking  {
-                    let ttsContent = contentsManager.getAllContentsString()
-                    self.startTTS(content: ttsContent)
-                    contentsManager.removeAllContents()
+                if reasoning.count > 0 {
+                    contentsManager.appendContent(reasoning)
                 } else {
                     contentsManager.appendContent(content)
                 }
             }
+            
             
             
         } else if type == .close {
@@ -654,6 +649,10 @@ extension AIChatViewController {
         } else if type == .done {
             
         } else if type == .comment {
+            let mod = generateRandomIntMod3()
+            if mod == 0 {
+                self.startTTS(content: "亲爱的，不要着急哈，再让我思考下该如何回答")
+            }
             setSpeakBtn(enabled: false)
         }
             
