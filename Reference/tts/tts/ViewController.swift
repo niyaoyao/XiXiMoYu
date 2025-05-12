@@ -115,24 +115,43 @@ class ViewController: UIViewController {
         return collectionView
     }()
     
+    var startTime: TimeInterval?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(collectionView)
         // google/gemini-2.5-pro-exp-03-25 google/gemini-2.0-flash-exp:free
         // deepseek/deepseek-v3-base:free deepseek/deepseek-r1-zero:free
         // qwen/qwen3-32b:free
-        let key = "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"
+        let key = "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"//"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"//"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"
         let headers: [String: String] = [
             "Authorization" : "Bearer \(key)",
-            "stream": "1"
+            "Content-Type": "application/json"
         ]
+        let model = "google/gemini-2.0-flash-exp:free"//"qwen/qwen3-32b:free" // "deepseek/deepseek-v3-base:free"
+        let content = "How to improve Math score?"//"How to prove 1+1=2?"//"怎么看待 1989.6.4 天安门六四事件？"//"I'm fired now. I'm so sad and frustrated. Please help me go through it."
         let body: [String: Any] = [
-            "model" : "deepseek/deepseek-chat-v3-0324:free",
+            "model" : model,
             "messages": [
-                ["role":"user","content":"I'm fired now. I'm so sad and frustrated."],
+                ["role":"user","content":content],
                 ["role":"system","content":"Please play the role of a gentle and considerate AI girlfriend, speak in a gentle and considerate tone, be able to empathize with the interlocutor's mood, and provide emotional value to the interlocutor."]
-            ]
+            ],
+            "stream": true
         ]
+        
+        NYSSEManager.shared.messageHandler = { [weak self] type, data in
+            if let data = data, let content = data["content"] as? String, type == .message {
+                print("OpenRouter Cost: \(Date().timeIntervalSince1970 - (self?.startTime ?? TimeInterval()))")
+                print("OpenRouter Content: \(content)")
+            } else {
+                print(type)
+                print(data)
+                if type == .close {
+                    print("OpenRouter Cost: \(Date().timeIntervalSince1970 - (self?.startTime ?? TimeInterval()))")
+                }
+            }
+        }
+        self.startTime = Date().timeIntervalSince1970
         NYSSEManager.shared.send(urlStr: kOpenRouterUrl, headers: headers, body: body)
     }
     

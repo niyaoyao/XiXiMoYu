@@ -171,6 +171,7 @@ class AIChatViewController: EvaBaseViewController {
     }()
     
     var inputWrapperEndRect = CGRect()
+    var startTime: TimeInterval?
     
     lazy var modelBackgroudBtn: UIButton = {
         let btn = UIButton(frame: .zero)
@@ -283,10 +284,8 @@ extension AIChatViewController {
     // 请求权限
     private func requestPermissions() {
        // 麦克风权限
-//        NYLDSDKManager.suspend()
         AVAudioSession.sharedInstance().requestRecordPermission { granted in
             DispatchQueue.main.async {
-//                NYLDSDKManager.resume()
                 if !granted {
                     self.showAlert(message: "请在设置中启用麦克风权限")
                 }
@@ -294,10 +293,9 @@ extension AIChatViewController {
        }
        
        // 语音识别权限
-//        NYLDSDKManager.suspend()
+
        SFSpeechRecognizer.requestAuthorization { status in
            DispatchQueue.main.async {
-//               NYLDSDKManager.resume()
                if status != .authorized {
                    self.showAlert(message: "请在设置中启用语音识别权限")
                }
@@ -346,7 +344,7 @@ extension AIChatViewController {
             self.amplitudes.append(contentsOf: batchAmplitudes)
             print("实时振幅（最新）: \(batchAmplitudes.last ?? 0)")
             if let amplitude = batchAmplitudes.last {
-//                NYLDModelManager.shared().mouthOpenRate = amplitude * 20
+                NYLDModelManager.shared().mouthOpenRate = amplitude * 20
             }
         }
         
@@ -361,7 +359,7 @@ extension AIChatViewController {
     func stopAmplitudeAudioEngine() {
         audioEngine.stop()
         audioEngine.inputNode.removeTap(onBus: 0)
-//        NYLDModelManager.shared().mouthOpenRate = 0.0
+        NYLDModelManager.shared().mouthOpenRate = 0.0
         
         freshAIAnswerTextView(text: "", shouldHide: true)
     }
@@ -380,7 +378,8 @@ extension AIChatViewController {
         setupAmplitudeAudioEngine()
         let text = answer
         if text.isEmpty || text.count <= 0 { return }
-        freshAIAnswerTextView(text: text, shouldHide: false)
+        requestAI(userContent: text)
+        
         let utterance = AVSpeechUtterance(string: text)
         utterance.voice = AVSpeechSynthesisVoice(language: "en-US") // 中文语音
         utterance.rate = 0.5 // 语速（0.1 - 1.0）
@@ -501,6 +500,47 @@ extension AIChatViewController {
     func hideCollectionView() {
         UIView.animate(withDuration: 0.35) { [weak self] in
             self?.collectionView.alpha = 0.0
+        }
+    }
+}
+
+extension AIChatViewController {
+    func requestAI(userContent: String) {
+        // google/gemini-2.5-pro-exp-03-25 google/gemini-2.0-flash-exp:free
+        // deepseek/deepseek-v3-base:free deepseek/deepseek-r1-zero:free
+        // qwen/qwen3-32b:free
+        let key = "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"//"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"//"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"
+        let headers: [String: String] = [
+            "Authorization" : "Bearer \(key)",
+            "Content-Type": "application/json"
+        ]
+        let model = "google/gemini-2.0-flash-exp:free"//"qwen/qwen3-32b:free" // "deepseek/deepseek-v3-base:free"
+//        let content = "How to improve Math score?"//"How to prove 1+1=2?"//"怎么看待 1989.6.4 天安门六四事件？"//"I'm fired now. I'm so sad and frustrated. Please help me go through it."
+        let body: [String: Any] = [
+            "model" : model,
+            "messages": [
+                ["role":"user", "content": userContent],
+                ["role":"system", "content": "Please play the role of a gentle and considerate AI girlfriend, speak in a gentle and considerate tone, be able to empathize with the interlocutor's mood, and provide emotional value to the interlocutor."]
+            ],
+            "stream": true
+        ]
+        
+        NYSSEManager.shared.messageHandler = { [weak self] type, data in
+            
+        }
+        self.startTime = Date().timeIntervalSince1970
+        NYSSEManager.shared.send(urlStr: kOpenRouterUrl, headers: headers, body: body)
+    }
+    
+    func handleMessage(type: NYSSEMessageHandleType, data: [String: Any]?) {
+        if let data = data, let content = data["content"] as? String, type == .message {
+            print("OpenRouter Cost: \(Date().timeIntervalSince1970 - (self.startTime ?? TimeInterval()))")
+            print("OpenRouter Content: \(content)")
+//            freshAIAnswerTextView(text: text, shouldHide: false)
+        } else {
+            if type == .close {
+                print("OpenRouter Cost: \(Date().timeIntervalSince1970 - (self.startTime ?? TimeInterval()))")
+            }
         }
     }
 }

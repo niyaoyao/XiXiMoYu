@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		0EDFAD2D2DCEE8F2004E9526 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFAD2B2DCEE8F2004E9526 /* NetworkClient.swift */; };
 		0EDFAD2E2DCEE8F2004E9526 /* SwiftCombineSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFAD2C2DCEE8F2004E9526 /* SwiftCombineSupport.swift */; };
+		0EDFAD3C2DD1F90D004E9526 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFAD392DD1F90D004E9526 /* Types.swift */; };
+		0EDFAD3D2DD1F90D004E9526 /* NYSSEManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFAD382DD1F90D004E9526 /* NYSSEManager.swift */; };
+		0EDFAD3E2DD1F90D004E9526 /* UTF8LineParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFAD3A2DD1F90D004E9526 /* UTF8LineParser.swift */; };
+		0EDFAD3F2DD1F90D004E9526 /* EventParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFAD352DD1F90D004E9526 /* EventParser.swift */; };
+		0EDFAD402DD1F90D004E9526 /* LDSwiftEventSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFAD362DD1F90D004E9526 /* LDSwiftEventSource.swift */; };
+		0EDFAD412DD1F90D004E9526 /* Logs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFAD372DD1F90D004E9526 /* Logs.swift */; };
 		59DC4FF82B8F75228E12F5C4 /* libPods-Eva.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 465389745AECEFD96AFE6EA0 /* libPods-Eva.a */; };
 		8C944D142DC9D016000B4168 /* ScaleCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C944D132DC9D016000B4168 /* ScaleCollectionCell.swift */; };
 		8C944D162DC9D646000B4168 /* EvaSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C944D152DC9D646000B4168 /* EvaSettingViewController.swift */; };
@@ -31,6 +37,12 @@
 /* Begin PBXFileReference section */
 		0EDFAD2B2DCEE8F2004E9526 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		0EDFAD2C2DCEE8F2004E9526 /* SwiftCombineSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftCombineSupport.swift; sourceTree = "<group>"; };
+		0EDFAD352DD1F90D004E9526 /* EventParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventParser.swift; sourceTree = "<group>"; };
+		0EDFAD362DD1F90D004E9526 /* LDSwiftEventSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LDSwiftEventSource.swift; sourceTree = "<group>"; };
+		0EDFAD372DD1F90D004E9526 /* Logs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logs.swift; sourceTree = "<group>"; };
+		0EDFAD382DD1F90D004E9526 /* NYSSEManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYSSEManager.swift; sourceTree = "<group>"; };
+		0EDFAD392DD1F90D004E9526 /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
+		0EDFAD3A2DD1F90D004E9526 /* UTF8LineParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UTF8LineParser.swift; sourceTree = "<group>"; };
 		465389745AECEFD96AFE6EA0 /* libPods-Eva.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Eva.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A10D700A5C0AF96271F8C2E /* Pods-Eva.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eva.debug.xcconfig"; path = "Target Support Files/Pods-Eva/Pods-Eva.debug.xcconfig"; sourceTree = "<group>"; };
 		8C944D132DC9D016000B4168 /* ScaleCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleCollectionCell.swift; sourceTree = "<group>"; };
@@ -66,6 +78,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0EDFAD3B2DD1F90D004E9526 /* LDSwiftEventSource */ = {
+			isa = PBXGroup;
+			children = (
+				0EDFAD352DD1F90D004E9526 /* EventParser.swift */,
+				0EDFAD362DD1F90D004E9526 /* LDSwiftEventSource.swift */,
+				0EDFAD372DD1F90D004E9526 /* Logs.swift */,
+				0EDFAD382DD1F90D004E9526 /* NYSSEManager.swift */,
+				0EDFAD392DD1F90D004E9526 /* Types.swift */,
+				0EDFAD3A2DD1F90D004E9526 /* UTF8LineParser.swift */,
+			);
+			path = LDSwiftEventSource;
+			sourceTree = "<group>";
+		};
 		475D1370AC6AB86FE35707BD /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +151,7 @@
 		8CAA9E8D2DB164D600C48B27 /* Eva */ = {
 			isa = PBXGroup;
 			children = (
+				0EDFAD3B2DD1F90D004E9526 /* LDSwiftEventSource */,
 				8C94E4C32DBB53F10005D4B5 /* Common */,
 				8C94E4C22DBB53DC0005D4B5 /* Modules */,
 				8CAA9E972DB164D900C48B27 /* Assets.xcassets */,
@@ -257,6 +283,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EDFAD3C2DD1F90D004E9526 /* Types.swift in Sources */,
+				0EDFAD3D2DD1F90D004E9526 /* NYSSEManager.swift in Sources */,
+				0EDFAD3E2DD1F90D004E9526 /* UTF8LineParser.swift in Sources */,
+				0EDFAD3F2DD1F90D004E9526 /* EventParser.swift in Sources */,
+				0EDFAD402DD1F90D004E9526 /* LDSwiftEventSource.swift in Sources */,
+				0EDFAD412DD1F90D004E9526 /* Logs.swift in Sources */,
 				8C944D1E2DCA7A28000B4168 /* EvaRequest.swift in Sources */,
 				8C94E4C72DBB54310005D4B5 /* EvaBaseViewController.swift in Sources */,
 				8C944D142DC9D016000B4168 /* ScaleCollectionCell.swift in Sources */,

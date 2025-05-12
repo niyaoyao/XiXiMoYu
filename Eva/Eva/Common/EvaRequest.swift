@@ -15,39 +15,39 @@ struct ChatCompletionError: Codable {
         case message, code
     }
 }
-
-struct ChatCompletionResponse: Codable {
-    let error: ChatCompletionError?
-    let id: String?
-    let provider: String?
-    let model: String?
-    let object: String?
-    let created: Int?
-    let choices: [Choice]?
-    let usage: Usage?
-    let user_id: String?
-    enum CodingKeys: String, CodingKey {
-        case id, provider, model, object, created, choices, usage, error, user_id
-    }
-}
-
-// Choice 结构体
-struct Choice: Codable {
-    let logprobs: Logprobs?
-    let finishReason: String?
-    let nativeFinishReason: String?
-    let index: Int?
-    let message: Message?
-    let refusal: String?
-    let reasoning: String?
-    
-    enum CodingKeys: String, CodingKey {
-        case logprobs
-        case finishReason = "finish_reason"
-        case nativeFinishReason = "native_finish_reason"
-        case index, message, refusal, reasoning
-    }
-}
+//
+//struct ChatCompletionResponse: Codable {
+//    let error: ChatCompletionError?
+//    let id: String?
+//    let provider: String?
+//    let model: String?
+//    let object: String?
+//    let created: Int?
+//    let choices: [Choice]?
+//    let usage: Usage?
+//    let user_id: String?
+//    enum CodingKeys: String, CodingKey {
+//        case id, provider, model, object, created, choices, usage, error, user_id
+//    }
+//}
+//
+//// Choice 结构体
+//struct Choice: Codable {
+//    let logprobs: Logprobs?
+//    let finishReason: String?
+//    let nativeFinishReason: String?
+//    let index: Int?
+//    let message: Message?
+//    let refusal: String?
+//    let reasoning: String?
+//    
+//    enum CodingKeys: String, CodingKey {
+//        case logprobs
+//        case finishReason = "finish_reason"
+//        case nativeFinishReason = "native_finish_reason"
+//        case index, message, refusal, reasoning
+//    }
+//}
 
 // Logprobs 结构体（处理 null）
 struct Logprobs: Codable {
@@ -96,35 +96,35 @@ func aiRequest(prompt: String, model:String = "qwen/qwen3-14b:free", completion:
         ]
     ]
     guard let url = URL(string: "https://openrouter.ai/api/v1/chat/completions") else { return }
-    NetworkClient.shared.post(url: url, headers: headers, body: body) { result in
-        print(result)
-        switch result {
-        case .success(let data):
-            do {
-                let decoder = JSONDecoder()
-                let response = try decoder.decode(ChatCompletionResponse.self, from: data)
-                if let error = response.error {
-                    print("USPictureSearchIntent error: \(error.message)")
-                } else {
-                    print("ID: \(response.id)")
-                    print("Provider: \(response.provider)")
-                    if let firstChoice = response.choices?.first {
-                        print("USPictureSearchIntent Assistant response: \(firstChoice.message?.content)")
-                        DispatchQueue.main.async {
-                            completion?(firstChoice.message?.content)
-                        }
-                    }
-                }
-//                    let responseDict = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
-//                    print("USPictureSearchIntent ID: \(responseDict)")
-//                    print("USPictureSearchIntent Provider: \(responseDict)")
-//
-            } catch  {
-                debugPrint("USPictureSearchIntent log request 错误: \(error.localizedDescription)")
-            }
-        case .failure(let error):
-            print("USPictureSearchIntent error: \(error)")
-            
-        }
-    }
+//    NetworkClient.shared.post(url: url, headers: headers, body: body) { result in
+//        print(result)
+//        switch result {
+//        case .success(let data):
+//            do {
+//                let decoder = JSONDecoder()
+//                let response = try decoder.decode(ChatCompletionResponse.self, from: data)
+//                if let error = response.error {
+//                    print("USPictureSearchIntent error: \(error.message)")
+//                } else {
+//                    print("ID: \(response.id)")
+//                    print("Provider: \(response.provider)")
+//                    if let firstChoice = response.choices?.first {
+//                        print("USPictureSearchIntent Assistant response: \(firstChoice.message?.content)")
+//                        DispatchQueue.main.async {
+//                            completion?(firstChoice.message?.content)
+//                        }
+//                    }
+//                }
+////                    let responseDict = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+////                    print("USPictureSearchIntent ID: \(responseDict)")
+////                    print("USPictureSearchIntent Provider: \(responseDict)")
+////
+//            } catch  {
+//                debugPrint("USPictureSearchIntent log request 错误: \(error.localizedDescription)")
+//            }
+//        case .failure(let error):
+//            print("USPictureSearchIntent error: \(error)")
+//            
+//        }
+//    }
 }

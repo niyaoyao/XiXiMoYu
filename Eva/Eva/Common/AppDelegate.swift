@@ -19,8 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
         EvaRouter.showHomePage()
-        
-        
         return true
     }
 
