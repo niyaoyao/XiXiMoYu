@@ -53,7 +53,7 @@ class EvaThreadSafeContentsManager {
     }
     
     func getAllContentsString() -> String {
-        return getAllContents().joined(separator: " ")
+        return getAllContents().joined(separator: "")
     }
     
     // 读操作：获取内容数量
@@ -376,6 +376,7 @@ extension AIChatViewController {
         let format = inputNode.outputFormat(forBus: 0)
         
         inputNode.installTap(onBus: 0, bufferSize: 1024, format: format) { [weak self] buffer, _ in
+            print("OpenRouter buffer:\(buffer) Thread.current: \(Thread.current)")
             guard let `self` = self else { return }
             guard let floatChannelData = buffer.floatChannelData else { return }
             let frameLength = Int(buffer.frameLength)
@@ -398,10 +399,10 @@ extension AIChatViewController {
             }
             
             self.amplitudes.append(contentsOf: batchAmplitudes)
-            print("AI Request batchAmplitudes: \(batchAmplitudes.last)")
+            print("OpenRouter AI Request batchAmplitudes: \(batchAmplitudes.last) Thread.current:\(Thread.current)")
             if let amplitude = batchAmplitudes.last {
                 NYLDModelManager.shared().mouthOpenRate = amplitude * 20
-                print("AI Request Mouth: \(NYLDModelManager.shared().mouthOpenRate)")
+                print("OpenRouter AI Request Mouth: \(NYLDModelManager.shared().mouthOpenRate)")
             }
         }
         
@@ -438,20 +439,19 @@ extension AIChatViewController {
     }
     
     func startTTS(content: String) {
-        DispatchQueue.main.async {
-            if self.isSpeaking {
-                return
-            }
-            print("OpenRouter AI Request Start TTS: \(content)")
-            self.isSpeaking = true
-            let utterance = AVSpeechUtterance(string: content)
-            utterance.voice = AVSpeechSynthesisVoice(language: "en-US") // 中文语音
-            utterance.rate = 0.5 // 语速（0.1 - 1.0）
-            utterance.pitchMultiplier = 1.0 // 音调（0.5 - 2.0）
-            
-            self.synthesizer.stopSpeaking(at: .immediate)
-            self.synthesizer.speak(utterance)
+        if self.isSpeaking {
+            return
         }
+        print("OpenRouter AI Request Start TTS: \(content)")
+        self.isSpeaking = true
+        let utterance = AVSpeechUtterance(string: content)
+        utterance.voice = AVSpeechSynthesisVoice(language: "en-US") // 中文语音
+        utterance.rate = 0.5 // 语速（0.1 - 1.0）
+        utterance.pitchMultiplier = 1.0 // 音调（0.5 - 2.0）
+        
+        self.synthesizer.stopSpeaking(at: .immediate)
+        self.synthesizer.speak(utterance)
+        
     }
     
     // TTS: 文字转语音
@@ -490,9 +490,13 @@ extension AIChatViewController: AVSpeechSynthesizerDelegate {
         
     }
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
-        print("OpenRouter 语音合成完成，振幅数据（前 10 个）: \(amplitudes)")
-        if contentsManager.getAllContents().count > 0 {
-            let ttsContent = contentsManager.getAllContentsString()
+        print("OpenRouter 语音合成完成")
+        let ttsContent = contentsManager.getAllContentsString()
+        let ttsContents = contentsManager.getAllContents()
+        print("OpenRouter ttsContent: \(ttsContent)")
+        print("OpenRouter ttsContent: \(ttsContents)")
+        self.isSpeaking = false
+        if ttsContents.count > 0 {
             self.startTTS(content: ttsContent)
             contentsManager.removeAllContents()
         } else {
@@ -574,7 +578,7 @@ extension AIChatViewController {
         // google/gemini-2.5-pro-exp-03-25 google/gemini-2.0-flash-exp:free
         // deepseek/deepseek-v3-base:free deepseek/deepseek-r1-zero:free
         // qwen/qwen3-32b:free
-        let key = "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"
+        let key = "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"
         let headers: [String: String] = [
             "Authorization" : "Bearer \(key)",
             "Content-Type": "application/json"
@@ -604,7 +608,7 @@ extension AIChatViewController {
         if let data = data, let content = data["content"] as? String, type == .message {
             print("OpenRouter Content: \(content)")
             
-            if content == "," || content == "." || content == "，" || content == "。"  {
+            if (content == "." ||  content == "。") && !self.isSpeaking  {
                 let ttsContent = contentsManager.getAllContentsString()
                 self.startTTS(content: ttsContent)
                 contentsManager.removeAllContents()
