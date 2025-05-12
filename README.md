@@ -38,9 +38,9 @@
             - [ ] Settings/Me
                 - [ ] Privacy
                 - [ ] User
-                - [ ] **OpenRouter Key Request JSON**
+                - [ ] **OpenRouter Key Request JSON AES encrypt**
                 - [ ] AI Model Settings
-                    - [ ] Model List: **Request JSON**
+                    - [ ] Model List: **Request JSON AES encrypt**
                     - [ ] Request Message
                         - [ ] user
                         - [ ] system

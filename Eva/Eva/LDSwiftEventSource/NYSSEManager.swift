@@ -13,6 +13,7 @@ enum NYSSEMessageHandleType: String {
     case close
     case error
     case message
+    case comment
     case done
 }
 
@@ -171,6 +172,7 @@ class NYSSEManager {
             debugPrint("NYSSEManager eventType: \(eventType) ")
         } _onComment: { comment in
             debugPrint("NYSSEManager comment: \(comment) ")
+            self.messageHandler?(.comment, nil)
         } _onError: { error in
             self.messageHandler?(.error, nil)
             self.stopSSE()

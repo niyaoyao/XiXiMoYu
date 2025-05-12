@@ -205,7 +205,7 @@ class AIChatViewController: EvaBaseViewController {
         textView.layer.borderWidth = 1
         textView.layer.cornerRadius = 8
         textView.font = .systemFont(ofSize: 16)
-        textView.text = "我失业了，好挫败，怎么办，你能帮我度过这个痛苦的时刻吗？"//"I'm fired now. I'm so sad and frustrated. Please help me go through it."
+        textView.text = "好无聊啊，给我讲个笑话吧？"//"I'm fired now. I'm so sad and frustrated. Please help me go through it."
         textView.delegate = self
         return textView
     }()
@@ -597,7 +597,7 @@ extension AIChatViewController {
         // google/gemini-2.5-pro-exp-03-25 google/gemini-2.0-flash-exp:free
         // deepseek/deepseek-v3-base:free deepseek/deepseek-r1-zero:free
         // qwen/qwen3-32b:free
-        let key = "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"
+        let key = "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"
         let headers: [String: String] = [
             "Authorization" : "Bearer \(key)",
             "Content-Type": "application/json"
@@ -626,7 +626,7 @@ extension AIChatViewController {
     func handleMessage(type: NYSSEMessageHandleType, data: [String: Any]?) {
         if let data = data, let content = data["content"] as? String, type == .message {
             print("OpenRouter Content: \(content)")
-            
+            setSpeakBtn(enabled: false)
             if (content == "." ||  content == "。") && !self.isSpeaking  {
                 let ttsContent = contentsManager.getAllContentsString()
                 self.startTTS(content: ttsContent)
@@ -637,13 +637,15 @@ extension AIChatViewController {
             
         } else if type == .close {
                 print("OpenRouter Cost: \(Date().timeIntervalSince1970 - (self.startTime ?? TimeInterval()))")
-            } else if type == .error {
-                self.startTTS(content: "Sorry, something is wrong. Please try a again.")
-            } else if type == .done {
-                
-            }
+        } else if type == .error {
+            self.startTTS(content: "Sorry, something is wrong. Please try a again.")
+        } else if type == .done {
             
+        } else if type == .comment {
+            self.startTTS(content: "Ummmmmmm, 不要着急哦，再容我想一想哈")
         }
+            
+    }
     
     
     func setSpeakBtn(enabled: Bool) {
@@ -658,7 +660,7 @@ extension AIChatViewController: UITextViewDelegate {
         inputPlaceholer.isHidden = textView.text.count > 0
     }
     
-    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
-        retu
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        inputPlaceholer.isHidden = textView.text.count > 0
     }
 }
