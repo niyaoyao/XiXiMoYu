@@ -20,6 +20,59 @@ enum EvaModelChangeType {
     case avatar, background
 }
 
+class EvaThreadSafeContentsManager {
+    // 共享数组
+    private var waitToSpeakContents: [String] = []
+    
+    // 并发队列，启用 barrier
+    private let queue = DispatchQueue(label: "com.example.subtitleManager", attributes: .concurrent)
+    
+    // 写操作：添加内容
+    func appendContent(_ content: String) {
+        queue.async(flags: .barrier) {
+            self.waitToSpeakContents.append(content)
+        }
+    }
+    
+    // 写操作：移除内容
+    func removeFirstContent() -> String? {
+        var result: String?
+        queue.sync(flags: .barrier) {
+            result = self.waitToSpeakContents.isEmpty ? nil : self.waitToSpeakContents.removeFirst()
+        }
+        return result
+    }
+    
+    // 读操作：获取所有内容
+    func getAllContents() -> [String] {
+        var result: [String] = []
+        queue.sync {
+            result = self.waitToSpeakContents
+        }
+        return result
+    }
+    
+    func getAllContentsString() -> String {
+        return getAllContents().joined(separator: " ")
+    }
+    
+    // 读操作：获取内容数量
+    func getContentCount() -> Int {
+        var count = 0
+        queue.sync {
+            count = self.waitToSpeakContents.count
+        }
+        return count
+    }
+    
+    // 新增：移除所有内容
+    func removeAllContents() {
+        queue.async(flags: .barrier) {
+            self.waitToSpeakContents.removeAll()
+        }
+    }
+}
+
 class AIChatViewController: EvaBaseViewController {
     let btnSize = CGSize(width: 35, height: 35)
     let bottomH = 100.0
@@ -152,7 +205,7 @@ class AIChatViewController: EvaBaseViewController {
         textView.layer.borderWidth = 1
         textView.layer.cornerRadius = 8
         textView.font = .systemFont(ofSize: 16)
-        textView.text = "Hi,welcome! Let’s start the AI ​​journey together~"
+        textView.text = "I'm fired now. I'm so sad and frustrated. Please help me go through it."
         return textView
     }()
     
@@ -180,6 +233,9 @@ class AIChatViewController: EvaBaseViewController {
         }
         return btn
     }()
+    
+    var contentsManager: EvaThreadSafeContentsManager = EvaThreadSafeContentsManager()
+    var isSpeaking = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -342,9 +398,10 @@ extension AIChatViewController {
             }
             
             self.amplitudes.append(contentsOf: batchAmplitudes)
-            print("实时振幅（最新）: \(batchAmplitudes.last ?? 0)")
+            print("AI Request batchAmplitudes: \(batchAmplitudes.last)")
             if let amplitude = batchAmplitudes.last {
                 NYLDModelManager.shared().mouthOpenRate = amplitude * 20
+                print("AI Request Mouth: \(NYLDModelManager.shared().mouthOpenRate)")
             }
         }
         
@@ -360,8 +417,8 @@ extension AIChatViewController {
         audioEngine.stop()
         audioEngine.inputNode.removeTap(onBus: 0)
         NYLDModelManager.shared().mouthOpenRate = 0.0
-        
         freshAIAnswerTextView(text: "", shouldHide: true)
+        isSpeaking = false
     }
     
     func freshAIAnswerTextView(text: String, shouldHide: Bool) {
@@ -375,18 +432,26 @@ extension AIChatViewController {
     }
     
     func startAISpeak(answer: String) {
-        setupAmplitudeAudioEngine()
         let text = answer
         if text.isEmpty || text.count <= 0 { return }
         requestAI(userContent: text)
-        
-        let utterance = AVSpeechUtterance(string: text)
-        utterance.voice = AVSpeechSynthesisVoice(language: "en-US") // 中文语音
-        utterance.rate = 0.5 // 语速（0.1 - 1.0）
-        utterance.pitchMultiplier = 1.0 // 音调（0.5 - 2.0）
-        
-        synthesizer.stopSpeaking(at: .immediate)
-        synthesizer.speak(utterance)
+    }
+    
+    func startTTS(content: String) {
+        DispatchQueue.main.async {
+            if self.isSpeaking {
+                return
+            }
+            print("OpenRouter AI Request Start TTS: \(content)")
+            self.isSpeaking = true
+            let utterance = AVSpeechUtterance(string: content)
+            utterance.voice = AVSpeechSynthesisVoice(language: "en-US") // 中文语音
+            utterance.rate = 0.5 // 语速（0.1 - 1.0）
+            utterance.pitchMultiplier = 1.0 // 音调（0.5 - 2.0）
+            
+            self.synthesizer.stopSpeaking(at: .immediate)
+            self.synthesizer.speak(utterance)
+        }
     }
     
     // TTS: 文字转语音
@@ -395,13 +460,7 @@ extension AIChatViewController {
         let text = textView.text.trimmingCharacters(in: .whitespacesAndNewlines)
         if text.isEmpty || text.count <= 0 { return }
         self.startAISpeak(answer: text)
-//        aiAnswerTV.text = "AI 正在思考中，请稍等..."
-//        aiAnswerTV.isHidden = false
-//        aiRequest(prompt: text) { [weak self] answer in
-//            guard let `self` = self else { return }
-//            guard let answer = answer else { return }
-//            self.startAISpeak(answer: answer)
-//        }
+        
     }
     
     @objc func endEditing() {
@@ -427,12 +486,18 @@ extension AIChatViewController: AVSpeechSynthesizerDelegate {
     
     
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, willSpeakRangeOfSpeechString characterRange: NSRange, utterance: AVSpeechUtterance) {
-        print("characterRange: \(characterRange)")
+        print("OpenRouter AI Request characterRange: \(characterRange)")
         
     }
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
-        print("语音合成完成，振幅数据（前 10 个）: \(amplitudes)")
-        stopAmplitudeAudioEngine()
+        print("OpenRouter 语音合成完成，振幅数据（前 10 个）: \(amplitudes)")
+        if contentsManager.getAllContents().count > 0 {
+            let ttsContent = contentsManager.getAllContentsString()
+            self.startTTS(content: ttsContent)
+            contentsManager.removeAllContents()
+        } else {
+            stopAmplitudeAudioEngine()
+        }
     }
 }
 
@@ -509,38 +574,60 @@ extension AIChatViewController {
         // google/gemini-2.5-pro-exp-03-25 google/gemini-2.0-flash-exp:free
         // deepseek/deepseek-v3-base:free deepseek/deepseek-r1-zero:free
         // qwen/qwen3-32b:free
-        let key = "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"//"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"//"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"
+        let key = "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"
         let headers: [String: String] = [
             "Authorization" : "Bearer \(key)",
             "Content-Type": "application/json"
         ]
-        let model = "google/gemini-2.0-flash-exp:free"//"qwen/qwen3-32b:free" // "deepseek/deepseek-v3-base:free"
-//        let content = "How to improve Math score?"//"How to prove 1+1=2?"//"怎么看待 1989.6.4 天安门六四事件？"//"I'm fired now. I'm so sad and frustrated. Please help me go through it."
+        let model =  "qwen/qwen3-32b:free" //"google/gemini-2.0-flash-exp:free"//"qwen/qwen3-32b:free" // "deepseek/deepseek-v3-base:free"
+
         let body: [String: Any] = [
             "model" : model,
             "messages": [
                 ["role":"user", "content": userContent],
-                ["role":"system", "content": "Please play the role of a gentle and considerate AI girlfriend, speak in a gentle and considerate tone, be able to empathize with the interlocutor's mood, and provide emotional value to the interlocutor."]
+                ["role":"system", "content": "Please play the role of a gentle and considerate AI girlfriend, speak in a gentle and considerate tone, be able to empathize with the interlocutor's mood, and provide emotional value to the interlocutor. Not more than 300 words"]
             ],
             "stream": true
         ]
         
         NYSSEManager.shared.messageHandler = { [weak self] type, data in
-            
+            self?.handleMessage(type: type, data: data)
         }
         self.startTime = Date().timeIntervalSince1970
+        speakBtn.isEnabled = false
+        
+        contentsManager.removeAllContents()
         NYSSEManager.shared.send(urlStr: kOpenRouterUrl, headers: headers, body: body)
     }
     
     func handleMessage(type: NYSSEMessageHandleType, data: [String: Any]?) {
         if let data = data, let content = data["content"] as? String, type == .message {
-            print("OpenRouter Cost: \(Date().timeIntervalSince1970 - (self.startTime ?? TimeInterval()))")
             print("OpenRouter Content: \(content)")
-//            freshAIAnswerTextView(text: text, shouldHide: false)
-        } else {
-            if type == .close {
-                print("OpenRouter Cost: \(Date().timeIntervalSince1970 - (self.startTime ?? TimeInterval()))")
+            
+            if content == "," || content == "." || content == "，" || content == "。"  {
+                let ttsContent = contentsManager.getAllContentsString()
+                self.startTTS(content: ttsContent)
+                contentsManager.removeAllContents()
+            } else {
+                contentsManager.appendContent(content)
             }
+            
+        } else if type == .close {
+                print("OpenRouter Cost: \(Date().timeIntervalSince1970 - (self.startTime ?? TimeInterval()))")
+                setSpeakBtn(enabled: true)
+            } else if type == .error {
+                self.startTTS(content: "Sorry, something is wrong. Please try a again.")
+                setSpeakBtn(enabled: true)
+            } else if type == .done {
+                
+            }
+            
+        }
+    
+    
+    func setSpeakBtn(enabled: Bool) {
+        DispatchQueue.main.async {
+            self.speakBtn.isEnabled = enabled
         }
     }
 }

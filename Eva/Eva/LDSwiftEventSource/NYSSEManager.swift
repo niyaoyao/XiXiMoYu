@@ -13,6 +13,7 @@ enum NYSSEMessageHandleType: String {
     case close
     case error
     case message
+    case done
 }
 
 // 顶层结构体
@@ -185,6 +186,7 @@ class NYSSEManager {
     func onMessageHandler(type: String, event: MessageEvent)  {
         
         if event.data.contains("[DONE]") {
+            self.messageHandler?(.done, nil)
             self.stopSSE()
         } else {
 //            debugPrint("NYSSEManager event.data: \(event.data) ")
