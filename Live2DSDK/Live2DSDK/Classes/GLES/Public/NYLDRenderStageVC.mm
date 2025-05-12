@@ -68,7 +68,7 @@ using namespace LAppDefine;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    [UIApplication.sharedApplication setIdleTimerDisabled:NO];
     mOpenGLRun = true;
     NYLog(@"1");
     _anotherTarget = false;

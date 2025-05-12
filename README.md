@@ -47,13 +47,14 @@
                 - [x] ICP
                 - [x] Version
                 - [ ] Locale Language
-    - [ ] AI Speech
+    - [x] AI Speech
         - [x] **SSE Text Stream** 
-        - [ ] Mouth Control
-        - [ ] Text to Speech
+        - [x] Mouth Control
+        - [x] Text to Speech
 
     - [ ] `NYLDModel` instead of `LAppModel`
         - [x] Change Model Mouth Angle
+        - [ ] a i e o u
 
 4. [x] App Icon
 5. [x] Renew Account Plan 

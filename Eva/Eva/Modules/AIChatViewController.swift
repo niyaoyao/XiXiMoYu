@@ -185,8 +185,8 @@ class AIChatViewController: EvaBaseViewController {
     
     lazy var speakBtn: UIButton = {
         let speakButton = UIButton(frame: .zero)// Speak Button
-        speakButton.setTitle("Send", for: .normal)
-        speakButton.setTitle("Waiting", for: .disabled)
+        speakButton.setTitle("Ask Me", for: .normal)
+        speakButton.setTitle("Talking", for: .disabled)
         speakButton.addTarget(self, action: #selector(speakText), for: .touchUpInside)
         let layer = speakButton.layer
                 
@@ -205,9 +205,12 @@ class AIChatViewController: EvaBaseViewController {
         textView.layer.borderWidth = 1
         textView.layer.cornerRadius = 8
         textView.font = .systemFont(ofSize: 16)
-        textView.text = "I'm fired now. I'm so sad and frustrated. Please help me go through it."
+        textView.text = "我失业了，好挫败，怎么办，你能帮我度过这个痛苦的时刻吗？"//"I'm fired now. I'm so sad and frustrated. Please help me go through it."
+        textView.delegate = self
         return textView
     }()
+    
+    
     
     lazy var inputWrapper: UIView = {
         let v = UIView(frame: .zero)
@@ -218,9 +221,17 @@ class AIChatViewController: EvaBaseViewController {
     
     lazy var inputBackground: UIView = {
         let v = UIView(frame: .zero)
-        v.backgroundColor = .white
+        v.backgroundColor = .black.withAlphaComponent(0.5)
         v.alpha = 0.0
         return v
+    }()
+    
+    lazy var inputPlaceholer: UILabel = {
+        let lab = UILabel(frame: .zero)
+        lab.font = .systemFont(ofSize: 16)
+        lab.text = "Type message here..."
+        lab.textColor = UIColor("#dddddd")
+        return lab
     }()
     
     var inputWrapperEndRect = CGRect()
@@ -311,10 +322,12 @@ class AIChatViewController: EvaBaseViewController {
         inputWrapper.frame = CGRect(x: 0, y: inputY, width: UIScreen.main.bounds.size.width, height: th + 20)
         inputWrapperEndRect = inputWrapper.frame
         inputWrapper.addSubview(self.textView)
+        inputWrapper.addSubview(inputPlaceholer)
         inputWrapper.addSubview(speakBtn)
         textView.frame = CGRect(x: 15, y: 10, width: UIScreen.main.bounds.size.width - 30 - sbtnw - 10, height: th)
         speakBtn.frame = CGRect(x: textView.frame.maxX + 10.0, y: textView.frame.origin.y, width: sbtnw, height: th)
-        
+        inputPlaceholer.frame = textView.frame
+        inputPlaceholer.isHidden = true
         view.addSubview(collectionView)
     }
     
@@ -420,6 +433,7 @@ extension AIChatViewController {
         NYLDModelManager.shared().mouthOpenRate = 0.0
         freshAIAnswerTextView(text: "", shouldHide: true)
         isSpeaking = false
+        setSpeakBtn(enabled: !isSpeaking)
     }
     
     func freshAIAnswerTextView(text: String, shouldHide: Bool) {
@@ -442,10 +456,12 @@ extension AIChatViewController {
         if self.isSpeaking {
             return
         }
+        setupAmplitudeAudioEngine()
         print("OpenRouter AI Request Start TTS: \(content)")
-        self.isSpeaking = true
+        isSpeaking = true
+        setSpeakBtn(enabled: !isSpeaking)
         let utterance = AVSpeechUtterance(string: content)
-        utterance.voice = AVSpeechSynthesisVoice(language: "en-US") // 中文语音
+        utterance.voice = AVSpeechSynthesisVoice(language: "zh-Hant-TW") // 中文语音 zh-Hant-TW "en-US" zh-Hans
         utterance.rate = 0.5 // 语速（0.1 - 1.0）
         utterance.pitchMultiplier = 1.0 // 音调（0.5 - 2.0）
         
@@ -458,9 +474,11 @@ extension AIChatViewController {
     @objc private func speakText() {
         self.endEditing()
         let text = textView.text.trimmingCharacters(in: .whitespacesAndNewlines)
+        self.startTTS(content: "好的，亲爱的，让我想想如何回答你关于「\(text)」的问题")
         if text.isEmpty || text.count <= 0 { return }
         self.startAISpeak(answer: text)
-        
+        textView.text = ""
+        inputPlaceholer.isHidden = false
     }
     
     @objc func endEditing() {
@@ -496,6 +514,7 @@ extension AIChatViewController: AVSpeechSynthesizerDelegate {
         print("OpenRouter ttsContent: \(ttsContent)")
         print("OpenRouter ttsContent: \(ttsContents)")
         self.isSpeaking = false
+        setSpeakBtn(enabled: !isSpeaking)
         if ttsContents.count > 0 {
             self.startTTS(content: ttsContent)
             contentsManager.removeAllContents()
@@ -618,10 +637,8 @@ extension AIChatViewController {
             
         } else if type == .close {
                 print("OpenRouter Cost: \(Date().timeIntervalSince1970 - (self.startTime ?? TimeInterval()))")
-                setSpeakBtn(enabled: true)
             } else if type == .error {
                 self.startTTS(content: "Sorry, something is wrong. Please try a again.")
-                setSpeakBtn(enabled: true)
             } else if type == .done {
                 
             }
@@ -633,5 +650,15 @@ extension AIChatViewController {
         DispatchQueue.main.async {
             self.speakBtn.isEnabled = enabled
         }
+    }
+}
+
+extension AIChatViewController: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        inputPlaceholer.isHidden = textView.text.count > 0
+    }
+    
+    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
+        retu
     }
 }

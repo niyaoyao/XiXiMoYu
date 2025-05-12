@@ -292,7 +292,7 @@ void NYLDFinishedMotion(Csm::ACubismMotion* motion)
         }
         else
         {
-          projection.Scale(0.5 * static_cast<float>(height) / static_cast<float>(width), 0.5f);
+          projection.Scale(1.0f * static_cast<float>(height) / static_cast<float>(width), 1.0f);
         }
 //        projection.TranslateRelative(0.5, 0.5);
         // 必要があればここで乗算
