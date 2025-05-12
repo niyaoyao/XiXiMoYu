@@ -186,7 +186,7 @@ class AIChatViewController: EvaBaseViewController {
     lazy var speakBtn: UIButton = {
         let speakButton = UIButton(frame: .zero)// Speak Button
         speakButton.setTitle("Ask Me", for: .normal)
-        speakButton.setTitle("Talking", for: .disabled)
+        speakButton.setTitle("Thinking", for: .disabled)
         speakButton.addTarget(self, action: #selector(speakText), for: .touchUpInside)
         let layer = speakButton.layer
                 
@@ -379,7 +379,7 @@ extension AIChatViewController {
            try audioSession.setCategory(.playAndRecord, mode: .default, options: [.mixWithOthers, .defaultToSpeaker])
            try audioSession.setActive(true)
         } catch {
-           print("音频会话配置失败: \(error)")
+           // print("音频会话配置失败: \(error)")
         }
     }
 
@@ -389,7 +389,7 @@ extension AIChatViewController {
         let format = inputNode.outputFormat(forBus: 0)
         
         inputNode.installTap(onBus: 0, bufferSize: 1024, format: format) { [weak self] buffer, _ in
-            print("OpenRouter buffer:\(buffer) Thread.current: \(Thread.current)")
+            // print("OpenRouter buffer:\(buffer) Thread.current: \(Thread.current)")
             guard let `self` = self else { return }
             guard let floatChannelData = buffer.floatChannelData else { return }
             let frameLength = Int(buffer.frameLength)
@@ -412,10 +412,10 @@ extension AIChatViewController {
             }
             
             self.amplitudes.append(contentsOf: batchAmplitudes)
-            print("OpenRouter AI Request batchAmplitudes: \(batchAmplitudes.last) Thread.current:\(Thread.current)")
+            // print("OpenRouter AI Request batchAmplitudes: \(batchAmplitudes.last) Thread.current:\(Thread.current)")
             if let amplitude = batchAmplitudes.last {
                 NYLDModelManager.shared().mouthOpenRate = amplitude * 20
-                print("OpenRouter AI Request Mouth: \(NYLDModelManager.shared().mouthOpenRate)")
+                // print("OpenRouter AI Request Mouth: \(NYLDModelManager.shared().mouthOpenRate)")
             }
         }
         
@@ -423,7 +423,7 @@ extension AIChatViewController {
             audioEngine.prepare()
             try audioEngine.start()
         } catch {
-            print("音频引擎启动失败: \(error)")
+            // print("音频引擎启动失败: \(error)")
         }
     }
     
@@ -457,7 +457,7 @@ extension AIChatViewController {
             return
         }
         setupAmplitudeAudioEngine()
-        print("OpenRouter AI Request Start TTS: \(content)")
+        // print("OpenRouter AI Request Start TTS: \(content)")
         isSpeaking = true
         setSpeakBtn(enabled: !isSpeaking)
         let utterance = AVSpeechUtterance(string: content)
@@ -504,15 +504,15 @@ extension AIChatViewController: AVSpeechSynthesizerDelegate {
     
     
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, willSpeakRangeOfSpeechString characterRange: NSRange, utterance: AVSpeechUtterance) {
-        print("OpenRouter AI Request characterRange: \(characterRange)")
+        // print("OpenRouter AI Request characterRange: \(characterRange)")
         
     }
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
-        print("OpenRouter 语音合成完成")
+        // print("OpenRouter 语音合成完成")
         let ttsContent = contentsManager.getAllContentsString()
         let ttsContents = contentsManager.getAllContents()
-        print("OpenRouter ttsContent: \(ttsContent)")
-        print("OpenRouter ttsContent: \(ttsContents)")
+        // print("OpenRouter ttsContent: \(ttsContent)")
+        // print("OpenRouter ttsContent: \(ttsContents)")
         self.isSpeaking = false
         setSpeakBtn(enabled: !isSpeaking)
         if ttsContents.count > 0 {
@@ -597,7 +597,7 @@ extension AIChatViewController {
         // google/gemini-2.5-pro-exp-03-25 google/gemini-2.0-flash-exp:free
         // deepseek/deepseek-v3-base:free deepseek/deepseek-r1-zero:free
         // qwen/qwen3-32b:free
-        let key = "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"
+        let key = "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"
         let headers: [String: String] = [
             "Authorization" : "Bearer \(key)",
             "Content-Type": "application/json"
@@ -624,25 +624,37 @@ extension AIChatViewController {
     }
     
     func handleMessage(type: NYSSEMessageHandleType, data: [String: Any]?) {
-        if let data = data, let content = data["content"] as? String, type == .message {
-            print("OpenRouter Content: \(content)")
+        if let data = data, let content = data["content"] as? String,
+            let reasoning = data["reasoning"] as? String, type == .message {
+            // print("OpenRouter Content: \(content)")
             setSpeakBtn(enabled: false)
-            if (content == "." ||  content == "。") && !self.isSpeaking  {
-                let ttsContent = contentsManager.getAllContentsString()
-                self.startTTS(content: ttsContent)
-                contentsManager.removeAllContents()
+            if reasoning.count > 0 {
+                if (reasoning == "." ||  reasoning == "。") && !self.isSpeaking  {
+                    let ttsContent = contentsManager.getAllContentsString()
+                    self.startTTS(content: ttsContent)
+                    contentsManager.removeAllContents()
+                } else {
+                    contentsManager.appendContent(reasoning)
+                }
             } else {
-                contentsManager.appendContent(content)
+                if (content == "." ||  content == "。") && !self.isSpeaking  {
+                    let ttsContent = contentsManager.getAllContentsString()
+                    self.startTTS(content: ttsContent)
+                    contentsManager.removeAllContents()
+                } else {
+                    contentsManager.appendContent(content)
+                }
             }
             
+            
         } else if type == .close {
-                print("OpenRouter Cost: \(Date().timeIntervalSince1970 - (self.startTime ?? TimeInterval()))")
+                // print("OpenRouter Cost: \(Date().timeIntervalSince1970 - (self.startTime ?? TimeInterval()))")
         } else if type == .error {
             self.startTTS(content: "Sorry, something is wrong. Please try a again.")
         } else if type == .done {
             
         } else if type == .comment {
-            self.startTTS(content: "Ummmmmmm, 不要着急哦，再容我想一想哈")
+            setSpeakBtn(enabled: false)
         }
             
     }
@@ -653,6 +665,15 @@ extension AIChatViewController {
             self.speakBtn.isEnabled = enabled
         }
     }
+    
+    func generateRandomIntMod3(range: ClosedRange<Int> = 0...100) -> Int {
+        // 生成随机整数
+        let randomInt = Int.random(in: range)
+        // 对 3 取余
+        let result = randomInt % 3
+        return result
+    }
+
 }
 
 extension AIChatViewController: UITextViewDelegate {
