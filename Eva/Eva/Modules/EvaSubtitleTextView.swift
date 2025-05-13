@@ -25,7 +25,7 @@ class EvaSubtitleTextView: UITextView {
         // 设置 UITextView 背景色为透明
         self.backgroundColor = .clear
         // 禁用交互和滚动
-        self.isUserInteractionEnabled = false
+        self.isUserInteractionEnabled = true
         self.isScrollEnabled = true
         // 设置内边距
         self.textContainerInset = UIEdgeInsets(top: 4, left: 8, bottom: 4, right: 8)

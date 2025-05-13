@@ -185,8 +185,8 @@ class AIChatViewController: EvaBaseViewController {
     
     lazy var speakBtn: UIButton = {
         let speakButton = UIButton(frame: .zero)// Speak Button
-        speakButton.setTitle("Ask Me", for: .normal)
-        speakButton.setTitle("Thinking", for: .disabled)
+        speakButton.setTitle("问我", for: .normal)
+        speakButton.setTitle("思考中", for: .disabled)
         speakButton.addTarget(self, action: #selector(speakText), for: .touchUpInside)
         let layer = speakButton.layer
                 
@@ -333,7 +333,7 @@ class AIChatViewController: EvaBaseViewController {
         
         // tts
         let th = 50.0
-        let sbtnw = 80.0
+        let sbtnw = 60.0
         view.addSubview(inputWrapper)
         let inputY = UIScreen.main.bounds.height - kBottomSafeHeight - bottomH//(bottomH - th)/2.0 - th
         inputWrapper.frame = CGRect(x: 0, y: inputY, width: UIScreen.main.bounds.size.width, height: th + 20)
@@ -352,7 +352,7 @@ class AIChatViewController: EvaBaseViewController {
         let width = UIScreen.main.bounds.size.width - btnSize.width - 15 - 15
         subtitleTextView.frame = CGRect(x: 0, y: inputY - h, width: width, height: h)
         view.addSubview(subtitleTextView)
-        let w = 20.0
+        let w = 25.0
         view.addSubview(copyBtn)
         copyBtn.frame = CGRect(x: subtitleTextView.frame.maxX - w - 20, y: subtitleTextView.frame.maxY - w, width: w, height: w)
         
@@ -502,6 +502,7 @@ extension AIChatViewController {
     @objc private func speakText() {
         self.endEditing()
         let text = textView.text.trimmingCharacters(in: .whitespacesAndNewlines)
+        subtitleTextView.setSubtitle("")
         self.startTTS(content: "好的，让我想想如何回答你的问题")
         if text.isEmpty || text.count <= 0 { return }
         self.startAISpeak(answer: text)
@@ -663,7 +664,6 @@ extension AIChatViewController {
                 DispatchQueue.main.async { [weak self] in
                     self?.copyBtn.isHidden = true
                 }
-                subtitleTextView.setSubtitle("")
                 let ttsContent = contentsManager.getAllContentsString()
                 self.startTTS(content: ttsContent)
                 contentsManager.removeAllContents()
