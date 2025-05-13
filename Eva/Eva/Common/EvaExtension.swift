@@ -311,3 +311,22 @@ extension Date {
     }
 
 }
+
+extension String {
+    func substring(with nsrange: NSRange) -> String? {
+        // 验证 NSRange 是否有效
+        guard nsrange.location != NSNotFound,
+              nsrange.location >= 0,
+              nsrange.location + nsrange.length <= self.utf16.count else {
+            return nil
+        }
+        
+        // 将 NSRange 转换为 Range<String.Index>
+        guard let range = Range(nsrange, in: self) else {
+            return nil
+        }
+        
+        // 提取子字符串
+        return String(self[range])
+    }
+}

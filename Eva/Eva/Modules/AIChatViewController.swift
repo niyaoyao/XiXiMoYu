@@ -247,6 +247,23 @@ class AIChatViewController: EvaBaseViewController {
     
     var contentsManager: EvaThreadSafeContentsManager = EvaThreadSafeContentsManager()
     var isSpeaking = false
+    var currentSpeakingString = ""
+    
+    lazy var subtitleTextView: EvaSubtitleTextView = {
+        let tv = EvaSubtitleTextView(frame: .zero)
+        tv.textContainerInset = UIEdgeInsets(top: 4, left: 8, bottom: 4, right: 8)
+        return tv
+    }()
+    
+    lazy var copyBtn: UIButton = {
+        let btn = UIButton(frame: .zero)
+        btn.setImage(UIImage(named: "tts_copy"), for: .normal)
+        btn.isHidden = true
+        btn.addActionHandler { [weak self] in
+            UIPasteboard.general.string = self?.subtitleTextView.originText
+        }
+        return btn
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -329,6 +346,16 @@ class AIChatViewController: EvaBaseViewController {
         inputPlaceholer.frame = textView.frame
         inputPlaceholer.isHidden = true
         view.addSubview(collectionView)
+        
+        // 设置 UITextView 的初始 frame
+        let h = 150.0
+        let width = UIScreen.main.bounds.size.width - btnSize.width - 15 - 15
+        subtitleTextView.frame = CGRect(x: 0, y: inputY - h, width: width, height: h)
+        view.addSubview(subtitleTextView)
+        let w = 20.0
+        view.addSubview(copyBtn)
+        copyBtn.frame = CGRect(x: subtitleTextView.frame.maxX - w - 20, y: subtitleTextView.frame.maxY - w, width: w, height: w)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -432,8 +459,8 @@ extension AIChatViewController {
         audioEngine.inputNode.removeTap(onBus: 0)
         NYLDModelManager.shared().mouthOpenRate = 0.0
         freshAIAnswerTextView(text: "", shouldHide: true)
-        isSpeaking = false
-        setSpeakBtn(enabled: !isSpeaking)
+        setIsSpeaking(false)
+        currentSpeakingString = ""
     }
     
     func freshAIAnswerTextView(text: String, shouldHide: Bool) {
@@ -458,8 +485,8 @@ extension AIChatViewController {
         }
         setupAmplitudeAudioEngine()
         // print("OpenRouter AI Request Start TTS: \(content)")
-        isSpeaking = true
-        setSpeakBtn(enabled: !isSpeaking)
+        setIsSpeaking(true)
+        currentSpeakingString = content
         let utterance = AVSpeechUtterance(string: content)
         utterance.voice = AVSpeechSynthesisVoice(language: "zh-Hant-TW") // 中文语音 zh-Hant-TW "en-US" zh-Hans
         utterance.rate = 0.5 // 语速（0.1 - 1.0）
@@ -469,6 +496,7 @@ extension AIChatViewController {
         self.synthesizer.speak(utterance)
         
     }
+    
     
     // TTS: 文字转语音
     @objc private func speakText() {
@@ -504,17 +532,19 @@ extension AIChatViewController: AVSpeechSynthesizerDelegate {
     
     
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, willSpeakRangeOfSpeechString characterRange: NSRange, utterance: AVSpeechUtterance) {
-        // print("OpenRouter AI Request characterRange: \(characterRange)")
-        
+        print("OpenRouter AI Request characterRange: \(characterRange)")
+        // 设置示例字幕
+        let content = currentSpeakingString.substring(with: characterRange) ?? ""
+        copyBtn.isHidden = false
+        subtitleTextView.setSubtitle("\(subtitleTextView.originText)\(content)")
+        setIsSpeaking(true)
     }
+    
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
-        // print("OpenRouter 语音合成完成")
+        setIsSpeaking()
         let ttsContent = contentsManager.getAllContentsString()
         let ttsContents = contentsManager.getAllContents()
-        // print("OpenRouter ttsContent: \(ttsContent)")
-        // print("OpenRouter ttsContent: \(ttsContents)")
-        self.isSpeaking = false
-        setSpeakBtn(enabled: !isSpeaking)
+        
         if ttsContents.count > 0 {
             self.startTTS(content: ttsContent)
             contentsManager.removeAllContents()
@@ -597,8 +627,7 @@ extension AIChatViewController {
         // google/gemini-2.5-pro-exp-03-25 google/gemini-2.0-flash-exp:free
         // deepseek/deepseek-v3-base:free deepseek/deepseek-r1-zero:free
         // qwen/qwen3-32b:free
-        // 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
-        let key = "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"
+        let key = "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"
         let headers: [String: String] = [
             "Authorization" : "Bearer \(key)",
             "Content-Type": "application/json"
@@ -608,7 +637,7 @@ extension AIChatViewController {
         let body: [String: Any] = [
             "model" : model,
             "messages": [
-                ["role":"user", "content": "\(userContent) 请直接提供最终答案，不要包含推理过程，不超过300字"],
+                ["role":"user", "content": "\(userContent) 请直接提供最终答案，不要包含推理过程，不超过500字"],
 //                ["role":"system", "content": "请扮演一位温柔体贴的AI女友，用温柔体贴的语气说话，能够体会对话者的心情，并为对话者提供情感价值。"]
             ],
             "stream": true
@@ -631,6 +660,10 @@ extension AIChatViewController {
             print("OpenRouter Content: \(content)")
             setSpeakBtn(enabled: false)
             if (content == "." ||  content == "，" ||  content == "。" ||  content == "？" ||  content == "！") && !self.isSpeaking  {
+                DispatchQueue.main.async { [weak self] in
+                    self?.copyBtn.isHidden = true
+                }
+                subtitleTextView.setSubtitle("")
                 let ttsContent = contentsManager.getAllContentsString()
                 self.startTTS(content: ttsContent)
                 contentsManager.removeAllContents()
@@ -645,19 +678,16 @@ extension AIChatViewController {
         } else if type == .done {
             setSpeakBtn(enabled: true)
         } else if type == .comment {
-            let mod = generateRandomIntMod3()
-            if mod == 7 {
-                self.startTTS(content: "亲爱的，不要着急哈，再让我思考下该如何回答")
-            } else if mod == 51 {
-                self.startTTS(content: "宝贝，这个问题真的好难哦～ 让我再想想哈～")
-            }  else if mod == 8351 {
-                self.startTTS(content: "我是不是太笨了，这个问题还没想出来，宝贝再给我点思考时间")
-            }
             setSpeakBtn(enabled: false)
         }
             
     }
     
+    
+    func setIsSpeaking(_ isSpeaking: Bool = false) {
+        self.isSpeaking = isSpeaking
+        self.setSpeakBtn(enabled: !isSpeaking)
+    }
     
     func setSpeakBtn(enabled: Bool) {
         DispatchQueue.main.async {
@@ -665,7 +695,7 @@ extension AIChatViewController {
         }
     }
     
-    func generateRandomIntMod3(range: ClosedRange<Int> = 0...1000) -> Int {
+    func generateRandomIntMod3(range: ClosedRange<Int> = 0...100) -> Int {
         // 生成随机整数
         let randomInt = Int.random(in: range)
         // 对 3 取余

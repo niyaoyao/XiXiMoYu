@@ -172,8 +172,7 @@ using namespace LAppDefine;
 {
     //時間更新
     LAppPal::UpdateTime();
-    NYLog(@"4");
-    NYLog(@"mOpenGLRun:%d", mOpenGLRun);
+    
     if(mOpenGLRun)
     {
         
@@ -193,7 +192,7 @@ using namespace LAppDefine;
         // 各モデルが持つ描画ターゲットをテクスチャとする場合はスプライトへの描画はここ
         if (_renderTarget == NYLDSelectTargetModelFrameBuffer && _renderSprite)
         {
-            NYLog(@"??????????????????????");
+            
             float uvVertex[] =
             {
                 0.0f, 0.0f,

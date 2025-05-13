@@ -38,10 +38,10 @@
             - [ ] Settings/Me
                 - [ ] Privacy
                 - [ ] User
-                - [ ] **OpenRouter Key Request JSON AES encrypt**
+                - [ ] Dynamic Key: **OpenRouter Key Request JSON AES encrypt**
                 - [ ] AI Model Settings
                     - [ ] Model List: **Request JSON AES encrypt**
-                    - [ ] Request Message
+                    - [ ] Request Message Prompt Settings
                         - [ ] user
                         - [ ] system
                 - [x] ICP
