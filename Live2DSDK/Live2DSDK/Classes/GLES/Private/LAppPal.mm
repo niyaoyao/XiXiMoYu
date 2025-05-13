@@ -79,7 +79,7 @@ void LAppPal::PrintLogLn(const csmChar* format, ...)
     Csm::csmChar buf[256];
     va_start(args, format);
     vsnprintf(buf, sizeof(buf), format, args); // 標準出力でレンダリング;
-    NYLog(@"%@",[NSString stringWithCString:buf encoding:NSUTF8StringEncoding]);
+//    NYLog(@"%@",[NSString stringWithCString:buf encoding:NSUTF8StringEncoding]);
     va_end(args);
 }
 

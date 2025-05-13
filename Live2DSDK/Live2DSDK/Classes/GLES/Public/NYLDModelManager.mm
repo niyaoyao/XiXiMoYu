@@ -380,7 +380,7 @@ void NYLDFinishedMotion(Csm::ACubismMotion* motion)
 {
     for (int i = 0; i < 16; i++) {
         _viewMatrix->GetArray()[i] = m[i];
-        NYLog(@"m->GetArray()[i]:%.2f _viewMatrix->GetArray()[i]:%.2f", m[i], _viewMatrix->GetArray()[i]);
+//        NYLog(@"m->GetArray()[i]:%.2f _viewMatrix->GetArray()[i]:%.2f", m[i], _viewMatrix->GetArray()[i]);
     }
 }
 

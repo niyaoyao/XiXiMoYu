@@ -196,27 +196,22 @@ class NYSSEManager {
                 let decoder = JSONDecoder()
                 if let data = event.data.data(using: .utf8) {
                     let chunk = try decoder.decode(ChatCompletionChunk.self, from: data)
-                    
-                    // 访问解析后的数据
-//                    print("ID: \(chunk.id)")
-//                    print("Provider: \(chunk.provider)")
-//                    print("Model: \(chunk.model)")
-//                    print("Created: \(chunk.created)")
                     if let firstChoice = chunk.choices.first, let content =  firstChoice.delta.content {
-//                        print("Choice Index: \(firstChoice.index)")
-//                        print("Delta Content: \(firstChoice.delta.content ?? "nil")")
-//                        print("Finish Reason: \(firstChoice.finishReason ?? "nil")")
+//                        let reasoning = firstChoice.delta.reasoning ?? ""
                         self.messageHandler?(.message, ["content" : content])
                     } else {
-                        self.messageHandler?(.message, nil)
+                        self.messageHandler?(.error, ["content" : "啊哦，出错了"])
+                        self.stopSSE()
                     }
                 } else {
-                    self.messageHandler?(.message, nil)
+                    self.messageHandler?(.error, ["content" : "啊哦，出错了"])
+                    self.stopSSE()
                 }
                 
             } catch {
                 print("解码错误: \(error)")
-                self.messageHandler?(.error, nil)
+                self.messageHandler?(.error, ["content" : "啊哦，出错了"])
+                self.stopSSE()
             }
         }
     }
