@@ -598,7 +598,7 @@ extension AIChatViewController {
         // deepseek/deepseek-v3-base:free deepseek/deepseek-r1-zero:free
         // qwen/qwen3-32b:free
         // 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
-        let key = "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"
+        let key = "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"
         let headers: [String: String] = [
             "Authorization" : "Bearer \(key)",
             "Content-Type": "application/json"
@@ -630,7 +630,7 @@ extension AIChatViewController {
 //            print("OpenRouter reasoning: \(data["reasoning"])")
             print("OpenRouter Content: \(content)")
             setSpeakBtn(enabled: false)
-            if (content == "." ||  content == "。") && !self.isSpeaking  {
+            if (content == "." ||  content == "，" ||  content == "。" ||  content == "？" ||  content == "！") && !self.isSpeaking  {
                 let ttsContent = contentsManager.getAllContentsString()
                 self.startTTS(content: ttsContent)
                 contentsManager.removeAllContents()
