@@ -474,7 +474,7 @@ extension AIChatViewController {
     @objc private func speakText() {
         self.endEditing()
         let text = textView.text.trimmingCharacters(in: .whitespacesAndNewlines)
-//        self.startTTS(content: "好的，让我想想")
+        self.startTTS(content: "好的，让我想想如何回答你的问题")
         if text.isEmpty || text.count <= 0 { return }
         self.startAISpeak(answer: text)
         textView.text = ""
@@ -650,7 +650,7 @@ extension AIChatViewController {
                 self.startTTS(content: "亲爱的，不要着急哈，再让我思考下该如何回答")
             } else if mod == 51 {
                 self.startTTS(content: "宝贝，这个问题真的好难哦～ 让我再想想哈～")
-            }  else if mod == 851 {
+            }  else if mod == 8351 {
                 self.startTTS(content: "我是不是太笨了，这个问题还没想出来，宝贝再给我点思考时间")
             }
             setSpeakBtn(enabled: false)
