@@ -96,35 +96,36 @@ func aiRequest(prompt: String, model:String = "qwen/qwen3-14b:free", completion:
         ]
     ]
     guard let url = URL(string: "https://openrouter.ai/api/v1/chat/completions") else { return }
-//    NetworkClient.shared.post(url: url, headers: headers, body: body) { result in
-//        print(result)
-//        switch result {
-//        case .success(let data):
-//            do {
-//                let decoder = JSONDecoder()
-//                let response = try decoder.decode(ChatCompletionResponse.self, from: data)
-//                if let error = response.error {
-//                    print("USPictureSearchIntent error: \(error.message)")
-//                } else {
-//                    print("ID: \(response.id)")
-//                    print("Provider: \(response.provider)")
-//                    if let firstChoice = response.choices?.first {
-//                        print("USPictureSearchIntent Assistant response: \(firstChoice.message?.content)")
-//                        DispatchQueue.main.async {
-//                            completion?(firstChoice.message?.content)
-//                        }
-//                    }
-//                }
-////                    let responseDict = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
-////                    print("USPictureSearchIntent ID: \(responseDict)")
-////                    print("USPictureSearchIntent Provider: \(responseDict)")
-////
-//            } catch  {
-//                debugPrint("USPictureSearchIntent log request 错误: \(error.localizedDescription)")
-//            }
-//        case .failure(let error):
-//            print("USPictureSearchIntent error: \(error)")
-//            
-//        }
-//    }
+ 
+}
+
+
+
+
+struct EvaConfigResponse: Codable {
+    let data: EvaKeyData?
+    let error: EvaError?
+    
+    enum CodingKeys: String, CodingKey {
+        case data
+        case error
+    }
+}
+
+struct EvaKeyData: Codable {
+    let keys: [String]?
+    
+    enum CodingKeys: String, CodingKey {
+        case keys
+    }
+}
+
+struct EvaError: Codable {
+    let message: String?
+    let code: Int?
+    
+    enum CodingKeys: String, CodingKey {
+        case message
+        case code
+    }
 }

@@ -47,10 +47,17 @@
                 - [x] ICP
                 - [x] Version
                 - [ ] Locale Language
+<<<<<<< HEAD
     - [x] AI Speech
         - [x] **SSE Text Stream** 
         - [x] Mouth Control
         - [x] Text to Speech
+=======
+    - [ ] AI Speech
+        - [x] **SSE Text Stream** 
+        - [ ] Mouth Control
+        - [ ] Text to Speech
+>>>>>>> 681013f (feat: refresh key)
 
     - [ ] `NYLDModel` instead of `LAppModel`
         - [x] Change Model Mouth Angle

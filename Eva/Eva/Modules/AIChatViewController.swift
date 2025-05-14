@@ -20,58 +20,6 @@ enum EvaModelChangeType {
     case avatar, background
 }
 
-class EvaThreadSafeContentsManager {
-    // 共享数组
-    private var waitToSpeakContents: [String] = []
-    
-    // 并发队列，启用 barrier
-    private let queue = DispatchQueue(label: "com.example.subtitleManager", attributes: .concurrent)
-    
-    // 写操作：添加内容
-    func appendContent(_ content: String) {
-        queue.async(flags: .barrier) {
-            self.waitToSpeakContents.append(content)
-        }
-    }
-    
-    // 写操作：移除内容
-    func removeFirstContent() -> String? {
-        var result: String?
-        queue.sync(flags: .barrier) {
-            result = self.waitToSpeakContents.isEmpty ? nil : self.waitToSpeakContents.removeFirst()
-        }
-        return result
-    }
-    
-    // 读操作：获取所有内容
-    func getAllContents() -> [String] {
-        var result: [String] = []
-        queue.sync {
-            result = self.waitToSpeakContents
-        }
-        return result
-    }
-    
-    func getAllContentsString() -> String {
-        return getAllContents().joined(separator: "")
-    }
-    
-    // 读操作：获取内容数量
-    func getContentCount() -> Int {
-        var count = 0
-        queue.sync {
-            count = self.waitToSpeakContents.count
-        }
-        return count
-    }
-    
-    // 新增：移除所有内容
-    func removeAllContents() {
-        queue.async(flags: .barrier) {
-            self.waitToSpeakContents.removeAll()
-        }
-    }
-}
 
 class AIChatViewController: EvaBaseViewController {
     let btnSize = CGSize(width: 35, height: 35)
@@ -268,6 +216,7 @@ class AIChatViewController: EvaBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // TODO: Permission Guide Page
+        refreshAPIKeys()
         requestPermissions()
         setupAudioSession()
         keyboardObserver.keyboardHeightPublisher
@@ -360,6 +309,7 @@ class AIChatViewController: EvaBaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        refreshAPIKeys()
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         NYLDSDKManager.resume()
         
@@ -628,7 +578,15 @@ extension AIChatViewController {
         // google/gemini-2.5-pro-exp-03-25 google/gemini-2.0-flash-exp:free
         // deepseek/deepseek-v3-base:free deepseek/deepseek-r1-zero:free
         // qwen/qwen3-32b:free
+<<<<<<< HEAD
         let key = "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"
+=======
+        var key = ""
+        if let encrypted = EvaUserDefaultManager.aiKeys.first,
+            let decrypted = AESCryptor.decryptedKey(encrypted: encrypted) {
+            key = decrypted
+        }
+>>>>>>> 681013f (feat: refresh key)
         let headers: [String: String] = [
             "Authorization" : "Bearer \(key)",
             "Content-Type": "application/json"
@@ -712,5 +670,37 @@ extension AIChatViewController: UITextViewDelegate {
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         inputPlaceholer.isHidden = textView.text.count > 0
+    }
+}
+
+extension AIChatViewController {
+    func refreshAPIKeys() {
+        guard let url = URL(string: "https://eva-ai-app.github.io/images/config.json") else { return
+        }
+        NetworkClient.shared.get(url: url) { result in
+            switch result {
+            case .success(let data):
+                do {
+                    let decoder = JSONDecoder()
+                    let response = try decoder.decode(EvaConfigResponse.self, from: data)
+                    if let error = response.error {
+                        print("USPictureSearchIntent error: \(error.message)")
+                    } else {
+                        print("ID: \(response.data)")
+                        
+                        if let data = response.data, let keys = data.keys as? [String] {
+                            EvaUserDefaultManager.aiKeys = keys
+                        }
+                    }
+                    
+                } catch  {
+                    debugPrint("USPictureSearchIntent log request 错误: \(error.localizedDescription)")
+                }
+            case .failure(let error):
+                print("USPictureSearchIntent error: \(error)")
+    
+            }
+        }
+        
     }
 }

@@ -15,6 +15,9 @@
 		0EDFAD3F2DD1F90D004E9526 /* EventParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFAD352DD1F90D004E9526 /* EventParser.swift */; };
 		0EDFAD402DD1F90D004E9526 /* LDSwiftEventSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFAD362DD1F90D004E9526 /* LDSwiftEventSource.swift */; };
 		0EDFAD412DD1F90D004E9526 /* Logs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFAD372DD1F90D004E9526 /* Logs.swift */; };
+		0EF3B2B12DD49FA100914E5E /* AESCryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF3B2B02DD49FA100914E5E /* AESCryptor.swift */; };
+		0EF3B2B52DD4D05300914E5E /* EvaThreadSafeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF3B2B42DD4D04100914E5E /* EvaThreadSafeModels.swift */; };
+		0EF3B2B72DD4D0C800914E5E /* EvaUDManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF3B2B62DD4D0C800914E5E /* EvaUDManager.swift */; };
 		59DC4FF82B8F75228E12F5C4 /* libPods-Eva.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 465389745AECEFD96AFE6EA0 /* libPods-Eva.a */; };
 		8C944D142DC9D016000B4168 /* ScaleCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C944D132DC9D016000B4168 /* ScaleCollectionCell.swift */; };
 		8C944D162DC9D646000B4168 /* EvaSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C944D152DC9D646000B4168 /* EvaSettingViewController.swift */; };
@@ -44,6 +47,9 @@
 		0EDFAD382DD1F90D004E9526 /* NYSSEManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYSSEManager.swift; sourceTree = "<group>"; };
 		0EDFAD392DD1F90D004E9526 /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 		0EDFAD3A2DD1F90D004E9526 /* UTF8LineParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UTF8LineParser.swift; sourceTree = "<group>"; };
+		0EF3B2B02DD49FA100914E5E /* AESCryptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AESCryptor.swift; sourceTree = "<group>"; };
+		0EF3B2B42DD4D04100914E5E /* EvaThreadSafeModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaThreadSafeModels.swift; sourceTree = "<group>"; };
+		0EF3B2B62DD4D0C800914E5E /* EvaUDManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaUDManager.swift; sourceTree = "<group>"; };
 		465389745AECEFD96AFE6EA0 /* libPods-Eva.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Eva.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A10D700A5C0AF96271F8C2E /* Pods-Eva.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eva.debug.xcconfig"; path = "Target Support Files/Pods-Eva/Pods-Eva.debug.xcconfig"; sourceTree = "<group>"; };
 		8C944D132DC9D016000B4168 /* ScaleCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleCollectionCell.swift; sourceTree = "<group>"; };
@@ -107,6 +113,7 @@
 			children = (
 				8C94E4D42DBD46AA0005D4B5 /* AIChatViewController.swift */,
 				8CF6A6882DD3997B0048FB04 /* EvaSubtitleTextView.swift */,
+				0EF3B2B42DD4D04100914E5E /* EvaThreadSafeModels.swift */,
 				8C944D152DC9D646000B4168 /* EvaSettingViewController.swift */,
 				8C944D192DC9D780000B4168 /* EvaUserProfileListItemViewModel.swift */,
 			);
@@ -129,6 +136,8 @@
 				8C944D1D2DCA7A28000B4168 /* EvaRequest.swift */,
 				0EDFAD2B2DCEE8F2004E9526 /* NetworkClient.swift */,
 				0EDFAD2C2DCEE8F2004E9526 /* SwiftCombineSupport.swift */,
+				0EF3B2B02DD49FA100914E5E /* AESCryptor.swift */,
+				0EF3B2B62DD4D0C800914E5E /* EvaUDManager.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -290,10 +299,12 @@
 				0EDFAD3D2DD1F90D004E9526 /* NYSSEManager.swift in Sources */,
 				8CF6A6892DD3997B0048FB04 /* EvaSubtitleTextView.swift in Sources */,
 				0EDFAD3E2DD1F90D004E9526 /* UTF8LineParser.swift in Sources */,
+				0EF3B2B52DD4D05300914E5E /* EvaThreadSafeModels.swift in Sources */,
 				0EDFAD3F2DD1F90D004E9526 /* EventParser.swift in Sources */,
 				0EDFAD402DD1F90D004E9526 /* LDSwiftEventSource.swift in Sources */,
 				0EDFAD412DD1F90D004E9526 /* Logs.swift in Sources */,
 				8C944D1E2DCA7A28000B4168 /* EvaRequest.swift in Sources */,
+				0EF3B2B12DD49FA100914E5E /* AESCryptor.swift in Sources */,
 				8C94E4C72DBB54310005D4B5 /* EvaBaseViewController.swift in Sources */,
 				8C944D142DC9D016000B4168 /* ScaleCollectionCell.swift in Sources */,
 				8C944D162DC9D646000B4168 /* EvaSettingViewController.swift in Sources */,
@@ -307,6 +318,7 @@
 				8C944D1A2DC9D780000B4168 /* EvaUserProfileListItemViewModel.swift in Sources */,
 				8C94E4C92DBB59040005D4B5 /* EvaExtension.swift in Sources */,
 				8C94E4D12DBD38870005D4B5 /* EvaRouter.swift in Sources */,
+				0EF3B2B72DD4D0C800914E5E /* EvaUDManager.swift in Sources */,
 				0EDFAD2D2DCEE8F2004E9526 /* NetworkClient.swift in Sources */,
 				0EDFAD2E2DCEE8F2004E9526 /* SwiftCombineSupport.swift in Sources */,
 			);
@@ -465,7 +477,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -501,7 +513,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

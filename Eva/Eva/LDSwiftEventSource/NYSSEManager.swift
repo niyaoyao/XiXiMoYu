@@ -191,13 +191,11 @@ class NYSSEManager {
             self.messageHandler?(.done, nil)
             self.stopSSE()
         } else {
-//            debugPrint("NYSSEManager event.data: \(event.data) ")
             do {
                 let decoder = JSONDecoder()
                 if let data = event.data.data(using: .utf8) {
                     let chunk = try decoder.decode(ChatCompletionChunk.self, from: data)
                     if let firstChoice = chunk.choices.first, let content =  firstChoice.delta.content {
-//                        let reasoning = firstChoice.delta.reasoning ?? ""
                         self.messageHandler?(.message, ["content" : content])
                     } else {
                         self.messageHandler?(.error, ["content" : "啊哦，出错了"])
