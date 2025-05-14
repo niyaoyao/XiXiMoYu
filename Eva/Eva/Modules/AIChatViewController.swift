@@ -578,15 +578,11 @@ extension AIChatViewController {
         // google/gemini-2.5-pro-exp-03-25 google/gemini-2.0-flash-exp:free
         // deepseek/deepseek-v3-base:free deepseek/deepseek-r1-zero:free
         // qwen/qwen3-32b:free
-<<<<<<< HEAD
-        let key = "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"
-=======
         var key = ""
         if let encrypted = EvaUserDefaultManager.aiKeys.first,
             let decrypted = AESCryptor.decryptedKey(encrypted: encrypted) {
             key = decrypted
         }
->>>>>>> 681013f (feat: refresh key)
         let headers: [String: String] = [
             "Authorization" : "Bearer \(key)",
             "Content-Type": "application/json"
