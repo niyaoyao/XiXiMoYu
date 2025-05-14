@@ -328,6 +328,11 @@ extension String {
         
         // 提取子字符串
         return String(self[range])
+        
+    }
+
+}
+
 extension Bundle {
     static var appBundleID: String {
         guard let bundleID = Bundle.main.bundleIdentifier else {
