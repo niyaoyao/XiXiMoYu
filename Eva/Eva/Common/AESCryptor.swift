@@ -168,7 +168,7 @@ public class AESCryptor {
 extension AESCryptor {
     public static func example() throws {
         // Example 1: Encrypt and decrypt with a random key
-        let message = "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"
+        let message = "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"
         let keyStr = "com.bear.yao.xi.evaai.aescryptor"
 
         guard let key = keyStr.data(using: .utf8) else {
@@ -185,23 +185,23 @@ extension AESCryptor {
         
     }
     
-    public static func decryptedKey(encrypted: String) -> String? {
-        let string = "\(Bundle.appBundleID)ai.aescryptor"
+     public static func decryptedKey(encrypted: String) -> String? {
+         let string = "\(Bundle.appBundleID)ai.aescryptor"
 
-        guard let key = string.data(using: .utf8) else {
-            print("Failed to convert string to data")
-            return nil
-        }
+         guard let key = string.data(using: .utf8) else {
+             print("Failed to convert string to data")
+             return nil
+         }
 
-        let decrypted = try? decrypt(encrypted, key: key)
+         let decrypted = try? decrypt(encrypted, key: key)
         
-        return decrypted
-    }
+         return decrypted
+     }
 }
 
 // do {
-//     try AESCryptor.example()
+//    try AESCryptor.example()
 // } catch  {
-//     print(error)
-    
+//    print(error)
+
 // }
