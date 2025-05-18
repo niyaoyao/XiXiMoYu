@@ -38,7 +38,7 @@
             - [ ] Settings/Me
                 - [ ] Privacy
                 - [ ] User
-                - [ ] Dynamic Key: **OpenRouter Key Request JSON AES encrypt**
+                - [x] Dynamic Key: **OpenRouter Key Request JSON AES encrypt**
                 - [ ] AI Model Settings
                     - [ ] Model List: **Request JSON AES encrypt**
                     - [ ] Request Message Prompt Settings
@@ -47,17 +47,11 @@
                 - [x] ICP
                 - [x] Version
                 - [ ] Locale Language
-<<<<<<< HEAD
     - [x] AI Speech
         - [x] **SSE Text Stream** 
         - [x] Mouth Control
         - [x] Text to Speech
-=======
-    - [ ] AI Speech
-        - [x] **SSE Text Stream** 
-        - [ ] Mouth Control
-        - [ ] Text to Speech
->>>>>>> 681013f (feat: refresh key)
+        - [ ] Speech to Text
 
     - [ ] `NYLDModel` instead of `LAppModel`
         - [x] Change Model Mouth Angle

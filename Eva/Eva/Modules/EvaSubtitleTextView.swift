@@ -33,17 +33,19 @@ class EvaSubtitleTextView: UITextView {
     }
     
     func setSubtitle(_ text: String) {
-        // 创建 NSAttributedString
-        let attributes: [NSAttributedString.Key: Any] = [
-            .foregroundColor: UIColor.white, // 字体颜色：白色
-            .backgroundColor: UIColor.black.withAlphaComponent(0.5), // 字体背景色：半透明黑色
-            .font: UIFont.systemFont(ofSize: 20, weight: .medium) // 字体样式
-        ]
-        
-        let attributedString = NSAttributedString(string: text, attributes: attributes)
-        self.attributedText = attributedString
-        self.originText = text
-        scrollToBottom()
+        DispatchQueue.main.async {
+            // 创建 NSAttributedString
+            let attributes: [NSAttributedString.Key: Any] = [
+                .foregroundColor: UIColor.white, // 字体颜色：白色
+                .backgroundColor: UIColor.black.withAlphaComponent(0.5), // 字体背景色：半透明黑色
+                .font: UIFont.systemFont(ofSize: 20, weight: .medium) // 字体样式
+            ]
+            
+            let attributedString = NSAttributedString(string: text, attributes: attributes)
+            self.attributedText = attributedString
+            self.originText = text
+            self.scrollToBottom()
+        }
     }
     
     private func scrollToBottom() {

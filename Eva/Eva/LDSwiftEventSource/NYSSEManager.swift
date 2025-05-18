@@ -159,25 +159,23 @@ class NYSSEManager {
     private lazy var eventSourceHandler: EventHandler = { [weak self] in
         guard let `self` = self else { return NYSSEHandler(_onOpened: {}, _onClosed: {}, _onMessage: {_,_ in }, _onComment: {_ in }, _onError: {_ in })}
         let handler = NYSSEHandler {
-            debugPrint("NYSSEManager open")
             self.messageHandler?(.open, nil)
-            
         } _onClosed: {
-            debugPrint("NYSSEManager close ")
             self.messageHandler?(.close, nil)
             self.stopSSE()
-            
         } _onMessage: { eventType, messageEvent in
             self.onMessageHandler(type: eventType, event: messageEvent)
-            debugPrint("NYSSEManager eventType: \(eventType) ")
         } _onComment: { comment in
-            debugPrint("NYSSEManager comment: \(comment) ")
             self.messageHandler?(.comment, nil)
         } _onError: { error in
-            self.messageHandler?(.error, nil)
+            if let error = error as? UnsuccessfulResponseError {
+                self.messageHandler?(.error, ["msg": error.localizedDescription, "code": error.responseCode])
+            } else {
+                let nsError = error as NSError
+                let errorCode = nsError.code
+                self.messageHandler?(.error, ["msg": error.localizedDescription, "code": errorCode])
+            }
             self.stopSSE()
-            debugPrint("NYSSEManager error: \(error) ")
-            
         }
 
         return handler

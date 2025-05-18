@@ -196,6 +196,7 @@ class AIChatViewController: EvaBaseViewController {
     var contentsManager: EvaThreadSafeContentsManager = EvaThreadSafeContentsManager()
     var isSpeaking = false
     var currentSpeakingString = ""
+    var currentAIKey = ""
     
     lazy var subtitleTextView: EvaSubtitleTextView = {
         let tv = EvaSubtitleTextView(frame: .zero)
@@ -453,8 +454,12 @@ extension AIChatViewController {
         self.endEditing()
         let text = textView.text.trimmingCharacters(in: .whitespacesAndNewlines)
         subtitleTextView.setSubtitle("")
+        
+        if text.isEmpty || text.count <= 0 {
+            self.startTTS(content: "请先输入您想要询问的问题")
+            return
+        }
         self.startTTS(content: "好的，让我想想如何回答你的问题")
-        if text.isEmpty || text.count <= 0 { return }
         self.startAISpeak(answer: text)
         textView.text = ""
         inputPlaceholer.isHidden = false
@@ -579,9 +584,16 @@ extension AIChatViewController {
         // deepseek/deepseek-v3-base:free deepseek/deepseek-r1-zero:free
         // qwen/qwen3-32b:free
         var key = ""
-        if let encrypted = EvaUserDefaultManager.aiKeys.first,
-            let decrypted = AESCryptor.decryptedKey(encrypted: encrypted) {
+        if let decrypted = EvaUserDefaultManager.aiKeys.first {
             key = decrypted
+        }
+        
+        if key == "" {
+            refreshAPIKeys()
+            stopAmplitudeAudioEngine()
+            setSpeakBtn(enabled: true)
+            self.startTTS(content: "抱歉，网络出问题了，请重试")
+            return
         }
         let headers: [String: String] = [
             "Authorization" : "Bearer \(key)",
@@ -603,7 +615,7 @@ extension AIChatViewController {
         }
         self.startTime = Date().timeIntervalSince1970
         speakBtn.isEnabled = false
-        
+        currentAIKey = key
         contentsManager.removeAllContents()
         NYSSEManager.shared.send(urlStr: kOpenRouterUrl, headers: headers, body: body)
     }
@@ -628,10 +640,31 @@ extension AIChatViewController {
         } else if type == .close {
                 // print("OpenRouter Cost: \(Date().timeIntervalSince1970 - (self.startTime ?? TimeInterval()))")
         } else if type == .error {
+            stopAmplitudeAudioEngine()
+            setSpeakBtn(enabled: true)
+            if let data = data, let errorCode = data["code"] as? Int, let msg = data["msg"] {
+                
+                switch errorCode {
+                case 401:
+                    var invalidKeys = EvaUserDefaultManager.invalidAIKeys
+                    if !invalidKeys.contains(currentAIKey) {
+                        invalidKeys.append(currentAIKey)
+                    }
+                    EvaUserDefaultManager.invalidAIKeys = invalidKeys
+                    let arrayA = EvaUserDefaultManager.aiKeys
+                    let arrayB = EvaUserDefaultManager.invalidAIKeys
+                    EvaUserDefaultManager.aiKeys = arrayA.filter { !arrayB.contains($0) }
+                    print("EvaAI Keys: \(EvaUserDefaultManager.aiKeys)")
+                default:
+                    print("code: \(errorCode)")
+                    print("msg: \(msg)")
+                }
+            }
             self.startTTS(content: "抱歉，网络出问题了，请重试")
         } else if type == .done {
             setSpeakBtn(enabled: true)
         } else if type == .comment {
+            subtitleTextView.setSubtitle("")
             setSpeakBtn(enabled: false)
         }
             
@@ -666,14 +699,15 @@ extension AIChatViewController: UITextViewDelegate {
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         inputPlaceholer.isHidden = textView.text.count > 0
+        subtitleTextView.setSubtitle("")
     }
 }
 
 extension AIChatViewController {
     func refreshAPIKeys() {
-        guard let url = URL(string: "https://eva-ai-app.github.io/images/config.json") else { return
+        guard let url = URL(string: "https://cyberpi.tech/web-player/musics/config.json") else { return
         }
-        NetworkClient.shared.get(url: url) { result in
+        NetworkClient.shared.post(url: url) { result in
             switch result {
             case .success(let data):
                 do {
@@ -682,10 +716,11 @@ extension AIChatViewController {
                     if let error = response.error {
                         print("USPictureSearchIntent error: \(error.message)")
                     } else {
-                        print("ID: \(response.data)")
-                        
                         if let data = response.data, let keys = data.keys as? [String] {
-                            EvaUserDefaultManager.aiKeys = keys
+                            let arrayA = keys.map({ AESCryptor.decryptString($0) ?? "" }).filter({ $0 != "" })
+                            let arrayB = EvaUserDefaultManager.invalidAIKeys
+                            EvaUserDefaultManager.aiKeys = arrayA.filter { !arrayB.contains($0) }
+                            print("EvaAI Keys:\(EvaUserDefaultManager.aiKeys)")
                         }
                     }
                     

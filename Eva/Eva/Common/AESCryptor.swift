@@ -86,6 +86,25 @@ public class AESCryptor {
         return decryptedString
     }
     
+    public static func decryptString(_ encryptedBase64: String, password: String? = nil) -> String? {
+        let keyStr = "com.bear.yao.xi.evaai.aescryptor"
+        guard let key = keyStr.data(using: .utf8) else {
+            return nil
+        }
+        guard let encryptedData = Data(base64Encoded: encryptedBase64) else {
+            return nil
+        }
+        do {
+            let decryptedData = try decrypt(encryptedData, key: key, password: password)
+            guard let decryptedString = String(data: decryptedData, encoding: .utf8) else {
+                return nil
+            }
+            return decryptedString
+        } catch {
+            return nil
+        }
+    }
+    
     /// Decrypts data using AES-GCM with a provided key or password.
     /// - Parameters:
     ///   - encryptedData: Data containing nonce, ciphertext, and tag.
@@ -149,8 +168,8 @@ public class AESCryptor {
 extension AESCryptor {
     public static func example() throws {
         // Example 1: Encrypt and decrypt with a random key
-        let message = ""
-        let keyStr = ""//"com.bear.yao.xi.eva.ai.app.crypt"
+        let message = "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"
+        let keyStr = "com.bear.yao.xi.evaai.aescryptor"
 
         guard let key = keyStr.data(using: .utf8) else {
             print("Failed to convert string to data")
@@ -158,16 +177,16 @@ extension AESCryptor {
         }
 
         print("Key: \(key)")
-        // let encrypted = "e56IV+5c3fig2iediAwalMiEobnVztHh5IaR3I518rT48xEWlcL+eC5EI08aFTvM3SluQeI7WXFDihhyZHCZfm7+RPia8tM2tDkn6aID9UZgRSJCYJc8dRxgpUQl/Ec1KYol+Cg="
         let encrypted = try encrypt(message, key: key)
         print("Encrypted (Base64): \(encrypted)")
+        // let decrypted = try decrypt("L6L12f/NaDYs00YL1VcVTklE4qFU7r+0R1/iMi1uJDKT5BORJKydI95cH2sEqF03Gp5kBvxScbqYeuDzMzg6NUKx31Xc+/b8HJSRi+xovjWwk/vlYqVzKn5pXQFIVHLLj4gibig=", key: key)
         let decrypted = try decrypt(encrypted, key: key)
         print("Decrypted: \(decrypted)")
         
     }
     
     public static func decryptedKey(encrypted: String) -> String? {
-        let string = "\(Bundle.appBundleID).ai.app.crypt"
+        let string = "\(Bundle.appBundleID)ai.aescryptor"
 
         guard let key = string.data(using: .utf8) else {
             print("Failed to convert string to data")
@@ -180,4 +199,9 @@ extension AESCryptor {
     }
 }
 
-
+// do {
+//     try AESCryptor.example()
+// } catch  {
+//     print(error)
+    
+// }

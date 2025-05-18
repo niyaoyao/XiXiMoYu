@@ -20,4 +20,18 @@ class EvaUserDefaultManager {
             UserDefaults.standard.setValue(newValue, forKey: #function)
         }
     }
+    
+    static var invalidAIKeys: [String] {
+        get {
+            if let array = UserDefaults.standard.array(forKey: #function) as? [String] {
+                return array
+            } else {
+                return []
+            }
+        }
+        set {
+            UserDefaults.standard.setValue(newValue, forKey: #function)
+        }
+    }
+    
 }
