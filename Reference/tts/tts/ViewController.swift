@@ -95,7 +95,7 @@ class NYScaleCenterCollectionCell: UICollectionViewCell {
 }
 
 class ViewController: UIViewController {
-    let titles = ["TTS&SST","Real Time \nAmplitudes","Sound Wave","Mask Animation","555555","666666" ]
+    let titles = ["PhotoVaporizeViewController","Real Time \nAmplitudes","Sound Wave","Mask Animation","555555","666666" ]
     
     lazy var collectionView: UICollectionView = {
         let width = 80.0
@@ -184,15 +184,15 @@ extension ViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         var vc = UIViewController()
         let item = indexPath.item
-//        if item == 0 {
-//            vc = BackupViewController()
+        if item == 0 {
+            vc = PhotoVaporizeViewController()
 //        } else if item == 1 {
 //            vc = Backup2ViewController()
 //        } else if item == 2 {
 //            vc = Backup3ViewController()
 //        } else if item == 3 {
 //            vc = MaskAnimationViewController()
-//        }
+        }
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

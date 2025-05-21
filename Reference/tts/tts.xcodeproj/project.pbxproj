@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0EDFAD332DCEFC40004E9526 /* NYSSEManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFAD322DCEFC40004E9526 /* NYSSEManager.swift */; };
+		0EF69F5A2DDB0B6B00877455 /* PhotoVaporizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF69F592DDB0B6B00877455 /* PhotoVaporizeViewController.swift */; };
+		0EF69F5C2DDB11D500877455 /* ParticleShader.metal in Sources */ = {isa = PBXBuildFile; fileRef = 0EF69F5B2DDB11C100877455 /* ParticleShader.metal */; };
+		0EF69F5E2DDB50E000877455 /* EvaporatingImageLayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF69F5D2DDB50E000877455 /* EvaporatingImageLayerView.swift */; };
 		8C69D4E92DCBCEFA007B495B /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8C69D4E32DCBCEF9007B495B /* .swiftlint.yml */; };
 		8C69D4EA2DCBCEFA007B495B /* Logs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C69D4E42DCBCEF9007B495B /* Logs.swift */; };
 		8C69D4EB2DCBCEFA007B495B /* UTF8LineParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C69D4E52DCBCEF9007B495B /* UTF8LineParser.swift */; };
@@ -35,6 +38,9 @@
 /* Begin PBXFileReference section */
 		0EDFAD322DCEFC40004E9526 /* NYSSEManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYSSEManager.swift; sourceTree = "<group>"; };
 		0EF3B1052DD472C000914E5E /* ttstests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ttstests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0EF69F592DDB0B6B00877455 /* PhotoVaporizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoVaporizeViewController.swift; sourceTree = "<group>"; };
+		0EF69F5B2DDB11C100877455 /* ParticleShader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = ParticleShader.metal; sourceTree = "<group>"; };
+		0EF69F5D2DDB50E000877455 /* EvaporatingImageLayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaporatingImageLayerView.swift; sourceTree = "<group>"; };
 		8C69D4E32DCBCEF9007B495B /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		8C69D4E42DCBCEF9007B495B /* Logs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logs.swift; sourceTree = "<group>"; };
 		8C69D4E52DCBCEF9007B495B /* UTF8LineParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UTF8LineParser.swift; sourceTree = "<group>"; };
@@ -112,6 +118,9 @@
 				8C8E09962DC19C0000A4772B /* AppDelegate.swift */,
 				8C8E09982DC19C0000A4772B /* SceneDelegate.swift */,
 				8C8E099A2DC19C0000A4772B /* ViewController.swift */,
+				0EF69F592DDB0B6B00877455 /* PhotoVaporizeViewController.swift */,
+				0EF69F5D2DDB50E000877455 /* EvaporatingImageLayerView.swift */,
+				0EF69F5B2DDB11C100877455 /* ParticleShader.metal */,
 				8C8E099C2DC19C0000A4772B /* Main.storyboard */,
 				8C8E099F2DC19C0A00A4772B /* Assets.xcassets */,
 				8C8E09A12DC19C0A00A4772B /* LaunchScreen.storyboard */,
@@ -235,7 +244,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C8E099B2DC19C0000A4772B /* ViewController.swift in Sources */,
+				0EF69F5E2DDB50E000877455 /* EvaporatingImageLayerView.swift in Sources */,
 				8C69D4EC2DCBCEFA007B495B /* EventParser.swift in Sources */,
+				0EF69F5C2DDB11D500877455 /* ParticleShader.metal in Sources */,
 				8C69D4EB2DCBCEFA007B495B /* UTF8LineParser.swift in Sources */,
 				8C69D4EE2DCBCEFA007B495B /* Types.swift in Sources */,
 				8C8E09972DC19C0000A4772B /* AppDelegate.swift in Sources */,
@@ -243,6 +254,7 @@
 				0EDFAD332DCEFC40004E9526 /* NYSSEManager.swift in Sources */,
 				8C8E09992DC19C0000A4772B /* SceneDelegate.swift in Sources */,
 				8C69D4ED2DCBCEFA007B495B /* LDSwiftEventSource.swift in Sources */,
+				0EF69F5A2DDB0B6B00877455 /* PhotoVaporizeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,6 +455,7 @@
 				DEVELOPMENT_TEAM = P66P3CXU58;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = tts/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = photo;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -472,6 +485,7 @@
 				DEVELOPMENT_TEAM = P66P3CXU58;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = tts/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = photo;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
