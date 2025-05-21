@@ -34,10 +34,10 @@
             - [x] Change Model
                 - [x] Collection View Circle Transmation
             - [x] Change Background
-            - [ ] Creative Functions( Pose/Animation/Play Music)
+            - [ ] **Creative Functions( Pose/Animation/Play Music)**
             - [ ] Settings/Me
-                - [ ] Privacy
-                - [ ] User
+                - [x] Privacy
+                - [z] User
                 - [x] Dynamic Key: **OpenRouter Key Request JSON AES encrypt**
                 - [ ] AI Model Settings
                     - [ ] Model List: **Request JSON AES encrypt**

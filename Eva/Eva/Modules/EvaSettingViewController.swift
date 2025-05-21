@@ -48,8 +48,8 @@ class EvaSettingViewController: EvaBaseViewController {
     }
     
     var unregisterSection: [EvaUserProfileListItemViewModel] {
-        var unregister = EvaUserProfileListItemViewModel(type: .unregister)
-        unregister.title = "注销账户"
+        var unregister = EvaUserProfileListItemViewModel(type: .about)
+        unregister.title = "关于我们"
         
         return [unregister]
     }
@@ -64,6 +64,7 @@ class EvaSettingViewController: EvaBaseViewController {
         btn.titleLabel?.font = .systemFont(ofSize: 14)
         btn.addTarget(self, action: #selector(logout), for: .touchUpInside)
         btn.layer.cornerRadius = 21
+        btn.isHidden = true
         return btn
     }()
     override func viewDidLoad() {
@@ -120,17 +121,16 @@ extension EvaSettingViewController: UICollectionViewDelegate {
     // MARK: - UICollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let itemVM = self.viewModel[indexPath.section][indexPath.item]
-//        switch itemVM.type {
-//        case .userProtocol:
-//            let web = WeStudyWebViewController(url: "https://img.westudy.net.cn/westudy/protocol.html")
-//            let nav = WeStudyBaseNavController(rootViewController: web)
-//            nav.modalPresentationStyle = .fullScreen
-//            self.present(nav, animated: true)
-//        case .privacy:
-//            let web = WeStudyWebViewController(url: "https://img.westudy.net.cn/westudy/privacy.html")
-//            let nav = WeStudyBaseNavController(rootViewController: web)
-//            nav.modalPresentationStyle = .fullScreen
-//            self.present(nav, animated: true)
+        switch itemVM.type {
+        case .userProtocol:
+            let web = EvaWebViewController(url: "https://eva-ai-app.github.io/2025/05/22/TermsofUse/")
+            self.navigationController?.pushViewController(web, animated: true)
+        case .privacy:
+            let web = EvaWebViewController(url: "https://eva-ai-app.github.io/2025/05/22/PrivacyPolicy/")
+            self.navigationController?.pushViewController(web, animated: true)
+        case .about:
+            let web = EvaWebViewController(url: "https://cyberpi.tech")
+            self.navigationController?.pushViewController(web, animated: true)
 //        case .unregister:
 //            let alert = UIAlertController(title: "注销账户", message: "注销后，个人信息都会删除，确定注销？", preferredStyle: .alert)
 //            let ok = UIAlertAction(title: "确定", style: .default) { [weak self] _ in
@@ -140,9 +140,9 @@ extension EvaSettingViewController: UICollectionViewDelegate {
 //            alert.addAction(ok)
 //            alert.addAction(cancel)
 //            self.present(alert, animated: true)
-//        default:
-//            debugPrint("Unknown")
-//        }
+        default:
+            debugPrint("Unknown")
+        }
     }
     
     func unregisterAccount()  {

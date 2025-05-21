@@ -24,6 +24,8 @@ enum EvaUserProfileItemType {
     case privacy
     case icp
     case unregister
+    case llm
+    case about
 }
 
 struct EvaUserProfileListItemViewModel {

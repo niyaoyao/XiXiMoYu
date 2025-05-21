@@ -23,7 +23,7 @@ enum EvaModelChangeType {
 
 class AIChatViewController: EvaBaseViewController {
     let btnSize = CGSize(width: 35, height: 35)
-    let bottomH = 100.0
+    let bottomH = 120.0
     // TTS
     private let synthesizer = AVSpeechSynthesizer()
     private let audioEngine = AVAudioEngine()
@@ -109,6 +109,7 @@ class AIChatViewController: EvaBaseViewController {
         layer.shadowColor = UIColor("#333333").cgColor // 对应 rgba(255, 89, 0)
         layer.shadowOffset = CGSize(width: 0, height: 6) // 对应 offset-x: 0px, offset-y: 11px
         layer.shadowRadius = 12
+        btn.isHidden = true
         return btn
     }()
     
@@ -197,6 +198,7 @@ class AIChatViewController: EvaBaseViewController {
     var isSpeaking = false
     var currentSpeakingString = ""
     var currentAIKey = ""
+    var originAnswerString = ""
     
     lazy var subtitleTextView: EvaSubtitleTextView = {
         let tv = EvaSubtitleTextView(frame: .zero)
@@ -209,7 +211,7 @@ class AIChatViewController: EvaBaseViewController {
         btn.setImage(UIImage(named: "tts_copy"), for: .normal)
         btn.isHidden = true
         btn.addActionHandler { [weak self] in
-            UIPasteboard.general.string = self?.subtitleTextView.originText
+            UIPasteboard.general.string = self?.originAnswerString
         }
         return btn
     }()
@@ -253,7 +255,7 @@ class AIChatViewController: EvaBaseViewController {
         }
         view.addSubview(modelBackgroudBtn)
         view.addSubview(settingsBtn)
-        view.addSubview(controlBtn)
+//        view.addSubview(controlBtn)
         view.addSubview(backgroundBtn)
         view.addSubview(modelBtn)
         
@@ -263,15 +265,15 @@ class AIChatViewController: EvaBaseViewController {
             make.size.equalTo(btnSize)
         }
         
-        controlBtn.snp.makeConstraints { make in
-            make.bottom.equalTo(settingsBtn.snp.top).offset(-25)
-            make.right.equalTo(settingsBtn)
-            make.size.equalTo(btnSize)
-        }
+//        controlBtn.snp.makeConstraints { make in
+//            make.bottom.equalTo(settingsBtn.snp.top).offset(-25)
+//            make.right.equalTo(settingsBtn)
+//            make.size.equalTo(btnSize)
+//        }
         
         backgroundBtn.snp.makeConstraints { make in
-            make.bottom.equalTo(controlBtn.snp.top).offset(-25)
-            make.right.equalTo(controlBtn)
+            make.bottom.equalTo(settingsBtn.snp.top).offset(-25)
+            make.right.equalTo(settingsBtn)
             make.size.equalTo(btnSize)
         }
         
@@ -635,7 +637,7 @@ extension AIChatViewController {
                 contentsManager.removeAllContents()
             }
             contentsManager.appendContent(content)
-            
+            originAnswerString = "\(originAnswerString)\(content)"
             print("OpenRouter contentsManager.getAllContentsString(): \(contentsManager.getAllContentsString())")
         } else if type == .close {
                 // print("OpenRouter Cost: \(Date().timeIntervalSince1970 - (self.startTime ?? TimeInterval()))")
@@ -665,6 +667,7 @@ extension AIChatViewController {
             setSpeakBtn(enabled: true)
         } else if type == .comment {
             subtitleTextView.setSubtitle("")
+            originAnswerString = ""
             setSpeakBtn(enabled: false)
         }
             
