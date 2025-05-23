@@ -476,8 +476,8 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Eva/Info.plist;
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = stt;
-				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "speech to tts";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Eva AI 需要启用话筒，以用于进行语音识别";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Eva AI 需要启用语音识别，以用于进行文本转换";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -516,8 +516,8 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Eva/Info.plist;
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = stt;
-				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "speech to tts";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Eva AI 需要启用话筒，以用于进行语音识别";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Eva AI 需要启用语音识别，以用于进行文本转换";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
