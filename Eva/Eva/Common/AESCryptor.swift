@@ -136,7 +136,7 @@ public class AESCryptor {
     
     /// Generates or derives a symmetric key for AES-256.
     /// - Parameters:
-    ///   - key: A provided 32-byte key (optional).
+    ///   - key: A provided 32-byte key (optional). 
     ///   - password: A password to derive a key (optional).
     /// - Returns: A SymmetricKey for AES-256.
     private static func getSymmetricKey(key: Data?, password: String?) throws -> SymmetricKey {
